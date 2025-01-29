@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-with-form",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "button",
+    "card",
+    "input",
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "examples/card-with-form.tsx",
+      "content": "import * as React from \"react\"\r\n\r\nimport { Button } from \"@/registry/new-york/ui/button\"\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/registry/new-york/ui/card\"\r\nimport { Input } from \"@/registry/new-york/ui/input\"\r\nimport { Label } from \"@/registry/new-york/ui/label\"\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/new-york/ui/select\"\r\n\r\nexport default function CardWithForm() {\r\n  return (\r\n    <Card className=\"w-[350px]\">\r\n      <CardHeader>\r\n        <CardTitle>Create project</CardTitle>\r\n        <CardDescription>Deploy your new project in one-click.</CardDescription>\r\n      </CardHeader>\r\n      <CardContent>\r\n        <form>\r\n          <div className=\"grid w-full items-center gap-4\">\r\n            <div className=\"flex flex-col space-y-1.5\">\r\n              <Label htmlFor=\"name\">Name</Label>\r\n              <Input id=\"name\" placeholder=\"Name of your project\" />\r\n            </div>\r\n            <div className=\"flex flex-col space-y-1.5\">\r\n              <Label htmlFor=\"framework\">Framework</Label>\r\n              <Select>\r\n                <SelectTrigger id=\"framework\">\r\n                  <SelectValue placeholder=\"Select\" />\r\n                </SelectTrigger>\r\n                <SelectContent position=\"popper\">\r\n                  <SelectItem value=\"next\">Next.js</SelectItem>\r\n                  <SelectItem value=\"sveltekit\">SvelteKit</SelectItem>\r\n                  <SelectItem value=\"astro\">Astro</SelectItem>\r\n                  <SelectItem value=\"nuxt\">Nuxt.js</SelectItem>\r\n                </SelectContent>\r\n              </Select>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </CardContent>\r\n      <CardFooter className=\"flex justify-between\">\r\n        <Button variant=\"outline\">Cancel</Button>\r\n        <Button>Deploy</Button>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

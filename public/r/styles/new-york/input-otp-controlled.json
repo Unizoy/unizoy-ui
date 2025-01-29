@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-controlled",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "input-otp"
+  ],
+  "files": [
+    {
+      "path": "examples/input-otp-controlled.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport {\r\n  InputOTP,\r\n  InputOTPGroup,\r\n  InputOTPSlot,\r\n} from \"@/registry/new-york/ui/input-otp\"\r\n\r\nexport default function InputOTPControlled() {\r\n  const [value, setValue] = React.useState(\"\")\r\n\r\n  return (\r\n    <div className=\"space-y-2\">\r\n      <InputOTP\r\n        maxLength={6}\r\n        value={value}\r\n        onChange={(value) => setValue(value)}\r\n      >\r\n        <InputOTPGroup>\r\n          <InputOTPSlot index={0} />\r\n          <InputOTPSlot index={1} />\r\n          <InputOTPSlot index={2} />\r\n          <InputOTPSlot index={3} />\r\n          <InputOTPSlot index={4} />\r\n          <InputOTPSlot index={5} />\r\n        </InputOTPGroup>\r\n      </InputOTP>\r\n      <div className=\"text-center text-sm\">\r\n        {value === \"\" ? (\r\n          <>Enter your one-time password.</>\r\n        ) : (\r\n          <>You entered: {value}</>\r\n        )}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

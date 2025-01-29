@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "examples/collapsible-demo.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { ChevronsUpDown } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york/ui/button\"\r\nimport {\r\n  Collapsible,\r\n  CollapsibleContent,\r\n  CollapsibleTrigger,\r\n} from \"@/registry/new-york/ui/collapsible\"\r\n\r\nexport default function CollapsibleDemo() {\r\n  const [isOpen, setIsOpen] = React.useState(false)\r\n\r\n  return (\r\n    <Collapsible\r\n      open={isOpen}\r\n      onOpenChange={setIsOpen}\r\n      className=\"w-[350px] space-y-2\"\r\n    >\r\n      <div className=\"flex items-center justify-between space-x-4 px-4\">\r\n        <h4 className=\"text-sm font-semibold\">\r\n          @peduarte starred 3 repositories\r\n        </h4>\r\n        <CollapsibleTrigger asChild>\r\n          <Button variant=\"ghost\" size=\"sm\">\r\n            <ChevronsUpDown className=\"h-4 w-4\" />\r\n            <span className=\"sr-only\">Toggle</span>\r\n          </Button>\r\n        </CollapsibleTrigger>\r\n      </div>\r\n      <div className=\"rounded-md border px-4 py-2 font-mono text-sm shadow-sm\">\r\n        @radix-ui/primitives\r\n      </div>\r\n      <CollapsibleContent className=\"space-y-2\">\r\n        <div className=\"rounded-md border px-4 py-2 font-mono text-sm shadow-sm\">\r\n          @radix-ui/colors\r\n        </div>\r\n        <div className=\"rounded-md border px-4 py-2 font-mono text-sm shadow-sm\">\r\n          @stitches/react\r\n        </div>\r\n      </CollapsibleContent>\r\n    </Collapsible>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

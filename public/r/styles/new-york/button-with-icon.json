@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-with-icon",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/button-with-icon.tsx",
+      "content": "import { MailOpen } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york/ui/button\"\r\n\r\nexport default function ButtonWithIcon() {\r\n  return (\r\n    <Button>\r\n      <MailOpen /> Login with Email\r\n    </Button>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-link",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "examples/breadcrumb-link.tsx",
+      "content": "import Link from \"next/link\"\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator,\r\n} from \"@/registry/default/ui/breadcrumb\"\r\n\r\nexport default function BreadcrumbWithCustomSeparator() {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink>\r\n            <Link href=\"/\">Home</Link>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink>\r\n            <Link href=\"/components\">Components</Link>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

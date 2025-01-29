@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "v0-login-01",
+  "type": "registry:internal",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "button",
+    "card",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "internal/login-01.tsx",
+      "content": "import Link from \"next/link\"\r\n\r\nimport { Button } from \"@/components/ui/button\"\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\"\r\nimport { Input } from \"@/components/ui/input\"\r\nimport { Label } from \"@/components/ui/label\"\n\nexport default function Page() {\r\n  return (\r\n    <div className=\"flex h-screen w-full items-center justify-center px-4\">\r\n      <Card className=\"mx-auto max-w-sm\">\r\n        <CardHeader>\r\n          <CardTitle className=\"text-2xl\">Login</CardTitle>\r\n          <CardDescription>\r\n            Enter your email below to login to your account\r\n          </CardDescription>\r\n        </CardHeader>\r\n        <CardContent>\r\n          <div className=\"grid gap-4\">\r\n            <div className=\"grid gap-2\">\r\n              <Label htmlFor=\"email\">Email</Label>\r\n              <Input\r\n                id=\"email\"\r\n                type=\"email\"\r\n                placeholder=\"m@example.com\"\r\n                required\r\n              />\r\n            </div>\r\n            <div className=\"grid gap-2\">\r\n              <div className=\"flex items-center\">\r\n                <Label htmlFor=\"password\">Password</Label>\r\n                <Link\r\n                  href=\"#\"\r\n                  className=\"ml-auto inline-block text-sm underline\"\r\n                >\r\n                  Forgot your password?\r\n                </Link>\r\n              </div>\r\n              <Input id=\"password\" type=\"password\" required />\r\n            </div>\r\n            <Button type=\"submit\" className=\"w-full\">\r\n              Login\r\n            </Button>\r\n            <Button variant=\"outline\" className=\"w-full\">\r\n              Login with Google\r\n            </Button>\r\n          </div>\r\n          <div className=\"mt-4 text-center text-sm\">\r\n            Don&apos;t have an account?{\" \"}\r\n            <Link href=\"#\" className=\"underline\">\r\n              Sign up\r\n            </Link>\r\n          </div>\r\n        </CardContent>\r\n      </Card>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:internal",
+      "target": ""
+    }
+  ]
+}

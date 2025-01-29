@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "dependencies": [
+    "vaul",
+    "@radix-ui/react-dialog"
+  ],
+  "files": [
+    {
+      "path": "ui/drawer.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { Drawer as DrawerPrimitive } from \"vaul\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst Drawer = ({\r\n  shouldScaleBackground = true,\r\n  ...props\r\n}: React.ComponentProps<typeof DrawerPrimitive.Root>) => (\r\n  <DrawerPrimitive.Root\r\n    shouldScaleBackground={shouldScaleBackground}\r\n    {...props}\r\n  />\r\n)\r\nDrawer.displayName = \"Drawer\"\r\n\r\nconst DrawerTrigger = DrawerPrimitive.Trigger\r\n\r\nconst DrawerPortal = DrawerPrimitive.Portal\r\n\r\nconst DrawerClose = DrawerPrimitive.Close\r\n\r\nconst DrawerOverlay = React.forwardRef<\r\n  React.ElementRef<typeof DrawerPrimitive.Overlay>,\r\n  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>\r\n>(({ className, ...props }, ref) => (\r\n  <DrawerPrimitive.Overlay\r\n    ref={ref}\r\n    className={cn(\"fixed inset-0 z-50 bg-black/80\", className)}\r\n    {...props}\r\n  />\r\n))\r\nDrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName\r\n\r\nconst DrawerContent = React.forwardRef<\r\n  React.ElementRef<typeof DrawerPrimitive.Content>,\r\n  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>\r\n>(({ className, children, ...props }, ref) => (\r\n  <DrawerPortal>\r\n    <DrawerOverlay />\r\n    <DrawerPrimitive.Content\r\n      ref={ref}\r\n      className={cn(\r\n        \"fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background\",\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      <div className=\"mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted\" />\r\n      {children}\r\n    </DrawerPrimitive.Content>\r\n  </DrawerPortal>\r\n))\r\nDrawerContent.displayName = \"DrawerContent\"\r\n\r\nconst DrawerHeader = ({\r\n  className,\r\n  ...props\r\n}: React.HTMLAttributes<HTMLDivElement>) => (\r\n  <div\r\n    className={cn(\"grid gap-1.5 p-4 text-center sm:text-left\", className)}\r\n    {...props}\r\n  />\r\n)\r\nDrawerHeader.displayName = \"DrawerHeader\"\r\n\r\nconst DrawerFooter = ({\r\n  className,\r\n  ...props\r\n}: React.HTMLAttributes<HTMLDivElement>) => (\r\n  <div\r\n    className={cn(\"mt-auto flex flex-col gap-2 p-4\", className)}\r\n    {...props}\r\n  />\r\n)\r\nDrawerFooter.displayName = \"DrawerFooter\"\r\n\r\nconst DrawerTitle = React.forwardRef<\r\n  React.ElementRef<typeof DrawerPrimitive.Title>,\r\n  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>\r\n>(({ className, ...props }, ref) => (\r\n  <DrawerPrimitive.Title\r\n    ref={ref}\r\n    className={cn(\r\n      \"text-lg font-semibold leading-none tracking-tight\",\r\n      className\r\n    )}\r\n    {...props}\r\n  />\r\n))\r\nDrawerTitle.displayName = DrawerPrimitive.Title.displayName\r\n\r\nconst DrawerDescription = React.forwardRef<\r\n  React.ElementRef<typeof DrawerPrimitive.Description>,\r\n  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>\r\n>(({ className, ...props }, ref) => (\r\n  <DrawerPrimitive.Description\r\n    ref={ref}\r\n    className={cn(\"text-sm text-muted-foreground\", className)}\r\n    {...props}\r\n  />\r\n))\r\nDrawerDescription.displayName = DrawerPrimitive.Description.displayName\r\n\r\nexport {\r\n  Drawer,\r\n  DrawerPortal,\r\n  DrawerOverlay,\r\n  DrawerTrigger,\r\n  DrawerClose,\r\n  DrawerContent,\r\n  DrawerHeader,\r\n  DrawerFooter,\r\n  DrawerTitle,\r\n  DrawerDescription,\r\n}\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

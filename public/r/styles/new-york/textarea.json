@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "files": [
+    {
+      "path": "ui/textarea.tsx",
+      "content": "import * as React from \"react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst Textarea = React.forwardRef<\r\n  HTMLTextAreaElement,\r\n  React.ComponentProps<\"textarea\">\r\n>(({ className, ...props }, ref) => {\r\n  return (\r\n    <textarea\r\n      className={cn(\r\n        \"flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm\",\r\n        className\r\n      )}\r\n      ref={ref}\r\n      {...props}\r\n    />\r\n  )\r\n})\r\nTextarea.displayName = \"Textarea\"\r\n\r\nexport { Textarea }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-icon",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/button-icon.tsx",
+      "content": "import { ChevronRight } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/default/ui/button\"\r\n\r\nexport default function ButtonIcon() {\r\n  return (\r\n    <Button variant=\"outline\" size=\"icon\">\r\n      <ChevronRight />\r\n    </Button>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-ellipsis",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "examples/breadcrumb-ellipsis.tsx",
+      "content": "import Link from \"next/link\"\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbEllipsis,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator,\r\n} from \"@/registry/default/ui/breadcrumb\"\r\n\r\nexport default function BreadcrumbCollapsed() {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink asChild>\r\n            <Link href=\"/\">Home</Link>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbEllipsis />\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink asChild>\r\n            <Link href=\"/docs/components\">Components</Link>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

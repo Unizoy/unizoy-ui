@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "dependencies": [
+    "@radix-ui/react-slider"
+  ],
+  "files": [
+    {
+      "path": "ui/slider.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport * as SliderPrimitive from \"@radix-ui/react-slider\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst Slider = React.forwardRef<\r\n  React.ElementRef<typeof SliderPrimitive.Root>,\r\n  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>\r\n>(({ className, ...props }, ref) => (\r\n  <SliderPrimitive.Root\r\n    ref={ref}\r\n    className={cn(\r\n      \"relative flex w-full touch-none select-none items-center\",\r\n      className\r\n    )}\r\n    {...props}\r\n  >\r\n    <SliderPrimitive.Track className=\"relative h-2 w-full grow overflow-hidden rounded-full bg-secondary\">\r\n      <SliderPrimitive.Range className=\"absolute h-full bg-primary\" />\r\n    </SliderPrimitive.Track>\r\n    <SliderPrimitive.Thumb className=\"block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50\" />\r\n  </SliderPrimitive.Root>\r\n))\r\nSlider.displayName = SliderPrimitive.Root.displayName\r\n\r\nexport { Slider }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

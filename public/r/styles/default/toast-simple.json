@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-simple",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "examples/toast-simple.tsx",
+      "content": "\"use client\"\r\n\r\nimport { useToast } from \"@/registry/default/hooks/use-toast\"\r\nimport { Button } from \"@/registry/default/ui/button\"\r\n\r\nexport default function ToastSimple() {\r\n  const { toast } = useToast()\r\n\r\n  return (\r\n    <Button\r\n      variant=\"outline\"\r\n      onClick={() => {\r\n        toast({\r\n          description: \"Your message has been sent.\",\r\n        })\r\n      }}\r\n    >\r\n      Show Toast\r\n    </Button>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

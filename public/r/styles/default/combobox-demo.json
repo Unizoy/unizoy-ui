@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "command"
+  ],
+  "files": [
+    {
+      "path": "examples/combobox-demo.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { Check, ChevronsUpDown } from \"lucide-react\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\nimport { Button } from \"@/registry/default/ui/button\"\r\nimport {\r\n  Command,\r\n  CommandEmpty,\r\n  CommandGroup,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n} from \"@/registry/default/ui/command\"\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/registry/default/ui/popover\"\r\n\r\nconst frameworks = [\r\n  {\r\n    value: \"next.js\",\r\n    label: \"Next.js\",\r\n  },\r\n  {\r\n    value: \"sveltekit\",\r\n    label: \"SvelteKit\",\r\n  },\r\n  {\r\n    value: \"nuxt.js\",\r\n    label: \"Nuxt.js\",\r\n  },\r\n  {\r\n    value: \"remix\",\r\n    label: \"Remix\",\r\n  },\r\n  {\r\n    value: \"astro\",\r\n    label: \"Astro\",\r\n  },\r\n]\r\n\r\nexport default function ComboboxDemo() {\r\n  const [open, setOpen] = React.useState(false)\r\n  const [value, setValue] = React.useState(\"\")\r\n\r\n  return (\r\n    <Popover open={open} onOpenChange={setOpen}>\r\n      <PopoverTrigger asChild>\r\n        <Button\r\n          variant=\"outline\"\r\n          role=\"combobox\"\r\n          aria-expanded={open}\r\n          className=\"w-[200px] justify-between\"\r\n        >\r\n          {value\r\n            ? frameworks.find((framework) => framework.value === value)?.label\r\n            : \"Select framework...\"}\r\n          <ChevronsUpDown className=\"opacity-50\" />\r\n        </Button>\r\n      </PopoverTrigger>\r\n      <PopoverContent className=\"w-[200px] p-0\">\r\n        <Command>\r\n          <CommandInput placeholder=\"Search framework...\" />\r\n          <CommandList>\r\n            <CommandEmpty>No framework found.</CommandEmpty>\r\n            <CommandGroup>\r\n              {frameworks.map((framework) => (\r\n                <CommandItem\r\n                  key={framework.value}\r\n                  value={framework.value}\r\n                  onSelect={(currentValue) => {\r\n                    setValue(currentValue === value ? \"\" : currentValue)\r\n                    setOpen(false)\r\n                  }}\r\n                >\r\n                  {framework.label}\r\n                  <Check\r\n                    className={cn(\r\n                      \"ml-auto\",\r\n                      value === framework.value ? \"opacity-100\" : \"opacity-0\"\r\n                    )}\r\n                  />\r\n                </CommandItem>\r\n              ))}\r\n            </CommandGroup>\r\n          </CommandList>\r\n        </Command>\r\n      </PopoverContent>\r\n    </Popover>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

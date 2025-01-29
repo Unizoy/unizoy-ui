@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "dependencies": [
+    "@radix-ui/react-label"
+  ],
+  "files": [
+    {
+      "path": "ui/label.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport * as LabelPrimitive from \"@radix-ui/react-label\"\r\nimport { cva, type VariantProps } from \"class-variance-authority\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst labelVariants = cva(\r\n  \"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\r\n)\r\n\r\nconst Label = React.forwardRef<\r\n  React.ElementRef<typeof LabelPrimitive.Root>,\r\n  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &\r\n    VariantProps<typeof labelVariants>\r\n>(({ className, ...props }, ref) => (\r\n  <LabelPrimitive.Root\r\n    ref={ref}\r\n    className={cn(labelVariants(), className)}\r\n    {...props}\r\n  />\r\n))\r\nLabel.displayName = LabelPrimitive.Root.displayName\r\n\r\nexport { Label }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

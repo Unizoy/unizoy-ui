@@ -1,0 +1,5 @@
+.vscode
+.env
+node_modules
+.contentlayer
+.next

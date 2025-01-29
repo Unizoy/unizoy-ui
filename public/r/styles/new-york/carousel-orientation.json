@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-orientation",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "examples/carousel-orientation.tsx",
+      "content": "import * as React from \"react\"\r\n\r\nimport { Card, CardContent } from \"@/registry/new-york/ui/card\"\r\nimport {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n} from \"@/registry/new-york/ui/carousel\"\r\n\r\nexport default function CarouselOrientation() {\r\n  return (\r\n    <Carousel\r\n      opts={{\r\n        align: \"start\",\r\n      }}\r\n      orientation=\"vertical\"\r\n      className=\"w-full max-w-xs\"\r\n    >\r\n      <CarouselContent className=\"-mt-1 h-[200px]\">\r\n        {Array.from({ length: 5 }).map((_, index) => (\r\n          <CarouselItem key={index} className=\"pt-1 md:basis-1/2\">\r\n            <div className=\"p-1\">\r\n              <Card>\r\n                <CardContent className=\"flex items-center justify-center p-6\">\r\n                  <span className=\"text-3xl font-semibold\">{index + 1}</span>\r\n                </CardContent>\r\n              </Card>\r\n            </div>\r\n          </CarouselItem>\r\n        ))}\r\n      </CarouselContent>\r\n      <CarouselPrevious />\r\n      <CarouselNext />\r\n    </Carousel>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

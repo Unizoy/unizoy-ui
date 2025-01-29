@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "examples/accordion-demo.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/registry/default/ui/accordion\"\r\n\r\nexport default function AccordionDemo() {\r\n  return (\r\n    <Accordion type=\"single\" collapsible className=\"w-full\">\r\n      <AccordionItem value=\"item-1\">\r\n        <AccordionTrigger>Is it accessible?</AccordionTrigger>\r\n        <AccordionContent>\r\n          Yes. It adheres to the WAI-ARIA design pattern.\r\n        </AccordionContent>\r\n      </AccordionItem>\r\n      <AccordionItem value=\"item-2\">\r\n        <AccordionTrigger>Is it styled?</AccordionTrigger>\r\n        <AccordionContent>\r\n          Yes. It comes with default styles that matches the other\r\n          components&apos; aesthetic.\r\n        </AccordionContent>\r\n      </AccordionItem>\r\n      <AccordionItem value=\"item-3\">\r\n        <AccordionTrigger>Is it animated?</AccordionTrigger>\r\n        <AccordionContent>\r\n          Yes. It&apos;s animated by default, but you can disable it if you\r\n          prefer.\r\n        </AccordionContent>\r\n      </AccordionItem>\r\n    </Accordion>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

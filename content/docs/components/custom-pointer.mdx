@@ -1,0 +1,68 @@
+---
+title: Custom Pointer
+description: Cursor changes on hover to card and moves with a name tag with random color each time.
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+---
+
+<ComponentPreview 
+  name="custom-pointer-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Run the following command:</Step>
+
+<Step>Run the following command:</Step>
+
+<Step>Run the following command:</Step>
+
+<Step>Run the following command:</Step>
+
+</Steps>
+
+```bash
+npm install gsap @gsap/react  
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install input-otp
+```
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+```
+
+<Callout className="mt-6">
+  **Note:** You are not required to update your code if you are using the
+  `render` prop. It is still supported.
+</Callout>

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "dependencies": [
+    "@radix-ui/react-collapsible"
+  ],
+  "files": [
+    {
+      "path": "ui/collapsible.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as CollapsiblePrimitive from \"@radix-ui/react-collapsible\"\r\n\r\nconst Collapsible = CollapsiblePrimitive.Root\r\n\r\nconst CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger\r\n\r\nconst CollapsibleContent = CollapsiblePrimitive.CollapsibleContent\r\n\r\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

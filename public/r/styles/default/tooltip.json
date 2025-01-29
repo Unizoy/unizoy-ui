@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "dependencies": [
+    "@radix-ui/react-tooltip"
+  ],
+  "files": [
+    {
+      "path": "ui/tooltip.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport * as TooltipPrimitive from \"@radix-ui/react-tooltip\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst TooltipProvider = TooltipPrimitive.Provider\r\n\r\nconst Tooltip = TooltipPrimitive.Root\r\n\r\nconst TooltipTrigger = TooltipPrimitive.Trigger\r\n\r\nconst TooltipContent = React.forwardRef<\r\n  React.ElementRef<typeof TooltipPrimitive.Content>,\r\n  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>\r\n>(({ className, sideOffset = 4, ...props }, ref) => (\r\n  <TooltipPrimitive.Content\r\n    ref={ref}\r\n    sideOffset={sideOffset}\r\n    className={cn(\r\n      \"z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2\",\r\n      className\r\n    )}\r\n    {...props}\r\n  />\r\n))\r\nTooltipContent.displayName = TooltipPrimitive.Content.displayName\r\n\r\nexport { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

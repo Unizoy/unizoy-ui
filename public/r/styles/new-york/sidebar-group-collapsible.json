@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-group-collapsible",
+  "type": "registry:internal",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "files": [
+    {
+      "path": "internal/sidebar-group-collapsible.tsx",
+      "content": "\"use client\"\r\n\r\nimport { ChevronDown, LifeBuoy, Send } from \"lucide-react\"\r\n\r\nimport {\r\n  Collapsible,\r\n  CollapsibleContent,\r\n  CollapsibleTrigger,\r\n} from \"@/registry/new-york/ui/collapsible\"\r\nimport {\r\n  Sidebar,\r\n  SidebarContent,\r\n  SidebarGroup,\r\n  SidebarGroupContent,\r\n  SidebarGroupLabel,\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  SidebarProvider,\r\n} from \"@/registry/new-york/ui/sidebar\"\r\n\r\nexport default function AppSidebar() {\r\n  return (\r\n    <SidebarProvider>\r\n      <Sidebar>\r\n        <SidebarContent>\r\n          <Collapsible defaultOpen className=\"group/collapsible\">\r\n            <SidebarGroup>\r\n              <SidebarGroupLabel\r\n                asChild\r\n                className=\"text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground\"\r\n              >\r\n                <CollapsibleTrigger>\r\n                  Help\r\n                  <ChevronDown className=\"ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180\" />\r\n                </CollapsibleTrigger>\r\n              </SidebarGroupLabel>\r\n              <CollapsibleContent>\r\n                <SidebarGroupContent>\r\n                  <SidebarMenu>\r\n                    <SidebarMenuItem>\r\n                      <SidebarMenuButton>\r\n                        <LifeBuoy />\r\n                        Support\r\n                      </SidebarMenuButton>\r\n                    </SidebarMenuItem>\r\n                    <SidebarMenuItem>\r\n                      <SidebarMenuButton>\r\n                        <Send />\r\n                        Feedback\r\n                      </SidebarMenuButton>\r\n                    </SidebarMenuItem>\r\n                  </SidebarMenu>\r\n                </SidebarGroupContent>\r\n              </CollapsibleContent>\r\n            </SidebarGroup>\r\n          </Collapsible>\r\n        </SidebarContent>\r\n      </Sidebar>\r\n    </SidebarProvider>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "examples/carousel-demo.tsx",
+      "content": "import * as React from \"react\"\r\n\r\nimport { Card, CardContent } from \"@/registry/new-york/ui/card\"\r\nimport {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n} from \"@/registry/new-york/ui/carousel\"\r\n\r\nexport default function CarouselDemo() {\r\n  return (\r\n    <Carousel className=\"w-full max-w-xs\">\r\n      <CarouselContent>\r\n        {Array.from({ length: 5 }).map((_, index) => (\r\n          <CarouselItem key={index}>\r\n            <div className=\"p-1\">\r\n              <Card>\r\n                <CardContent className=\"flex aspect-square items-center justify-center p-6\">\r\n                  <span className=\"text-4xl font-semibold\">{index + 1}</span>\r\n                </CardContent>\r\n              </Card>\r\n            </div>\r\n          </CarouselItem>\r\n        ))}\r\n      </CarouselContent>\r\n      <CarouselPrevious />\r\n      <CarouselNext />\r\n    </Carousel>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

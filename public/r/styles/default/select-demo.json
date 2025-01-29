@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "examples/select-demo.tsx",
+      "content": "import * as React from \"react\"\r\n\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectGroup,\r\n  SelectItem,\r\n  SelectLabel,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/default/ui/select\"\r\n\r\nexport default function SelectDemo() {\r\n  return (\r\n    <Select>\r\n      <SelectTrigger className=\"w-[180px]\">\r\n        <SelectValue placeholder=\"Select a fruit\" />\r\n      </SelectTrigger>\r\n      <SelectContent>\r\n        <SelectGroup>\r\n          <SelectLabel>Fruits</SelectLabel>\r\n          <SelectItem value=\"apple\">Apple</SelectItem>\r\n          <SelectItem value=\"banana\">Banana</SelectItem>\r\n          <SelectItem value=\"blueberry\">Blueberry</SelectItem>\r\n          <SelectItem value=\"grapes\">Grapes</SelectItem>\r\n          <SelectItem value=\"pineapple\">Pineapple</SelectItem>\r\n        </SelectGroup>\r\n      </SelectContent>\r\n    </Select>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

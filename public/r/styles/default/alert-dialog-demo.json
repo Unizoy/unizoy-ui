@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/alert-dialog-demo.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/registry/default/ui/alert-dialog\"\r\nimport { Button } from \"@/registry/default/ui/button\"\r\n\r\nexport default function AlertDialogDemo() {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">Show Dialog</Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>\r\n          <AlertDialogDescription>\r\n            This action cannot be undone. This will permanently delete your\r\n            account and remove your data from our servers.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\r\n          <AlertDialogAction>Continue</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-bar-demo-grid",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "files": [
+    {
+      "path": "examples/chart-bar-demo-grid.tsx",
+      "content": "\"use client\"\r\n\r\nimport { Bar, BarChart, CartesianGrid } from \"recharts\"\r\n\r\nimport { ChartConfig, ChartContainer } from \"@/registry/new-york/ui/chart\"\r\n\r\nconst chartData = [\r\n  { month: \"January\", desktop: 186, mobile: 80 },\r\n  { month: \"February\", desktop: 305, mobile: 200 },\r\n  { month: \"March\", desktop: 237, mobile: 120 },\r\n  { month: \"April\", desktop: 73, mobile: 190 },\r\n  { month: \"May\", desktop: 209, mobile: 130 },\r\n  { month: \"June\", desktop: 214, mobile: 140 },\r\n]\r\n\r\nconst chartConfig = {\r\n  desktop: {\r\n    label: \"Desktop\",\r\n    color: \"#2563eb\",\r\n  },\r\n  mobile: {\r\n    label: \"Mobile\",\r\n    color: \"#60a5fa\",\r\n  },\r\n} satisfies ChartConfig\r\n\r\nexport default function Component() {\r\n  return (\r\n    <ChartContainer config={chartConfig} className=\"min-h-[200px] w-full\">\r\n      <BarChart accessibilityLayer data={chartData}>\r\n        <CartesianGrid vertical={false} />\r\n        <Bar dataKey=\"desktop\" fill=\"var(--color-desktop)\" radius={4} />\r\n        <Bar dataKey=\"mobile\" fill=\"var(--color-mobile)\" radius={4} />\r\n      </BarChart>\r\n    </ChartContainer>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

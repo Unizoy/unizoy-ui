@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "rules": {
+    "react/no-unescaped-entities": "off"
+  },
+   "ignoreWarnings": [
+    {
+      "module": "/@ts-morph\/common/",
+      "message": "/the request of a dependency is an expression/"
+    }
+  ]
+}

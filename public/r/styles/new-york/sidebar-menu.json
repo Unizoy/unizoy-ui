@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-menu",
+  "type": "registry:internal",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "files": [
+    {
+      "path": "internal/sidebar-menu.tsx",
+      "content": "\"use client\"\r\n\r\nimport { Frame, LifeBuoy, Map, PieChart, Send } from \"lucide-react\"\r\n\r\nimport {\r\n  Sidebar,\r\n  SidebarContent,\r\n  SidebarGroup,\r\n  SidebarGroupContent,\r\n  SidebarGroupLabel,\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  SidebarProvider,\r\n} from \"@/registry/new-york/ui/sidebar\"\r\n\r\nconst projects = [\r\n  {\r\n    name: \"Design Engineering\",\r\n    url: \"#\",\r\n    icon: Frame,\r\n  },\r\n  {\r\n    name: \"Sales & Marketing\",\r\n    url: \"#\",\r\n    icon: PieChart,\r\n  },\r\n  {\r\n    name: \"Travel\",\r\n    url: \"#\",\r\n    icon: Map,\r\n  },\r\n  {\r\n    name: \"Support\",\r\n    url: \"#\",\r\n    icon: LifeBuoy,\r\n  },\r\n  {\r\n    name: \"Feedback\",\r\n    url: \"#\",\r\n    icon: Send,\r\n  },\r\n]\r\n\r\nexport default function AppSidebar() {\r\n  return (\r\n    <SidebarProvider>\r\n      <Sidebar>\r\n        <SidebarContent>\r\n          <SidebarGroup>\r\n            <SidebarGroupLabel>Projects</SidebarGroupLabel>\r\n            <SidebarGroupContent>\r\n              <SidebarMenu>\r\n                {projects.map((project) => (\r\n                  <SidebarMenuItem key={project.name}>\r\n                    <SidebarMenuButton asChild>\r\n                      <a href={project.url}>\r\n                        <project.icon />\r\n                        <span>{project.name}</span>\r\n                      </a>\r\n                    </SidebarMenuButton>\r\n                  </SidebarMenuItem>\r\n                ))}\r\n              </SidebarMenu>\r\n            </SidebarGroupContent>\r\n          </SidebarGroup>\r\n        </SidebarContent>\r\n      </Sidebar>\r\n    </SidebarProvider>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ]
+}

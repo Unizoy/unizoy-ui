@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-rsc",
+  "type": "registry:internal",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "files": [
+    {
+      "path": "internal/sidebar-rsc.tsx",
+      "content": "import * as React from \"react\"\r\nimport { Frame, LifeBuoy, Map, PieChart, Send } from \"lucide-react\"\r\n\r\nimport {\r\n  Sidebar,\r\n  SidebarContent,\r\n  SidebarGroup,\r\n  SidebarGroupContent,\r\n  SidebarGroupLabel,\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  SidebarMenuSkeleton,\r\n  SidebarProvider,\r\n} from \"@/registry/new-york/ui/sidebar\"\r\n\r\nconst projects = [\r\n  {\r\n    name: \"Design Engineering\",\r\n    url: \"#\",\r\n    icon: Frame,\r\n    badge: \"24\",\r\n  },\r\n  {\r\n    name: \"Sales & Marketing\",\r\n    url: \"#\",\r\n    icon: PieChart,\r\n    badge: \"12\",\r\n  },\r\n  {\r\n    name: \"Travel\",\r\n    url: \"#\",\r\n    icon: Map,\r\n    badge: \"3\",\r\n  },\r\n  {\r\n    name: \"Support\",\r\n    url: \"#\",\r\n    icon: LifeBuoy,\r\n    badge: \"21\",\r\n  },\r\n  {\r\n    name: \"Feedback\",\r\n    url: \"#\",\r\n    icon: Send,\r\n    badge: \"8\",\r\n  },\r\n]\r\n\r\n// Dummy fetch function\r\nasync function fetchProjects() {\r\n  await new Promise((resolve) => setTimeout(resolve, 3000))\r\n  return projects\r\n}\r\n\r\nexport default function AppSidebar() {\r\n  return (\r\n    <SidebarProvider>\r\n      <Sidebar>\r\n        <SidebarContent>\r\n          <SidebarGroup>\r\n            <SidebarGroupLabel>Projects</SidebarGroupLabel>\r\n            <SidebarGroupContent>\r\n              <React.Suspense fallback={<NavProjectsSkeleton />}>\r\n                <NavProjects />\r\n              </React.Suspense>\r\n            </SidebarGroupContent>\r\n          </SidebarGroup>\r\n        </SidebarContent>\r\n      </Sidebar>\r\n    </SidebarProvider>\r\n  )\r\n}\r\n\r\nfunction NavProjectsSkeleton() {\r\n  return (\r\n    <SidebarMenu>\r\n      {Array.from({ length: 5 }).map((_, index) => (\r\n        <SidebarMenuItem key={index}>\r\n          <SidebarMenuSkeleton showIcon />\r\n        </SidebarMenuItem>\r\n      ))}\r\n    </SidebarMenu>\r\n  )\r\n}\r\n\r\nasync function NavProjects() {\r\n  const projects = await fetchProjects()\r\n\r\n  return (\r\n    <SidebarMenu>\r\n      {projects.map((project) => (\r\n        <SidebarMenuItem key={project.name}>\r\n          <SidebarMenuButton asChild>\r\n            <a href={project.url}>\r\n              <project.icon />\r\n              <span>{project.name}</span>\r\n            </a>\r\n          </SidebarMenuButton>\r\n        </SidebarMenuItem>\r\n      ))}\r\n    </SidebarMenu>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ]
+}

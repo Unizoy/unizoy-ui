@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "examples/avatar-demo.tsx",
+      "content": "import {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n} from \"@/registry/new-york/ui/avatar\"\r\n\r\nexport default function AvatarDemo() {\r\n  return (\r\n    <Avatar>\r\n      <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n      <AvatarFallback>CN</AvatarFallback>\r\n    </Avatar>\r\n  )\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-group",
+  "type": "registry:internal",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "files": [
+    {
+      "path": "internal/sidebar-group.tsx",
+      "content": "\"use client\"\r\n\r\nimport { LifeBuoy, Send } from \"lucide-react\"\r\n\r\nimport {\r\n  Sidebar,\r\n  SidebarContent,\r\n  SidebarGroup,\r\n  SidebarGroupContent,\r\n  SidebarGroupLabel,\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  SidebarProvider,\r\n} from \"@/registry/default/ui/sidebar\"\r\n\r\nexport default function AppSidebar() {\r\n  return (\r\n    <SidebarProvider>\r\n      <Sidebar>\r\n        <SidebarContent>\r\n          <SidebarGroup>\r\n            <SidebarGroupLabel>Help</SidebarGroupLabel>\r\n            <SidebarGroupContent>\r\n              <SidebarMenu>\r\n                <SidebarMenuItem>\r\n                  <SidebarMenuButton>\r\n                    <LifeBuoy />\r\n                    Support\r\n                  </SidebarMenuButton>\r\n                </SidebarMenuItem>\r\n                <SidebarMenuItem>\r\n                  <SidebarMenuButton>\r\n                    <Send />\r\n                    Feedback\r\n                  </SidebarMenuButton>\r\n                </SidebarMenuItem>\r\n              </SidebarMenu>\r\n            </SidebarGroupContent>\r\n          </SidebarGroup>\r\n        </SidebarContent>\r\n      </Sidebar>\r\n    </SidebarProvider>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ]
+}
