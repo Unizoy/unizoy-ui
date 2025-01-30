@@ -1,5 +1,13 @@
 import { MainNavItem, SidebarNavItem } from "types/nav"
 
+
+
+
+//To add Component See line 163
+
+
+
+
 export interface DocsConfig {
   mainNav: MainNavItem[]
   sidebarNav: SidebarNavItem[]

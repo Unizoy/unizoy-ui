@@ -3,8 +3,8 @@ import * as React from "react";
 
 export const Index:Record<string,any>={
 "new-york":{
-    "custom-pointer-preview":{
-        name:"custom-pointer-preview",
+    "custom-pointer":{
+        name:"custom-pointer",
         description:"",
         type:"registry:ui",
         registryDependencies:undefined,

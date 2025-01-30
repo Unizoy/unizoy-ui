@@ -1,8 +1,9 @@
 "use client"
 
+import { Mdx } from "./mdx-components"
 import * as React from "react"
 import Image from "next/image"
-import { Index } from "@/__registry__/index"
+import { Index } from "@/config/index"
 
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
@@ -17,9 +18,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/registry/new-york/ui/tabs"
-import { styles } from "@/registry/registry-styles"
+import { Style, styles } from "@/registry/registry-styles"
 import { ComponentSource } from "@/components/component-source"
-
+import { NpmCommands } from "@/types/unist"
+import { CodeBlockCommand } from "./code-block-command"
+import { StyleWrapper } from "./style-wrapper"
+import { Event } from "@/lib/events"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -45,12 +49,14 @@ export function ComponentPreview({
 }: ComponentPreviewProps) {
   const [config] = useConfig()
   const index = styles.findIndex((style) => style.name === config.style)
-  console.log(index);
+  
   
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
-  const Code = Codes[index]
-  console.log(children);
+  //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
+  //   and also Alex told to remove options for switching theme so no need of it
+  const Code = Codes[0]
+ 
   
 
 
@@ -82,6 +88,7 @@ export function ComponentPreview({
       return Button?.props?.value || Button?.props?.__rawString__ || null
     }
   }, [Code])
+
 
   if (type === "block") {
     return (
@@ -173,7 +180,10 @@ export function ComponentPreview({
         <TabsContent value="code">
           <div className="flex flex-col space-y-4">
             <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-              {Code}
+            
+        
+              <Pre>{Code}</Pre>
+            
            
             </div>
           </div>
@@ -182,3 +192,56 @@ export function ComponentPreview({
     </div>
   )
 }
+const Pre= ({
+    className,
+    __rawString__,
+    __npmCommand__,
+    __yarnCommand__,
+    __pnpmCommand__,
+    __bunCommand__,
+    __withMeta__,
+    __src__,
+    __event__,
+    __style__,
+    ...props
+  }: React.HTMLAttributes<HTMLPreElement> & {
+    __style__?: Style["name"]
+    __rawString__?: string
+    __withMeta__?: boolean
+    __src__?: string
+    __event__?: Event["name"]
+  } & NpmCommands) => {
+    const isNpmCommand =
+      __npmCommand__ && __yarnCommand__ && __pnpmCommand__ && __bunCommand__
+
+    if (isNpmCommand) {
+      return (
+        <CodeBlockCommand
+          __npmCommand__={__npmCommand__}
+          __yarnCommand__={__yarnCommand__}
+          __pnpmCommand__={__pnpmCommand__}
+          __bunCommand__={__bunCommand__}
+        />
+      )
+    }
+
+    return (
+      <StyleWrapper styleName={__style__}>
+        <pre
+          className={cn(
+            "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 py-4 dark:bg-zinc-900",
+            className
+          )}
+          {...props}
+        />
+        {__rawString__ && (
+          <CopyButton
+            value={__rawString__}
+            src={__src__}
+            event={__event__}
+            className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
+          />
+        )}
+      </StyleWrapper>
+    )
+  }
