@@ -10,31 +10,12 @@ links:
   className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
 />
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-<Steps>
-
-<Step>Run the following command:</Step>
-
-<Step>Run the following command:</Step>
-
-<Step>Run the following command:</Step>
-
-<Step>Run the following command:</Step>
-
-</Steps>
-
-```bash
-npm install gsap @gsap/react  
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
@@ -43,8 +24,29 @@ npm install gsap @gsap/react
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install input-otp
+npm install gsap
 ```
+<Step>Make a file file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+<Step>Make a file and copy paste this code in a file with name CustomCursor</Step>
+
+<ComponentSource name="custom-pointer"/>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>sdsd</Step>
 
 </Steps>
 
@@ -52,17 +54,3 @@ npm install input-otp
 
 </Tabs>
 
-
-```tsx
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "@/components/ui/input-otp"
-```
-
-<Callout className="mt-6">
-  **Note:** You are not required to update your code if you are using the
-  `render` prop. It is still supported.
-</Callout>
