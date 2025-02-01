@@ -1,6 +1,5 @@
 "use client"
 
-import { Mdx } from "./mdx-components"
 import * as React from "react"
 import Image from "next/image"
 import { Index } from "@/config/index"
@@ -19,7 +18,6 @@ import {
   TabsTrigger,
 } from "@/registry/new-york/ui/tabs"
 import { Style, styles } from "@/registry/registry-styles"
-import { ComponentSource } from "@/components/component-source"
 import { NpmCommands } from "@/types/unist"
 import { CodeBlockCommand } from "./code-block-command"
 import { StyleWrapper } from "./style-wrapper"
@@ -55,7 +53,8 @@ export function ComponentPreview({
   const Codes = React.Children.toArray(children) as React.ReactElement[]
   //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
   //   and also Alex told to remove options for switching theme so no need of it
-  const Code = Codes[0]
+  //1 is default  and 0 is new-york
+  const Code = Codes[1]
  
   
 

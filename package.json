@@ -66,6 +66,7 @@
     "embla-carousel-react": "8.0.0-rc15",
     "framer-motion": "^11.0.24",
     "geist": "^1.2.2",
+    "gsap": "^3.12.7",
     "input-otp": "^1.2.2",
     "jotai": "^2.1.0",
     "lodash": "^4.17.21",
