@@ -63,6 +63,8 @@ export function ComponentPreview({
     const Component = Index[config.style][name]?.component
    
     if (!Component) {
+      console.log("dfdf");
+      
       return (
         <p className="text-sm text-muted-foreground">
           Component{" "}
