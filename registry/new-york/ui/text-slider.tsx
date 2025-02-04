@@ -46,7 +46,7 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       () => {
         const elements = localRef.current?.children;
         if (!elements) return;
-        console.log("running animations");
+        
 
         // Animate elements
         gsap.from(elements, {

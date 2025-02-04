@@ -11,8 +11,8 @@ interface TextSliderProps extends React.HTMLAttributes<HTMLDivElement> {
   duration?: number;
   ease?: string;
   stagger?: number;
-  start?: string;
-  end?: string;
+  start?: string|number|((tag?:ScrollTrigger) => string | number);
+  end?: string|number|((tag?:ScrollTrigger) => string | number);
 }
 
 const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
@@ -24,8 +24,8 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       duration = 1,
       ease = "power2.out",
       stagger = 0.5,
-      start = "35",
-      end = "0",
+      start = "top 90%",
+      end = "top",
       ...props
     },
     ref
@@ -46,7 +46,7 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       () => {
         const elements = localRef.current?.children;
         if (!elements) return;
-        console.log("running animations");
+        
 
         // Animate elements
         gsap.from(elements, {

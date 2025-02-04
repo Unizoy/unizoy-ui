@@ -39,7 +39,7 @@ export const Index:Record<string,any>={
       type:"registry:ui",
       registryDependencies:undefined,
       files: [{
-      path: "registry/new-york/examples/text-slider.tsx",
+      path: "registry/new-york/ui/text-slider.tsx",
       type: "registry:ui",
       target: ""
       }],
@@ -132,7 +132,7 @@ export const Index:Record<string,any>={
       type:"registry:ui",
       registryDependencies:undefined,
       files: [{
-      path: "registry/default/examples/text-slider.tsx",
+      path: "registry/default/ui/text-slider.tsx",
       type: "registry:ui",
       target: ""
       }],

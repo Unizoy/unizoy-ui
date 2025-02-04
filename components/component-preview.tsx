@@ -51,11 +51,16 @@ export function ComponentPreview({
   
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
+
   //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
   //   and also Alex told to remove options for switching theme so no need of it
   //1 is default  and 0 is new-york
+
+  // console.log(children);
+  
   const Code = Codes[1]
- 
+   
+   
   
 
 
@@ -63,7 +68,7 @@ export function ComponentPreview({
     const Component = Index[config.style][name]?.component
    
     if (!Component) {
-      console.log("dfdf");
+    
       
       return (
         <p className="text-sm text-muted-foreground">
