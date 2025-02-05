@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Bar, BarChart, XAxis } from "recharts"
+import { Bar, BarChart, XAxis } from "recharts";
 
 import {
   Card,
@@ -8,18 +8,18 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/default/ui/card"
+} from "@/registry/default/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/registry/default/ui/chart"
+} from "@/registry/default/ui/chart";
 
-export const description = "A stacked bar chart with a legend"
-export const iframeHeight = "600px"
+export const description = "A stacked bar chart with a legend";
+export const iframeHeight = "600px";
 export const containerClassName =
-  "[&>div]:w-full [&>div]:max-w-md flex items-center justify-center min-h-svh"
+  "[&>div]:w-full [&>div]:max-w-md flex items-center justify-center min-h-svh";
 
 const chartData = [
   { date: "2024-07-15", running: 450, swimming: 300 },
@@ -28,7 +28,7 @@ const chartData = [
   { date: "2024-07-18", running: 140, swimming: 550 },
   { date: "2024-07-19", running: 600, swimming: 350 },
   { date: "2024-07-20", running: 480, swimming: 400 },
-]
+];
 
 const chartConfig = {
   running: {
@@ -39,7 +39,7 @@ const chartConfig = {
     label: "Swimming",
     color: "hsl(var(--chart-2))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export default function Component() {
   return (
@@ -61,7 +61,7 @@ export default function Component() {
               tickFormatter={(value) => {
                 return new Date(value).toLocaleDateString("en-US", {
                   weekday: "short",
-                })
+                });
               }}
             />
             <Bar
@@ -85,5 +85,5 @@ export default function Component() {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }

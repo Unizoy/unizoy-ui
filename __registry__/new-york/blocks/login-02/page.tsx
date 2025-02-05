@@ -1,6 +1,6 @@
-import { GalleryVerticalEnd } from "lucide-react"
+import { GalleryVerticalEnd } from "lucide-react";
 
-import { LoginForm } from "@/registry/new-york/blocks/login-02/components/login-form"
+import { LoginForm } from "@/registry/new-york/blocks/login-02/components/login-form";
 
 export default function LoginPage() {
   return (
@@ -28,5 +28,5 @@ export default function LoginPage() {
         />
       </div>
     </div>
-  )
+  );
 }

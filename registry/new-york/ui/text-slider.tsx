@@ -28,7 +28,7 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       end = "0",
       ...props
     },
-    ref
+    ref,
   ) => {
     const localRef = useRef<HTMLDivElement>(null);
     const childrenHeights = useRef<number[]>([]);
@@ -38,7 +38,7 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       if (!localRef.current?.children) return;
 
       childrenHeights.current = Array.from(localRef.current.children).map(
-        (child) => child.getBoundingClientRect().height
+        (child) => child.getBoundingClientRect().height,
       );
     }, [children]);
 
@@ -46,7 +46,6 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       () => {
         const elements = localRef.current?.children;
         if (!elements) return;
-        
 
         // Animate elements
         gsap.from(elements, {
@@ -71,7 +70,7 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
       {
         scope: localRef,
         dependencies: [direction, duration, ease, stagger, start, end],
-      }
+      },
     );
 
     return (
@@ -83,10 +82,8 @@ const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 
-
-
 // TextSlider.displayName="TextSlider"
-export {TextSlider };
+export { TextSlider };

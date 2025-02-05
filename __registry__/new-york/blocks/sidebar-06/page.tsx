@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/registry/new-york/blocks/sidebar-06/components/app-sidebar"
+import { AppSidebar } from "@/registry/new-york/blocks/sidebar-06/components/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,13 +6,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb"
-import { Separator } from "@/registry/new-york/ui/separator"
+} from "@/registry/new-york/ui/breadcrumb";
+import { Separator } from "@/registry/new-york/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/registry/new-york/ui/sidebar"
+} from "@/registry/new-york/ui/sidebar";
 
 export default function Page() {
   return (
@@ -46,5 +46,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }
