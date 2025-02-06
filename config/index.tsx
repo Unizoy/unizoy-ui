@@ -63,6 +63,36 @@ export const Index:Record<string,any>={
     source: "",
     meta: undefined,
 },
+ "type-writer":{
+      name:"type-writer",
+      description:"",
+      type:"registry:ui",
+      registryDependencies:undefined,
+      files: [{
+      path: "registry/new-york/ui/type-writer.tsx",
+      type: "registry:ui",
+      target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/type-writer.tsx")),
+      source: "",
+      meta: undefined,
+  },
+  "type-writer-demo":{
+    name:"type-writer-demo",
+    description:"",
+    type:"registry:example",
+    registryDependencies:undefined,
+    files: [{
+    path: "registry/new-york/examples/type-writer-demo.tsx",
+    type: "registry:example",
+    target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/type-writer-demo.tsx")),
+    source: "",
+    meta: undefined,
+},
 },
 
 "default":{
@@ -153,6 +183,36 @@ export const Index:Record<string,any>={
     }],
     categories: undefined,
     component: React.lazy(() => import("@/registry/default/examples/text-slider-demo.tsx")),
+    source: "",
+    meta: undefined,
+},
+ "type-writer":{
+      name:"type-writer",
+      description:"",
+      type:"registry:ui",
+      registryDependencies:undefined,
+      files: [{
+      path: "registry/default/ui/type-writer.tsx",
+      type: "registry:ui",
+      target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/type-writer.tsx")),
+      source: "",
+      meta: undefined,
+  },
+  "type-writer-demo":{
+    name:"type-writer-demo",
+    description:"",
+    type:"registry:example",
+    registryDependencies:undefined,
+    files: [{
+    path: "registry/default/examples/type-writer-demo.tsx",
+    type: "registry:example",
+    target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/default/examples/type-writer-demo.tsx")),
     source: "",
     meta: undefined,
 },

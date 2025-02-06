@@ -421,6 +421,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/tooltip",
           items: [],
         },
+        {
+          title:"Type Writer",
+          href:"/docs/components/type-writer",
+          items:[]
+        }
       ],
     },
   ],

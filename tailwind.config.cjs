@@ -76,11 +76,20 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        blinkBorder: {
+          "0%, 100%": {
+            borderColor: "transparent",
+          },
+          "50%": {
+            borderColor: "#3B82F6",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+         blinkBorder: "blinkBorder 1.5s infinite ease-in-out",
       },
     },
   },
