@@ -33,6 +33,36 @@ export const Index:Record<string,any>={
         source: "",
         meta: undefined,
     },
+    "text-slider":{
+      name:"text-slider",
+      description:"",
+      type:"registry:ui",
+      registryDependencies:undefined,
+      files: [{
+      path: "registry/new-york/ui/text-slider.tsx",
+      type: "registry:ui",
+      target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/text-slider.tsx")),
+      source: "",
+      meta: undefined,
+  },
+  "text-slider-demo":{
+    name:"text-slider-demo",
+    description:"",
+    type:"registry:example",
+    registryDependencies:undefined,
+    files: [{
+    path: "registry/new-york/examples/text-slider-demo.tsx",
+    type: "registry:example",
+    target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/text-slider-demo.tsx")),
+    source: "",
+    meta: undefined,
+},
 },
 
 "default":{
@@ -96,6 +126,36 @@ export const Index:Record<string,any>={
         source: "",
         meta: undefined,
     },
+    "text-slider":{
+      name:"text-slider",
+      description:"",
+      type:"registry:ui",
+      registryDependencies:undefined,
+      files: [{
+      path: "registry/default/ui/text-slider.tsx",
+      type: "registry:ui",
+      target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/text-slider.tsx")),
+      source: "",
+      meta: undefined,
+  },
+  "text-slider-demo":{
+    name:"text-slider-demo",
+    description:"",
+    type:"registry:example",
+    registryDependencies:undefined,
+    files: [{
+    path: "registry/default/examples/text-slider-demo.tsx",
+    type: "registry:example",
+    target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/default/examples/text-slider-demo.tsx")),
+    source: "",
+    meta: undefined,
+},
 }
 
 

@@ -397,6 +397,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title:"Text Slider",
+          href:"/docs/components/text-slider",
+          items:[]
+        },
+        {
           title: "Toast",
           href: "/docs/components/toast",
           items: [],
