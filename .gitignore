@@ -3,3 +3,6 @@
 node_modules
 .contentlayer
 .next
+__registry__
+!public/r/**/*.png
+public/r/**/*
