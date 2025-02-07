@@ -1,4 +1,4 @@
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Card,
   CardContent,
@@ -6,15 +6,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card";
-import { Input } from "@/registry/new-york/ui/input";
-import { Label } from "@/registry/new-york/ui/label";
+} from "@/registry/new-york/ui/card"
+import { Input } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york/ui/tabs";
+} from "@/registry/new-york/ui/tabs"
 
 export default function TabsDemo() {
   return (
@@ -70,5 +70,5 @@ export default function TabsDemo() {
         </Card>
       </TabsContent>
     </Tabs>
-  );
+  )
 }

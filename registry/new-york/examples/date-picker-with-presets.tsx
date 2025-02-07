@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { addDays, format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import * as React from "react"
+import { addDays, format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/registry/new-york/ui/button";
-import { Calendar } from "@/registry/new-york/ui/calendar";
+import { cn } from "@/lib/utils"
+import { Button } from "@/registry/new-york/ui/button"
+import { Calendar } from "@/registry/new-york/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york/ui/popover";
+} from "@/registry/new-york/ui/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select";
+} from "@/registry/new-york/ui/select"
 
 export default function DatePickerWithPresets() {
-  const [date, setDate] = React.useState<Date>();
+  const [date, setDate] = React.useState<Date>()
 
   return (
     <Popover>
@@ -30,7 +30,7 @@ export default function DatePickerWithPresets() {
           variant={"outline"}
           className={cn(
             "w-[240px] justify-start text-left font-normal",
-            !date && "text-muted-foreground",
+            !date && "text-muted-foreground"
           )}
         >
           <CalendarIcon />
@@ -61,5 +61,5 @@ export default function DatePickerWithPresets() {
         </div>
       </PopoverContent>
     </Popover>
-  );
+  )
 }

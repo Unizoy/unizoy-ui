@@ -1,14 +1,14 @@
-import { cn } from "@/registry/default/lib/utils";
-import { Button } from "@/registry/default/ui/button";
+import { cn } from "@/registry/default/lib/utils"
+import { Button } from "@/registry/default/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/default/ui/card";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+} from "@/registry/default/ui/card"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export function LoginForm({
   className,
@@ -92,5 +92,5 @@ export function LoginForm({
         and <a href="#">Privacy Policy</a>.
       </div>
     </div>
-  );
+  )
 }

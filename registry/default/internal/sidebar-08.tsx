@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   BadgeCheck,
@@ -22,13 +22,13 @@ import {
   Sparkles,
   SquareTerminal,
   Trash2,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/ui/avatar";
+} from "@/registry/default/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -36,12 +36,12 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
+} from "@/registry/default/ui/breadcrumb"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
+} from "@/registry/default/ui/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -50,8 +50,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/dropdown-menu"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -70,11 +70,11 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "An inset sidebar with secondary navigation.";
+export const description = "An inset sidebar with secondary navigation."
 
 const data = {
   user: {
@@ -198,7 +198,7 @@ const data = {
       icon: Map,
     },
   ],
-};
+}
 
 export default function Page() {
   return (
@@ -448,5 +448,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

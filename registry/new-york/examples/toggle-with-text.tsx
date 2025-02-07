@@ -1,6 +1,6 @@
-import { Italic } from "lucide-react";
+import { Italic } from "lucide-react"
 
-import { Toggle } from "@/registry/new-york/ui/toggle";
+import { Toggle } from "@/registry/new-york/ui/toggle"
 
 export default function ToggleWithText() {
   return (
@@ -8,5 +8,5 @@ export default function ToggleWithText() {
       <Italic />
       Italic
     </Toggle>
-  );
+  )
 }

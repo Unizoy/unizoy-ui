@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Minus, Plus } from "lucide-react";
-import { Bar, BarChart, ResponsiveContainer } from "recharts";
+import * as React from "react"
+import { Minus, Plus } from "lucide-react"
+import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Drawer,
   DrawerClose,
@@ -14,7 +14,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/registry/new-york/ui/drawer";
+} from "@/registry/new-york/ui/drawer"
 
 const data = [
   {
@@ -56,13 +56,13 @@ const data = [
   {
     goal: 349,
   },
-];
+]
 
 export function DrawerDemo() {
-  const [goal, setGoal] = React.useState(350);
+  const [goal, setGoal] = React.useState(350)
 
   function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
+    setGoal(Math.max(200, Math.min(400, goal + adjustment)))
   }
 
   return (
@@ -132,5 +132,5 @@ export function DrawerDemo() {
         </div>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }

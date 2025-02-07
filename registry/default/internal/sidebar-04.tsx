@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { GalleryVerticalEnd } from "lucide-react";
+import * as React from "react"
+import { GalleryVerticalEnd } from "lucide-react"
 
 import {
   Breadcrumb,
@@ -10,8 +10,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/breadcrumb"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -26,11 +26,11 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A floating sidebar with submenus.";
+export const description = "A floating sidebar with submenus."
 
 // This is sample data.
 const data = {
@@ -171,7 +171,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export default function Component() {
   return (
@@ -258,5 +258,5 @@ export default function Component() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

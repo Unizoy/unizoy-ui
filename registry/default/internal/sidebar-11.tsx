@@ -1,5 +1,5 @@
-import * as React from "react";
-import { ChevronRight, File, Folder } from "lucide-react";
+import * as React from "react"
+import { ChevronRight, File, Folder } from "lucide-react"
 
 import {
   Breadcrumb,
@@ -8,13 +8,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
+} from "@/registry/default/ui/breadcrumb"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/collapsible"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -30,7 +30,7 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
 // This is sample data.
 const data = {
@@ -74,11 +74,11 @@ const data = {
     "package.json",
     "README.md",
   ],
-};
+}
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar with a collapsible file tree.";
+export const description = "A sidebar with a collapsible file tree."
 
 export default function Page() {
   return (
@@ -114,7 +114,7 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -150,11 +150,11 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }
 
 function Tree({ item }: { item: string | any[] }) {
-  const [name, ...items] = Array.isArray(item) ? item : [item];
+  const [name, ...items] = Array.isArray(item) ? item : [item]
 
   if (!items.length) {
     return (
@@ -165,7 +165,7 @@ function Tree({ item }: { item: string | any[] }) {
         <File />
         {name}
       </SidebarMenuButton>
-    );
+    )
   }
 
   return (
@@ -190,5 +190,5 @@ function Tree({ item }: { item: string | any[] }) {
         </CollapsibleContent>
       </Collapsible>
     </SidebarMenuItem>
-  );
+  )
 }

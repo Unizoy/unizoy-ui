@@ -5,7 +5,7 @@ import {
   Settings,
   Smile,
   User,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Command,
@@ -16,7 +16,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/registry/default/ui/command";
+} from "@/registry/default/ui/command"
 
 export function CommandDemo() {
   return (
@@ -58,5 +58,5 @@ export function CommandDemo() {
         </CommandGroup>
       </CommandList>
     </Command>
-  );
+  )
 }

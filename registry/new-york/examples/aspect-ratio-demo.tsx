@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from "next/image"
 
-import { AspectRatio } from "@/registry/new-york/ui/aspect-ratio";
+import { AspectRatio } from "@/registry/new-york/ui/aspect-ratio"
 
 export default function AspectRatioDemo() {
   return (
@@ -12,5 +12,5 @@ export default function AspectRatioDemo() {
         className="h-full w-full rounded-md object-cover"
       />
     </AspectRatio>
-  );
+  )
 }

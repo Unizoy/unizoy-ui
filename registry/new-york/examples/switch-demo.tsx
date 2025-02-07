@@ -1,5 +1,5 @@
-import { Label } from "@/registry/new-york/ui/label";
-import { Switch } from "@/registry/new-york/ui/switch";
+import { Label } from "@/registry/new-york/ui/label"
+import { Switch } from "@/registry/new-york/ui/switch"
 
 export default function SwitchDemo() {
   return (
@@ -7,5 +7,5 @@ export default function SwitchDemo() {
       <Switch id="airplane-mode" />
       <Label htmlFor="airplane-mode">Airplane Mode</Label>
     </div>
-  );
+  )
 }

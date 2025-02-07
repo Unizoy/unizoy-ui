@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 import {
   Activity,
   ArrowUpRight,
@@ -9,22 +9,22 @@ import {
   Package2,
   Search,
   Users,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar";
-import { Badge } from "@/registry/new-york/ui/badge";
-import { Button } from "@/registry/new-york/ui/button";
+} from "@/registry/new-york/ui/avatar"
+import { Badge } from "@/registry/new-york/ui/badge"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card";
+} from "@/registry/new-york/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,13 +32,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Input } from "@/registry/new-york/ui/input";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/registry/new-york/ui/sheet";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Input } from "@/registry/new-york/ui/input"
+import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
 import {
   Table,
   TableBody,
@@ -46,14 +42,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/new-york/ui/table";
+} from "@/registry/new-york/ui/table"
 
 export const description =
-  "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image. The main content area is divided into two rows. The first row has a grid of cards with statistics. The second row has a grid of cards with a table of recent transactions and a list of recent sales.";
+  "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image. The main content area is divided into two rows. The first row has a grid of cards with statistics. The second row has a grid of cards with a table of recent transactions and a list of recent sales."
 
-export const iframeHeight = "730px";
+export const iframeHeight = "730px"
 
-export const containerClassName = "w-full h-full";
+export const containerClassName = "w-full h-full"
 
 export default function Dashboard() {
   return (
@@ -458,5 +454,5 @@ export default function Dashboard() {
         </div>
       </main>
     </div>
-  );
+  )
 }

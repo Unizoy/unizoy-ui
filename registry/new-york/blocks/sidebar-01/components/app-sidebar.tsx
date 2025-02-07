@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from "react"
 
-import { SearchForm } from "@/registry/new-york/blocks/sidebar-01/components/search-form";
-import { VersionSwitcher } from "@/registry/new-york/blocks/sidebar-01/components/version-switcher";
+import { SearchForm } from "@/registry/new-york/blocks/sidebar-01/components/search-form"
+import { VersionSwitcher } from "@/registry/new-york/blocks/sidebar-01/components/version-switcher"
 import {
   Sidebar,
   SidebarContent,
@@ -13,7 +13,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
 // This is sample data.
 const data = {
@@ -145,7 +145,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -178,5 +178,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }

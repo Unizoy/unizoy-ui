@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { GalleryVerticalEnd, MoreHorizontal } from "lucide-react";
+import { GalleryVerticalEnd, MoreHorizontal } from "lucide-react"
 
 import {
   Breadcrumb,
@@ -9,22 +9,22 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
-import { Button } from "@/registry/new-york/ui/button";
+} from "@/registry/new-york/ui/breadcrumb"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card";
+} from "@/registry/new-york/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Separator } from "@/registry/new-york/ui/separator";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Separator } from "@/registry/new-york/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -40,11 +40,11 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar with submenus as dropdowns.";
+export const description = "A sidebar with submenus as dropdowns."
 
 // This is sample data.
 const data = {
@@ -175,7 +175,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export default function Page() {
   return (
@@ -283,5 +283,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { useToast } from "@/registry/default/hooks/use-toast";
-import { Button } from "@/registry/default/ui/button";
-import { ToastAction } from "@/registry/default/ui/toast";
+import { useToast } from "@/registry/default/hooks/use-toast"
+import { Button } from "@/registry/default/ui/button"
+import { ToastAction } from "@/registry/default/ui/toast"
 
 export default function ToastDemo() {
-  const { toast } = useToast();
+  const { toast } = useToast()
 
   return (
     <Button
@@ -17,10 +17,10 @@ export default function ToastDemo() {
           action: (
             <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
           ),
-        });
+        })
       }}
     >
       Add to calendar
     </Button>
-  );
+  )
 }

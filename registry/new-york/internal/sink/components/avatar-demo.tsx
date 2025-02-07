@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar";
+} from "@/registry/new-york/ui/avatar"
 
 export function AvatarDemo() {
   return (
@@ -10,5 +10,5 @@ export function AvatarDemo() {
       <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
-  );
+  )
 }

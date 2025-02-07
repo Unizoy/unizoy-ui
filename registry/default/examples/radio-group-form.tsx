@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
-import { toast } from "@/registry/default/hooks/use-toast";
-import { Button } from "@/registry/default/ui/button";
+import { toast } from "@/registry/default/hooks/use-toast"
+import { Button } from "@/registry/default/ui/button"
 import {
   Form,
   FormControl,
@@ -13,19 +13,19 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/default/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
+} from "@/registry/default/ui/form"
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
 
 const FormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {
     required_error: "You need to select a notification type.",
   }),
-});
+})
 
 export default function RadioGroupForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-  });
+  })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
@@ -35,7 +35,7 @@ export default function RadioGroupForm() {
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
-    });
+    })
   }
 
   return (
@@ -84,5 +84,5 @@ export default function RadioGroupForm() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
-  );
+  )
 }

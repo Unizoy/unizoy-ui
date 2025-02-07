@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   Calculator,
   Calendar,
@@ -8,7 +8,7 @@ import {
   Settings,
   Smile,
   User,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   CommandDialog,
@@ -19,22 +19,22 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/registry/new-york/ui/command";
+} from "@/registry/new-york/ui/command"
 
 export default function CommandDialogDemo() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setOpen((open) => !open);
+        e.preventDefault()
+        setOpen((open) => !open)
       }
-    };
+    }
 
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
-  }, []);
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
 
   return (
     <>
@@ -83,5 +83,5 @@ export default function CommandDialogDemo() {
         </CommandList>
       </CommandDialog>
     </>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   ArchiveX,
   BadgeCheck,
@@ -14,13 +14,13 @@ import {
   Send,
   Sparkles,
   Trash2,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar";
+} from "@/registry/new-york/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,7 +28,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
+} from "@/registry/new-york/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -37,9 +37,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Label } from "@/registry/new-york/ui/label";
-import { Separator } from "@/registry/new-york/ui/separator";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Label } from "@/registry/new-york/ui/label"
+import { Separator } from "@/registry/new-york/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -55,8 +55,8 @@ import {
   SidebarProvider,
   SidebarTrigger,
   useSidebar,
-} from "@/registry/new-york/ui/sidebar";
-import { Switch } from "@/registry/new-york/ui/switch";
+} from "@/registry/new-york/ui/sidebar"
+import { Switch } from "@/registry/new-york/ui/switch"
 
 // This is sample data
 const data = {
@@ -179,11 +179,11 @@ const data = {
         "To celebrate our recent project success, I'd like to organize a team dinner.\nAre you available next Friday evening? Please let me know your preferences.",
     },
   ],
-};
+}
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "Collapsible nested sidebars.";
+export const description = "Collapsible nested sidebars."
 
 export default function Page() {
   return (
@@ -221,15 +221,15 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   // Note: I'm using state to show active item.
   // IRL you should use the url/router.
-  const [activeItem, setActiveItem] = React.useState(data.navMain[0]);
-  const [mails, setMails] = React.useState(data.mails);
-  const { setOpen } = useSidebar();
+  const [activeItem, setActiveItem] = React.useState(data.navMain[0])
+  const [mails, setMails] = React.useState(data.mails)
+  const { setOpen } = useSidebar()
 
   return (
     <Sidebar
@@ -273,15 +273,15 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         hidden: false,
                       }}
                       onClick={() => {
-                        setActiveItem(item);
-                        const mail = data.mails.sort(() => Math.random() - 0.5);
+                        setActiveItem(item)
+                        const mail = data.mails.sort(() => Math.random() - 0.5)
                         setMails(
                           mail.slice(
                             0,
-                            Math.max(5, Math.floor(Math.random() * 10) + 1),
-                          ),
-                        );
-                        setOpen(true);
+                            Math.max(5, Math.floor(Math.random() * 10) + 1)
+                          )
+                        )
+                        setOpen(true)
                       }}
                       isActive={activeItem.title === item.title}
                       className="px-2.5 md:px-2"
@@ -339,19 +339,19 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarContent>
       </Sidebar>
     </Sidebar>
-  );
+  )
 }
 
 function NavUser({
   user,
 }: {
   user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
+    name: string
+    email: string
+    avatar: string
+  }
 }) {
-  const { isMobile } = useSidebar();
+  const { isMobile } = useSidebar()
 
   return (
     <SidebarMenu>
@@ -422,5 +422,5 @@ function NavUser({
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  );
+  )
 }

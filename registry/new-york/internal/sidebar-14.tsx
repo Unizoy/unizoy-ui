@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 
 import {
   Breadcrumb,
@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
+} from "@/registry/new-york/ui/breadcrumb"
 import {
   Sidebar,
   SidebarContent,
@@ -24,11 +24,11 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar on the right.";
+export const description = "A sidebar on the right."
 
 // This is sample data.
 const data = {
@@ -169,7 +169,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export default function Page() {
   return (
@@ -202,7 +202,7 @@ export default function Page() {
       </SidebarInset>
       <AppSidebar side="right" />
     </SidebarProvider>
-  );
+  )
 }
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -242,5 +242,5 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }

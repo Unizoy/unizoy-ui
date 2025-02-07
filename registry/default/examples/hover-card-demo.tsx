@@ -1,16 +1,16 @@
-import { CalendarDays } from "lucide-react";
+import { CalendarDays } from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/ui/avatar";
-import { Button } from "@/registry/default/ui/button";
+} from "@/registry/default/ui/avatar"
+import { Button } from "@/registry/default/ui/button"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/registry/default/ui/hover-card";
+} from "@/registry/default/ui/hover-card"
 
 export default function HoverCardDemo() {
   return (
@@ -39,5 +39,5 @@ export default function HoverCardDemo() {
         </div>
       </HoverCardContent>
     </HoverCard>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { Separator } from "@/registry/default/ui/separator";
+import { Separator } from "@/registry/default/ui/separator"
 
 export default function SeparatorDemo() {
   return (
@@ -18,5 +18,5 @@ export default function SeparatorDemo() {
         <div>Source</div>
       </div>
     </div>
-  );
+  )
 }

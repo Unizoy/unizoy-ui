@@ -1,4 +1,4 @@
-import { cn } from "@/registry/new-york/lib/utils";
+import { cn } from "@/registry/new-york/lib/utils"
 
 export function ComponentWrapper({
   className,
@@ -18,5 +18,5 @@ export function ComponentWrapper({
         {children}
       </div>
     </div>
-  );
+  )
 }

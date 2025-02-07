@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/registry/new-york/ui/input-otp";
+} from "@/registry/new-york/ui/input-otp"
 
 export default function InputOTPWithSeparator() {
   return (
@@ -25,5 +25,5 @@ export default function InputOTPWithSeparator() {
         <InputOTPSlot index={5} />
       </InputOTPGroup>
     </InputOTP>
-  );
+  )
 }

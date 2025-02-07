@@ -59,4 +59,4 @@ export const registryCategories = [
     slug: "charts-tooltip",
     hidden: true,
   },
-];
+]

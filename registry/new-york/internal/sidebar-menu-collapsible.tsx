@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import { ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react"
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/new-york/ui/collapsible";
+} from "@/registry/new-york/ui/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -20,7 +20,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
 const items = [
   {
@@ -148,7 +148,7 @@ const items = [
       },
     ],
   },
-];
+]
 
 export default function AppSidebar() {
   return (
@@ -193,5 +193,5 @@ export default function AppSidebar() {
         </SidebarContent>
       </Sidebar>
     </SidebarProvider>
-  );
+  )
 }

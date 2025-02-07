@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   Area,
@@ -17,7 +17,7 @@ import {
   ReferenceLine,
   XAxis,
   YAxis,
-} from "recharts";
+} from "recharts"
 
 import {
   Card,
@@ -26,19 +26,19 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york//ui/card";
+} from "@/registry/new-york//ui/card"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/registry/new-york//ui/chart";
-import { Separator } from "@/registry/new-york//ui/separator";
+} from "@/registry/new-york//ui/chart"
+import { Separator } from "@/registry/new-york//ui/separator"
 
-export const description = "A collection of health charts.";
+export const description = "A collection of health charts."
 
-export const iframeHeight = "900px";
+export const iframeHeight = "900px"
 
-export const containerClassName = "min-h-screen py-12";
+export const containerClassName = "min-h-screen py-12"
 
 export default function Charts() {
   return (
@@ -118,7 +118,7 @@ export default function Charts() {
                   tickFormatter={(value) => {
                     return new Date(value).toLocaleDateString("en-US", {
                       weekday: "short",
-                    });
+                    })
                   }}
                 />
                 <ChartTooltip
@@ -131,7 +131,7 @@ export default function Charts() {
                           day: "numeric",
                           month: "long",
                           year: "numeric",
-                        });
+                        })
                       }}
                     />
                   }
@@ -260,7 +260,7 @@ export default function Charts() {
                   tickFormatter={(value) => {
                     return new Date(value).toLocaleDateString("en-US", {
                       weekday: "short",
-                    });
+                    })
                   }}
                 />
                 <Line
@@ -285,7 +285,7 @@ export default function Charts() {
                           day: "numeric",
                           month: "long",
                           year: "numeric",
-                        });
+                        })
                       }}
                     />
                   }
@@ -891,5 +891,5 @@ export default function Charts() {
         </Card>
       </div>
     </div>
-  );
+  )
 }

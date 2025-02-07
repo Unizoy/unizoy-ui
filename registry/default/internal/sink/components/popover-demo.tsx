@@ -1,11 +1,11 @@
-import { Button } from "@/registry/default/ui/button";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+import { Button } from "@/registry/default/ui/button"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover";
+} from "@/registry/default/ui/popover"
 
 export function PopoverDemo() {
   return (
@@ -58,5 +58,5 @@ export function PopoverDemo() {
         </div>
       </PopoverContent>
     </Popover>
-  );
+  )
 }

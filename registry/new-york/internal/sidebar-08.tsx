@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   BadgeCheck,
@@ -22,13 +22,13 @@ import {
   Sparkles,
   SquareTerminal,
   Trash2,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar";
+} from "@/registry/new-york/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -36,12 +36,12 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
+} from "@/registry/new-york/ui/breadcrumb"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/new-york/ui/collapsible";
+} from "@/registry/new-york/ui/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -50,8 +50,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Separator } from "@/registry/new-york/ui/separator";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Separator } from "@/registry/new-york/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -70,11 +70,11 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "An inset sidebar with secondary navigation.";
+export const description = "An inset sidebar with secondary navigation."
 
 const data = {
   user: {
@@ -198,7 +198,7 @@ const data = {
       icon: Map,
     },
   ],
-};
+}
 
 export default function Page() {
   return (
@@ -448,5 +448,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

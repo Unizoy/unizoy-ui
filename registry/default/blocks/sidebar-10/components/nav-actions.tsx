@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   ArrowDown,
   ArrowUp,
@@ -17,14 +17,14 @@ import {
   Star,
   Trash,
   Trash2,
-} from "lucide-react";
+} from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover";
+} from "@/registry/default/ui/popover"
 import {
   Sidebar,
   SidebarContent,
@@ -33,7 +33,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
 const data = [
   [
@@ -96,14 +96,14 @@ const data = [
       icon: ArrowDown,
     },
   ],
-];
+]
 
 export function NavActions() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
 
   React.useEffect(() => {
-    setIsOpen(true);
-  }, []);
+    setIsOpen(true)
+  }, [])
 
   return (
     <div className="flex items-center gap-2 text-sm">
@@ -149,5 +149,5 @@ export function NavActions() {
         </PopoverContent>
       </Popover>
     </div>
-  );
+  )
 }

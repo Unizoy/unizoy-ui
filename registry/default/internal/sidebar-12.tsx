@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   BadgeCheck,
   Bell,
@@ -11,25 +11,25 @@ import {
   LogOut,
   Plus,
   Sparkles,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/ui/avatar";
+} from "@/registry/default/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/registry/default/ui/breadcrumb";
-import { Calendar } from "@/registry/default/ui/calendar";
+} from "@/registry/default/ui/breadcrumb"
+import { Calendar } from "@/registry/default/ui/calendar"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
+} from "@/registry/default/ui/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,8 +38,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/dropdown-menu"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -57,7 +57,7 @@ import {
   SidebarSeparator,
   SidebarTrigger,
   useSidebar,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
 // This is sample data.
 const data = {
@@ -80,11 +80,11 @@ const data = {
       items: ["Travel", "Reminders", "Deadlines"],
     },
   ],
-};
+}
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar with a calendar.";
+export const description = "A sidebar with a calendar."
 
 export default function Page() {
   return (
@@ -111,7 +111,7 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -137,16 +137,16 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }
 
 function Calendars({
   calendars,
 }: {
   calendars: {
-    name: string;
-    items: string[];
-  }[];
+    name: string
+    items: string[]
+  }[]
 }) {
   return (
     <>
@@ -191,7 +191,7 @@ function Calendars({
         </React.Fragment>
       ))}
     </>
-  );
+  )
 }
 
 function DatePicker() {
@@ -201,19 +201,19 @@ function DatePicker() {
         <Calendar className="[&_[role=gridcell].bg-accent]:bg-sidebar-primary [&_[role=gridcell].bg-accent]:text-sidebar-primary-foreground [&_[role=gridcell]]:w-[33px]" />
       </SidebarGroupContent>
     </SidebarGroup>
-  );
+  )
 }
 
 function NavUser({
   user,
 }: {
   user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
+    name: string
+    email: string
+    avatar: string
+  }
 }) {
-  const { isMobile } = useSidebar();
+  const { isMobile } = useSidebar()
 
   return (
     <SidebarMenu>
@@ -284,5 +284,5 @@ function NavUser({
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  );
+  )
 }

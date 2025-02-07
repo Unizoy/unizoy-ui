@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
-import { toast } from "@/registry/default/hooks/use-toast";
-import { Button } from "@/registry/default/ui/button";
+import { toast } from "@/registry/default/hooks/use-toast"
+import { Button } from "@/registry/default/ui/button"
 import {
   Form,
   FormControl,
@@ -13,13 +13,13 @@ import {
   FormField,
   FormItem,
   FormLabel,
-} from "@/registry/default/ui/form";
-import { Switch } from "@/registry/default/ui/switch";
+} from "@/registry/default/ui/form"
+import { Switch } from "@/registry/default/ui/switch"
 
 const FormSchema = z.object({
   marketing_emails: z.boolean().default(false).optional(),
   security_emails: z.boolean(),
-});
+})
 
 export default function SwitchForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -27,7 +27,7 @@ export default function SwitchForm() {
     defaultValues: {
       security_emails: true,
     },
-  });
+  })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
@@ -37,7 +37,7 @@ export default function SwitchForm() {
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
-    });
+    })
   }
 
   return (
@@ -95,5 +95,5 @@ export default function SwitchForm() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
-  );
+  )
 }

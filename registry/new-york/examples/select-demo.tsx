@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 
 import {
   Select,
@@ -8,7 +8,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select";
+} from "@/registry/new-york/ui/select"
 
 export default function SelectDemo() {
   return (
@@ -27,5 +27,5 @@ export default function SelectDemo() {
         </SelectGroup>
       </SelectContent>
     </Select>
-  );
+  )
 }

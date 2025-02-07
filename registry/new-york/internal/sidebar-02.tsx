@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   Check,
   ChevronRight,
   ChevronsUpDown,
   GalleryVerticalEnd,
   Search,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Breadcrumb,
@@ -16,20 +16,20 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
+} from "@/registry/new-york/ui/breadcrumb"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/new-york/ui/collapsible";
+} from "@/registry/new-york/ui/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Label } from "@/registry/new-york/ui/label";
-import { Separator } from "@/registry/new-york/ui/separator";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Label } from "@/registry/new-york/ui/label"
+import { Separator } from "@/registry/new-york/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -45,11 +45,11 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar with collapsible sections.";
+export const description = "A sidebar with collapsible sections."
 
 // This is sample data.
 const data = {
@@ -191,12 +191,10 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export default function Component() {
-  const [selectedVersion, setSelectedVersion] = React.useState(
-    data.versions[0],
-  );
+  const [selectedVersion, setSelectedVersion] = React.useState(data.versions[0])
 
   return (
     <SidebarProvider>
@@ -321,5 +319,5 @@ export default function Component() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

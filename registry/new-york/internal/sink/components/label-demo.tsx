@@ -1,5 +1,5 @@
-import { Checkbox } from "@/registry/new-york/ui/checkbox";
-import { Label } from "@/registry/new-york/ui/label";
+import { Checkbox } from "@/registry/new-york/ui/checkbox"
+import { Label } from "@/registry/new-york/ui/label"
 
 export function LabelDemo() {
   return (
@@ -9,5 +9,5 @@ export function LabelDemo() {
         <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>
     </div>
-  );
+  )
 }

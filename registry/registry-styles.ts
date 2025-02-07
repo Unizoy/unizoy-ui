@@ -7,6 +7,6 @@ export const styles = [
     name: "default",
     label: "Default",
   },
-] as const;
+] as const
 
-export type Style = (typeof styles)[number];
+export type Style = (typeof styles)[number]

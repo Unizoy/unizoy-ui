@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 import {
   ChevronLeft,
   Home,
@@ -13,9 +13,9 @@ import {
   ShoppingCart,
   Upload,
   Users2,
-} from "lucide-react";
+} from "lucide-react"
 
-import { Badge } from "@/registry/new-york/ui/badge";
+import { Badge } from "@/registry/new-york/ui/badge"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -23,8 +23,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
-import { Button } from "@/registry/new-york/ui/button";
+} from "@/registry/new-york/ui/breadcrumb"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Card,
   CardContent,
@@ -32,7 +32,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card";
+} from "@/registry/new-york/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,21 +40,17 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Input } from "@/registry/new-york/ui/input";
-import { Label } from "@/registry/new-york/ui/label";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Input } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/registry/new-york/ui/sheet";
+} from "@/registry/new-york/ui/select"
+import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
 import {
   Table,
   TableBody,
@@ -62,24 +58,24 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/new-york/ui/table";
-import { Textarea } from "@/registry/new-york/ui/textarea";
+} from "@/registry/new-york/ui/table"
+import { Textarea } from "@/registry/new-york/ui/textarea"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/registry/new-york/ui/toggle-group";
+} from "@/registry/new-york/ui/toggle-group"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/registry/new-york/ui/tooltip";
+} from "@/registry/new-york/ui/tooltip"
 
 export const description =
-  "A product edit page. The product edit page has a form to edit the product details, stock, product category, product status, and product images. The product edit page has a sidebar navigation and a main content area. The main content area has a form to edit the product details, stock, product category, product status, and product images. The sidebar navigation has links to product details, stock, product category, product status, and product images.";
+  "A product edit page. The product edit page has a form to edit the product details, stock, product category, product status, and product images. The product edit page has a sidebar navigation and a main content area. The main content area has a form to edit the product details, stock, product category, product status, and product images. The sidebar navigation has links to product details, stock, product category, product status, and product images."
 
-export const iframeHeight = "1100px";
+export const iframeHeight = "1100px"
 
-export const containerClassName = "w-full h-full";
+export const containerClassName = "w-full h-full"
 
 export default function Dashboard() {
   return (
@@ -610,5 +606,5 @@ export default function Dashboard() {
         </main>
       </div>
     </div>
-  );
+  )
 }

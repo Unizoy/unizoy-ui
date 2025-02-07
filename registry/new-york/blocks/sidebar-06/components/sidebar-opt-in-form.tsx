@@ -1,12 +1,12 @@
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card";
-import { SidebarInput } from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/card"
+import { SidebarInput } from "@/registry/new-york/ui/sidebar"
 
 export function SidebarOptInForm() {
   return (
@@ -29,5 +29,5 @@ export function SidebarOptInForm() {
         </CardContent>
       </form>
     </Card>
-  );
+  )
 }

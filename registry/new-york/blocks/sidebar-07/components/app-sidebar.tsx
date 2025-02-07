@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   AudioWaveform,
   BookOpen,
@@ -12,19 +12,19 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
-} from "lucide-react";
+} from "lucide-react"
 
-import { NavMain } from "@/registry/new-york/blocks/sidebar-07/components/nav-main";
-import { NavProjects } from "@/registry/new-york/blocks/sidebar-07/components/nav-projects";
-import { NavUser } from "@/registry/new-york/blocks/sidebar-07/components/nav-user";
-import { TeamSwitcher } from "@/registry/new-york/blocks/sidebar-07/components/team-switcher";
+import { NavMain } from "@/registry/new-york/blocks/sidebar-07/components/nav-main"
+import { NavProjects } from "@/registry/new-york/blocks/sidebar-07/components/nav-projects"
+import { NavUser } from "@/registry/new-york/blocks/sidebar-07/components/nav-user"
+import { TeamSwitcher } from "@/registry/new-york/blocks/sidebar-07/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
 // This is sample data.
 const data = {
@@ -154,7 +154,7 @@ const data = {
       icon: Map,
     },
   ],
-};
+}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -171,5 +171,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }

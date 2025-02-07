@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   Bell,
   Check,
@@ -14,7 +14,7 @@ import {
   Paintbrush,
   Settings,
   Video,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Breadcrumb,
@@ -23,15 +23,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
-import { Button } from "@/registry/new-york/ui/button";
+} from "@/registry/new-york/ui/breadcrumb"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/new-york/ui/dialog";
+} from "@/registry/new-york/ui/dialog"
 import {
   Sidebar,
   SidebarContent,
@@ -41,11 +41,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar in a dialog.";
+export const description = "A sidebar in a dialog."
 
 const data = {
   nav: [
@@ -62,18 +62,18 @@ const data = {
     { name: "Privacy & visibility", icon: Lock },
     { name: "Advanced", icon: Settings },
   ],
-};
+}
 
 export default function Page() {
   return (
     <div className="flex h-svh items-center justify-center">
       <SettingsDialog />
     </div>
-  );
+  )
 }
 
 function SettingsDialog() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(true)
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -137,5 +137,5 @@ function SettingsDialog() {
         </SidebarProvider>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

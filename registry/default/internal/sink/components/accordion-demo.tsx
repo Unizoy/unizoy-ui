@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/default/ui/accordion";
+} from "@/registry/default/ui/accordion"
 
 export function AccordionDemo() {
   return (
@@ -28,5 +28,5 @@ export function AccordionDemo() {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
-  );
+  )
 }

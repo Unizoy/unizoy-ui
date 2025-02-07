@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
-import { toast } from "@/registry/default/hooks/use-toast";
-import { Button } from "@/registry/default/ui/button";
-import { Checkbox } from "@/registry/default/ui/checkbox";
+import { toast } from "@/registry/default/hooks/use-toast"
+import { Button } from "@/registry/default/ui/button"
+import { Checkbox } from "@/registry/default/ui/checkbox"
 import {
   Form,
   FormControl,
@@ -15,7 +15,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/default/ui/form";
+} from "@/registry/default/ui/form"
 
 const items = [
   {
@@ -42,13 +42,13 @@ const items = [
     id: "documents",
     label: "Documents",
   },
-] as const;
+] as const
 
 const FormSchema = z.object({
   items: z.array(z.string()).refine((value) => value.some((item) => item), {
     message: "You have to select at least one item.",
   }),
-});
+})
 
 export default function CheckboxReactHookFormMultiple() {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -56,7 +56,7 @@ export default function CheckboxReactHookFormMultiple() {
     defaultValues: {
       items: ["recents", "home"],
     },
-  });
+  })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
@@ -66,7 +66,7 @@ export default function CheckboxReactHookFormMultiple() {
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
-    });
+    })
   }
 
   return (
@@ -102,9 +102,9 @@ export default function CheckboxReactHookFormMultiple() {
                                 ? field.onChange([...field.value, item.id])
                                 : field.onChange(
                                     field.value?.filter(
-                                      (value) => value !== item.id,
-                                    ),
-                                  );
+                                      (value) => value !== item.id
+                                    )
+                                  )
                             }}
                           />
                         </FormControl>
@@ -112,7 +112,7 @@ export default function CheckboxReactHookFormMultiple() {
                           {item.label}
                         </FormLabel>
                       </FormItem>
-                    );
+                    )
                   }}
                 />
               ))}
@@ -123,5 +123,5 @@ export default function CheckboxReactHookFormMultiple() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
-  );
+  )
 }

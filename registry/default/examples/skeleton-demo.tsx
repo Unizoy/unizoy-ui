@@ -1,4 +1,4 @@
-import { Skeleton } from "@/registry/default/ui/skeleton";
+import { Skeleton } from "@/registry/default/ui/skeleton"
 
 export default function SkeletonDemo() {
   return (
@@ -9,5 +9,5 @@ export default function SkeletonDemo() {
         <Skeleton className="h-4 w-[200px]" />
       </div>
     </div>
-  );
+  )
 }

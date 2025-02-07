@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   ArrowDown,
   ArrowUp,
@@ -32,20 +32,20 @@ import {
   Trash,
   Trash2,
   type LucideIcon,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/registry/default/ui/breadcrumb";
-import { Button } from "@/registry/default/ui/button";
+} from "@/registry/default/ui/breadcrumb"
+import { Button } from "@/registry/default/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
+} from "@/registry/default/ui/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,13 +54,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
+} from "@/registry/default/ui/dropdown-menu"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/default/ui/popover";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/popover"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -81,11 +81,11 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar in a popover.";
+export const description = "A sidebar in a popover."
 
 // This is sample data.
 const data = {
@@ -378,7 +378,7 @@ const data = {
       },
     ],
   ],
-};
+}
 
 export default function Page() {
   return (
@@ -409,7 +409,7 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -426,22 +426,22 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }
 
 function NavActions({
   actions,
 }: {
   actions: {
-    label: string;
-    icon: LucideIcon;
-  }[][];
+    label: string
+    icon: LucideIcon
+  }[][]
 }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
 
   React.useEffect(() => {
-    setIsOpen(true);
-  }, []);
+    setIsOpen(true)
+  }, [])
 
   return (
     <div className="flex items-center gap-2 text-sm">
@@ -487,19 +487,19 @@ function NavActions({
         </PopoverContent>
       </Popover>
     </div>
-  );
+  )
 }
 
 function NavFavorites({
   favorites,
 }: {
   favorites: {
-    name: string;
-    url: string;
-    emoji: string;
-  }[];
+    name: string
+    url: string
+    emoji: string
+  }[]
 }) {
-  const { isMobile } = useSidebar();
+  const { isMobile } = useSidebar()
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
@@ -555,18 +555,18 @@ function NavFavorites({
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroup>
-  );
+  )
 }
 
 function NavMain({
   items,
 }: {
   items: {
-    title: string;
-    url: string;
-    icon: LucideIcon;
-    isActive?: boolean;
-  }[];
+    title: string
+    url: string
+    icon: LucideIcon
+    isActive?: boolean
+  }[]
 }) {
   return (
     <SidebarMenu>
@@ -581,7 +581,7 @@ function NavMain({
         </SidebarMenuItem>
       ))}
     </SidebarMenu>
-  );
+  )
 }
 
 function NavSecondary({
@@ -589,11 +589,11 @@ function NavSecondary({
   ...props
 }: {
   items: {
-    title: string;
-    url: string;
-    icon: LucideIcon;
-    badge?: React.ReactNode;
-  }[];
+    title: string
+    url: string
+    icon: LucideIcon
+    badge?: React.ReactNode
+  }[]
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
   return (
     <SidebarGroup {...props}>
@@ -613,20 +613,20 @@ function NavSecondary({
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>
-  );
+  )
 }
 
 function NavWorkspaces({
   workspaces,
 }: {
   workspaces: {
-    name: string;
-    emoji: React.ReactNode;
+    name: string
+    emoji: React.ReactNode
     pages: {
-      name: string;
-      emoji: React.ReactNode;
-    }[];
-  }[];
+      name: string
+      emoji: React.ReactNode
+    }[]
+  }[]
 }) {
   return (
     <SidebarGroup>
@@ -679,19 +679,19 @@ function NavWorkspaces({
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>
-  );
+  )
 }
 
 function TeamSwitcher({
   teams,
 }: {
   teams: {
-    name: string;
-    logo: React.ElementType;
-    plan: string;
-  }[];
+    name: string
+    logo: React.ElementType
+    plan: string
+  }[]
 }) {
-  const [activeTeam, setActiveTeam] = React.useState(teams[0]);
+  const [activeTeam, setActiveTeam] = React.useState(teams[0])
 
   return (
     <SidebarMenu>
@@ -739,5 +739,5 @@ function TeamSwitcher({
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  );
+  )
 }

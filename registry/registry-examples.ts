@@ -1,4 +1,4 @@
-import { type Registry } from "shadcn/registry";
+import { type Registry } from "shadcn/registry"
 
 export const examples: Registry["items"] = [
   {
@@ -1612,4 +1612,4 @@ export const examples: Registry["items"] = [
       },
     ],
   },
-];
+]

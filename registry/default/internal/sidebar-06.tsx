@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { GalleryVerticalEnd, MoreHorizontal } from "lucide-react";
+import { GalleryVerticalEnd, MoreHorizontal } from "lucide-react"
 
 import {
   Breadcrumb,
@@ -9,22 +9,22 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
-import { Button } from "@/registry/default/ui/button";
+} from "@/registry/default/ui/breadcrumb"
+import { Button } from "@/registry/default/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/default/ui/card";
+} from "@/registry/default/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/dropdown-menu"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -40,11 +40,11 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar with submenus as dropdowns.";
+export const description = "A sidebar with submenus as dropdowns."
 
 // This is sample data.
 const data = {
@@ -175,7 +175,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export default function Page() {
   return (
@@ -283,5 +283,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

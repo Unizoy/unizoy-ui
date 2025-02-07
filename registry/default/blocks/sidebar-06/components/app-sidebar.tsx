@@ -1,8 +1,8 @@
-import * as React from "react";
-import { GalleryVerticalEnd } from "lucide-react";
+import * as React from "react"
+import { GalleryVerticalEnd } from "lucide-react"
 
-import { NavMain } from "@/registry/default/blocks/sidebar-06/components/nav-main";
-import { SidebarOptInForm } from "@/registry/default/blocks/sidebar-06/components/sidebar-opt-in-form";
+import { NavMain } from "@/registry/default/blocks/sidebar-06/components/nav-main"
+import { SidebarOptInForm } from "@/registry/default/blocks/sidebar-06/components/sidebar-opt-in-form"
 import {
   Sidebar,
   SidebarContent,
@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
 // This is sample data.
 const data = {
@@ -143,7 +143,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -175,5 +175,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
+import * as React from "react"
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
 
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -11,14 +11,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
+} from "@/registry/new-york/ui/dropdown-menu"
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
+type Checked = DropdownMenuCheckboxItemProps["checked"]
 
 export default function DropdownMenuCheckboxes() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
-  const [showPanel, setShowPanel] = React.useState<Checked>(false);
+  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
+  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
+  const [showPanel, setShowPanel] = React.useState<Checked>(false)
 
   return (
     <DropdownMenu>
@@ -49,5 +49,5 @@ export default function DropdownMenuCheckboxes() {
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/new-york/ui/tooltip";
+} from "@/registry/new-york/ui/tooltip"
 
 export default function TooltipDemo() {
   return (
@@ -18,5 +18,5 @@ export default function TooltipDemo() {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }

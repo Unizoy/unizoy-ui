@@ -1,5 +1,5 @@
-import { Button } from "@/registry/new-york/ui/button";
-import { Textarea } from "@/registry/new-york/ui/textarea";
+import { Button } from "@/registry/new-york/ui/button"
+import { Textarea } from "@/registry/new-york/ui/textarea"
 
 export default function TextareaWithButton() {
   return (
@@ -7,5 +7,5 @@ export default function TextareaWithButton() {
       <Textarea placeholder="Type your message here." />
       <Button>Send message</Button>
     </div>
-  );
+  )
 }

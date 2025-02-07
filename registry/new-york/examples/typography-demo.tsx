@@ -115,5 +115,5 @@ export default function TypographyDemo() {
         and always be careful of bad ideas.
       </p>
     </div>
-  );
+  )
 }

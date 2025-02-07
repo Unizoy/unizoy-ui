@@ -2,7 +2,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/registry/default/ui/resizable";
+} from "@/registry/default/ui/resizable"
 
 export function ResizableHandleDemo() {
   return (
@@ -22,5 +22,5 @@ export function ResizableHandleDemo() {
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>
-  );
+  )
 }

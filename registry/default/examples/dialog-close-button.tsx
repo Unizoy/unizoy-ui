@@ -1,6 +1,6 @@
-import { Copy } from "lucide-react";
+import { Copy } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -10,9 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+} from "@/registry/default/ui/dialog"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export default function DialogCloseButton() {
   return (
@@ -52,5 +52,5 @@ export default function DialogCloseButton() {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

@@ -2,7 +2,7 @@ import {
   CursorIcon,
   CustomCursor,
   NameTag,
-} from "@/registry/default/ui/custom-pointer";
+} from "@/registry/default/ui/custom-pointer"
 
 function Card() {
   return (
@@ -23,7 +23,7 @@ function Card() {
         <NameTag name="Ankush" src="/avatars/01.png" />
       </CustomCursor>
     </div>
-  );
+  )
 }
 
-export default Card;
+export default Card

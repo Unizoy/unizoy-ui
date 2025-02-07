@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 import {
   AudioWaveform,
   BadgeCheck,
@@ -24,13 +24,13 @@ import {
   Sparkles,
   SquareTerminal,
   Trash2,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/ui/avatar";
+} from "@/registry/default/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -38,12 +38,12 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/default/ui/breadcrumb";
+} from "@/registry/default/ui/breadcrumb"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible";
+} from "@/registry/default/ui/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -53,8 +53,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/default/ui/dropdown-menu"
+import { Separator } from "@/registry/default/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -73,11 +73,11 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar that collapses to icons.";
+export const description = "A sidebar that collapses to icons."
 
 // This is sample data.
 const data = {
@@ -207,10 +207,10 @@ const data = {
       icon: Map,
     },
   ],
-};
+}
 
 export default function Page() {
-  const [activeTeam, setActiveTeam] = React.useState(data.teams[0]);
+  const [activeTeam, setActiveTeam] = React.useState(data.teams[0])
 
   return (
     <SidebarProvider>
@@ -478,5 +478,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

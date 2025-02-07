@@ -1,7 +1,7 @@
-import { cn } from "@/registry/default/lib/utils";
-import { Button } from "@/registry/default/ui/button";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+import { cn } from "@/registry/default/lib/utils"
+import { Button } from "@/registry/default/ui/button"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 
 export function LoginForm({
   className,
@@ -57,5 +57,5 @@ export function LoginForm({
         </a>
       </div>
     </form>
-  );
+  )
 }

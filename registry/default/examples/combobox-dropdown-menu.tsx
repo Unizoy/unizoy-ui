@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react";
+import * as React from "react"
+import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/default/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -11,7 +11,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/registry/default/ui/command";
+} from "@/registry/default/ui/command"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +24,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
+} from "@/registry/default/ui/dropdown-menu"
 
 const labels = [
   "feature",
@@ -34,11 +34,11 @@ const labels = [
   "design",
   "question",
   "maintenance",
-];
+]
 
 export default function ComboboxDropdownMenu() {
-  const [label, setLabel] = React.useState("feature");
-  const [open, setOpen] = React.useState(false);
+  const [label, setLabel] = React.useState("feature")
+  const [open, setOpen] = React.useState(false)
 
   return (
     <div className="flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center">
@@ -85,8 +85,8 @@ export default function ComboboxDropdownMenu() {
                           key={label}
                           value={label}
                           onSelect={(value) => {
-                            setLabel(value);
-                            setOpen(false);
+                            setLabel(value)
+                            setOpen(false)
                           }}
                         >
                           {label}
@@ -107,5 +107,5 @@ export default function ComboboxDropdownMenu() {
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  );
+  )
 }

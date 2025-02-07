@@ -9,7 +9,7 @@ export const iconLibraries = {
     package: "@radix-ui/react-icons",
     import: "@radix-ui/react-icons",
   },
-} as const;
+} as const
 
 export const icons: Record<
   string,
@@ -163,4 +163,4 @@ export const icons: Record<
     lucide: "X",
     radix: "Cross2Icon",
   },
-} as const;
+} as const

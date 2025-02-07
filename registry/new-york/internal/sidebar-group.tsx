@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { LifeBuoy, Send } from "lucide-react";
+import { LifeBuoy, Send } from "lucide-react"
 
 import {
   Sidebar,
@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -41,5 +41,5 @@ export default function AppSidebar() {
         </SidebarContent>
       </Sidebar>
     </SidebarProvider>
-  );
+  )
 }

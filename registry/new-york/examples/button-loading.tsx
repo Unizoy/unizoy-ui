@@ -1,6 +1,6 @@
-import { Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react"
 
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/registry/new-york/ui/button"
 
 export default function ButtonLoading() {
   return (
@@ -8,5 +8,5 @@ export default function ButtonLoading() {
       <Loader2 className="animate-spin" />
       Please wait
     </Button>
-  );
+  )
 }

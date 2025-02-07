@@ -12,7 +12,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/registry/new-york/ui/context-menu";
+} from "@/registry/new-york/ui/context-menu"
 
 export default function ContextMenuDemo() {
   return (
@@ -63,5 +63,5 @@ export default function ContextMenuDemo() {
         </ContextMenuRadioGroup>
       </ContextMenuContent>
     </ContextMenu>
-  );
+  )
 }

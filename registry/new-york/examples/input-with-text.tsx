@@ -1,5 +1,5 @@
-import { Input } from "@/registry/new-york/ui/input";
-import { Label } from "@/registry/new-york/ui/label";
+import { Input } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
 
 export default function InputWithText() {
   return (
@@ -8,5 +8,5 @@ export default function InputWithText() {
       <Input type="email" id="email-2" placeholder="Email" />
       <p className="text-sm text-muted-foreground">Enter your email address.</p>
     </div>
-  );
+  )
 }

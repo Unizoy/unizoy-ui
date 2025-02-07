@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/default/ui/table";
+} from "@/registry/default/ui/table"
 
 const invoices = [
   {
@@ -52,7 +52,7 @@ const invoices = [
     totalAmount: "$300.00",
     paymentMethod: "Credit Card",
   },
-];
+]
 
 export default function TableDemo() {
   return (
@@ -83,5 +83,5 @@ export default function TableDemo() {
         </TableRow>
       </TableFooter>
     </Table>
-  );
+  )
 }

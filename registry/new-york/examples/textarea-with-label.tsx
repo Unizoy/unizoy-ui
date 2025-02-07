@@ -1,5 +1,5 @@
-import { Label } from "@/registry/new-york/ui/label";
-import { Textarea } from "@/registry/new-york/ui/textarea";
+import { Label } from "@/registry/new-york/ui/label"
+import { Textarea } from "@/registry/new-york/ui/textarea"
 
 export default function TextareaWithLabel() {
   return (
@@ -7,5 +7,5 @@ export default function TextareaWithLabel() {
       <Label htmlFor="message">Your message</Label>
       <Textarea placeholder="Type your message here." id="message" />
     </div>
-  );
+  )
 }

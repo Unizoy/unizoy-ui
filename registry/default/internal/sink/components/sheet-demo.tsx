@@ -1,6 +1,6 @@
-import { Button } from "@/registry/default/ui/button";
-import { Input } from "@/registry/default/ui/input";
-import { Label } from "@/registry/default/ui/label";
+import { Button } from "@/registry/default/ui/button"
+import { Input } from "@/registry/default/ui/input"
+import { Label } from "@/registry/default/ui/label"
 import {
   Sheet,
   SheetClose,
@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/registry/default/ui/sheet";
+} from "@/registry/default/ui/sheet"
 
 export function SheetDemo() {
   return (
@@ -46,5 +46,5 @@ export function SheetDemo() {
         </SheetFooter>
       </SheetContent>
     </Sheet>
-  );
+  )
 }

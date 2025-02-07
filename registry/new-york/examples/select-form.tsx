@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import Link from "next/link"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
-import { toast } from "@/registry/new-york/hooks/use-toast";
-import { Button } from "@/registry/new-york/ui/button";
+import { toast } from "@/registry/new-york/hooks/use-toast"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Form,
   FormControl,
@@ -15,14 +15,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/new-york/ui/form";
+} from "@/registry/new-york/ui/form"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select";
+} from "@/registry/new-york/ui/select"
 
 const FormSchema = z.object({
   email: z
@@ -30,12 +30,12 @@ const FormSchema = z.object({
       required_error: "Please select an email to display.",
     })
     .email(),
-});
+})
 
 export default function SelectForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-  });
+  })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
@@ -45,7 +45,7 @@ export default function SelectForm() {
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
-    });
+    })
   }
 
   return (
@@ -80,5 +80,5 @@ export default function SelectForm() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
-  );
+  )
 }

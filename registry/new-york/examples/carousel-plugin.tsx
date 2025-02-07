@@ -1,19 +1,19 @@
-import * as React from "react";
-import Autoplay from "embla-carousel-autoplay";
+import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
 
-import { Card, CardContent } from "@/registry/new-york/ui/card";
+import { Card, CardContent } from "@/registry/new-york/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/registry/new-york/ui/carousel";
+} from "@/registry/new-york/ui/carousel"
 
 export default function CarouselPlugin() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
-  );
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
 
   return (
     <Carousel
@@ -38,5 +38,5 @@ export default function CarouselPlugin() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  );
+  )
 }

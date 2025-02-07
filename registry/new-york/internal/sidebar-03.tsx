@@ -1,12 +1,7 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import {
-  Check,
-  ChevronsUpDown,
-  GalleryVerticalEnd,
-  Search,
-} from "lucide-react";
+import * as React from "react"
+import { Check, ChevronsUpDown, GalleryVerticalEnd, Search } from "lucide-react"
 
 import {
   Breadcrumb,
@@ -15,15 +10,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
+} from "@/registry/new-york/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
-import { Label } from "@/registry/new-york/ui/label";
-import { Separator } from "@/registry/new-york/ui/separator";
+} from "@/registry/new-york/ui/dropdown-menu"
+import { Label } from "@/registry/new-york/ui/label"
+import { Separator } from "@/registry/new-york/ui/separator"
 import {
   Sidebar,
   SidebarContent,
@@ -42,11 +37,11 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/registry/new-york/ui/sidebar";
+} from "@/registry/new-york/ui/sidebar"
 
-export const iframeHeight = "800px";
+export const iframeHeight = "800px"
 
-export const description = "A sidebar with nested navigation.";
+export const description = "A sidebar with nested navigation."
 
 // This is sample data.
 const data = {
@@ -187,7 +182,7 @@ const data = {
       ],
     },
   ],
-};
+}
 
 export default function Component() {
   return (
@@ -271,5 +266,5 @@ export default function Component() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

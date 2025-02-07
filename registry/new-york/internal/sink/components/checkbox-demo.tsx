@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { Checkbox } from "@/registry/new-york/ui/checkbox";
+import { Checkbox } from "@/registry/new-york/ui/checkbox"
 
 export function CheckboxDemo() {
   return (
@@ -13,5 +13,5 @@ export function CheckboxDemo() {
         Accept terms and conditions
       </label>
     </div>
-  );
+  )
 }

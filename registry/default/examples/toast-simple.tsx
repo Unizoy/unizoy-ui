@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { useToast } from "@/registry/default/hooks/use-toast";
-import { Button } from "@/registry/default/ui/button";
+import { useToast } from "@/registry/default/hooks/use-toast"
+import { Button } from "@/registry/default/ui/button"
 
 export default function ToastSimple() {
-  const { toast } = useToast();
+  const { toast } = useToast()
 
   return (
     <Button
@@ -12,10 +12,10 @@ export default function ToastSimple() {
       onClick={() => {
         toast({
           description: "Your message has been sent.",
-        });
+        })
       }}
     >
       Show Toast
     </Button>
-  );
+  )
 }

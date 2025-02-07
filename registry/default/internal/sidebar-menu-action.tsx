@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   Frame,
@@ -7,14 +7,14 @@ import {
   MoreHorizontal,
   PieChart,
   Send,
-} from "lucide-react";
+} from "lucide-react"
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu";
+} from "@/registry/default/ui/dropdown-menu"
 import {
   Sidebar,
   SidebarContent,
@@ -26,7 +26,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/registry/default/ui/sidebar";
+} from "@/registry/default/ui/sidebar"
 
 const projects = [
   {
@@ -54,7 +54,7 @@ const projects = [
     url: "#",
     icon: Send,
   },
-];
+]
 
 export default function AppSidebar() {
   return (
@@ -100,5 +100,5 @@ export default function AppSidebar() {
         </SidebarContent>
       </Sidebar>
     </SidebarProvider>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { ChevronDown, Slash } from "lucide-react";
+import { ChevronDown, Slash } from "lucide-react"
 
 import {
   Breadcrumb,
@@ -7,13 +7,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb";
+} from "@/registry/new-york/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu";
+} from "@/registry/new-york/ui/dropdown-menu"
 
 export default function BreadcrumbWithDropdown() {
   return (
@@ -46,5 +46,5 @@ export default function BreadcrumbWithDropdown() {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  );
+  )
 }
