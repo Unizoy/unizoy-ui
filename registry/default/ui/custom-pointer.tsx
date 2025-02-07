@@ -2,6 +2,7 @@ import * as React from "react"
 import gsap from "gsap"
 import { cn } from "../lib/utils"
 const colorPairs = [
+
   { primary: "#FF6B6B", secondary: "#4ECDC4" },
   { primary: "#A17FB0", secondary: "#5D5FEF" },
   { primary: "#FF9F43", secondary: "#FF5E7D" },
@@ -9,9 +10,12 @@ const colorPairs = [
   { primary: "#08AEEA", secondary: "#2AF598" },
 ]
 
-const getRandomColorPair = () => {
-  return colorPairs[Math.floor(Math.random() * colorPairs.length)]
-}
+
+
+ const getRandomColorPair = () => {
+  return colorPairs[Math.floor(Math.random() * colorPairs.length)];
+};
+
 
 interface CursorIconProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -114,19 +118,7 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
     >
       {!isCursorIcon && (
         <CursorIcon style={{ color: colors.primary }}>
-          <svg
-            style={{ rotate: "-70deg" }}
-            className="scale-150"
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 16 16"
-            height="20px"
-            width="20px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
-          </svg>
+        <svg style={{ rotate: "-70deg" }} className="scale-150" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path></svg>
         </CursorIcon>
       )}
       {children &&
