@@ -245,6 +245,36 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "custom-pointer":{
+        name:"custom-pointer",
+        description:"",
+        type:"registry:ui",
+        registryDependencies:undefined,
+        files: [{
+        path: "registry/new-york/ui/custom-pointer.tsx",
+        type: "registry:ui",
+        target: ""
+        }],
+        categories: undefined,
+        component: React.lazy(() => import("@/registry/new-york/ui/custom-pointer.tsx")),
+        source: "",
+        meta: undefined,
+    },
+    "custom-pointer-demo":{
+        name:"custom-pointer-demo",
+        description:"",
+        type:"registry:example",
+        registryDependencies:undefined,
+        files: [{
+        path: "registry/new-york/examples/custom-pointer-demo.tsx",
+        type: "registry:example",
+        target: ""
+        }],
+        categories:["custom-pointer"],
+        component: React.lazy(() => import("@/registry/new-york/examples/custom-pointer-demo.tsx")),
+        source: "",
+        meta: undefined,
+    },
     "dialog": {
       name: "dialog",
       description: "",

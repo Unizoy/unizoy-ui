@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "lib/utils.ts",
-      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\nexport  function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {\n  return (node: T | null) => {\n    refs.forEach((ref) => {\n      if (typeof ref === \"function\") {\n        ref(node);\n      } else if (ref && \"current\" in ref) {\n        (ref as React.MutableRefObject<T | null>).current = node;\n      }\n    });\n  };\n}",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\r\nimport { twMerge } from \"tailwind-merge\"\r\n\r\nexport function cn(...inputs: ClassValue[]) {\r\n  return twMerge(clsx(inputs))\r\n}\r\n",
       "type": "registry:lib",
       "target": ""
     }
