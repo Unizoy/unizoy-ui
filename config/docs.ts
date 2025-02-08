@@ -421,6 +421,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/tooltip",
           items: [],
         },
+        {
+          title: "Typewriter",
+          href: "/docs/components/typewriter",
+          items: [],
+        }
       ],
     },
   ],
