@@ -15,7 +15,7 @@ interface TypeWriterProps extends HTMLAttributes<HTMLDivElement> {
   textArray?: TextAndClass[]
   delay?: number
   duration?: number
-  ease?: string
+  ease?:  gsap.EaseString | gsap.EaseFunction,
   className?: string
   start?: string | number | ((tag?: ScrollTrigger) => string | number)
   end?: string | number | ((tag?: ScrollTrigger) => string | number)
