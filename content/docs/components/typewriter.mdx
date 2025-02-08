@@ -1,0 +1,104 @@
+---
+title: Type Writer
+description: A Type Writer effect to your texts.
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/accordion
+---
+
+<ComponentPreview 
+  name="typewriter-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+<Step>Make a file file for cn and mergerRef functions and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+
+export  function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
+  return (node: T | null) => {
+    refs.forEach((ref) => {
+      if (typeof ref === "function") {
+        ref(node);
+      } else if (ref && "current" in ref) {
+        (ref as React.MutableRefObject<T | null>).current = node;
+      }
+    });
+  };
+}
+
+```
+
+<Step>Add this configurations to `tailwind.config.js` file</Step>
+
+```bash
+ extend: {
+      keyframes: {
+        blinkBorder: {
+          "0%, 100%": {
+            borderColor: "transparent",
+          },
+          "50%": {
+            borderColor: "#3B82F6",
+          },
+        },
+      },
+      animation: {
+        blinkBorder: "blinkBorder 1.5s infinite ease-in-out",
+      },
+    },
+```
+
+<Step>Make a file and copy paste this code in a file with name `type-writer.tsx`</Step>
+
+<ComponentSource name="typewriter"/>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+| Name           | Type                                                  | Description                                                            |
+| -------------- | ----------------------------------------------------- | ---------------------------------------------------------------------- |
+| `staticText`   | `Array<{ text: string, className?: string }>`        | An array of objects containing text and optional class names.         |
+| `textArray`    | `Array<{ text: string, className?: string }>`                                           | An array of strings used for dynamic text rendering.                  |
+| `children`     | `ReactNode`                                          | React children to be rendered inside the component.                   |
+| `delay`        | `number`                                             | Delay before the animation starts (in seconds). Default is `0`.       |
+| `start`        | `string \| number \| () => string \| number`         | Animation start point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start). Default is `"top 90%"`. |
+| `end`          | `string \| number \| () => string \| number`         | Animation end point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end). Default is `"top"`. |
+| `duration`     | `number`                                             | Duration of the animation (in seconds). Default is `0.5`.             |
+| `ease`         | `gsap.EaseString | gsap.EaseFunction`                                             | Easing function for animation, [GSAP docs](https://gsap.com/docs/v3/Eases). Default is `"none"`. |
+| `className`    | `string`                                             | Additional CSS classes for styling. Default is an empty string.       |
+| `arrayInterval`| `number`                                             | Time interval (in milliseconds) between each text change. Default is `3000`. |
+| `deleteSpeed`  | `number`                                             | Speed (in seconds) at which text is deleted during animations. Default is `0.1`. |
+| `props`        | `object`                                             | Any additional props passed to the component.                         |

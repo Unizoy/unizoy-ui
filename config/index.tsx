@@ -63,7 +63,38 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/new-york/examples/text-slider-demo.tsx")),
     source: "",
     meta: undefined,
-  },},
+  },
+"typewriter": {
+    name: "typewriter",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/typewriter.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/typewriter.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "typewriter-demo": {
+    name: "typewriter-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["typewriter"],
+    files: [{
+      path: "registry/new-york/examples/typewriter-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/typewriter-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
+},
   "default": {
     "custom-pointer": {
       name: "custom-pointer",
@@ -152,6 +183,36 @@ export const Index: Record<string, any> = {
       }],
       categories: undefined,
       component: React.lazy(() => import("@/registry/default/examples/text-slider-demo.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "typewriter": {
+      name: "typewriter",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/typewriter.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/typewriter.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "typewriter-demo": {
+      name: "typewriter-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/typewriter-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/examples/typewriter-demo.tsx")),
       source: "",
       meta: undefined,
     },
