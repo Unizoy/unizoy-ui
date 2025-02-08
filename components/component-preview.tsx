@@ -54,7 +54,7 @@ export function ComponentPreview({
   //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
   //   and also Alex told to remove options for switching theme so no need of it
   //1 is default  and 0 is new-york
-  const Code = Codes[1]
+  const Code = Codes[index]
  
   
 

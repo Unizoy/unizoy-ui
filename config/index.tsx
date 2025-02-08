@@ -33,7 +33,7 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-  },
+  
   "text-slider": {
     name: "text-slider",
     description: "",
@@ -53,7 +53,7 @@ export const Index: Record<string, any> = {
     name: "text-slider-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: undefined,
+    registryDependencies: ["text-slider"],
     files: [{
       path: "registry/new-york/examples/text-slider-demo.tsx",
       type: "registry:example",
@@ -63,7 +63,7 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/new-york/examples/text-slider-demo.tsx")),
     source: "",
     meta: undefined,
-  },
+  },},
   "default": {
     "custom-pointer": {
       name: "custom-pointer",
