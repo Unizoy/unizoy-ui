@@ -88,17 +88,17 @@ export  function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
 </Tabs>
 
 ### Props
-| Name           | Type                                                  | Description                                                            |
-| -------------- | ----------------------------------------------------- | ---------------------------------------------------------------------- |
-| `staticText`   | `Array<{ text: string, className?: string }>`        | An array of objects containing text and optional class names.         |
-| `textArray`    | `Array<{ text: string, className?: string }>`                                           | An array of strings used for dynamic text rendering.                  |
-| `children`     | `ReactNode`                                          | React children to be rendered inside the component.                   |
-| `delay`        | `number`                                             | Delay before the animation starts (in seconds). Default is `0`.       |
+| Name           | Type                                                 | Description                                                                                                               |
+| -------------- | -----------------------------------------------------| ------------------------------------------------------------------------------------------------------------------------- |
+| `staticText`   | `Array<{ text: string, className?: string }>`        | An array of objects containing text and optional class names.                                                             |
+| `textArray`    | `Array<{ text: string, className?: string }>`        | An array of strings used for dynamic text rendering.                                                                      |
+| `children`     | `ReactNode`                                          | React children to be rendered inside the component.                                                                       |
+| `delay`        | `number`                                             | Delay before the animation starts (in seconds). Default is `0`.                                                           |
 | `start`        | `string \| number \| () => string \| number`         | Animation start point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start). Default is `"top 90%"`. |
-| `end`          | `string \| number \| () => string \| number`         | Animation end point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end). Default is `"top"`. |
-| `duration`     | `number`                                             | Duration of the animation (in seconds). Default is `0.5`.             |
-| `ease`         | `gsap.EaseString | gsap.EaseFunction`                                             | Easing function for animation, [GSAP docs](https://gsap.com/docs/v3/Eases). Default is `"none"`. |
-| `className`    | `string`                                             | Additional CSS classes for styling. Default is an empty string.       |
-| `arrayInterval`| `number`                                             | Time interval (in milliseconds) between each text change. Default is `3000`. |
-| `deleteSpeed`  | `number`                                             | Speed (in seconds) at which text is deleted during animations. Default is `0.1`. |
-| `props`        | `object`                                             | Any additional props passed to the component.                         |
+| `end`          | `string \| number \| () => string \| number`         | Animation end point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end). Default is `"top"`.         |
+| `duration`     | `number`                                             | Duration of the animation (in seconds). Default is `0.5`.                                                                 |
+| `ease`         | `gsap.EaseString \| gsap.EaseFunction`               | Easing function for animation, [GSAP docs](https://gsap.com/docs/v3/Eases). Default is `"none"`.                          |
+| `className`    | `string`                                             | Additional CSS classes for styling. Default is an empty string.                                                           |
+| `arrayInterval`| `number`                                             | Time interval (in milliseconds) between each text change. Default is `3000`.                                              |
+| `deleteSpeed`  | `number`                                             | Speed (in seconds) at which text is deleted during animations. Default is `0.1`.                                          |
+| `props`        | `object`                                             | Any additional props passed to the component.                                                                             |
