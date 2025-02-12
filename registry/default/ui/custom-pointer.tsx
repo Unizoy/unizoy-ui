@@ -62,6 +62,7 @@ interface CustomCursorProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
   const [colors, setColors] = React.useState(getRandomColorPair)
+  const [isCursorIcon, setIsCursorIcon] = React.useState(false)
   const localRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
@@ -99,12 +100,22 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
     }
   }, [])
 
-  let isCursorIcon = false
-  React.Children.forEach(children, (child) => {
-    if (((child as any)?.type as any).displayName === "CursorIcon") {
-      isCursorIcon = true
-    }
-  })
+  // let isCursorIcon = true;
+  React.useEffect(() => {
+    React.Children.forEach(children, (child) => {
+      if (child && React.isValidElement(child)) {
+        console.log(child)
+
+        // Ensure child.type is a function before accessing its name
+        if (
+          typeof child.type === "function" &&
+          child.type.name === "CursorIcon"
+        ) {
+          setIsCursorIcon(true)
+        }
+      }
+    })
+  }, [children])
 
   return (
     <div
@@ -137,7 +148,7 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
                 style: {
                   color: colors.primary,
                   backgroundColor:
-                    (child.type as any).displayName !== "CursorIcon"
+                    (child.type as any).name !== "CursorIcon"
                       ? colors.secondary
                       : undefined,
                 } as React.CSSProperties, // Ensure TypeScript recognizes this as a valid style object
