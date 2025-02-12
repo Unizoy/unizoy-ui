@@ -33,6 +33,21 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "custom-pointer-custom-cursor": {
+      name: "custom-pointer-custom-cursor",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["custom-cursor"],
+      files: [{
+        path: "registry/new-york/examples/custom-pointer-custom-cursor.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/new-york/examples/custom-pointer-custom-cursor.tsx")),
+      source: "",
+      meta: undefined,
+    },
   
   "text-slider": {
     name: "text-slider",
@@ -125,6 +140,11 @@ export const Index: Record<string, any> = {
     meta: undefined,
   },
 },
+
+
+
+
+
   "default": {
     "custom-pointer": {
       name: "custom-pointer",
@@ -183,6 +203,21 @@ export const Index: Record<string, any> = {
       }],
       categories: ["custom-pointer"],
       component: React.lazy(() => import("@/registry/default/examples/custom-pointer-demo.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "custom-pointer-custom-cursor": {
+      name: "custom-pointer-custom-cursor",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/custom-pointer-custom-cursor.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      categories: ["custom-pointer"],
+      component: React.lazy(() => import("@/registry/default/examples/custom-pointer-custom-cursor.tsx")),
       source: "",
       meta: undefined,
     },
@@ -277,7 +312,4 @@ export const Index: Record<string, any> = {
       meta: undefined,
     },
   }
-
-
-
 }
