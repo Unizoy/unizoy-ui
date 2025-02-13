@@ -169,6 +169,36 @@ export const Index: Record<string, any> = {
     source: "",
     meta: undefined,
   },
+  "animated-tooltip": {
+    name: "animated-tooltip",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/animated-tooltip.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/animated-tooltip.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "animated-tooltip-demo": {
+    name: "animated-tooltip-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["animated-tooltip"],
+    files: [{
+      path: "registry/new-york/examples/animated-tooltip-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/animated-tooltip-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
 },
 
 
@@ -368,6 +398,36 @@ export const Index: Record<string, any> = {
       }],
       categories: undefined,
       component: React.lazy(() => import("@/registry/default/examples/navigation-icon-demo.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "animated-tooltip": {
+      name: "animated-tooltip",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/animated-tooltip.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/animated-tooltip.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "animated-tooltip-demo": {
+      name: "animated-tooltip-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/animated-tooltip-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-demo.tsx")),
       source: "",
       meta: undefined,
     },

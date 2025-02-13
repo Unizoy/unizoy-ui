@@ -177,6 +177,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Animated Tooltip",
+          href: "/docs/components/animated-tooltip",
+          items: [],
+        },
+        {
           title: "Aspect Ratio",
           href: "/docs/components/aspect-ratio",
           items: [],

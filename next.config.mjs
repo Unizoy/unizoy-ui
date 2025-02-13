@@ -7,6 +7,9 @@ const nextConfig = {
       "/blocks/*": ["./registry/**/*"],
     },
   },
+  images: {
+    domains: ["images.unsplash.com"], // Add the Unsplash domain here
+  },
   reactStrictMode: true,
   swcMinify: true,
   images: {
