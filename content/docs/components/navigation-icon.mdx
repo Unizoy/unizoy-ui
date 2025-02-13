@@ -1,0 +1,87 @@
+---
+title: Navigation Icon
+description: When hovering over the navigation icon, the text should move upward or downward based on entry direction. Clicking the icon triggers an alert.
+links:
+doc: https://www.radix-ui.com/docs/primitives/components/accordion
+---
+
+{" "}
+
+<ComponentPreview
+  name="navigation-icon-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+{" "}
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+{" "}
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap
+```
+
+{" "}
+
+<Step>Make a file file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+{" "}
+
+<Step>
+  Make a file and copy paste this code in a file with name Navigation Icon
+</Step>
+
+{" "}
+
+<ComponentSource name="navigation-icon" />
+
+  </Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
+
+### Props
+
+| Name             | Type       | Description                                                    |
+| ---------------- | ---------- | -------------------------------------------------------------- |
+| `parentDivClass` | `string`   | Additional class names for the parent div.                     |
+| `innerDivClass`  | `string`   | Additional class names for the inner div.                      |
+| `borderClass`    | `string`   | CSS class for border styling applied on click.                 |
+| `textClass`      | `string`   | Class for styling the text.                                    |
+| `translateYUp`   | `number`   | Y translation when hovering from the top. Default is 130.      |
+| `translateYDown` | `number`   | Y translation when hovering from the bottom. Default is 130.   |
+| `opposite`       | `boolean`  | If true, reverses the hover direction logic. Default is false. |
+| `duration`       | `number`   | Animation duration in seconds. Default is 0.5.                 |
+| `stagger`        | `number`   | Delay between animation of elements. Default is 0.1.           |
+| `onClick`        | `function` | Callback function triggered when the icon is clicked.          |

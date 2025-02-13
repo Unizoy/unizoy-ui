@@ -312,6 +312,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Navigation Icon",
+          href: "/docs/components/navigation-icon",
+          items: [],
+        },
+        {
           title: "Navigation Menu",
           href: "/docs/components/navigation-menu",
           items: [],

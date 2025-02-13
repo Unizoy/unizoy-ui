@@ -139,6 +139,36 @@ export const Index: Record<string, any> = {
     source: "",
     meta: undefined,
   },
+  "navigation-icon": {
+    name: "navigation-icon",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/navigation-icon.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/navigation-icon.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "navigation-icon-demo": {
+    name: "navigation-icon-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["navigation-icon"],
+    files: [{
+      path: "registry/new-york/examples/navigation-icon-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/navigation-icon-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
 },
 
 
@@ -308,6 +338,36 @@ export const Index: Record<string, any> = {
       }],
       categories: undefined,
       component: React.lazy(() => import("@/registry/default/examples/typewriter-demo.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "navigation-icon": {
+      name: "navigation-icon",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/navigation-icon.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/navigation-icon.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "navigation-icon-demo": {
+      name: "navigation-icon-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/navigation-icon-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/examples/navigation-icon-demo.tsx")),
       source: "",
       meta: undefined,
     },
