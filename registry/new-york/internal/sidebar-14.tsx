@@ -24,7 +24,7 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from "@/registry/new-york/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 export const iframeHeight = "800px"
 

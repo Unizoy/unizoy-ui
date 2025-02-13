@@ -7,7 +7,7 @@ import { z } from "zod"
 
 import { cn } from "@/lib/utils"
 import { toast } from "@/registry/new-york/hooks/use-toast"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
@@ -24,7 +24,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select"
+} from "@/components/ui/select"
 import { Textarea } from "@/registry/new-york/ui/textarea"
 
 const profileFormSchema = z.object({

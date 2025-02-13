@@ -21,15 +21,15 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/registry/new-york/ui/resizable"
-import { Separator } from "@/registry/new-york/ui/separator"
+} from "@/components/ui/resizable"
+import { Separator } from "@/components/ui/separator"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york/ui/tabs"
-import { TooltipProvider } from "@/registry/new-york/ui/tooltip"
+} from "@/components/ui/tabs"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import { AccountSwitcher } from "@/app/(app)/examples/mail/components/account-switcher"
 import { MailDisplay } from "@/app/(app)/examples/mail/components/mail-display"
 import { MailList } from "@/app/(app)/examples/mail/components/mail-list"

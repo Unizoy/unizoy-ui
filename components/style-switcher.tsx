@@ -11,7 +11,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select"
+} from "@/components/ui/select"
 import { Style, styles } from "@/registry/registry-styles"
 
 export function StyleSwitcher({ className, ...props }: SelectTriggerProps) {

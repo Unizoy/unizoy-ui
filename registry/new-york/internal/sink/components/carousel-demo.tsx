@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { Card, CardContent } from "@/registry/new-york/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,

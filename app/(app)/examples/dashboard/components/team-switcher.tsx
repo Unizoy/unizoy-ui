@@ -9,7 +9,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york/ui/avatar"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -18,7 +18,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/registry/new-york/ui/command"
+} from "@/components/ui/command"
 import {
   Dialog,
   DialogContent,
@@ -41,7 +41,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select"
+} from "@/components/ui/select"
 
 const groups = [
   {

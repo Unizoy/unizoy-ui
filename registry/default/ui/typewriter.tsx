@@ -1,3 +1,4 @@
+"use client";
 import { forwardRef, useRef, HTMLAttributes, useEffect, useState } from "react"
 import gsap from "gsap"
 import { cn, mergeRefs } from "../lib/utils"

@@ -5,14 +5,14 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york/ui/avatar"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card"
+} from "@/components/ui/card"
 import { Input } from "@/registry/new-york/ui/input"
 import {
   Select,
@@ -20,8 +20,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select"
-import { Separator } from "@/registry/new-york/ui/separator"
+} from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
 
 export function DemoShareDocument() {
   return (

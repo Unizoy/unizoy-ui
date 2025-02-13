@@ -2,7 +2,7 @@ import { Calendar } from "@/registry/new-york/ui/calendar"
 import {
   SidebarGroup,
   SidebarGroupContent,
-} from "@/registry/new-york/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 export function DatePicker() {
   return (

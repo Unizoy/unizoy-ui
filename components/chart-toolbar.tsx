@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { ChartCodeViewer } from "@/components/chart-code-viewer"
-import { Separator } from "@/registry/new-york/ui/separator"
+import { Separator } from "@/components/ui/separator"
 
 import "@/styles/mdx.css"
 import {

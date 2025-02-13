@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card"
+} from "@/components/ui/card"
 import { Label } from "@/registry/new-york/ui/label"
 import { Switch } from "@/registry/new-york/ui/switch"
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useToast } from "@/registry/new-york/hooks/use-toast"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/registry/new-york/ui/toast"
 
 export function ToastDemo() {

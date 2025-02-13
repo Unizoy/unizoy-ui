@@ -7,12 +7,12 @@ import { useRouter } from "next/navigation"
 import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
 import { useMetaColor } from "@/hooks/use-meta-color"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Drawer,
   DrawerContent,
   DrawerTrigger,
-} from "@/registry/new-york/ui/drawer"
+} from "@/components/ui/drawer"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)

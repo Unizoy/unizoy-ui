@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { NavItem, NavItemWithChildren } from "types/nav"
 
 import { docsConfig } from "@/config/docs"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 
 interface DocsPagerProps {
   doc: Doc

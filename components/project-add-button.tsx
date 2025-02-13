@@ -4,12 +4,12 @@ import { Check, PlusCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { useProject } from "@/hooks/use-project"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/registry/new-york/ui/tooltip"
+} from "@/components/ui/tooltip"
 
 export function ProjectAddButton({
   name,

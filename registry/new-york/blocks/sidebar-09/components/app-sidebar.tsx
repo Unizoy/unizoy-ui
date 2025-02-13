@@ -17,7 +17,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/registry/new-york/ui/sidebar"
+} from "@/components/ui/sidebar"
 import { Switch } from "@/registry/new-york/ui/switch"
 
 // This is sample data

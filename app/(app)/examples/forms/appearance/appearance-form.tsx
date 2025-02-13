@@ -7,7 +7,7 @@ import { z } from "zod"
 
 import { cn } from "@/lib/utils"
 import { toast } from "@/registry/new-york/hooks/use-toast"
-import { Button, buttonVariants } from "@/registry/new-york/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import {
   Form,
   FormControl,
