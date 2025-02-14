@@ -1,0 +1,79 @@
+---
+title: Copy Icon
+description: When hovering over the clipboard icon, two hidden icons should move upward. When the hover effect is removed, they should move downward and become hidden again.
+links:
+doc: https://www.radix-ui.com/docs/primitives/components/accordion
+---
+
+{" "}
+<ComponentPreview
+  name="copy-icon-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+{" "}
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+{" "}
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap react-icons
+```
+
+{" "}
+<Step>Make a file file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+{" "}
+<Step>Make a file and copy paste this code in a file with name Copy Icon</Step>
+
+{" "}
+<ComponentSource name="copy-icon" />
+
+  </Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
+
+### Props
+
+| Name              | Type       | Description                                                                                      |
+| ----------------- | ---------- | ------------------------------------------------------------------------------------------------ |
+| `iconClass`       | `string`   | Additional class names for the main copy icon.                                                   |
+| `hiddenIconClass` | `string`   | Additional class names for the hidden icons.                                                     |
+| `startY`          | `number`   | Initial Y position before animation. Default is `30`.                                            |
+| `enterY`          | `number`   | Y position when hovered. Default is `0`.                                                         |
+| `endY`            | `number`   | Y position when hiding. If not provided, defaults to `startY + 30`.                              |
+| `duration`        | `number`   | Duration of the animation (in seconds). Default is `0.5`.                                        |
+| `scaleFactor`     | `number`   | Scale effect applied to the main icon on hover. Default is `1.1`.                                |
+| `easing`          | `string`   | Easing function for animation, [GSAP docs](https://gsap.com/docs/v3/Eases). Default is `"none"`. |
+| `onClick`         | `function` | Callback function triggered when the main icon is clicked.                                       |
+| `onHtmlClick`     | `function` | Callback function triggered when the MdOutlineHtml icon is clicked.                              |
+| `onWebflowClick`  | `function` | Callback function triggered when the SiWebflow icon is clicked.                                  |

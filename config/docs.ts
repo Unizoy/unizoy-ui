@@ -168,6 +168,11 @@ export const docsConfig: DocsConfig = {
         },
        
         {
+          title: "Copy Icon",
+          href: "/docs/components/copy-icon",
+          items:[]
+        },
+        {
           title: "Custom Pointer",
           href: "/docs/components/custom-pointer",
           items:[]
