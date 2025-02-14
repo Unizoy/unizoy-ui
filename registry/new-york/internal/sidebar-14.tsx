@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 import {
   Sidebar,
   SidebarContent,

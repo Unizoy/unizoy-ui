@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Switch } from "@/registry/new-york/ui/switch"
+import { Switch } from "@/components/ui/switch"
 
 const notifications = [
   {

@@ -21,7 +21,7 @@ import {
   Users2,
 } from "lucide-react"
 
-import { Badge } from "@/registry/new-york/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -29,7 +29,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -48,15 +48,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/registry/new-york/ui/input"
+import { Input } from "@/components/ui/input"
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
-} from "@/registry/new-york/ui/pagination"
-import { Progress } from "@/registry/new-york/ui/progress"
+} from "@/components/ui/pagination"
+import { Progress } from "@/components/ui/progress"
 import { Separator } from "@/components/ui/separator"
-import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
   Table,
   TableBody,
@@ -64,7 +64,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/new-york/ui/table"
+} from "@/components/ui/table"
 import {
   Tabs,
   TabsContent,

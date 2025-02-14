@@ -4,7 +4,7 @@ import * as React from "react"
 import { ArchiveX, Command, File, Inbox, Send, Trash2 } from "lucide-react"
 
 import { NavUser } from "@/registry/new-york/blocks/sidebar-09/components/nav-user"
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/components/ui/label"
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +18,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { Switch } from "@/registry/new-york/ui/switch"
+import { Switch } from "@/components/ui/switch"
 
 // This is sample data
 const data = {

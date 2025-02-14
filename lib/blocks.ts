@@ -13,7 +13,7 @@ export async function getAllBlockIds(
   categories: string[] = [],
   style: Style["name"] = "new-york"
 ): Promise<string[]> {
-  const { Index } = await import("@/__registry__")
+  const { Index } = await import("@/config")
   const index = z.record(registryItemSchema).parse(Index[style])
 
   return Object.values(index)

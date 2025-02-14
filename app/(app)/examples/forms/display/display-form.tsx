@@ -6,7 +6,7 @@ import { z } from "zod"
 
 import { toast } from "@/registry/new-york/hooks/use-toast"
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/registry/new-york/ui/checkbox"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   Form,
   FormControl,
@@ -15,7 +15,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/new-york/ui/form"
+} from "@/components/ui/form"
 
 const items = [
   {

@@ -28,7 +28,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar"
+} from "@/components/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -36,7 +36,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 import {
   Collapsible,
   CollapsibleContent,

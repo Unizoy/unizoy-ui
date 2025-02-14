@@ -1,4 +1,4 @@
-import { Calendar } from "@/registry/new-york/ui/calendar"
+import { Calendar } from "@/components/ui/calendar"
 import {
   SidebarGroup,
   SidebarGroupContent,

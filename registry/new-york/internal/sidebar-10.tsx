@@ -39,7 +39,7 @@ import {
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/registry/new-york/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import {
   Collapsible,
@@ -59,7 +59,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+} from "@/components/ui/popover"
 import { Separator } from "@/components/ui/separator"
 import {
   Sidebar,

@@ -1,6 +1,6 @@
 import { Search } from "lucide-react"
 
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/components/ui/label"
 import {
   SidebarGroup,
   SidebarGroupContent,

@@ -33,14 +33,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar"
+} from "@/components/ui/avatar"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/registry/new-york/ui/breadcrumb"
-import { Calendar } from "@/registry/new-york/ui/calendar"
+} from "@/components/ui/breadcrumb"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Collapsible,
   CollapsibleContent,

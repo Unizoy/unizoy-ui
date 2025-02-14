@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar"
+} from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/registry/new-york/ui/input"
+import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,

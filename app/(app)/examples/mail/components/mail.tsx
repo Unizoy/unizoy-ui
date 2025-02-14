@@ -16,7 +16,7 @@ import {
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Input } from "@/registry/new-york/ui/input"
+import { Input } from "@/components/ui/input"
 import {
   ResizableHandle,
   ResizablePanel,

@@ -24,7 +24,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+} from "@/components/ui/popover"
 import {
   Sidebar,
   SidebarContent,

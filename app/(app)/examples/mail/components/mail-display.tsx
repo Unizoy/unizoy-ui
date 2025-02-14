@@ -16,27 +16,27 @@ import {
 import {
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/registry/default/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york/ui/avatar"
+} from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/registry/new-york/ui/calendar"
+import { Calendar } from "@/components/ui/calendar"
 import {
   DropdownMenu,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/components/ui/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+} from "@/components/ui/popover"
 import { Separator } from "@/components/ui/separator"
-import { Switch } from "@/registry/new-york/ui/switch"
-import { Textarea } from "@/registry/new-york/ui/textarea"
+import { Switch } from "@/components/ui/switch"
+import { Textarea } from "@/components/ui/textarea"
 import {
   Tooltip,
   TooltipContent,

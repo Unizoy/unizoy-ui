@@ -21,7 +21,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/registry/new-york/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,8 +29,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Label } from "@/registry/new-york/ui/label"
-import { Switch } from "@/registry/new-york/ui/switch"
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
 
 export function PresetActions() {
   const [open, setIsOpen] = React.useState(false)

@@ -9,7 +9,7 @@ import { z } from "zod"
 import { cn } from "@/lib/utils"
 import { toast } from "@/registry/new-york/hooks/use-toast"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/registry/new-york/ui/calendar"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Command,
   CommandEmpty,
@@ -26,13 +26,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/new-york/ui/form"
-import { Input } from "@/registry/new-york/ui/input"
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+} from "@/components/ui/popover"
 
 const languages = [
   { label: "English", value: "en" },
