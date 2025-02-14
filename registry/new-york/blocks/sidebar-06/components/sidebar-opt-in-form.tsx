@@ -1,12 +1,12 @@
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card"
-import { SidebarInput } from "@/registry/new-york/ui/sidebar"
+} from "@/components/ui/card"
+import { SidebarInput } from "@/components/ui/sidebar"
 
 export function SidebarOptInForm() {
   return (

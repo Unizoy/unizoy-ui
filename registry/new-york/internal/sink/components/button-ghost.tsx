@@ -1,4 +1,4 @@
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 
 export function ButtonGhost() {
   return <Button variant="ghost">Ghost</Button>

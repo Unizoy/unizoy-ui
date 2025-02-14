@@ -1,5 +1,5 @@
 import * as React from "react"
-import { registryItemFileSchema } from "shadcn/registry"
+import { registryItemFileSchema } from "@/packages/shadcn/src/registry/schema"
 import { z } from "zod"
 
 import { highlightCode } from "@/lib/highlight-code"

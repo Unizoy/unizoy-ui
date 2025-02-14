@@ -12,7 +12,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/registry/new-york/ui/context-menu"
+} from "@/components/ui/context-menu"
 
 export function ContextMenuDemo() {
   return (
