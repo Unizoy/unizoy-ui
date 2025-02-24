@@ -177,7 +177,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/custom-pointer",
           items:[]
         },
-        
+        {
+          title:"Product Preview",
+          href:"/docs/components/product-preview",
+          items:[]
+        },
         {
           title:"Text Slider",
           href:"/docs/components/text-slider",

@@ -48,7 +48,36 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-  
+  "product-preview": {
+    name: "product-preview",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/product-preview.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/product-preview.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "product-preview-demo": {
+    name: "product-preview-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["product-preview"],
+    files: [{
+      path: "registry/new-york/examples/product-preview-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/product-preview-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
   "text-slider": {
     name: "text-slider",
     description: "",
