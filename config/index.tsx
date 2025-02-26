@@ -48,7 +48,7 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-  "product-preview": {
+    "product-preview": {
     name: "product-preview",
     description: "",
     type: "registry:ui",
@@ -75,6 +75,36 @@ export const Index: Record<string, any> = {
     }],
     categories: undefined,
     component: React.lazy(() => import("@/registry/new-york/examples/product-preview-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "rotating-text": {
+    name: "rotating-text",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/rotating-text.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/rotating-text.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "rotating-text-demo": {
+    name: "rotating-text-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["rotating-text"],
+    files: [{
+      path: "registry/new-york/examples/rotating-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/rotating-text-demo.tsx")),
     source: "",
     meta: undefined,
   },

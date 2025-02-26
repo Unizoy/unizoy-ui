@@ -183,6 +183,11 @@ export const docsConfig: DocsConfig = {
           items:[]
         },
         {
+          title:"Rotating Text",
+          href:"/docs/components/rotating-text",
+          items:[]
+        },
+        {
           title:"Text Slider",
           href:"/docs/components/text-slider",
           items:[]
