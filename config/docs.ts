@@ -166,6 +166,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/accordion",
           items: [],
         },
+        {
+          title: "Animated Tooltip",
+          href: "/docs/components/animated-tooltip",
+          items: [],
+        },
        
         {
           title: "Copy Icon",
@@ -176,6 +181,11 @@ export const docsConfig: DocsConfig = {
           title: "Custom Pointer",
           href: "/docs/components/custom-pointer",
           items:[]
+        },
+        {
+          title: "Navigation Icon",
+          href: "/docs/components/navigation-icon",
+          items:[],
         },
         
         {
@@ -188,7 +198,8 @@ export const docsConfig: DocsConfig = {
           title: "Typewriter",
           href: "/docs/components/typewriter",
           items: [],
-        }
+        },
+        
       ],
     },
   ],

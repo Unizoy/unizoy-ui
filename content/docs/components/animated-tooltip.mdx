@@ -1,0 +1,110 @@
+---
+title: Animated Tooltip
+description: A customizable animated tooltip component.
+---
+
+{" "}
+
+<ComponentPreview
+  name="animated-tooltip-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+{" "}
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+{" "}
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap
+```
+
+{" "}
+
+<Step>Make a file file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+{" "}
+
+<Step>
+  Make a file and copy paste this code in a file with name  Animated Tooltip
+</Step>
+
+{" "}
+
+<ComponentSource name="animated-tooltip" />
+<Step>
+  Provide an array of items with the following properties: id, name, designation, and imgUrl.
+</Step>
+```tsx
+const items = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-.....",
+    },
+    {
+      id: 2,
+      name: "Robert Johnson",
+      designation: "Product Manager",
+      image:
+        "https://images.unsplash.com/photo-....",
+    },
+    ......
+    ......
+    ]
+```
+
+<Step>
+  If Image is not Visible,then modify NextConfig
+</Step>
+```tsx
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  images: {
+    domains: ["images.unsplash.com"], // Add Unsplash domain here
+  },
+};
+
+export default nextConfig;
+```
+  </Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+
+
+
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
