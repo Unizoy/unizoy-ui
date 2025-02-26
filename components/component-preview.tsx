@@ -16,7 +16,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york/ui/tabs"
+} from "@/components/ui/tabs"
 import { Style, styles } from "@/registry/registry-styles"
 import { NpmCommands } from "@/types/unist"
 import { CodeBlockCommand } from "./code-block-command"

@@ -1,6 +1,6 @@
 "use client"
 
-import { Checkbox } from "@/registry/new-york/ui/checkbox"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export function CheckboxDemo() {
   return (

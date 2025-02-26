@@ -10,7 +10,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 
 export default function IndexPage() {
   return (
@@ -57,7 +57,7 @@ export default function IndexPage() {
             />
           </section>
           <section className="hidden md:block [&>div]:p-0">
-            <CardsDemo />
+            {/* <CardsDemo /> */}
           </section>
         </div>
       </div>

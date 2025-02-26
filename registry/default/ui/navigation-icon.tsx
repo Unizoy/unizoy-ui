@@ -69,7 +69,7 @@ const NavigationIcon: React.FC<NavigationIconProps> = ({
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => {setClick(true);onClick?.()}}
-                className={cn(`flex flex-col gap-2 h-10 items-center text-center pb-1 justify-center px-2 overflow-y-hidden rounded-full ${clicked && borderClass}`, innerDivClass)}
+                className={cn(`flex flex-col gap-2 h-10 items-center text-center pb-1 justify-center px-2 overflow-y-hidden rounded-full cursor-pointer ${clicked && borderClass}`, innerDivClass)}
             >
                 <span className={textClass}>{children}</span>
                 <span className={textClass}>{children}</span> {/* Middle Text */}

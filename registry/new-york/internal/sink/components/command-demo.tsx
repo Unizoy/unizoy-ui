@@ -16,7 +16,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/registry/new-york/ui/command"
+} from "@/components/ui/command"
 
 export function CommandDemo() {
   return (

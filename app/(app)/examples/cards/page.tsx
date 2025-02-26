@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 
 import { DemoCookieSettings } from "./components/cookie-settings"
 import { DemoCreateAccount } from "./components/create-account"
-import { DemoDatePicker } from "./components/date-picker"
+// import { DemoDatePicker } from "./components/date-picker"
 import { DemoGithub } from "./components/github-card"
 import { DemoNotifications } from "./components/notifications"
 import { DemoPaymentMethod } from "./components/payment-method"
@@ -68,9 +68,9 @@ export default function CardsPage() {
           <DemoContainer>
             <DemoShareDocument />
           </DemoContainer>
-          <DemoContainer>
+          {/* <DemoContainer>
             <DemoDatePicker />
-          </DemoContainer>
+          </DemoContainer> */}
           <DemoContainer>
             <DemoNotifications />
           </DemoContainer>

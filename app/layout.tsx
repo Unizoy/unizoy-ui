@@ -8,9 +8,9 @@ import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/providers"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeSwitcher } from "@/components/theme-switcher"
-import { Toaster as DefaultToaster } from "@/registry/default/ui/toaster"
-import { Toaster as NewYorkSonner } from "@/registry/new-york/ui/sonner"
-import { Toaster as NewYorkToaster } from "@/registry/new-york/ui/toaster"
+import { Toaster as DefaultToaster } from "@/components/ui/toaster"
+import { Toaster as NewYorkSonner } from "@/components/ui/sonner"
+import { Toaster as NewYorkToaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: {

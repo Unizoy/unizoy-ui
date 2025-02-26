@@ -221,36 +221,8 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-    "card-demo": {
-      name: "card-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["card", "button", "switch"],
-      files: [{
-        path: "registry/default/examples/card-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      categories: undefined,
-      component: React.lazy(() => import("@/registry/default/examples/card-demo.tsx")),
-      source: "",
-      meta: undefined,
-    },
-    "card-with-form": {
-      name: "card-with-form",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["button", "card", "input", "label", "select"],
-      files: [{
-        path: "registry/default/examples/card-with-form.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      categories: undefined,
-      component: React.lazy(() => import("@/registry/default/examples/card-with-form.tsx")),
-      source: "",
-      meta: undefined,
-    },
+   
+   
     "custom-pointer-demo": {
       name: "custom-pointer-demo",
       description: "",

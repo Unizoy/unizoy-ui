@@ -1,6 +1,6 @@
-import DatePickerWithRange from "@/registry/default/examples/date-picker-with-range"
-import { Card, CardContent } from "@/registry/new-york/ui/card"
-import { Label } from "@/registry/new-york/ui/label"
+// import DatePickerWithRange from "@/registry/default/examples/date-picker-with-range"
+import { Card, CardContent } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
 
 export function DemoDatePicker() {
   return (
@@ -10,7 +10,7 @@ export function DemoDatePicker() {
           <Label htmlFor="date" className="shrink-0">
             Pick a date
           </Label>
-          <DatePickerWithRange className="[&>button]:w-[260px]" />
+          {/* <DatePickerWithRange className="[&>button]:w-[260px]" /> */}
         </div>
       </CardContent>
     </Card>
