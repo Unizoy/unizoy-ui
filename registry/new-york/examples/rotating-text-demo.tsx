@@ -11,7 +11,7 @@ export default function RotatingTextDemo() {
         Scroll to see the animation
       </div>
       <RotatingText
-        scrollerRef={parentRef}
+        scrollerRef={parentRef} //optional
         text={[
           { data: "Hello, World!", className: "text-5xl" },
           { data: "This is a sample text.", className: "text-5xl" },

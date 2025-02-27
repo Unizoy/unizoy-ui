@@ -57,5 +57,10 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 | Name             | Type                                                      | Description                                                            |
 | ---------------- | --------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `text`*           | `{ data: string, className?: string }[]`                   | Array of text objects with data and optional class names for each text block. |
 | `className`      | `string`                                                   | Additional class names for styling the main container.                  |
-| `scrollerRef`       | `RefObject<HTMLElement>`                                   | Scroll container reference for ScrollTrigger.                          |
+| `scrollerRef`    | `RefObject<HTMLElement>`                                   | Scroll container reference for ScrollTrigger.                          |
+| `start`          | `string | number | ScrollTrigger.StartEndFunc`             | Start point for the ScrollTrigger animation.                           |
+| `end`            | `string | number | ScrollTrigger.StartEndFunc`             | End point for the ScrollTrigger animation.                             |
+| `scrub`          | `number | boolean`                                         | Controls the smoothness of the animation linked to scroll position.     |
+| `markers`        | `boolean | ScrollTrigger.MarkersVars`                      | Toggle or configure markers to visualize ScrollTrigger start and end points. |

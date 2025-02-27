@@ -57,13 +57,13 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 | Name             | Type                                                      | Description                                                            |
 | ---------------- | --------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `productSrc`*    | `string`                                                   | Source URL of the product image.                                        |
+| `articleTop`*    | `{ <br> title: { text: string, className?: string }, description: { text: string, className?: string }, icon?: React.ReactNode }[]` | Array of article objects displayed at the top with title, description, and optional icon. |
+| `articleBottom`* | `{ title: { text: string, className?: string }, description: { text: string, className?: string }, icon?: React.ReactNode }[]` | Array of article objects displayed at the bottom with title, description, and optional icon. |
 | `className`      | `string`                                                   | Additional class names for styling the main container.                  |
-| `productSrc`     | `string`                                                   | Source URL of the product image.                                        |
 | `productHeight`  | `number` (default: `298`)                                  | Height of the product image before scaling.                             |
 | `productWidth`   | `number` (default: `1250`)                                 | Width of the product image before scaling.                              |
 | `scaleFactor`    | `number` (default: `0.1`)                                  | Scale factor for resizing the product image.                            |
 | `rotate`         | `number` (default: `30`)                                   | Rotation angle of the product image in degrees.                         |
 | `length`         | `number` (default: `(articleTop.length * 2 - 1) * 50`)     | Length used in ScrollTrigger for defining the end point.                |
 | `scroller`       | `RefObject<HTMLElement>`                                   | Scroll container reference for ScrollTrigger.                          |
-| `articleTop`     | `{ title: { text: string, className?: string }, description: { text: string, className?: string }, icon?: React.ReactNode }[]` | Array of article objects displayed at the top with title, description, and optional icon. |
-| `articleBottom`  | `{ title: { text: string, className?: string }, description: { text: string, className?: string }, icon?: React.ReactNode }[]` | Array of article objects displayed at the bottom with title, description, and optional icon. |
