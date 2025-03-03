@@ -1,0 +1,109 @@
+---
+title: Carousel
+description: A customizable Carousel component.
+---
+
+{" "}
+
+<ComponentPreview
+  name="carousel-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+{" "}
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+{" "}
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap react-icon
+```
+
+{" "}
+
+<Step>Make a file file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+{" "}
+
+<Step>
+  Make a file and copy paste this code in a file with name  Carousel
+</Step>
+
+{" "}
+
+<ComponentSource name="carousel" />
+<Step>
+  Provide an array of items with the following properties: id, name, designation, and imgUrl.
+</Step>
+```tsx
+    const  slideData = [
+        {
+          title: "Mystic Mountains",
+          button: "Explore Component",
+          src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          link:"https://www.unizoy.com/"
+        },
+        {
+          title: "Urban Dreams",
+          button: "Explore Component",
+          src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+           link:"https://www.unizoy.com/"
+        },
+        ...
+        ...
+        ...
+      ];
+```
+
+<Step>
+  If Image is not Visible,then modify NextConfig
+</Step>
+```tsx
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  images: {
+    domains: ["images.unsplash.com"], // Add Unsplash domain here
+  },
+};
+
+export default nextConfig;
+```
+  </Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+
+
+
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
