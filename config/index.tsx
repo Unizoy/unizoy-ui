@@ -48,6 +48,36 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "motion-cards": {
+    name: "motion-cards",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/motion-cards.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/motion-cards.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "motion-cards-demo": {
+    name: "product-preview-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["motion-cards"],
+    files: [{
+      path: "registry/new-york/examples/motion-cards-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/motion-cards-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
     "product-preview": {
     name: "product-preview",
     description: "",

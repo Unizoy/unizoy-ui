@@ -1,0 +1,64 @@
+---
+title: Motion Cards
+description: The MotionCard component is a GSAP-powered animated card layout that pins content during scroll and animates child elements.
+---
+
+<ComponentPreview
+  name="motion-cards-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+<Step>Make a file file for cn and mergerRef functions and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+
+```
+
+<Step>Make a file and copy paste this code in a file with name `product-preview.tsx`</Step>
+
+<ComponentSource name="motion-cards"/>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name          | Type                                              | Description                                                       |
+| ------------- | ------------------------------------------------- | ----------------------------------------------------------------- |
+| `mainText`\*  | `string` or `{ text: string; className: string }` | Main heading text or an object containing text and a CSS class.   |
+| `cards`\*     | `ReactElement[]`                                  | An array of React elements representing the cards to be animated. |
+| `scrollerRef` | `RefObject<HTMLElement>` (optional)               | Reference to the scrolling container; defaults to `window`.       |
+
+> **Note:** Props marked with `*` are required.
