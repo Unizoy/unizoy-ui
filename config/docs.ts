@@ -187,6 +187,11 @@ export const docsConfig: DocsConfig = {
           items:[]
         },
         {
+          title:"Motion Cards",
+          href:"/docs/components/motion-cards",
+          items:[]
+        },
+        {
 
           title:"Product Preview",
           href:"/docs/components/product-preview",
