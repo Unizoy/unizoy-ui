@@ -171,7 +171,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/animated-tooltip",
           items: [],
         },
-       
+        {
+          title: "Carousel ",
+          href: "/docs/components/carousel",
+          items:[]
+        },
         {
           title: "Copy Icon",
           href: "/docs/components/copy-icon",
