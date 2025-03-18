@@ -48,6 +48,36 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "draggable-carousel": {
+    name: "draggable-carousel",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/draggable-carousel.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/draggable-carousel.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "draggable-carousel-demo": {
+    name: "prodraggable-carousel-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["draggable-carousel"],
+    files: [{
+      path: "registry/new-york/examples/draggable-carousel-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/draggable-carousel-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
     "motion-cards": {
     name: "motion-cards",
     description: "",

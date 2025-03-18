@@ -186,6 +186,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/custom-pointer",
           items:[]
         },
+         {
+          title: "Draggable Carousel",
+          href: "/docs/components/draggable-carousel",
+          items:[]
+        },
         {
           title:"Motion Cards",
           href:"/docs/components/motion-cards",
