@@ -1,0 +1,118 @@
+---
+title: Slide Cards
+description: A dynamic component that reveals hidden cards while scrolling.
+---
+
+<ComponentPreview
+  name="sliding-cards-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap react-icons
+```
+
+{" "}
+
+<Step>Make a file file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+{" "}
+
+<Step>
+  Make a file and copy paste this code in a file with name Slide Cards
+</Step>
+
+{" "}
+
+<ComponentSource name="sliding-cards" />
+
+{" "}
+
+<Step>Copy this css and paste in global css</Step>
+
+```tsx
+.card {
+  backdrop-filter: blur(30px) saturate(100%);
+  -webkit-backdrop-filter: blur(rotate-3) saturate(100%);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+```
+
+
+<Step>
+  Provide an array of items with the following properties: title, description, name, and background.
+</Step>
+```tsx
+    const  items = [
+            {
+      title: "Outstanding Design & Development",
+      description: "Unizoy revamped our website with a modern, responsive design that boosted our online presence and conversions.",
+      name: "Alice W.",
+      background: "bg-[#FFDCB8]",
+    },
+    {
+      title: "Exceptional Customer Support",
+      description: "Their support team was prompt and professional, guiding us through every step to ensure smooth implementation.",
+      name: "Mark T.",
+      background: "bg-[#BBD2FF]",
+    },
+        ...
+        ...
+        ...
+      ];
+```
+</Steps>
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
+
+### Props
+
+
+| Name                      | Type                              | Description                                                                                      |
+| ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `items`                   | `ItemsProps[]`                    | Array of slide card items with title, description, name, and background properties.              |
+| `maxWidth`                | `number`                          | Maximum width of a card.                                                                         |
+| `gap`                     | `number`                          | Gap value added between card animations. Default is `30`.                                        |
+| `backgroundImage`         | `string`                          | Background image URL for the slide container.                                                  |
+| `triggerStart`            | `string`                          | ScrollTrigger start position.                                                                    |
+| `triggerEnd`              | `string`                          | ScrollTrigger end position/duration.                                                           |
+| `markers`                 | `boolean`                         | Toggle for ScrollTrigger markers. Default is `false`.                                          |
+| `headingText`             | `string`                          | Optional heading text for the slide cards.                                                     |
+| `minHeightValue`          | `number`                          | Minimum height value for the card content.                                                     |
+| `parentClassName`         | `string`                          | Additional classes for the slide container.                                                    |
+| `parentContentClassName`  | `string`                          | Additional classes for the card content wrapper.                                               |
+| `headingClassName`        | `string`                          | Additional classes for the heading element.                                                    |
+| `contentClassName`        | `string`                          | Additional classes for the card inner content.                                                 |
+| `scrollerRef`             | `RefObject<HTMLElement>`          | Reference to the scrolling container element.                                                  |
