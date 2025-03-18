@@ -288,6 +288,36 @@ export const Index: Record<string, any> = {
     source: "",
     meta: undefined,
   },
+  "image-trail": {
+    name: "image-trail",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/image-trail.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/image-trail.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "image-trail-demo": {
+    name: "image-trail-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["image-trail"],
+    files: [{
+      path: "registry/new-york/examples/image-trail-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/image-trail-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
   "navigation-icon": {
     name: "navigation-icon",
     description: "",
