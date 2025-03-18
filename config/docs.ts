@@ -187,6 +187,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/draggable-carousel",
           items:[]
         },
+         {
+          title: "Image Trail",
+          href: "/docs/components/image-trail",
+          items:[]
+        },
         {
           title:"Motion Cards",
           href:"/docs/components/motion-cards",
