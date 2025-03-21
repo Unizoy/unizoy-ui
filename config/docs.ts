@@ -217,6 +217,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/navigation-icon",
           items:[],
         },
+        {
+          title: "Sliding Cards",
+          href: "/docs/components/sliding-cards",
+          items:[],
+        },
         
 
         {

@@ -378,6 +378,36 @@ export const Index: Record<string, any> = {
     source: "",
     meta: undefined,
   },
+  "sliding-cards": {
+    name: "sliding-cards",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/new-york/ui/sliding-cards.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/ui/sliding-cards.tsx")),
+    source: "",
+    meta: undefined,
+  },
+  "sliding-cards-demo": {
+    name: "sliding-cards-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["sliding-cards"],
+    files: [{
+      path: "registry/new-york/examples/sliding-cards-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    component: React.lazy(() => import("@/registry/new-york/examples/sliding-cards-demo.tsx")),
+    source: "",
+    meta: undefined,
+  },
 },
 
 
@@ -609,6 +639,36 @@ export const Index: Record<string, any> = {
       }],
       categories: undefined,
       component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-demo.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "sliding-cards": {
+      name: "sliding-cards",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/sliding-cards.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/sliding-cards.tsx")),
+      source: "",
+      meta: undefined,
+    },
+    "sliding-cards-demo": {
+      name: "sliding-cards-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/examples/sliding-cards-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      categories: undefined,
+      component: React.lazy(() => import("@/registry/default/examples/sliding-cards-demo.tsx")),
       source: "",
       meta: undefined,
     },

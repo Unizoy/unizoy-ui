@@ -163,3 +163,9 @@
     @apply bg-background text-foreground;
   }
 }
+.card {
+  backdrop-filter: blur(30px) saturate(100%);
+  -webkit-backdrop-filter: blur(rotate-3) saturate(100%);
+  background-color: #ffffff26;
+  border-radius: 12px;
+}
