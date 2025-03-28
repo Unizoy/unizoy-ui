@@ -31,14 +31,20 @@ export default function ProductPreviewDemo() {
 
   const articleBottom = [
     {
-      title: { text: "Advanced Features", className: "text-red-900 text-3xl font-bold" },
+      title: {
+        text: "Advanced Features",
+        className: "text-red-900 text-3xl font-bold",
+      },
       description: {
         text: "Equipped with cutting-edge technology to enhance your productivity and experience.",
       },
       icon: <BsLightningCharge className="scale-[2]" />,
     },
     {
-      title: { text: "User-Friendly Interface", className: "text-3xl font-bold" },
+      title: {
+        text: "User-Friendly Interface",
+        className: "text-3xl font-bold",
+      },
       description: {
         text: "Intuitive controls and seamless connectivity for an effortless user experience.",
       },

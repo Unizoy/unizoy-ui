@@ -2,29 +2,47 @@ type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons = {
   logo: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+    // <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
+    //   <rect width="256" height="256" fill="none" />
+    //   <line
+    //     x1="208"
+    //     y1="128"
+    //     x2="128"
+    //     y2="208"
+    //     fill="none"
+    //     stroke="currentColor"
+    //     strokeLinecap="round"
+    //     strokeLinejoin="round"
+    //     strokeWidth="32"
+    //   />
+    //   <line
+    //     x1="192"
+    //     y1="40"
+    //     x2="40"
+    //     y2="192"
+    //     fill="none"
+    //     stroke="currentColor"
+    //     strokeLinecap="round"
+    //     strokeLinejoin="round"
+    //     strokeWidth="32"
+    //   />
+    // </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 512 512"
+      fill="none"
+      {...props}
+    >
       <rect width="256" height="256" fill="none" />
-      <line
-        x1="208"
-        y1="128"
-        x2="128"
-        y2="208"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="32"
+      <path
+        d="M68 389.643V182.5C68 176.286 72.1338 172.143 78.3344 172.143H119.672C125.873 172.143 132.487 168.414 135.794 163.443L165.557 118.7C168.864 113.729 175.478 110 181.678 110H429.704C435.905 110 440.038 114.143 440.038 120.357V327.5C440.038 333.714 435.905 337.857 429.704 337.857H388.367C382.166 337.857 375.552 341.586 372.245 346.557L342.482 391.3C339.175 396.271 332.561 400 326.36 400H78.3344C72.1338 400 68 395.857 68 389.643ZM140.341 337.857H367.698C373.898 337.857 378.032 333.714 378.032 327.5V182.5C378.032 176.286 373.898 172.143 367.698 172.143H140.341C134.14 172.143 130.006 176.286 130.006 182.5V327.5C130.006 333.714 134.14 337.857 140.341 337.857Z"
+        fill="currentColor"
       />
-      <line
-        x1="192"
-        y1="40"
-        x2="40"
-        y2="192"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="32"
+      <path
+        d="M112.361 297.161L340.446 144.168C346.567 140.062 355.614 139.311 362.237 141.958L421.842 165.779C424.186 166.57 425.714 167.909 426.553 169.118C428.233 171.536 427.312 174.517 423.232 177.254L154.344 357.617C148.223 361.722 141.344 360.429 137.146 354.383L109.157 314.08C104.959 308.034 106.24 301.267 112.361 297.161Z"
+        fill="currentColor"
       />
     </svg>
   ),

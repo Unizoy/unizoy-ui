@@ -4,6 +4,7 @@ description: When hovering over the clipboard icon, two hidden icons should move
 ---
 
 {" "}
+
 <ComponentPreview
   name="copy-icon-demo"
   className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
@@ -12,9 +13,9 @@ description: When hovering over the clipboard icon, two hidden icons should move
   <Tabs defaultValue="manual">
 
 {" "}
+
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
   <TabsContent value="manual">
@@ -22,6 +23,7 @@ description: When hovering over the clipboard icon, two hidden icons should move
   <Steps>
 
 {" "}
+
 <Step>Install the following dependencies:</Step>
 
 ```bash
@@ -29,6 +31,7 @@ npm install gsap react-icons
 ```
 
 {" "}
+
 <Step>Make a file file for cn function and match the import afterwards</Step>
 
 ```tsx
@@ -38,9 +41,11 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 ```
 
 {" "}
+
 <Step>Make a file and copy paste this code in a file with name Copy Icon</Step>
 
 {" "}
+
 <ComponentSource name="copy-icon" />
 
   </Steps>
@@ -52,6 +57,7 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
   <Steps>
 
 {" "}
+
 <Step>Cli Steps</Step>
 
   </Steps>

@@ -20,7 +20,10 @@ export default function MotionCardsDemo() {
       </div>
       {/* !!! EXAMPLE USECASE !!! */}
       <MotionCards
-        mainText={{ text: "Unify your finance", className: "text-red-900 text-5xl" }}
+        mainText={{
+          text: "Unify your finance",
+          className: "text-red-900 text-5xl",
+        }}
         cards={cardsArray}
         scrollerRef={parentRef} // optional
       />
@@ -39,7 +42,6 @@ const Card1: React.FC = () => {
           className="w-full h-40 object-cover rounded-lg"
         />
       </div>
-     
     </div>
   )
 }
@@ -132,7 +134,6 @@ const Card4: React.FC = () => {
 const Card5: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden w-48">
-      
       <div className="p-4">
         <h3 className="text-lg font-medium text-gray-800">
           Business Solutions

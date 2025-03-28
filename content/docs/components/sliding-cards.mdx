@@ -12,7 +12,6 @@ description: A dynamic component that reveals hidden cards while scrolling.
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
   <TabsContent value="manual">
@@ -58,7 +57,6 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 }
 ```
 
-
 <Step>
   Provide an array of items with the following properties: title, description, name, and background.
 </Step>
@@ -89,6 +87,7 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
   <Steps>
 
 {" "}
+
 <Step>Cli Steps</Step>
 
   </Steps>
@@ -99,20 +98,19 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 ### Props
 
-
-| Name                      | Type                              | Description                                                                                      |
-| ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `items`                   | `ItemsProps[]`                    | Array of slide card items with title, description, name, and background properties.              |
-| `maxWidth`                | `number`                          | Maximum width of a card.                                                                         |
-| `gap`                     | `number`                          | Gap value added between card animations. Default is `30`.                                        |
-| `backgroundImage`         | `string`                          | Background image URL for the slide container.                                                  |
-| `triggerStart`            | `string`                          | ScrollTrigger start position.                                                                    |
-| `triggerEnd`              | `string`                          | ScrollTrigger end position/duration.                                                           |
-| `markers`                 | `boolean`                         | Toggle for ScrollTrigger markers. Default is `false`.                                          |
-| `headingText`             | `string`                          | Optional heading text for the slide cards.                                                     |
-| `minHeightValue`          | `number`                          | Minimum height value for the card content.                                                     |
-| `parentClassName`         | `string`                          | Additional classes for the slide container.                                                    |
-| `parentContentClassName`  | `string`                          | Additional classes for the card content wrapper.                                               |
-| `headingClassName`        | `string`                          | Additional classes for the heading element.                                                    |
-| `contentClassName`        | `string`                          | Additional classes for the card inner content.                                                 |
-| `scrollerRef`             | `RefObject<HTMLElement>`          | Reference to the scrolling container element.                                                  |
+| Name                     | Type                     | Description                                                                         |
+| ------------------------ | ------------------------ | ----------------------------------------------------------------------------------- |
+| `items`                  | `ItemsProps[]`           | Array of slide card items with title, description, name, and background properties. |
+| `maxWidth`               | `number`                 | Maximum width of a card.                                                            |
+| `gap`                    | `number`                 | Gap value added between card animations. Default is `30`.                           |
+| `backgroundImage`        | `string`                 | Background image URL for the slide container.                                       |
+| `triggerStart`           | `string`                 | ScrollTrigger start position.                                                       |
+| `triggerEnd`             | `string`                 | ScrollTrigger end position/duration.                                                |
+| `markers`                | `boolean`                | Toggle for ScrollTrigger markers. Default is `false`.                               |
+| `headingText`            | `string`                 | Optional heading text for the slide cards.                                          |
+| `minHeightValue`         | `number`                 | Minimum height value for the card content.                                          |
+| `parentClassName`        | `string`                 | Additional classes for the slide container.                                         |
+| `parentContentClassName` | `string`                 | Additional classes for the card content wrapper.                                    |
+| `headingClassName`       | `string`                 | Additional classes for the heading element.                                         |
+| `contentClassName`       | `string`                 | Additional classes for the card inner content.                                      |
+| `scrollerRef`            | `RefObject<HTMLElement>` | Reference to the scrolling container element.                                       |

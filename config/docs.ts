@@ -1,12 +1,6 @@
 import { MainNavItem, SidebarNavItem } from "types/nav"
 
-
-
-
 //To add Component See line 163
-
-
-
 
 export interface DocsConfig {
   mainNav: MainNavItem[]
@@ -47,118 +41,6 @@ export const docsConfig: DocsConfig = {
   ],
   sidebarNav: [
     {
-      title: "Getting Started",
-      items: [
-        {
-          title: "Introduction",
-          href: "/docs",
-          items: [],
-        },
-        {
-          title: "Installation",
-          href: "/docs/installation",
-          items: [],
-        },
-        {
-          title: "components.json",
-          href: "/docs/components-json",
-          items: [],
-        },
-        {
-          title: "Theming",
-          href: "/docs/theming",
-          items: [],
-        },
-        {
-          title: "Dark mode",
-          href: "/docs/dark-mode",
-          items: [],
-        },
-        {
-          title: "CLI",
-          href: "/docs/cli",
-          items: [],
-        },
-        {
-          title: "Monorepo",
-          href: "/docs/monorepo",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "Next.js 15 + React 19",
-          href: "/docs/react-19",
-          items: [],
-        },
-        {
-          title: "Typography",
-          href: "/docs/components/typography",
-          items: [],
-        },
-        {
-          title: "Open in v0",
-          href: "/docs/v0",
-          items: [],
-        },
-        {
-          title: "Blocks",
-          href: "/docs/blocks",
-          items: [],
-          label: "New",
-        },
-        {
-          title: "Figma",
-          href: "/docs/figma",
-          items: [],
-        },
-        {
-          title: "Changelog",
-          href: "/docs/changelog",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Installation",
-      items: [
-        {
-          title: "Next.js",
-          href: "/docs/installation/next",
-          items: [],
-        },
-        {
-          title: "Vite",
-          href: "/docs/installation/vite",
-          items: [],
-        },
-        {
-          title: "Remix",
-          href: "/docs/installation/remix",
-          items: [],
-        },
-        {
-          title: "Astro",
-          href: "/docs/installation/astro",
-          items: [],
-        },
-        {
-          title: "Laravel",
-          href: "/docs/installation/laravel",
-          items: [],
-        },
-        {
-          title: "Gatsby",
-          href: "/docs/installation/gatsby",
-          items: [],
-        },
-        {
-          title: "Manual",
-          href: "/docs/installation/manual",
-          items: [],
-        },
-      ],
-    },
-    {
       title: "Components",
       items: [
         {
@@ -174,68 +56,65 @@ export const docsConfig: DocsConfig = {
         {
           title: "Carousel ",
           href: "/docs/components/carousel",
-          items:[]
+          items: [],
         },
         {
           title: "Copy Icon",
           href: "/docs/components/copy-icon",
-          items:[]
+          items: [],
         },
         {
           title: "Custom Pointer",
           href: "/docs/components/custom-pointer",
-          items:[]
+          items: [],
         },
-         {
+        {
           title: "Draggable Carousel",
           href: "/docs/components/draggable-carousel",
-          items:[]
+          items: [],
         },
-         {
+        {
           title: "Image Trail",
           href: "/docs/components/image-trail",
-          items:[]
+          items: [],
         },
         {
-          title:"Motion Cards",
-          href:"/docs/components/motion-cards",
-          items:[]
+          title: "Motion Cards",
+          href: "/docs/components/motion-cards",
+          items: [],
         },
         {
-
-          title:"Product Preview",
-          href:"/docs/components/product-preview",
-          items:[]
+          title: "Product Preview",
+          href: "/docs/components/product-preview",
+          items: [],
         },
         {
-          title:"Rotating Text",
-          href:"/docs/components/rotating-text",
-          items:[]
+          title: "Rotating Text",
+          href: "/docs/components/rotating-text",
+          items: [],
         },
         {
           title: "Navigation Icon",
           href: "/docs/components/navigation-icon",
-          items:[],
+          items: [],
         },
         {
           title: "Sliding Cards",
           href: "/docs/components/sliding-cards",
-          items:[],
+          items: [],
         },
-        
 
         {
-          title:"Text Slider",
-          href:"/docs/components/text-slider",
-          items:[]
+          title: "Text Slider",
+          href: "/docs/components/text-slider",
+          items: [],
         },
-       
+
         {
           title: "Typewriter",
           href: "/docs/components/typewriter",
           items: [],
         },
-        
       ],
     },
   ],

@@ -8,11 +8,7 @@ import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
 import { useMetaColor } from "@/hooks/use-meta-color"
 import { Button } from "@/components/ui/button"
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)

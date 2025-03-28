@@ -16,7 +16,6 @@ description: A customizable animated tooltip component.
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
   <TabsContent value="manual">
@@ -44,7 +43,7 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 {" "}
 
 <Step>
-  Make a file and copy paste this code in a file with name  Animated Tooltip
+  Make a file and copy paste this code in a file with name Animated Tooltip
 </Step>
 
 {" "}
@@ -74,17 +73,14 @@ const items = [
     ]
 ```
 
-<Step>
-  If Image is not Visible,then modify NextConfig
-</Step>
-```tsx
-import type { NextConfig } from "next";
+<Step>If Image is not Visible,then modify NextConfig</Step>
+```tsx import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  images: {
-    domains: ["images.unsplash.com"], // Add Unsplash domain here
-  },
+/_ config options here _/
+images: {
+domains: ["images.unsplash.com"], // Add Unsplash domain here
+},
 };
 
 export default nextConfig;
@@ -98,8 +94,6 @@ export default nextConfig;
   <Steps>
 
 {" "}
-
-
 
 <Step>Cli Steps</Step>
 

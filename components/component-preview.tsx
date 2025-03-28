@@ -11,12 +11,7 @@ import { Icons } from "@/components/icons"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { ThemeWrapper } from "@/components/theme-wrapper"
 import { V0Button } from "@/components/v0-button"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Style, styles } from "@/registry/registry-styles"
 import { NpmCommands } from "@/types/unist"
 import { CodeBlockCommand } from "./code-block-command"
@@ -47,21 +42,16 @@ export function ComponentPreview({
 }: ComponentPreviewProps) {
   const [config] = useConfig()
   const index = styles.findIndex((style) => style.name === config.style)
-  
-  
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
   //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
   //   and also Alex told to remove options for switching theme so no need of it
   //1 is default  and 0 is new-york
   const Code = Codes[index]
- 
-  
-
 
   const Preview = React.useMemo(() => {
     const Component = Index[config.style][name]?.component
-   
+
     if (!Component) {
       return (
         <p className="text-sm text-muted-foreground">
@@ -87,7 +77,6 @@ export function ComponentPreview({
       return Button?.props?.value || Button?.props?.__rawString__ || null
     }
   }, [Code])
-
 
   if (type === "block") {
     return (
@@ -179,11 +168,7 @@ export function ComponentPreview({
         <TabsContent value="code">
           <div className="flex flex-col space-y-4">
             <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-            
-        
               <Pre>{Code}</Pre>
-            
-           
             </div>
           </div>
         </TabsContent>
@@ -191,56 +176,56 @@ export function ComponentPreview({
     </div>
   )
 }
-const Pre= ({
-    className,
-    __rawString__,
-    __npmCommand__,
-    __yarnCommand__,
-    __pnpmCommand__,
-    __bunCommand__,
-    __withMeta__,
-    __src__,
-    __event__,
-    __style__,
-    ...props
-  }: React.HTMLAttributes<HTMLPreElement> & {
-    __style__?: Style["name"]
-    __rawString__?: string
-    __withMeta__?: boolean
-    __src__?: string
-    __event__?: Event["name"]
-  } & NpmCommands) => {
-    const isNpmCommand =
-      __npmCommand__ && __yarnCommand__ && __pnpmCommand__ && __bunCommand__
+const Pre = ({
+  className,
+  __rawString__,
+  __npmCommand__,
+  __yarnCommand__,
+  __pnpmCommand__,
+  __bunCommand__,
+  __withMeta__,
+  __src__,
+  __event__,
+  __style__,
+  ...props
+}: React.HTMLAttributes<HTMLPreElement> & {
+  __style__?: Style["name"]
+  __rawString__?: string
+  __withMeta__?: boolean
+  __src__?: string
+  __event__?: Event["name"]
+} & NpmCommands) => {
+  const isNpmCommand =
+    __npmCommand__ && __yarnCommand__ && __pnpmCommand__ && __bunCommand__
 
-    if (isNpmCommand) {
-      return (
-        <CodeBlockCommand
-          __npmCommand__={__npmCommand__}
-          __yarnCommand__={__yarnCommand__}
-          __pnpmCommand__={__pnpmCommand__}
-          __bunCommand__={__bunCommand__}
-        />
-      )
-    }
-
+  if (isNpmCommand) {
     return (
-      <StyleWrapper styleName={__style__}>
-        <pre
-          className={cn(
-            "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 py-4 dark:bg-zinc-900",
-            className
-          )}
-          {...props}
-        />
-        {__rawString__ && (
-          <CopyButton
-            value={__rawString__}
-            src={__src__}
-            event={__event__}
-            className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
-          />
-        )}
-      </StyleWrapper>
+      <CodeBlockCommand
+        __npmCommand__={__npmCommand__}
+        __yarnCommand__={__yarnCommand__}
+        __pnpmCommand__={__pnpmCommand__}
+        __bunCommand__={__bunCommand__}
+      />
     )
   }
+
+  return (
+    <StyleWrapper styleName={__style__}>
+      <pre
+        className={cn(
+          "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 py-4 dark:bg-zinc-900",
+          className
+        )}
+        {...props}
+      />
+      {__rawString__ && (
+        <CopyButton
+          value={__rawString__}
+          src={__src__}
+          event={__event__}
+          className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
+        />
+      )}
+    </StyleWrapper>
+  )
+}

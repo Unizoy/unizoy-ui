@@ -14,7 +14,6 @@ links:
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
 <TabsContent value="manual">
@@ -26,30 +25,35 @@ links:
 ```bash
 npm install gsap @gsap/react
 ```
-<Step>Make a file file for cn and mergerRef functions and match the import afterwards</Step>
+
+<Step>
+  Make a file file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
 
 ```tsx
-import clsx, { ClassValue } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
-export  function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
+export function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
   return (node: T | null) => {
     refs.forEach((ref) => {
       if (typeof ref === "function") {
-        ref(node);
+        ref(node)
       } else if (ref && "current" in ref) {
-        (ref as React.MutableRefObject<T | null>).current = node;
+        ;(ref as React.MutableRefObject<T | null>).current = node
       }
-    });
-  };
+    })
+  }
 }
-
 ```
 
-<Step>Make a file and copy paste this code in a file with name `text-slider.tsx`</Step>
+<Step>
+  Make a file and copy paste this code in a file with name `text-slider.tsx`
+</Step>
 
-<ComponentSource name="text-slider"/>
+<ComponentSource name="text-slider" />
 
 </Steps>
 
@@ -69,11 +73,11 @@ export  function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
 
 ### Props
 
-| Name           | Type                                                  | Description                                                            |
-| -------------- | ----------------------------------------------------- | ---------------------------------------------------------------------- |
-| `direction`    | `"up"\|"down"`                                        | Direction of the slide.                                                |
-| `duration`     | `number`                                              | Duration of the animation.                                             |
-| `ease`         | `string`                                              | Animation style, [refers to gsap docs](https://gsap.com/docs/v3/Eases) |
-| `stagger`      | `number`                                              | Delay between two consecuetive element's animation `seconds`.       |
-| `start`        | `string` or `number` or `()=>string\|number`          | Animation start point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start)  |
-| `end`          | `string` or `number` or `()=>string\|number`          | Animation end point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end)  |
+| Name        | Type                                         | Description                                                                                                |
+| ----------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `direction` | `"up"\|"down"`                               | Direction of the slide.                                                                                    |
+| `duration`  | `number`                                     | Duration of the animation.                                                                                 |
+| `ease`      | `string`                                     | Animation style, [refers to gsap docs](https://gsap.com/docs/v3/Eases)                                     |
+| `stagger`   | `number`                                     | Delay between two consecuetive element's animation `seconds`.                                              |
+| `start`     | `string` or `number` or `()=>string\|number` | Animation start point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start) |
+| `end`       | `string` or `number` or `()=>string\|number` | Animation end point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end)     |

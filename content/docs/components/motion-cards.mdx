@@ -12,7 +12,6 @@ description: The MotionCard component is a GSAP-powered animated card layout tha
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
 <TabsContent value="manual">
@@ -24,18 +23,23 @@ description: The MotionCard component is a GSAP-powered animated card layout tha
 ```bash
 npm install gsap @gsap/react
 ```
-<Step>Make a file file for cn and mergerRef functions and match the import afterwards</Step>
+
+<Step>
+  Make a file file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
 
 ```tsx
-import clsx, { ClassValue } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
-
 ```
 
-<Step>Make a file and copy paste this code in a file with name `product-preview.tsx`</Step>
+<Step>
+  Make a file and copy paste this code in a file with name `product-preview.tsx`
+</Step>
 
-<ComponentSource name="motion-cards"/>
+<ComponentSource name="motion-cards" />
 
 </Steps>
 
