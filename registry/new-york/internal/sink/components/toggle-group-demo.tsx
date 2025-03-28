@@ -1,9 +1,6 @@
 import { Bold, Italic, Underline } from "lucide-react"
 
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/components/ui/toggle-group"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export function ToggleGroupDemo() {
   return (

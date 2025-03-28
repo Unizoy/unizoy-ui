@@ -12,7 +12,6 @@ description: Rotation of texts while scaling at the same time.
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
 <TabsContent value="manual">
@@ -24,18 +23,23 @@ description: Rotation of texts while scaling at the same time.
 ```bash
 npm install gsap @gsap/react
 ```
-<Step>Make a file file for cn and mergerRef functions and match the import afterwards</Step>
+
+<Step>
+  Make a file file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
 
 ```tsx
-import clsx, { ClassValue } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
-
 ```
 
-<Step>Make a file and copy paste this code in a file with name `rotating-text.tsx`</Step>
+<Step>
+  Make a file and copy paste this code in a file with name `rotating-text.tsx`
+</Step>
 
-<ComponentSource name="rotating-text"/>
+<ComponentSource name="rotating-text" />
 
 </Steps>
 
@@ -55,12 +59,12 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 ### Props
 
-| Name             | Type                                                      | Description                                                            |
-| ---------------- | --------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `text`*           | `{ data: string, className?: string }[]`                   | Array of text objects with data and optional class names for each text block. |
-| `className`      | `string`                                                   | Additional class names for styling the main container.                  |
-| `scrollerRef`    | `RefObject<HTMLElement>`                                   | Scroll container reference for ScrollTrigger.                          |
-| `start`          | `string | number | ScrollTrigger.StartEndFunc`             | Start point for the ScrollTrigger animation.                           |
-| `end`            | `string | number | ScrollTrigger.StartEndFunc`             | End point for the ScrollTrigger animation.                             |
-| `scrub`          | `number | boolean`                                         | Controls the smoothness of the animation linked to scroll position.     |
-| `markers`        | `boolean | ScrollTrigger.MarkersVars`                      | Toggle or configure markers to visualize ScrollTrigger start and end points. |
+| Name          | Type                                     | Description                                                                   |
+| ------------- | ---------------------------------------- | ----------------------------------------------------------------------------- |
+| `text`\*      | `{ data: string, className?: string }[]` | Array of text objects with data and optional class names for each text block. |
+| `className`   | `string`                                 | Additional class names for styling the main container.                        |
+| `scrollerRef` | `RefObject<HTMLElement>`                 | Scroll container reference for ScrollTrigger.                                 |
+| `start`       | `string \| number \| ScrollTrigger.StartEndFunc` | Start point for the ScrollTrigger animation.                          |
+| `end`         | `string \| number \| ScrollTrigger.StartEndFunc` | End point for the ScrollTrigger animation.                            |
+| `scrub`       | `number \| boolean`                      | Controls the smoothness of the animation linked to scroll position.           |
+| `markers`     | `boolean \| ScrollTrigger.MarkersVars`   | Toggle or configure markers to visualize ScrollTrigger start and end points.  |

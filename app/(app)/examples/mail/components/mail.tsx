@@ -23,12 +23,7 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
 import { Separator } from "@/components/ui/separator"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { AccountSwitcher } from "@/app/(app)/examples/mail/components/account-switcher"
 import { MailDisplay } from "@/app/(app)/examples/mail/components/mail-display"

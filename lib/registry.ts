@@ -2,7 +2,10 @@ import { promises as fs } from "fs"
 import { tmpdir } from "os"
 import path from "path"
 import { Index } from "@/config"
-import { registryItemFileSchema, registryItemSchema } from "@/packages/shadcn/src/registry/schema"
+import {
+  registryItemFileSchema,
+  registryItemSchema,
+} from "@/packages/shadcn/src/registry/schema"
 import { Project, ScriptKind, SourceFile, SyntaxKind } from "ts-morph"
 import { z } from "zod"
 

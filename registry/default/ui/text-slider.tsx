@@ -1,4 +1,4 @@
-'use client';
+"use client"
 import React, { useRef, useLayoutEffect, forwardRef } from "react"
 import { cn, mergeRefs } from "../lib/utils"
 import { useGSAP } from "@gsap/react"

@@ -12,7 +12,6 @@ description: The DraggableCarousel component is a GSAP-powered animated carousel
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
 <TabsContent value="manual">
@@ -24,18 +23,24 @@ description: The DraggableCarousel component is a GSAP-powered animated carousel
 ```bash
 npm install gsap @gsap/react
 ```
-<Step>Make a file file for cn and mergerRef functions and match the import afterwards</Step>
+
+<Step>
+  Make a file file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
 
 ```tsx
-import clsx, { ClassValue } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
-
 ```
 
-<Step>Make a file and copy paste this code in a file with name `draggable-carousel.tsx`</Step>
+<Step>
+  Make a file and copy paste this code in a file with name
+  `draggable-carousel.tsx`
+</Step>
 
-<ComponentSource name="draggable-carousel"/>
+<ComponentSource name="draggable-carousel" />
 
 </Steps>
 
@@ -55,10 +60,10 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 ### Props
 
-| Name          | Type                                              | Description                                                       |
-| ------------- | ------------------------------------------------- | ----------------------------------------------------------------- |
-| `items`\*     | `Arrav<{title,description,imageUrl}>`             | Array of card in carousel   |
-| `friction`    | `number`                                          | The value should be between 0-1, 1 for max smoothness |
-| `cardWidth`   | `string`             | Width of each card in string format example:- `300px`   |
+| Name        | Type                                  | Description                                           |
+| ----------- | ------------------------------------- | ----------------------------------------------------- |
+| `items`\*   | `Arrav<{title,description,imageUrl}>` | Array of card in carousel                             |
+| `friction`  | `number`                              | The value should be between 0-1, 1 for max smoothness |
+| `cardWidth` | `string`                              | Width of each card in string format example:- `300px` |
 
 > **Note:** Props marked with `*` are required.

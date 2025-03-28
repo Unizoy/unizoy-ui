@@ -7,18 +7,9 @@ import { ChartCopyButton } from "@/components/chart-copy-button"
 import { Chart } from "@/components/chart-display"
 import { V0Button } from "@/components/v0-button"
 import { Button } from "@/components/ui/button"
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export function ChartCodeViewer({
   chart,

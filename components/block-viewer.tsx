@@ -16,7 +16,10 @@ import {
   Terminal,
 } from "lucide-react"
 import { ImperativePanelHandle } from "react-resizable-panels"
-import { registryItemFileSchema, registryItemSchema } from "@/packages/shadcn/src/registry/schema"
+import {
+  registryItemFileSchema,
+  registryItemSchema,
+} from "@/packages/shadcn/src/registry/schema"
 import { z } from "zod"
 
 import { trackEvent } from "@/lib/events"
@@ -47,10 +50,7 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/components/ui/toggle-group"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Style } from "@/registry/registry-styles"
 
 type BlockViewerContext = {

@@ -9,12 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CalendarDateRangePicker } from "@/app/(app)/examples/dashboard/components/date-range-picker"
 import { MainNav } from "@/app/(app)/examples/dashboard/components/main-nav"
 import { Overview } from "@/app/(app)/examples/dashboard/components/overview"

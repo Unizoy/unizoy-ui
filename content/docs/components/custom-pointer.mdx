@@ -5,7 +5,7 @@ links:
   doc: https://www.radix-ui.com/docs/primitives/components/accordion
 ---
 
-<ComponentPreview 
+<ComponentPreview
   name="custom-pointer-demo"
   className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
 />
@@ -14,7 +14,6 @@ links:
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
 <TabsContent value="manual">
@@ -26,17 +25,20 @@ links:
 ```bash
 npm install gsap
 ```
+
 <Step>Make a file file for cn function and match the import afterwards</Step>
 
 ```tsx
-import clsx, { ClassValue } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 ```
 
-<Step>Make a file and copy paste this code in a file with name CustomCursor</Step>
+<Step>
+  Make a file and copy paste this code in a file with name CustomCursor
+</Step>
 
-<ComponentSource name="custom-pointer"/>
+<ComponentSource name="custom-pointer" />
 
 </Steps>
 
@@ -58,4 +60,4 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 ### Custom Pointer With Custom Cursor
 
-<ComponentPreview name="custom-pointer-custom-cursor"/>
+<ComponentPreview name="custom-pointer-custom-cursor" />

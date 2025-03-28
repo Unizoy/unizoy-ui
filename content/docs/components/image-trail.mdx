@@ -12,7 +12,6 @@ description: A dynamic and interactive React component that creates a trail of i
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
 </TabsList>
 
 <TabsContent value="manual">
@@ -25,10 +24,11 @@ description: A dynamic and interactive React component that creates a trail of i
 npm install gsap @gsap/react
 ```
 
+<Step>
+  Make a file and copy paste this code in a file with name `image-trail.tsx`
+</Step>
 
-<Step>Make a file and copy paste this code in a file with name `image-trail.tsx`</Step>
-
-<ComponentSource name="image-trail"/>
+<ComponentSource name="image-trail" />
 
 </Steps>
 
@@ -48,15 +48,15 @@ npm install gsap @gsap/react
 
 ### Props
 
-| Name               | Type                            | Description                                                       |
-| ------------------ | ------------------------------- | ----------------------------------------------------------------- |
-| `images`*         | `string[]`                      | Array of image URLs that will be displayed in the image trail.    |
-| `text`*             | `string`                        | Text displayed on top of the images, often as a heading or title. |
-| `duration`         | `number`                        | The duration (in seconds) that an image will stay visible before it starts fading out. Default is `1`. |
-| `fadeOutDuration`  | `number`                        | The duration (in seconds) for the fade-out effect of images when they expire. Default is `0.5`. |
-| `spawnInterval`    | `number`                        | The minimum time interval (in milliseconds) between spawning images. Default is `0`. |
-| `renderRadius`     | `number`                        | The radius (in pixels) within which images can be spawned based on cursor distance. Default is `90`. |
-| `maxImages`        | `number`                        | The maximum number of images that can be displayed at once. Older images will fade out once the limit is exceeded. Default is `5`. |
-| `easeForMovement`  | `string`                        | The easing function applied to image movement (e.g., "power2.out"). Default is `"none"`. |
+| Name              | Type       | Description                                                                                                                        |
+| ----------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `images`\*        | `string[]` | Array of image URLs that will be displayed in the image trail.                                                                     |
+| `text`\*          | `string`   | Text displayed on top of the images, often as a heading or title.                                                                  |
+| `duration`        | `number`   | The duration (in seconds) that an image will stay visible before it starts fading out. Default is `1`.                             |
+| `fadeOutDuration` | `number`   | The duration (in seconds) for the fade-out effect of images when they expire. Default is `0.5`.                                    |
+| `spawnInterval`   | `number`   | The minimum time interval (in milliseconds) between spawning images. Default is `0`.                                               |
+| `renderRadius`    | `number`   | The radius (in pixels) within which images can be spawned based on cursor distance. Default is `90`.                               |
+| `maxImages`       | `number`   | The maximum number of images that can be displayed at once. Older images will fade out once the limit is exceeded. Default is `5`. |
+| `easeForMovement` | `string`   | The easing function applied to image movement (e.g., "power2.out"). Default is `"none"`.                                           |
 
 > **Note:** Props marked with `*` are required.

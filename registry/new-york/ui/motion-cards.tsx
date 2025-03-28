@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { ReactElement, RefObject, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
