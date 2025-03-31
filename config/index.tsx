@@ -576,6 +576,45 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+
+    "scaling-sliding-cards": {
+      name: "scaling-sliding-cards",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/scaling-sliding-cards.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/scaling-sliding-cards.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "scaling-sliding-cards-demo": {
+      name: "scaling-sliding-cards-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scaling-sliding-cards"],
+      files: [
+        {
+          path: "registry/new-york/examples/scaling-sliding-cards-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/scaling-sliding-cards-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
   },
 
   default: {

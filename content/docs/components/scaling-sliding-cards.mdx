@@ -1,0 +1,70 @@
+---
+title: Scaling Sliding Cards
+description: A dynamic scrolling component where images smoothly move from the right, scaling up as they enter and down as they exit towards the left, creating an engaging and fluid visual effect.
+---
+
+<ComponentPreview
+  name="scaling-sliding-cards-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react react-icons
+```
+<Step>Make a file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+<Step>
+  Make a file and copy paste this code in a file with name `scaling-sliding-cards.tsx`
+</Step>
+
+<ComponentSource name="scaling-sliding-cards" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name                     | Type                         | Description                                                                                                         |
+| ------------------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `photos`*                | `PhotoItem[]`                | Array of photo objects containing `link` (image URL) and `style` (CSS class for styling).                          |
+| `fromXPercent`           | `number`                     | The starting X position for the scroll animation, defined as a percentage. Default is `100`.                        |
+| `toXPercent`             | `number`                     | The ending X position for the scroll animation, defined as a percentage. Default is `0`.                           |
+| `triggerStart`           | `string`                     | The scroll position where the animation should start (e.g., `"top center"`). Default is `"top center"`.            |
+| `triggerEnd`             | `string`                     | The scroll position where the animation should end (e.g., `"bottom top"`). Default is `"bottom top"`.              |
+| `scrubSpeed`             | `boolean | number`             | Speed of the scroll-triggered animation. `true` for default, or set a custom speed. Default is `true`.             |
+| `useMarkers`             | `boolean`                    | Whether to display ScrollTrigger markers for debugging. Default is `false`.                                         |
+| `gap`                    | `number`                     | The space between the images in the scrolling component. Default is `20`.                                          |
+| `wrapperClassName`       | `string`                     | Additional CSS classes for the wrapper container. Default is `"text-white h-screen"`.                              |
+| `scrollerRef`            | `RefObject<HTMLElement>`     | A ref for the scroll container to synchronize scrolling behavior.                                                  |
+
+> **Note:** Props marked with `*` are required.
