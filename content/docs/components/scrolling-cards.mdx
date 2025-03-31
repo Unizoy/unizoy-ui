@@ -1,0 +1,74 @@
+---
+title: Scrolling Cards
+description: A dynamic, scroll-triggered component that creates an engaging card reveal animation sequence
+---
+
+<ComponentPreview
+  name="scrolling-cards-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap
+```
+
+<Step>Make a file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+<Step>
+  Make a file and copy paste this code in a file with name `scrolling-cards.tsx`
+</Step>
+
+<ComponentSource name="scrolling-cards" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>sdsd</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Scrolling Cards With Snapping Effect
+
+<ComponentPreview name="snapping-scroll-cards-demo" />
+
+### Props
+
+| Name               | Type                          | Description                                                                                         |
+| ------------------ | --------------------------- | --------------------------------------------------------------------------------------------------- |
+| `cards`\*         | `{ card: ReactElement; rotate: number; transformOrigin?: string }[]` | Array of card objects, each containing a React element, rotation angle, and optional transform origin. |
+| `cardWidth`\*     | `number`                      | The width of each card in pixels.                                                                  |
+| `top`             | `number`                      | The top position of the card slider. Optional.                                                     |
+| `left`            | `number`                      | The left position of the card slider. Optional.                                                    |
+| `animationLength` | `number`                      | Duration of the animation in milliseconds. Should be a multiple of 100. Default is `100`. Optional. |
+| `scrollerRef`     | `RefObject<HTMLElement>`      | A reference to the scrolling container element. Optional.                                          |
+
+> **Note:** Props marked with `*` are required.

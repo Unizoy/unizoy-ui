@@ -481,6 +481,63 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+     "scrolling-cards": {
+      name: "scrolling-cards",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/scrolling-cards.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/scrolling-cards.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "scrolling-cards-demo": {
+      name: "scrolling-cards-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scrolling-cards"],
+      files: [
+        {
+          path: "registry/new-york/examples/scrolling-cards-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/scrolling-cards-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+     "snapping-scroll-cards-demo": {
+      name: "snapping-scroll-cards-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scrolling-cards"],
+      files: [
+        {
+          path: "registry/new-york/examples/snapping-scroll-cards-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/snapping-scroll-cards-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
     "sliding-cards": {
       name: "sliding-cards",
       description: "",
