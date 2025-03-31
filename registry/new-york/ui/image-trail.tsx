@@ -228,7 +228,7 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
 
       {/* Text Layer */}
       <div className="relative z-10 w-full h-full flex items-center justify-center">
-        <h1 className="text-6xl font-bold text-white mix-blend-difference">
+        <h1 className="text-6xl font-bold dark:text-white text-black mix-blend-difference">
           {text}
         </h1>
       </div>

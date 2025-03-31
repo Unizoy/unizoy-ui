@@ -43,7 +43,7 @@ export default function SlidingCardsDemo() {
         backgroundImage="https://www.jeton.com/_ipx/f_webp&q_80&w_3400/cms/b7c674ecd0ee69b2eca20443cac6272c550ed396-4000x2667.jpg"
         triggerStart="top top"
         triggerEnd="+=800"
-        markers={true}
+        markers={false}
         headingText="Hear it from our clients"
         parentClassName="min-h-[156vh] justify-start items-center"
         parentContentClassName="mt-40"

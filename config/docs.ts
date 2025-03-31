@@ -95,6 +95,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Scrolling Cards",
+          href: "/docs/components/scrolling-cards",
+          items: [],
+        },
+        {
           title: "Sliding Cards",
           href: "/docs/components/sliding-cards",
           items: [],
