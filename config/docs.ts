@@ -100,6 +100,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Scroll Text Flow",
+          href: "/docs/components/scroll-text-flow",
+          items: [],
+        },
+        {
           title: "Scrolling Cards",
           href: "/docs/components/scrolling-cards",
           items: [],

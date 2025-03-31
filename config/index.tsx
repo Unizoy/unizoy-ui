@@ -653,6 +653,44 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "scroll-text-flow": {
+      name: "scroll-text-flow",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/scroll-text-flow.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/scroll-text-flow.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "scroll-text-flow-demo": {
+      name: "scroll-text-flow-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text-flow"],
+      files: [
+        {
+          path: "registry/new-york/examples/scroll-text-flow-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/scroll-text-flow-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
   },
 
   default: {

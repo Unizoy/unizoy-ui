@@ -1,0 +1,71 @@
+---
+title: Scroll Text Flow
+description: ScrollTextFlow is a React component that creates a dynamic scrolling effect with text and slide groups. As users scroll, the component reveals and animates slides while displaying the specified heading and subheading.
+---
+
+<ComponentPreview
+  name="scroll-text-flow-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+<Step>Make a file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+<Step>
+  Make a file and copy paste this code in a file with name `scroll-text-flow.tsx`
+</Step>
+
+<ComponentSource name="scroll-text-flow" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name                     | Type                         | Description                                                                                                         |
+| ------------------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `heading`*                | `string`                     | The main heading of the component.                                                                                   |
+| `subheading`*             | `string`                     | The subheading that appears below the heading.                                                                       |
+| `slideGroups`*            | `SlideItem[][]`              | A 2D array of slide items, where each inner array represents a row of slides.                                        |
+| `topGroupCount`           | `number`                     | The number of slide groups rendered above the text container. Default is `2`.                                        |
+| `wrapperClassName`        | `string`                     | Additional CSS classes for the main container.                                                                       |
+| `textWrapperClassName`    | `string`                     | Extra CSS classes for the text container (heading and subheading).                                                   |
+| `groupClassName`          | `string`                     | Extra CSS classes for each row of slide groups.                                                                      |
+| `scrollTriggerStart`      | `string`                     | The scroll position where the animation should start. Default is `"top 20%"`.                                       |
+| `scrollTriggerEnd`        | `string`                     | The scroll position where the animation should end. Default is `"+=1500"`.                                          |
+| `useMarkers`              | `boolean`                    | Whether to display ScrollTrigger markers for debugging. Default is `false`.                                          |
+| `scrollerRef`             | `RefObject<HTMLElement>`     | A reference for the custom scroll container to synchronize scrolling behavior.                                      |
+
+> **Note:** Props marked with `*` are required.
