@@ -1,0 +1,72 @@
+---
+title: Scrolling Video Cards
+description: A dynamic scrolling component where videos smoothly moves horizontally, scaling up as they enter and scaling down as they enter and exit the viewport. This interactive effect creates an engaging, fluid visual experience, allowing users to view content in a responsive and immersive manner as they scroll.
+---
+
+<ComponentPreview
+  name="scrolling-video-cards-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react react-icons @next/font
+```
+<Step>Make a file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+<Step>
+  Make a file and copy paste this code in a file with name `scrolling-video-cards.tsx`
+</Step>
+
+<ComponentSource name="scrolling-video-cards" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name                        | Type                         | Description                                                                                                               |
+| --------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `videoItems`*               | `VideoItem[]`                | Array of video objects, each containing `title`, `description`, `tag`, and `link`.                                         |
+| `startXPercentage`          | `number`                     | The starting X position for the scroll animation, defined as a percentage. Default is `100`.                               |
+| `endXPercentage`            | `number`                     | The ending X position for the scroll animation, defined as a percentage. Default is `0`.                                  |
+| `scrollTriggerStart`        | `string`                     | The scroll position where the animation should start (e.g., `"top center"`). Default is `"top center"`.                    |
+| `scrollTriggerEnd`          | `string`                     | The scroll position where the animation should end (e.g., `"bottom top"`). Default is `"bottom top"`.                      |
+| `scrubSpeed`                | `boolean | number`            | Speed of the scroll-triggered animation. `true` for default, or set a custom speed. Default is `true`.                     |
+| `useMarkers`                | `boolean`                    | Whether to display ScrollTrigger markers for debugging. Default is `false`.                                               |
+| `gap`                       | `number`                     | The space between the video cards in the scrolling component. Default is `20`.                                            |
+| `descriptionTextClassName`  | `string`                     | Additional CSS classes for styling the description text.                                                                   |
+| `videoCardContainerClassName` | `string`                   | Additional CSS classes for styling each video card container.                                                              |
+| `containerClassName`        | `string`                     | Additional CSS classes for the wrapper container. Default is `"bg-black text-white h-screen"`.                            |
+| `scrollerRef`               | `RefObject<HTMLElement>`     | A ref for the scroll container to synchronize scrolling behavior.                                                          |
+
+> **Note:** Props marked with `*` are required.

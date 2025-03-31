@@ -615,6 +615,44 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "scrolling-video-cards": {
+      name: "scrolling-video-cards",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/scrolling-video-cards.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/scrolling-video-cards.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "scrolling-video-cards-demo": {
+      name: "scrolling-video-cards-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scrolling-video-cards"],
+      files: [
+        {
+          path: "registry/new-york/examples/scrolling-video-cards-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/scrolling-video-cards-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
   },
 
   default: {
