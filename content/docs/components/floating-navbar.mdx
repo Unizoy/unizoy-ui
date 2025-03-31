@@ -1,0 +1,61 @@
+---
+title: Floating Navabar
+description: This component provides an elegant navigation menu with animated dropdown panels that appear when hovering over menu items.
+---
+
+<ComponentPreview
+  name="floating-navbar-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+
+<Step>
+  Make a file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+<Step>
+  Make a file and copy paste this code in a file with name
+  `floating-navbar.tsx`
+</Step>
+
+<ComponentSource name="floating-navbar" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
