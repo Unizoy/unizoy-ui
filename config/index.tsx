@@ -691,6 +691,45 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+
+    "testimonial": {
+      name: "testimonial",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/testimonial.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/testimonial.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "testimonial-demo": {
+      name: "testimonial-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["testimonial"],
+      files: [
+        {
+          path: "registry/new-york/examples/testimonial-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/testimonial-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
   },
 
   default: {
