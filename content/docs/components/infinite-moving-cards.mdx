@@ -1,0 +1,59 @@
+---
+title: Infinite Moving Cards
+description: This InfiniteMovingCards component creates a continuously scrolling carousel of testimonials or quotes with a modern, elegant design. 
+---
+
+<ComponentPreview
+  name="infinite-moving-cards-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+
+<Step>
+  Make a file and copy paste this code in a file with name `infinite-moving-cards.tsx`
+</Step>
+
+<ComponentSource name="infinite-moving-cards" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name | Type | Description |
+| ----------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `items`* | `Array` | Array of objects containing quote, name, and title that will be displayed in the moving cards. Each object should have the shape: `{quote: string, name: string, title: string}` |
+| `direction` | `string` | The direction in which the cards will scroll. Options are `"left"` or `"right"`. Default is `"left"`. |
+| `speed` | `string` | The scrolling speed of the cards. Options are `"fast"`, `"normal"`, or `"slow"`. Default is `"fast"`. |
+| `pauseOnHover` | `boolean` | Whether the animation should pause when the user hovers over the component. Default is `true`. |
+| `className` | `string` | Additional CSS class names to apply to the container element for custom styling. Optional. |
+
+> **Note:** Props marked with `*` are required.
