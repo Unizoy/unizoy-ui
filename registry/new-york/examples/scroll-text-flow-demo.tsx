@@ -54,7 +54,7 @@ export default function () {
                 textWrapperClassName="my-5 mb-8 w-full mx-auto"
                 scrollTriggerStart="top top"
                 scrollTriggerEnd="+=1500"
-                useMarkers={true}
+                useMarkers={false}
                 scrollerRef={parentRef}
             />
     </div>

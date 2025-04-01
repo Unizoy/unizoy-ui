@@ -57,7 +57,7 @@ export default function () {
         startXPercentage={75}
         endXPercentage={-40}
         scrollTriggerStart="top top"
-        scrollTriggerEnd="bottom top"
+        scrollTriggerEnd="+=200% top"
         scrubSpeed={0.5}
         gap={20}
         useMarkers={false}

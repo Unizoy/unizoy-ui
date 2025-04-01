@@ -52,7 +52,7 @@ export default function () {
           fromXPercent={80}
           toXPercent={-40}
           triggerStart="top 5%"
-          triggerEnd="bottom top"
+          triggerEnd="+=200% top"
           scrubSpeed={1}
           gap={30}
           useMarkers={false}

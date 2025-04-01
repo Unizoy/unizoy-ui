@@ -61,7 +61,7 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 | `endXPercentage`            | `number`                     | The ending X position for the scroll animation, defined as a percentage. Default is `0`.                                  |
 | `scrollTriggerStart`        | `string`                     | The scroll position where the animation should start (e.g., `"top center"`). Default is `"top center"`.                    |
 | `scrollTriggerEnd`          | `string`                     | The scroll position where the animation should end (e.g., `"bottom top"`). Default is `"bottom top"`.                      |
-| `scrubSpeed`                | `boolean | number`            | Speed of the scroll-triggered animation. `true` for default, or set a custom speed. Default is `true`.                     |
+| `scrubSpeed`                | `boolean \| number`          | Speed of the scroll-triggered animation. `true` for default, or set a custom speed. Default is `true`.                     |
 | `useMarkers`                | `boolean`                    | Whether to display ScrollTrigger markers for debugging. Default is `false`.                                               |
 | `gap`                       | `number`                     | The space between the video cards in the scrolling component. Default is `20`.                                            |
 | `descriptionTextClassName`  | `string`                     | Additional CSS classes for styling the description text.                                                                   |
