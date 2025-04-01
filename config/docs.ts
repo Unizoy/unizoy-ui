@@ -74,6 +74,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/image-trail",
           items: [],
         },
+         {
+          title: "Infinite Moving Cards",
+          href: "/docs/components/infinite-moving-cards",
+          items: [],
+        },
         {
           title: "Motion Cards",
           href: "/docs/components/motion-cards",

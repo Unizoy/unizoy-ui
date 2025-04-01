@@ -291,7 +291,7 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-    carousel: {
+    "carousel": {
       name: "carousel",
       description: "",
       type: "registry:ui",
@@ -329,7 +329,7 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-    typewriter: {
+    "typewriter": {
       name: "typewriter",
       description: "",
       type: "registry:ui",
@@ -401,6 +401,44 @@ export const Index: Record<string, any> = {
       categories: undefined,
       component: React.lazy(
         () => import("@/registry/new-york/examples/image-trail-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "infinite-moving-cards": {
+      name: "infinite-moving-cards",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/infinite-moving-cards.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/infinite-moving-cards.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "infinite-moving-cards-demo": {
+      name: "infinite-moving-cards-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["infinite-moving-cards"],
+      files: [
+        {
+          path: "registry/new-york/examples/infinite-moving-cards-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/infinite-moving-cards-demo.tsx")
       ),
       source: "",
       meta: undefined,
