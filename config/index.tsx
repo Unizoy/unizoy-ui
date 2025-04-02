@@ -100,6 +100,44 @@ export const Index: Record<string, any> = {
       ),
       source: "",
       meta: undefined,
+    }, 
+    "floating-navbar": {
+      name: "floating-navbar",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/floating-navbar.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/floating-navbar.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "floating-navbar-demo": {
+      name: "profloating-navbar-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["floating-navbar"],
+      files: [
+        {
+          path: "registry/new-york/examples/floating-navbar-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/floating-navbar-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
     },
     "motion-cards": {
       name: "motion-cards",

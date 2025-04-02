@@ -70,6 +70,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Floating Navbar",
+          href: "/docs/components/floating-navbar",
+          items: [],
+        },
+        {
           title: "Image Trail",
           href: "/docs/components/image-trail",
           items: [],
