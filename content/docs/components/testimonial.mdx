@@ -1,0 +1,69 @@
+---
+title: Testimonial
+description: A dynamic testimonial component that periodically updates the displayed name, description, and potentially other details, providing a seamless and engaging user experience with smooth transitions.
+---
+
+<ComponentPreview
+  name="testimonial-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @next/font
+```
+<Step>Make a file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+<Step>
+  Make a file and copy paste this code in a file with name `testimonial.tsx`
+</Step>
+
+<ComponentSource name="testimonial" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name              | Type       | Description                                                                                                                        |
+| ----------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `data`\*        | `TestimonialProps[]` | Array of testimonial objects containing title, subTitle, and description.                                                                     |
+| `backgroundUrl`\*          | `string`   | Optional URL for a background image or video.                                                                   |
+| `backgroundClassName`        | `string`   | Additional CSS classes for styling the background container.                             |
+| `containerClassName` | `string`   | Additional CSS classes for the outer container.                                    |
+| `contentWrapperClassName`   | `string`   | Additional CSS classes for the content wrapper.                                            |
+| `titleTextClassName`    | `string`   | Additional CSS classes for styling the title text.                               |
+| `subtitleTextClassName`       | `string`   | Additional CSS classes for styling the subtitle text. |
+| `descriptionTextClassName` | `string`   | Additional CSS classes for styling the description text.                                           |
+
+> **Note:** Props marked with `*` are required.
+

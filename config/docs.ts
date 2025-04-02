@@ -124,6 +124,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/sliding-cards",
           items: [],
         },
+        {
+          title: "Testimonial",
+          href: "/docs/components/testimonial",
+          items: [],
+        },
 
         {
           title: "Text Slider",
