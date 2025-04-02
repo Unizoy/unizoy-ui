@@ -1,7 +1,11 @@
-'use client';
-import { useState } from "react";
-import {Menu,MenuItem,HoveredLink,ProductItem} from "@/registry/new-york/ui/floating-navbar"
-import { cn } from "../lib/utils";
+"use client"
+import {
+  Menu,
+  MenuItem,
+  HoveredLink,
+  ProductItem,
+} from "@/registry/new-york/ui/floating-navbar"
+import { cn } from "../lib/utils"
 
 export default function NavbarDemo() {
   return (
@@ -11,17 +15,16 @@ export default function NavbarDemo() {
         The Navbar will show on top of the page
       </p>
     </div>
-  );
+  )
 }
- 
+
 function Navbar({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
   return (
     <div
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+      <Menu>
+        <MenuItem item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
             <HoveredLink href="/interface-design">Interface Design</HoveredLink>
@@ -29,8 +32,8 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+        <MenuItem item="Products">
+          <div className="text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Product one"
               href="https://example.com"
@@ -40,13 +43,13 @@ function Navbar({ className }: { className?: string }) {
             <ProductItem
               title="Product two"
               href="https://example.com"
-              src= "https://images.unsplash.com/photo-1682687982501-1e58ab814714"
+              src="https://images.unsplash.com/photo-1682687982501-1e58ab814714"
               description="Track metrics and visualize key performance data."
             />
             <ProductItem
               title="Product Three"
               href="https://example.com"
-              src= "https://images.unsplash.com/photo-1682687982501-1e58ab814714"
+              src="https://images.unsplash.com/photo-1682687982501-1e58ab814714"
               description="Organize and publish content across channels."
             />
             <ProductItem
@@ -57,7 +60,7 @@ function Navbar({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
@@ -67,6 +70,5 @@ function Navbar({ className }: { className?: string }) {
         </MenuItem>
       </Menu>
     </div>
-  );
+  )
 }
-
