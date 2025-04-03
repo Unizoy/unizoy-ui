@@ -253,40 +253,78 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-    "text-slider": {
-      name: "text-slider",
+     "rotating-text": {
+      name: "rotating-text",
       description: "",
       type: "registry:ui",
       registryDependencies: undefined,
       files: [
         {
-          path: "registry/new-york/ui/text-slider.tsx",
+          path: "registry/new-york/ui/rotating-text.tsx",
           type: "registry:ui",
           target: "",
         },
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/text-slider.tsx")
+        () => import("@/registry/new-york/ui/rotating-text.tsx")
       ),
       source: "",
       meta: undefined,
     },
-    "text-slider-demo": {
-      name: "text-slider-demo",
+    "rotating-text-demo": {
+      name: "rotating-text-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["text-slider"],
+      registryDependencies: ["rotating-text"],
       files: [
         {
-          path: "registry/new-york/examples/text-slider-demo.tsx",
+          path: "registry/new-york/examples/rotating-text-demo.tsx",
           type: "registry:example",
           target: "",
         },
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/text-slider-demo.tsx")
+        () => import("@/registry/new-york/examples/rotating-text-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "rythemic-reveal": {
+      name: "rythemic-reveal",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/rythemic-reveal.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/rythemic-reveal.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "rythemic-reveal-demo": {
+      name: "rythemic-reveal-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["rythemic-reveal"],
+      files: [
+        {
+          path: "registry/new-york/examples/rythemic-reveal-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/rythemic-reveal-demo.tsx")
       ),
       source: "",
       meta: undefined,
