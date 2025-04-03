@@ -253,44 +253,6 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
-     "rotating-text": {
-      name: "rotating-text",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/new-york/ui/rotating-text.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/new-york/ui/rotating-text.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "rotating-text-demo": {
-      name: "rotating-text-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["rotating-text"],
-      files: [
-        {
-          path: "registry/new-york/examples/rotating-text-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/new-york/examples/rotating-text-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
     "rythemic-reveal": {
       name: "rythemic-reveal",
       description: "",
@@ -325,6 +287,44 @@ export const Index: Record<string, any> = {
       categories: undefined,
       component: React.lazy(
         () => import("@/registry/new-york/examples/rythemic-reveal-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "text-slider": {
+      name: "text-slider",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/text-slider.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/text-slider.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "text-slider-demo": {
+      name: "text-slider-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["text-slider"],
+      files: [
+        {
+          path: "registry/new-york/examples/text-slider-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/text-slider-demo.tsx")
       ),
       source: "",
       meta: undefined,
