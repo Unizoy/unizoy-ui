@@ -100,6 +100,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Rythemic Reveal",
+          href: "/docs/components/rythemic-reveal",
+          items: [],
+        },
+        {
           title: "Navigation Icon",
           href: "/docs/components/navigation-icon",
           items: [],

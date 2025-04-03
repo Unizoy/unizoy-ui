@@ -253,6 +253,44 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "rythemic-reveal": {
+      name: "rythemic-reveal",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/rythemic-reveal.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/rythemic-reveal.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "rythemic-reveal-demo": {
+      name: "rythemic-reveal-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["rythemic-reveal"],
+      files: [
+        {
+          path: "registry/new-york/examples/rythemic-reveal-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/rythemic-reveal-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
     "text-slider": {
       name: "text-slider",
       description: "",
