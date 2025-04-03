@@ -70,8 +70,18 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Floating Navbar",
+          href: "/docs/components/floating-navbar",
+          items: [],
+        },
+        {
           title: "Image Trail",
           href: "/docs/components/image-trail",
+          items: [],
+        },
+         {
+          title: "Infinite Moving Cards",
+          href: "/docs/components/infinite-moving-cards",
           items: [],
         },
         {
@@ -87,6 +97,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Rotating Text",
           href: "/docs/components/rotating-text",
+          items: [],
+        },
+        {
+          title: "Rythemic Reveal",
+          href: "/docs/components/rythemic-reveal",
           items: [],
         },
         {
