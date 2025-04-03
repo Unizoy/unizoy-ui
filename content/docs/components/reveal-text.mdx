@@ -1,0 +1,73 @@
+---
+title: Reveal Text
+description: A dynamic text component that reveals an image on hover with smooth animation and optional clickable link support.
+---
+
+<ComponentPreview
+  name="reveal-text-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap 
+```
+<Step>Make a file for cn function and match the import afterwards</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+<Step>
+  Make a file and copy paste this code in a file with name `reveal-text.tsx`
+</Step>
+
+<ComponentSource name="reveal-text" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Different Variants in Reveal Text
+
+<ComponentPreview name="reveal-text-demo2" />
+
+### Props
+
+| Name              | Type                                                   | Description                                                                                       |
+| ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| `children`*      | `React.ReactNode`                                      | The content to be displayed inside the text.                                                      |
+| `variant`        | `"black" \| "gradient0" \| "gradient1" \| "gradient2" \| "gradient3" \| "gradient4" \| "gradient5" \| "gradient6" \| "gradient7" \| "gradient8"` | Text color style with different gradient options. Default is `"black"`.                           |
+| `className`      | `string`                                               | Additional CSS classes to customize the text styling. Optional.                                   |
+| `image`          | `string`                                               | URL of the image to show when hovering over the text. Optional.                                   |
+| `hoverImageClass`| `string`                                               | Additional CSS classes to customize the hover image styling. Optional.                            |
+| `href`           | `string`                                               | If provided, the text becomes a clickable link pointing to this URL. Optional.                    |
+
+> **Note:** Props marked with `*` are required.

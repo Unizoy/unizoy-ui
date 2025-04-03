@@ -730,6 +730,63 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "reveal-text": {
+      name: "reveal-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/reveal-text.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/reveal-text.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "reveal-text-demo": {
+      name: "reveal-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["reveal-text"],
+      files: [
+        {
+          path: "registry/new-york/examples/reveal-text-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/reveal-text-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "reveal-text-demo2": {
+      name: "reveal-text-demo2",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["reveal-text2"],
+      files: [
+        {
+          path: "registry/new-york/examples/reveal-text-demo2.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/reveal-text-demo2.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
   },
 
   default: {
