@@ -95,6 +95,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Reveal Text",
+          href: "/docs/components/reveal-text",
+          items: [],
+        },
+        {
           title: "Rotating Text",
           href: "/docs/components/rotating-text",
           items: [],
@@ -107,11 +112,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Navigation Icon",
           href: "/docs/components/navigation-icon",
-          items: [],
-        },
-        {
-          title: "Reveal Text",
-          href: "/docs/components/reveal-text",
           items: [],
         },
         {
