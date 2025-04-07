@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
 import { CardsDemo } from "@/components/cards"
-import { Rythem ,Line,Word,Picture} from "@/registry/new-york/ui/rythemic-reveal"
+import { Rythem, Line, Word, Picture } from "@/registry/new-york/ui/rythemic-reveal"
 import { ExamplesNav } from "@/components/examples-nav"
 import {
   PageActions,
@@ -62,8 +62,10 @@ export default function IndexPage() {
           </section>
         </div>
       </div> */}
-      <div className="h-96">remove in prod</div>
-        <Rythem className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl " imgsWidth={124} >
+      <div className="h-96">
+        {/* remove in prod */}
+      </div>
+      <Rythem className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl " imgsWidth={124} >
         <Line className="flex mx-auto w-fit gap-3 ">
           <Word>FROM</Word>
           <Word>STATIC</Word>
@@ -76,7 +78,7 @@ export default function IndexPage() {
           </Word>
           <Word>ELEMENTS</Word>
         </Line>
-        
+
         <Line className="flex mx-auto w-fit gap-3">
           <Word>TO</Word>
           <Word>DYNAMIC</Word>
@@ -88,7 +90,7 @@ export default function IndexPage() {
           </Word>
           <Word>EXPERIENCES</Word>
         </Line>
-        
+
         <Line className="flex mx-auto w-fit gap-3">
           <Word>TRANSFORM</Word>
           <Word className="rounded-md scale-[0.40] md:scale-[0.65]">
@@ -99,7 +101,7 @@ export default function IndexPage() {
           </Word>
           <Word>MUNDANE</Word>
         </Line>
-        
+
         <Line className="flex mx-auto w-fit gap-3">
           <Word>INTO</Word>
           <Word>MAGICAL</Word>
@@ -110,8 +112,8 @@ export default function IndexPage() {
             />
           </Word>
         </Line>
-        
-      
+
+
         <Line className="flex mx-auto w-fit gap-3">
           <Word>OPEN</Word>
           <Word>SOURCE</Word>
@@ -122,12 +124,12 @@ export default function IndexPage() {
             />
           </Word>
         </Line>
-        
+
         <Line className="flex mx-auto w-fit gap-3">
           <Word>ANIMATION</Word>
           <Word>ECOSYSTEM</Word>
         </Line>
-        
+
         <Line className="flex mx-auto w-fit gap-3 py-0">
           <Word>UNIZOYUI</Word>
           <Word className="rounded-md scale-[0.40] md:scale-[0.50] ">
@@ -138,14 +140,15 @@ export default function IndexPage() {
           </Word>
           <Word>POWERS</Word>
         </Line>
-        
+
         <Line className="flex mx-auto w-fit gap-3">
           <Word>YOUR</Word>
           <Word>CREATIVE</Word>
           <Word>VISION</Word>
         </Line>
       </Rythem>
-      <div className="h-screen"></div>//remove in prod
+      <div className="h-screen"></div>
+      {/* remove in prod */}
     </>
   )
 }
