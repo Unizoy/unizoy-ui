@@ -1,0 +1,58 @@
+---
+title: Text Hover Effect
+description: Highligts the text on hover
+---
+
+<ComponentPreview
+  name="text-hover-effect-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap react-icons
+```
+<Step>
+  Make a file and copy paste this code in a file with name `text-hover-effect.tsx`
+</Step>
+
+<ComponentSource name="text-hover-effect" />
+
+</Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
+
+### Props
+
+| Name                     | Type                     | Description                                                                         |
+| ------------------------ | ------------------------ | ----------------------------------------------------------------------------------- |
+| `text`\*                 | `string`                 | Text that has to have the animation                                                 |
+| `duration`               | `number`                 | Time in seconds to reach the final point of animation.                                                           |
+| `fontSize`               | `number`                 | Font size in pixels `default is 56` same as `text-7xl`.                                                           |
+
+> **Note:** Props marked with `*` are required.
