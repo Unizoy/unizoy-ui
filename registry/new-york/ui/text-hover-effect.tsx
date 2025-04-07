@@ -6,9 +6,11 @@ import gsap from "gsap"
 export const TextHoverEffect = ({
   text,
   duration,
+  fontSize = 56, // Default to roughly Tailwind's `text-7xl`
 }: {
   text: string
   duration?: number
+  fontSize?: number
 }) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const maskGradientRef = useRef(null)
@@ -17,10 +19,8 @@ export const TextHoverEffect = ({
   const [hovered, setHovered] = useState(false)
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" })
 
-  // Use GSAP hook for animations
   useGSAP(
     () => {
-      // Initial animation for the stroke dashoffset
       gsap.fromTo(
         animatedTextRef.current,
         { strokeDashoffset: 1000, strokeDasharray: 1000 },
@@ -35,7 +35,6 @@ export const TextHoverEffect = ({
     { scope: svgRef }
   )
 
-  // Handle cursor position updates
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {
       const svgRect = svgRef.current.getBoundingClientRect()
@@ -49,7 +48,6 @@ export const TextHoverEffect = ({
 
       setMaskPosition(newPosition)
 
-      // Animate the mask position with GSAP
       gsap.to(maskGradientRef.current, {
         attr: newPosition,
         duration: duration ?? 0,
@@ -61,7 +59,6 @@ export const TextHoverEffect = ({
   return (
     <svg
       ref={svgRef}
-      // adjust this width,height,viewbox according to your need
       width="100%"
       height="100%"
       viewBox="0 0 300 100"
@@ -77,7 +74,6 @@ export const TextHoverEffect = ({
           gradientUnits="userSpaceOnUse"
           cx="50%"
           cy="50%"
-          //try changing this value as needed
           r="20%"
         >
           {hovered && (
@@ -94,7 +90,6 @@ export const TextHoverEffect = ({
           id="revealMask"
           ref={maskGradientRef}
           gradientUnits="userSpaceOnUse"
-          //try changing this value as needed
           r="25%"
           cx="50%"
           cy="50%"
@@ -112,40 +107,34 @@ export const TextHoverEffect = ({
           />
         </mask>
       </defs>
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        strokeWidth="0.3"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-7xl font-bold dark:stroke-neutral-800"
-        style={{ opacity: hovered ? 0.7 : 0 }}
-      >
-        {text}
-      </text>
-      <text
-        ref={animatedTextRef}
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        strokeWidth="0.3"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-7xl font-bold dark:stroke-neutral-800"
-      >
-        {text}
-      </text>
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        stroke="url(#textGradient)"
-        strokeWidth="0.3"
-        mask="url(#textMask)"
-        className="fill-transparent font-[helvetica] text-7xl font-bold"
-      >
-        {text}
-      </text>
+
+      {/* 3 text layers with shared style */}
+      {[0, 1, 2].map((_, idx) => (
+        <text
+          key={idx}
+          ref={idx === 1 ? animatedTextRef : undefined}
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          strokeWidth="0.3"
+          className={`fill-transparent font-[helvetica] font-bold ${
+            idx === 0
+              ? "stroke-neutral-200 dark:stroke-neutral-800"
+              : idx === 1
+              ? "stroke-neutral-200 dark:stroke-neutral-800"
+              : ""
+          }`}
+          stroke={idx === 2 ? "url(#textGradient)" : undefined}
+          mask={idx === 2 ? "url(#textMask)" : undefined}
+          style={{
+            fontSize,
+            opacity: idx === 0 && !hovered ? 0 : idx === 0 ? 0.7 : 1,
+          }}
+        >
+          {text}
+        </text>
+      ))}
     </svg>
   )
 }
