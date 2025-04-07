@@ -144,7 +144,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/testimonial",
           items: [],
         },
-
+        {
+          title: "Text Hover Effect",
+          href: "/docs/components/text-hover-effect",
+          items: [],
+        },
         {
           title: "Text Slider",
           href: "/docs/components/text-slider",

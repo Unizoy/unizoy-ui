@@ -291,6 +291,44 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "text-hover-effect": {
+      name: "text-hover-effect",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/text-hover-effect.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/text-hover-effect.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "text-hover-effect-demo": {
+      name: "text-hover-effect-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["text-hover-effect"],
+      files: [
+        {
+          path: "registry/new-york/examples/text-hover-effect-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/text-hover-effect-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
     "text-slider": {
       name: "text-slider",
       description: "",
