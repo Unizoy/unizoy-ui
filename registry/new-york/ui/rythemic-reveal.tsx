@@ -39,8 +39,8 @@ function Rythem({
           scrollTrigger: {
             trigger: img,
             //edit these values for diffrent position of image's animation start and end
-            start: "top 80%",
-            end: "bottom 80%",
+            start: "center 80%",
+            end: "center 80%",
             toggleActions: "play none none reverse",
             scroller: scrollerRef?.current ?? window,
           },
@@ -85,8 +85,8 @@ type LineProps = React.HTMLAttributes<HTMLParagraphElement> & {
   children: React.ReactNode
 }
 
-function Line({ children, ...props }: LineProps) {
-  return <p {...props}>{children}</p>
+function Line({ children,className, ...props }: LineProps) {
+  return <p {...props} className={cn("items-center",className)}>{children}</p>
 }
 
 type WordProps = React.HTMLAttributes<HTMLSpanElement> & {
