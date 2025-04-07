@@ -7,6 +7,7 @@ import { Index } from "@/config/index"
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { CopyButton } from "@/components/copy-button"
+import { RefreshButton } from "@/components/refresh-button"
 import { Icons } from "@/components/icons"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { ThemeWrapper } from "@/components/theme-wrapper"
@@ -41,6 +42,7 @@ export function ComponentPreview({
   ...props
 }: ComponentPreviewProps) {
   const [config] = useConfig()
+  const [forceUpdate, setForceUpdate] = React.useState(false)
   const index = styles.findIndex((style) => style.name === config.style)
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
@@ -51,7 +53,6 @@ export function ComponentPreview({
 
   const Preview = React.useMemo(() => {
     const Component = Index[config.style][name]?.component
-
     if (!Component) {
       return (
         <p className="text-sm text-muted-foreground">
@@ -64,8 +65,8 @@ export function ComponentPreview({
       )
     }
 
-    return <Component />
-  }, [name, config.style])
+    return <Component key={forceUpdate} />
+  }, [name, config.style, forceUpdate])
 
   const codeString = React.useMemo(() => {
     if (
@@ -140,6 +141,11 @@ export function ComponentPreview({
                 className="h-7 w-7 text-foreground opacity-100 hover:bg-muted hover:text-foreground [&_svg]:h-3.5 [&_svg]:w-3.5"
               />
             </div>
+            <RefreshButton
+              refresh={() => setForceUpdate(!forceUpdate)}
+              variant="outline"
+              className="h-7 w-7 text-foreground opacity-100 hover:bg-muted hover:text-foreground [&_svg]:h-3.5 [&_svg]:w-3.5 "
+            />
           </div>
           <ThemeWrapper defaultTheme="zinc">
             <div
