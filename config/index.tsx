@@ -804,7 +804,7 @@ export const Index: Record<string, any> = {
       ),
       source: "",
       meta: undefined,
-    },
+    }, 
     "scroll-text-flow": {
       name: "scroll-text-flow",
       description: "",
@@ -839,6 +839,44 @@ export const Index: Record<string, any> = {
       categories: undefined,
       component: React.lazy(
         () => import("@/registry/new-york/examples/scroll-text-flow-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "scroll-opacity-effect": {
+      name: "scroll-opacity-effect",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/scroll-opacity-effect.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/scroll-opacity-effect.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "scroll-opacity-effect-demo": {
+      name: "scroll-opacity-effect-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-opacity-effect"],
+      files: [
+        {
+          path: "registry/new-york/examples/scroll-opacity-effect-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/scroll-opacity-effect-demo.tsx")
       ),
       source: "",
       meta: undefined,
