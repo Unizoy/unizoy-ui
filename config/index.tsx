@@ -939,6 +939,44 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "sidebar": {
+      name: "sidebar",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/sidebar.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/sidebar.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "sidebar-demo": {
+      name: "sidebar-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["sidebar"],
+      files: [
+        {
+          path: "registry/new-york/examples/sidebar-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/sidebar-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
   },
 
   default: {

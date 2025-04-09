@@ -135,6 +135,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Sidebar",
+          href: "/docs/components/sidebar",
+          items: [],
+        },
+        {
           title: "Sliding Cards",
           href: "/docs/components/sliding-cards",
           items: [],
