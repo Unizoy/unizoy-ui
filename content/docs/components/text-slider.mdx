@@ -73,11 +73,15 @@ export function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
 
 ### Props
 
-| Name        | Type                                         | Description                                                                                                |
-| ----------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `direction` | `"up"\|"down"`                               | Direction of the slide.                                                                                    |
-| `duration`  | `number`                                     | Duration of the animation.                                                                                 |
-| `ease`      | `string`                                     | Animation style, [refers to gsap docs](https://gsap.com/docs/v3/Eases)                                     |
-| `stagger`   | `number`                                     | Delay between two consecuetive element's animation `seconds`.                                              |
-| `start`     | `string` or `number` or `()=>string\|number` | Animation start point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start) |
-| `end`       | `string` or `number` or `()=>string\|number` | Animation end point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end)     |
+| Name              | Type                            | Description                                                                                                 |
+| ----------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `children`        | `string \| React.ReactNode`     | Content to be animated.                                                                                      |
+| `className`       | `string`                        | Custom CSS classes to style the container.                                                                  |
+| `delay`           | `number`                        | Delay before the animation starts, in seconds.                                                              |
+| `start`           | `string`                        | ScrollTrigger start point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start) |
+| `end`             | `string`                        | ScrollTrigger end point, [refers to gsap docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end)     |
+| `translateX`      | `number`                        | Horizontal translation percentage to move the container.                                                    |
+| `popFrom`         | `"up" \| "down"`                | Direction from which the content should slide in.                                                           |
+| `translateDuration` | `number`                      | Duration for the horizontal (X-axis) animation in seconds.                                                  |
+| `duration`        | `number`                        | Duration for the vertical pop-in animation in seconds.                                                      |
+

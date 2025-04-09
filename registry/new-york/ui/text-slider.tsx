@@ -1,91 +1,95 @@
-"use client"
+"use client";
 
-import React, { useRef, useLayoutEffect, forwardRef } from "react"
-import { cn, mergeRefs } from "../lib/utils"
-import { useGSAP } from "@gsap/react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import React, { useRef } from "react";
+import { cn } from "../lib/utils";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
-
-interface TextSliderProps extends React.HTMLAttributes<HTMLDivElement> {
-  direction?: "up" | "down"
-  duration?: number
-  ease?: string
-  stagger?: number
-  start?: string
-  end?: string
+interface TextSliderProps {
+  children?: string | React.ReactNode;
+  className?: string;
+  delay?: number;
+  start?: string;
+  end?: string;
+  translateX?: number;
+  popFrom?: "up" | "down";
+  translateDuration?: number;
+  duration?: number;
 }
 
-const TextSlider = forwardRef<HTMLDivElement, TextSliderProps>(
-  (
-    {
-      className,
-      children,
-      direction = "up",
-      duration = 1,
-      ease = "power2.out",
-      stagger = 0.5,
-      start = "35",
-      end = "0",
-      ...props
-    },
-    ref
-  ) => {
-    const localRef = useRef<HTMLDivElement>(null)
-    const childrenHeights = useRef<number[]>([])
+gsap.registerPlugin(ScrollTrigger);
 
-    // Calculate heights of direct children
-    useLayoutEffect(() => {
-      if (!localRef.current?.children) return
+export function TextSlider({
+  children,
+  className,
+  delay = 0,
+  translateX,
+  popFrom = "down",
+  translateDuration = 0.4,
+  duration = 0.3,
+  start = "top 80%",
+  end = "top 65%",
+}: TextSliderProps) {
+  const containerRef = useRef<HTMLElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const tl = useRef<gsap.core.Timeline | null>(null);
 
-      childrenHeights.current = Array.from(localRef.current.children).map(
-        (child) => child.getBoundingClientRect().height
-      )
-    }, [children])
+  useGSAP(
+    () => {
+      if (containerRef.current && lineRef.current) {
+        const lineHeight = lineRef.current.offsetHeight || 0;
+        const animationDistance = popFrom === "up" ? -lineHeight : lineHeight;
 
-    useGSAP(
-      () => {
-        const elements = localRef.current?.children
-        if (!elements) return
-
-        // Animate elements
-        gsap.from(elements, {
-          y: (c) => {
-            return direction === "down"
-              ? -childrenHeights.current[c]
-              : childrenHeights.current[c]
-          },
-          opacity: 0,
-          duration: duration,
-          ease: ease,
-          stagger: stagger,
-
+        tl.current = gsap.timeline({
+          delay,
           scrollTrigger: {
-            trigger: elements,
+            trigger: containerRef.current,
             start,
             end,
-            toggleActions: "play none none reset",
+            toggleActions: "play none none reverse",
           },
-        })
-      },
-      {
-        scope: localRef,
-        dependencies: [direction, duration, ease, stagger, start, end],
-      }
-    )
+        });
 
-    return (
-      <div
-        ref={mergeRefs(ref, localRef)}
-        className={cn("overflow-hidden ", className)}
-        {...props}
-      >
+        // Animate line using the calculated height
+        tl.current.from(lineRef.current, {
+          y: animationDistance,
+          duration: duration,
+          ease: "linear",
+        });
+
+        // Add translateX animation if specified
+        if (translateX) {
+          tl.current.to(
+            containerRef.current,
+            {
+              x: translateX.toString().concat("%"),
+              duration: translateDuration,
+              ease: "linear",
+            },
+            "+=0.1"
+          );
+        }
+      }
+
+      return () => {
+        if (tl.current) {
+          tl.current.kill();
+        }
+      };
+    },
+    {
+      dependencies: [popFrom],
+      revertOnUpdate: true,
+      scope: containerRef,
+    }
+  );
+
+  return (
+    <section ref={containerRef} className={cn("overflow-hidden block", className)}>
+      <div className="inline-block opacity-1" ref={lineRef}>
         {children}
       </div>
-    )
-  }
-)
-
-// TextSlider.displayName="TextSlider"
-export { TextSlider }
+    </section>
+  );
+}
