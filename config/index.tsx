@@ -329,6 +329,45 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+    "text-rollup-effect": {
+      name: "text-rollup-effect",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/text-rollup-effect.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ] ,
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/text-rollup-effect.tsx")
+      ),
+      source: "",
+      meta: undefined,
+     },
+     "text-rollup-effect-demo": {
+      name: "text-rollup-effect-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["text-rollup-effect"],
+      files: [
+        {
+          path: "registry/new-york/examples/text-rollup-effect-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: undefined,
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/text-rollup-effect-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+},
+
     "text-slider": {
       name: "text-slider",
       description: "",

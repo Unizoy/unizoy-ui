@@ -1,0 +1,57 @@
+---
+title: Text Rollup Effect
+description: A rollup effect for your texts
+---
+
+<ComponentPreview
+  name="text-rollup-effect-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+  <TabsList>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="manual">
+
+    <Steps>
+
+      <Step>Install the following dependencies:</Step>
+
+      ```bash
+      npm install gsap react-icons
+      ```
+
+      <Step>
+        Make a file and copy paste this code in a file with name `text-rollup-effect.tsx`
+      </Step>
+
+      <ComponentSource name="text-rollup-effect" />
+
+    </Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+    <Steps>
+      <Step>Cli Steps</Step>
+    </Steps>
+
+  </TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name       | Type     | Description                                                                 |
+|------------|----------|-----------------------------------------------------------------------------|
+| `children`\*   | `string` | Text that has to have the animation                                         |
+| `frequency` | `number` | Number of change in one second.                      |
+| `className` | `string` | Tailwind classes for the children                     |
+| `stagger` | `number`   | Delay between two charaters change                   |
+| `style` | `CSSproperties` | Html Css passed throug props                     |
+
+> **Note:** Props marked with `*` are required.

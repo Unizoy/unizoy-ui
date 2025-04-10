@@ -40,11 +40,6 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
-          title: "Accordion",
-          href: "/docs/components/accordion",
-          items: [],
-        },
-        {
           title: "Animated Tooltip",
           href: "/docs/components/animated-tooltip",
           items: [],
@@ -147,6 +142,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Text Hover Effect",
           href: "/docs/components/text-hover-effect",
+          items: [],
+        },
+        {
+          title: "Text Rollup Effect",
+          href: "/docs/components/text-rollup-effect",
           items: [],
         },
         {
