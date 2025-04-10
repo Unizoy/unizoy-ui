@@ -115,6 +115,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Scroll Opacity Effect",
+          href: "/docs/components/scroll-opacity-effect",
+          items: [],
+        },
+        {
           title: "Scroll Text Flow",
           href: "/docs/components/scroll-text-flow",
           items: [],

@@ -1,0 +1,62 @@
+---
+title: Scroll Opacity Effect
+description: Increasing the opacity of the whole text based on the scoll distance.
+---
+
+<ComponentPreview
+  name="scroll-opacity-effect-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+  <Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+  <TabsContent value="manual">
+
+  <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap react-icons
+```
+<Step>
+  Make a file and copy paste this code in a file with name `scroll-opacity-effect.tsx`
+</Step>
+
+<ComponentSource name="scroll-opacity-effect" />
+
+</Steps>
+
+  </TabsContent>
+
+  <TabsContent value="cli">
+
+  <Steps>
+
+{" "}
+
+<Step>Cli Steps</Step>
+
+  </Steps>
+
+  </TabsContent>
+
+  </Tabs>
+
+### Props
+
+| Name                     | Type                     | Description                                                                         |
+| ------------------------ | ------------------------ | ----------------------------------------------------------------------------------- |
+| `children`\*             | `ReactNode`              | Element on which opacity animation has to be applied.                               |
+| `className`              | `string`                 | Additonal Tailwind classes for the children.                                        |
+| `animation`              | `gsap.TweenVars`         | Would be a object of the final attributes for the animation.                        |
+| `start`                  | `string `                | Animation start point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#start). Default is `"top 90%"`. |
+| `end`                    | `string `                | Animation end point, [GSAP docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1#end). Default is `"bottom 60%"`.  |
+| `scrub`                  | `number \| boolean`      | To control the scrub propertry. Default is `1`.                                                                                          |
+| `initialOpacity`         | `number`                 | The initial opacity of the children. Default is `0.2`.                                                                                    |
+
+> **Note:** Props marked with `*` are required.
