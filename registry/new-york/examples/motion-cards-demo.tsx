@@ -27,6 +27,9 @@ export default function MotionCardsDemo() {
         cards={cardsArray}
         scrollerRef={parentRef} // optional
       />
+      <div className="w-full h-40  border-b flex justify-center items-center border-white text-white px-3">
+        {/* Scroll to Explore Component */}
+      </div>
     </div>
   )
 }

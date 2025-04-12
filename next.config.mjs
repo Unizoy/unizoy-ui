@@ -7,7 +7,7 @@ const nextConfig = {
       "/blocks/*": ["./registry/**/*"],
     },
   },
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   images: {
     remotePatterns: [
@@ -25,12 +25,12 @@ const nextConfig = {
     return [
       {
         source: "/components",
-        destination: "/docs/components/accordion",
+        destination: "/docs/components/animated-tooltip",
         permanent: true,
       },
       {
         source: "/docs/components",
-        destination: "/docs/components/accordion",
+        destination: "/docs/components/animated-tooltip",
         permanent: true,
       },
       {

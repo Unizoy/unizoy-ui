@@ -1,7 +1,7 @@
 "use client"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import { RefObject, useRef } from "react"
+import { RefObject, useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { cn } from "../lib/utils"
 gsap.registerPlugin(ScrollTrigger)
@@ -13,17 +13,34 @@ function Rythem({
   children,
   className,
   imgsWidth,
+  positionToAnimation=80,
   scrollerRef,
 }: {
-  children: React.ReactNode
-  className?: string
-  imgsWidth: number
-  scrollerRef?: RefObject<HTMLElement>
+  children: React.ReactNode;
+  className?: string;
+  imgsWidth: number;
+  positionToAnimation?:number
+  scrollerRef?: RefObject<HTMLElement>;
 }) {
   const sectionRef = useRef<HTMLElement>(null)
+    const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+ const [forceUpdate, setForceUpdate] = useState(false)
+   useEffect(()=>{
+      if (scrollerRef?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  },[])
   useGSAP(
     () => {
       if (!sectionRef.current) return
+        const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+    const existingTrigger2 = ScrollTrigger.getById(instanceIdRef.current + "2")
+    if (existingTrigger && existingTrigger2) {
+      existingTrigger.kill()
+      existingTrigger2.kill()
+    }
       const allSpan = sectionRef.current.querySelectorAll("span")
       const allImages = sectionRef.current.querySelectorAll("img")
 
@@ -39,10 +56,11 @@ function Rythem({
           scrollTrigger: {
             trigger: img,
             //edit these values for diffrent position of image's animation start and end
-            start: "center 80%",
-            end: "center 80%",
+            start: `center ${positionToAnimation}%`,
+            end: `center ${positionToAnimation}%`,
             toggleActions: "play none none reverse",
             scroller: scrollerRef?.current ?? window,
+             id: instanceIdRef.current,
           },
           display: "block",
           width: `${imgsWidth}px`,
@@ -54,10 +72,11 @@ function Rythem({
         scrollTrigger: {
           trigger: sectionRef.current,
           //edit these values for diffrent position of animation start and end
-          start: "top 80%",
-          end: "bottom 80%",
+          start: `top ${positionToAnimation}%`,
+          end: `bottom ${positionToAnimation}%`,
           scrub: 1,
           scroller: scrollerRef?.current ?? window,
+          id: instanceIdRef.current + "2"
         },
       })
 
@@ -66,7 +85,7 @@ function Rythem({
         stagger: 0.2,
       })
     },
-    { scope: sectionRef }
+    { scope: sectionRef ,dependencies:[forceUpdate] }
   )
 
   return (

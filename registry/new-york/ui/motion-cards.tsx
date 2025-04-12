@@ -1,5 +1,5 @@
 "use client"
-import { ReactElement, RefObject, useRef } from "react"
+import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
@@ -25,7 +25,16 @@ export default function MotionCard({
   const masterRef = useRef<HTMLDivElement>(null)
   const childRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<HTMLDivElement[]>([])
+  const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+  const [forceUpdate, setForceUpdate] = useState(false)
 
+  useEffect(() => {
+    if (scrollerRef?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  }, [scrollerRef?.current])
   //ajust this value accordingly to have desired animation or you can also increase
   //  the element inside and remove the conditional check below
   const vars = [
@@ -38,6 +47,12 @@ export default function MotionCard({
 
   useGSAP(() => {
     if (!masterRef.current || !childRef.current) return
+    const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+    const existingTrigger2 = ScrollTrigger.getById(instanceIdRef.current + "2")
+    if (existingTrigger && existingTrigger2) {
+      existingTrigger.kill()
+      existingTrigger2.kill()
+    }
 
     gsap.to(masterRef.current, {
       scrollTrigger: {
@@ -46,6 +61,7 @@ export default function MotionCard({
         end: "bottom 40%",
         pin: true,
         scroller: scrollerRef?.current ?? window,
+        id: instanceIdRef.current,
       },
     })
 
@@ -56,6 +72,7 @@ export default function MotionCard({
         end: "bottom 10%",
         scrub: 1,
         scroller: scrollerRef?.current ?? window,
+        id: instanceIdRef.current + "2",
       },
     })
 
@@ -73,7 +90,7 @@ export default function MotionCard({
       },
       "<"
     )
-  })
+  }, [forceUpdate])
   //this will return if legth is small than 1 or more than 5
   if (cards.length > 5 || cards.length < 1)
     return <div>Inappropriate card length </div>

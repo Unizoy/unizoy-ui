@@ -4,7 +4,7 @@ import { Metadata, Viewport } from "next"
 import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import { fontMono, fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-import { Analytics } from "@/components/analytics"
+// import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/providers"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeSwitcher } from "@/components/theme-switcher"
@@ -110,7 +110,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
             <TailwindIndicator />
             <ThemeSwitcher />
-            <Analytics />
+            {/* <Analytics /> */}
             <NewYorkToaster />
             <DefaultToaster />
             <NewYorkSonner />

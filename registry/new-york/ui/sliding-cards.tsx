@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, RefObject } from "react"
+import React, { useRef, RefObject, useState, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
@@ -47,11 +47,25 @@ const SlidingCards: React.FC<SlidingCardsProps> = ({
   scrollerRef,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+  const [forceUpdate, setForceUpdate] = useState(false)
 
+  useEffect(() => {
+    console.log("from useEffext")
+
+    if (scrollerRef?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  }, [scrollerRef?.current])
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
     if (!containerRef.current) return
-
+    const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+    if (existingTrigger) {
+      existingTrigger.kill()
+    }
     const cards = containerRef.current.querySelectorAll(".card")
     const cardsArray = Array.from(cards)
 
@@ -79,6 +93,7 @@ const SlidingCards: React.FC<SlidingCardsProps> = ({
         scrub: true,
         markers: markers,
         scroller: scrollerRef?.current ?? window,
+        id: instanceIdRef.current,
       },
     })
 
@@ -112,7 +127,7 @@ const SlidingCards: React.FC<SlidingCardsProps> = ({
           "<"
         )
     })
-  }, [])
+  }, [forceUpdate])
 
   return (
     <div

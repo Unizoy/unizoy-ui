@@ -35,11 +35,12 @@ export const TextHoverEffect = ({
     { scope: svgRef }
   )
 
-  useEffect(() => {
-    if (svgRef.current && cursor.x !== null && cursor.y !== null) {
+  // Update cursor position based on mouse or touch coordinates
+  const updateCursorPosition = (x: number, y: number) => {
+    if (svgRef.current && x !== null && y !== null) {
       const svgRect = svgRef.current.getBoundingClientRect()
-      const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100
-      const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100
+      const cxPercentage = ((x - svgRect.left) / svgRect.width) * 100
+      const cyPercentage = ((y - svgRect.top) / svgRect.height) * 100
 
       const newPosition = {
         cx: `${cxPercentage}%`,
@@ -54,7 +55,41 @@ export const TextHoverEffect = ({
         ease: "power2.out",
       })
     }
+  }
+
+  useEffect(() => {
+    updateCursorPosition(cursor.x, cursor.y)
   }, [cursor, duration])
+
+  // Mouse event handlers
+  const handleMouseEnter = () => setHovered(true)
+  const handleMouseLeave = () => setHovered(false)
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setCursor({ x: e.clientX, y: e.clientY })
+  }
+
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault() // Prevent default behavior like scrolling
+    setHovered(true)
+    if (e.touches.length > 0) {
+      const touch = e.touches[0]
+      setCursor({ x: touch.clientX, y: touch.clientY })
+    }
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault()
+    if (e.touches.length > 0) {
+      const touch = e.touches[0]
+      setCursor({ x: touch.clientX, y: touch.clientY })
+    }
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    e.preventDefault()
+    setHovered(false)
+  }
 
   return (
     <svg
@@ -63,9 +98,15 @@ export const TextHoverEffect = ({
       height="100%"
       viewBox="0 0 300 100"
       xmlns="http://www.w3.org/2000/svg"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
+      // Mouse events
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseMove={handleMouseMove}
+      // Touch events
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
       className="select-none"
     >
       <defs>
@@ -91,8 +132,8 @@ export const TextHoverEffect = ({
           ref={maskGradientRef}
           gradientUnits="userSpaceOnUse"
           r="25%"
-          cx="50%"
-          cy="50%"
+          cx={maskPosition.cx}
+          cy={maskPosition.cy}
         >
           <stop offset="0%" stopColor="white" />
           <stop offset="100%" stopColor="black" />

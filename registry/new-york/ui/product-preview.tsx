@@ -59,14 +59,17 @@ export default function ProductPreview({
   const articleBottomRef = useRef<HTMLElement>(null)
   const [currentTopIndex, setCurrentTopIndex] = useState(-1)
   const [currentBottomIndex, setCurrentBottomIndex] = useState(-1)
-
+  const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+ const [forceUpdate, setForceUpdate] = useState(false)
   const handleProgress = (self: ScrollTrigger) => {
     const direction = self.direction
     const totalSteps = articleTop.length * 2 - 1
     const progress = Math.min(Math.max(self.progress, 0), 1) // Clamp between 0 and 1
     const stepSize = 1 / totalSteps
     const currentStep = Math.ceil(progress / stepSize)
-    console.log(currentStep)
+
 
     // Calculate indices based on step
     if (currentStep === 1) {
@@ -94,15 +97,24 @@ export default function ProductPreview({
       }
     }
   }
+  useEffect(()=>{
+      if (scroller?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  },[])
   useGSAP(() => {
     if (mainRef.current) {
+      const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+      if (existingTrigger) {
+      existingTrigger.kill()
+    }
       gsap.timeline({
         scrollTrigger: {
           trigger: mainRef.current,
           start: "top top",
           end: `${length}% top`,
           scrub: true,
-          scroller: scroller?.current || window,
+          scroller: scroller?.current ?? window,
           pin: true,
           onUpdate: handleProgress,
           // markers: true, // Consider disabling in production
@@ -139,10 +151,11 @@ export default function ProductPreview({
               "<"
             )
           },
+           id: instanceIdRef.current,
         },
       })
     }
-  })
+  },[forceUpdate])
 
   return (
     <>
@@ -262,7 +275,7 @@ const Translate: React.FC<TranslateProps> = ({ arr, index, type, pos }) => {
       ? "backward"
       : "forward"
 
-  console.log(direction)
+  
 
   useGSAP(() => {
     if (!contentRef.current) return

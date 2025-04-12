@@ -59,11 +59,12 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 ### Props
 
-| Name          | Type                                     | Description                                                                   |
-| ------------- | ---------------------------------------- | ----------------------------------------------------------------------------- |
-| `chidren`\*   | `ReactElement`                           | Array of text objects with data and optional class names for each text block. |
-| `imgswidth`\*   | `number`                               | Width of all the images                                                       |
-| `className`   | `string`                                 | Additional class names for styling the main container.                        |
-| `scrollerRef` | `RefObject<HTMLElement>`                 | Scroll container reference for ScrollTrigger.                                 |
+| Name          | Type                        | Description                                                                   |
+| ------------- | ----------------------------| ----------------------------------------------------------------------------- |
+| `chidren`\*   | `ReactElement`              | Array of text objects with data and optional class names for each text block. |
+| `imgswidth`\*   | `number`                  | Width of all the images                                                       |
+| `className`   | `string`                    | Additional class names for styling the main container.                        |
+| `scrollerRef` | `RefObject<HTMLElement>`    | Scroll container reference for ScrollTrigger.                                 |
+| `positionToAnimation`   | `number`          | Position in percentage from top of the scroller default is `80`                                                  |
 
 > **Note:** Props marked with `*` are required.

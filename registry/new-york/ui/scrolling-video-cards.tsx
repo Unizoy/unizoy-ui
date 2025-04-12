@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef ,RefObject} from 'react'
+import React, { useRef ,RefObject, useState, useEffect} from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { cn } from '@/lib/utils';
@@ -50,7 +50,18 @@ const ScrollingVideoCards = ({
   const videoRefs = useRef<HTMLVideoElement[]>([]);
   const textRefs = useRef<HTMLDivElement[]>([]);
   const cardRefs = useRef<HTMLDivElement[]>([]);
+  const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+  const [forceUpdate, setForceUpdate] = useState(false)
 
+  useEffect(() => {
+    console.log("from useEffext");
+    
+    if (scrollerRef?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  }, [])
   const addToVideoRefs = (el: HTMLVideoElement) => {
     if (el && !videoRefs.current.includes(el)) {
       videoRefs.current.push(el);
@@ -71,6 +82,12 @@ const ScrollingVideoCards = ({
 
   useGSAP(() => {
     if (groupRef.current && containerRef.current) {
+      const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+    
+      if (existingTrigger ) {
+      existingTrigger.kill()
+     
+      }
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -80,6 +97,7 @@ const ScrollingVideoCards = ({
           markers: useMarkers,
           pin: true,
           scroller: scrollerRef?.current ?? window,
+          id:instanceIdRef.current
         },
         onUpdate: function () {
           const progress = this.progress();
@@ -129,7 +147,7 @@ const ScrollingVideoCards = ({
         { xPercent: endXPercentage, ease: "none" }
       );
     }
-  }, [startXPercentage, endXPercentage, scrollTriggerStart, scrollTriggerEnd, scrubSpeed, useMarkers]);
+  }, [startXPercentage, endXPercentage, scrollTriggerStart, scrollTriggerEnd, scrubSpeed, useMarkers, forceUpdate]);
 
 
   return (

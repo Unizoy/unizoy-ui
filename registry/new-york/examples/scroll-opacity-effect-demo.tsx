@@ -4,7 +4,7 @@ export default function TextHoverEffectDemo() {
   return (
     <div className="w-full h-full">
       <ScrollOpacityEffect
-        className="flex-1 items-center my-40 mx-auto w-1/2"
+        className="flex-1 items-center my-40 mx-auto w-5/6 md:w-1/2"
         animation={{
           opacity: 1,
           duration: 1,

@@ -1,5 +1,5 @@
 "use client"
-import { ReactElement, RefObject, useRef } from "react"
+import { ReactElement, RefObject, useEffect, useRef, useState } from "react"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import gsap from "gsap"
@@ -32,10 +32,26 @@ function ScrollingCards({
 }: CardSliderProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
+  const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+  const [forceUpdate, setForceUpdate] = useState(false)
 
+  useEffect(() => {
+    console.log("from useEffext");
+    
+    if (scrollerRef?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  }, [scrollerRef?.current])
   useGSAP(() => {
     if (!sectionRef.current || !cardsRef.current) return
-
+     const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+    const existingTrigger2 = ScrollTrigger.getById(instanceIdRef.current + "2")
+    if (existingTrigger && existingTrigger2) {
+      existingTrigger.kill()
+      existingTrigger2.kill()
+    }
     const unitLeftDis = (50 - left) / cards.length
     // Set initial position for all cards (below viewport)
     gsap.set(cardsRef.current, {
@@ -50,6 +66,7 @@ function ScrollingCards({
         scrub: true, // Smooth scrubbing effect
         markers: false, // Set to
         scroller: scrollerRef?.current ?? window,
+        id:instanceIdRef.current
       },
     })
     // Create timeline for sequential animation
@@ -62,6 +79,7 @@ function ScrollingCards({
         scrub: 1, // Smooth scrubbing effect
         scroller: scrollerRef?.current ?? window,
         markers:false,
+        id: instanceIdRef.current + "2",
         onUpdate: (self) => {
           const direction = self.direction
           const topCards = cardsRef.current.filter((card) => {
@@ -103,7 +121,7 @@ function ScrollingCards({
         ">"
       ) // Stagger the animations
     })
-  }, [cards, cardsRef.current])
+  }, [cards, cardsRef.current,forceUpdate])
 
   return (
     <section
@@ -137,19 +155,34 @@ function SnappingScrollingCards({
   cards,
   cardWidth,
   top = 35,
-  left = 20,
+  left = 30,
   animationLength = 400,
   scrollerRef,
 }: CardSliderProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
+  const instanceIdRef = useRef<string>(
+    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
+  )
+  const [forceUpdate, setForceUpdate] = useState(false)
 
+  useEffect(() => {
+    console.log("from useEffext");
+    
+    if (scrollerRef?.current) {
+      setForceUpdate(!forceUpdate)
+    }
+  }, [scrollerRef?.current])
   useGSAP(() => {
     if (!sectionRef.current || cardsRef.current.some((ref) => !ref)) return
 
     // // Clear any existing ScrollTriggers
     // ScrollTrigger.getAll().forEach((st) => st.kill())
-
+    const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+   
+    if (existingTrigger) {
+      existingTrigger.kill()
+    }
     const unitLeftDis = (50 - left) / (cards.length - 1 || 1)
 
     // Calculate maximum rotation to adjust starting position
@@ -172,7 +205,7 @@ function SnappingScrollingCards({
       end: `+=${animationLength}%`,
       pin: true,
       scrub: 1,
-
+      id:instanceIdRef.current,
       scroller: scrollerRef?.current ?? window,
       onUpdate: (self) => {
         // Calculate current scroll progress (0-1)
@@ -231,7 +264,7 @@ function SnappingScrollingCards({
     return () => {
       st.kill()
     }
-  }, [cards, cardWidth, top, left])
+  }, [cards, cardWidth, top, left,forceUpdate])
 
   return (
     <section

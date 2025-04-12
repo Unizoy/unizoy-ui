@@ -84,7 +84,7 @@ export default function () {
   ]
   return (
     <div className="w-full h-screen overflow-scroll" ref={scrollerRef}>
-      <section className="h-96 w-full bg-black flex justify-center items-center text-white text-5xl">
+      <section className="h-40 w-full bg-black flex justify-center items-center text-white text-2xl">
         {" "}
         Scroll to animate
       </section>

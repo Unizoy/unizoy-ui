@@ -46,7 +46,7 @@ export default function () {
         },
       ];
   return (
-    <div className="w-full h-[90vh] overflow-scroll" ref={parentRef}>
+    <div className="w-full h-[50vh] overflow-scroll" ref={parentRef}>
        <ScalingSlidingCards
           photos={items}
           fromXPercent={80}

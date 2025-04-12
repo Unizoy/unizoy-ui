@@ -41,6 +41,7 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
   const imageIdCounter = useRef(0)
   const MAX_IMAGES = maxImages
   const imagesRef = useRef<HTMLDivElement>(null)
+  const isTouchActiveRef = useRef(false)
 
   // Remove images that have completed their fade-out animation
   const removeExpiredImages = useCallback(() => {
@@ -113,6 +114,22 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
     return () => clearInterval(intervalId)
   }, [removeExpiredImages])
 
+  // Set up global touch event handling to prevent scrolling while interacting with our component
+  useEffect(() => {
+    const preventScroll = (e: TouchEvent) => {
+      if (isTouchActiveRef.current && containerRef.current) {
+        e.preventDefault()
+      }
+    }
+
+    // Add the event listener with passive: false to allow preventDefault()
+    document.addEventListener('touchmove', preventScroll, { passive: false })
+    
+    return () => {
+      document.removeEventListener('touchmove', preventScroll)
+    }
+  }, [])
+
   const getDistance = (x1: number, y1: number, x2: number, y2: number) => {
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2))
   }
@@ -162,7 +179,6 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
           newImages[0] = { ...oldestImage, isExpiring: true }
 
           // Start fade-out animation
-          // setTimeout(() => {
           const imgElement = imagesRef.current?.querySelector(
             `[data-id="${oldestImage.id}"]`
           )
@@ -174,7 +190,6 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
               ease: "none",
             })
           }
-          // }, 0);
         }
 
         // we keep the expiring image
@@ -191,19 +206,50 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
     setImageIndex((prev) => (prev + 1) % images.length)
   }
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current || !imagesRef.current) return
+  const handlePointerEvent = (x: number, y: number) => {
+    if (!imagesRef.current) return
     const rect = imagesRef.current.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    addImage(x, y)
+    const relativeX = x - rect.left
+    const relativeY = y - rect.top
+    addImage(relativeX, relativeY)
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    handlePointerEvent(e.clientX, e.clientY)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    // Get the first touch point
+    const touch = e.touches[0]
+    if (touch) {
+      handlePointerEvent(touch.clientX, touch.clientY)
+    }
+  }
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    // Set the touch as active to prevent scrolling
+    isTouchActiveRef.current = true
+    
+    const touch = e.touches[0]
+    if (touch) {
+      handlePointerEvent(touch.clientX, touch.clientY)
+    }
+  }
+
+  const handleTouchEnd = () => {
+    // Touch is no longer active, allow scrolling again
+    isTouchActiveRef.current = false
   }
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full overflow-hidden"
+      className="relative w-full h-full overflow-hidden touch-none"
       onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
     >
       {/* Canvas Layer */}
       <div className="absolute inset-0" ref={imagesRef}>
@@ -228,7 +274,7 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
 
       {/* Text Layer */}
       <div className="relative z-10 w-full h-full flex items-center justify-center">
-        <h1 className="text-6xl font-bold dark:text-white text-black mix-blend-difference">
+        <h1 className=" text-xl sm:text2xl md:text4xl lg:text-6xl font-bold dark:text-white text-black mix-blend-difference">
           {text}
         </h1>
       </div>

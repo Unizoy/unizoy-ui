@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
-import { CardsDemo } from "@/components/cards"
+
 import { Rythem, Line, Word, Picture } from "@/registry/new-york/ui/rythemic-reveal"
 import { ExamplesNav } from "@/components/examples-nav"
 import {
@@ -25,11 +25,11 @@ export default function IndexPage() {
         </PageHeaderDescription>
         <PageActions>
           <Button asChild size="sm">
-            <Link href="/docs">Get Started</Link>
+            <Link href="/docs/components">Get Started</Link>
           </Button>
-          <Button asChild size="sm" variant="ghost">
+          {/* <Button asChild size="sm" variant="ghost">
             <Link href="/blocks">Browse Blocks</Link>
-          </Button>
+          </Button> */}
         </PageActions>
       </PageHeader>
       {/* <div className="border-grid border-b">
@@ -65,7 +65,7 @@ export default function IndexPage() {
       <div className="h-96">
         {/* remove in prod */}
       </div>
-      <Rythem className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl " imgsWidth={124} >
+      <Rythem className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl " imgsWidth={90} >
         <Line className="flex mx-auto w-fit gap-3 ">
           <Word>FROM</Word>
           <Word>STATIC</Word>

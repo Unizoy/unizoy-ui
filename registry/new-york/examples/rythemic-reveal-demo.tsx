@@ -5,12 +5,12 @@ import { Rythem ,Line,Word,Picture} from "../ui/rythemic-reveal"
 export default function RythemicRevealDemo(){
     const parentRef = useRef<HTMLDivElement>(null)
     return(
-    <div ref={parentRef} className="w-full h-screen overflow-scroll ">
-         <div className="w-full h-screen bg-background border-b flex justify-center items-center border-white text-white px-3">
+    <div ref={parentRef} className="w-full h-[50vh] overflow-scroll ">
+         <div className="w-full h-full bg-background border-b flex justify-center items-center border-white text-white px-3">
         Scroll to Preview
       </div>
-         <Rythem className="text-7xl" imgsWidth={110} scrollerRef={parentRef}>
-        <Line className="flex mx-auto w-fit gap-3 items-center">
+         <Rythem className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-7xl" imgsWidth={110} scrollerRef={parentRef}>
+        <Line className="flex mx-auto w-fit gap-3  items-center">
           <Word>FROM</Word>
           <Word className="rounded-md scale-[0.65]">
             <Picture
@@ -23,7 +23,7 @@ export default function RythemicRevealDemo(){
           <Word>+</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>Celebrities</Word>
           <Word className="rounded-md scale-[0.65]">
             <Picture
@@ -34,7 +34,7 @@ export default function RythemicRevealDemo(){
           <Word>to</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>social</Word>
           <Word className="rounded-md scale-[0.65]">
             <Picture
@@ -45,13 +45,13 @@ export default function RythemicRevealDemo(){
           <Word>media</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>stars,</Word>
           <Word>we</Word>
           <Word>select</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>the</Word>
           <Word className="rounded-md scale-[0.65]">
             <Picture
@@ -62,18 +62,18 @@ export default function RythemicRevealDemo(){
           <Word>most</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>authentic</Word>
           <Word>voices</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>to</Word>
           <Word>partner</Word>
           <Word>with</Word>
         </Line>
 
-        <Line className="flex mx-auto w-fit gap-3">
+        <Line className="flex mx-auto w-fit gap-3 ">
           <Word>your</Word>
           <Word className="rounded-md scale-[0.65]">
             <Picture

@@ -4,24 +4,24 @@ import { useRef } from "react"
 import { BsLightningCharge } from "react-icons/bs"
 
 export default function ProductPreviewDemo() {
-  const parentRef = useRef<HTMLDivElement>(null)
+  const parentRef = useRef<HTMLDivElement|null>(null)
   const articleTop = [
     {
-      title: { text: "Innovative Charging", className: "text-3xl font-bold" },
+      title: { text: "Innovative Charging", className: "text-xl md:text-2xl lg:text-3xl font-bold" },
       description: {
         text: "Experience fast and efficient charging with USB-C compatibility, ensuring you never run out of power.",
       },
       icon: <BsLightningCharge className="scale-[2]" />,
     },
     {
-      title: { text: "Seamless Design", className: "text-3xl font-bold" },
+      title: { text: "Seamless Design", className: "text-xl md:text-2xl lg:text-3xl font-bold" },
       description: {
         text: "Crafted with precision, the sleek design complements any modern workspace or lifestyle.",
       },
       icon: <BsLightningCharge className="scale-[2]" />,
     },
     {
-      title: { text: "Enhanced Durability", className: "text-3xl font-bold" },
+      title: { text: "Enhanced Durability", className: "text-xl md:text-2xl lg:text-3xl font-bold" },
       description: {
         text: "Built to last, with robust materials that ensure long-term reliability and performance.",
       },
@@ -33,7 +33,7 @@ export default function ProductPreviewDemo() {
     {
       title: {
         text: "Advanced Features",
-        className: "text-red-900 text-3xl font-bold",
+        className: "text-red-900 text-xl md:text-2xl lg:text-3xl font-bold",
       },
       description: {
         text: "Equipped with cutting-edge technology to enhance your productivity and experience.",
@@ -43,7 +43,7 @@ export default function ProductPreviewDemo() {
     {
       title: {
         text: "User-Friendly Interface",
-        className: "text-3xl font-bold",
+        className: "text-xl md:text-2xl lg:text-3xl font-bold",
       },
       description: {
         text: "Intuitive controls and seamless connectivity for an effortless user experience.",
@@ -51,7 +51,7 @@ export default function ProductPreviewDemo() {
       icon: <BsLightningCharge className="scale-[2]" />,
     },
     {
-      title: { text: "Eco-Friendly", className: "text-3xl font-bold" },
+      title: { text: "Eco-Friendly", className: "text-xl md:text-2xl lg:text-3xl font-bold" },
       description: {
         text: "Manufactured with environmentally sustainable materials, contributing to a greener planet.",
       },

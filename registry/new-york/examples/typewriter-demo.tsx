@@ -11,7 +11,7 @@ export default function TypeWriterDemo() {
   ]
   return (
     <TypeWriter
-      className="text-5xl"
+      className=" text-xl  lg:text-5xl"
       staticText={StaticTextWithClasses}
       textArray={DynamicTextWithClasses}
     />

@@ -1,27 +1,28 @@
+"use client";
 import React from "react"
 import { NavigationIcon } from "@/registry/new-york/ui/navigation-icon"
 
 export default function NavigationIconDemo() {
   const handleClick = () => {
-    alert("Clicked on Nav-icon!")
+    
   }
 
   const items = [
     {
       id: 1,
-      name: "John Doe",
+      name: "John",
     },
     {
       id: 2,
-      name: "Robert Johnson",
+      name: "Robert",
     },
     {
       id: 3,
-      name: "Jane Smith",
+      name: "Jane",
     },
     {
       id: 4,
-      name: "Emily Davis",
+      name: "Emily",
     },
   ]
   return (
