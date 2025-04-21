@@ -1,8 +1,7 @@
 "use client";
-import React, { useRef, useEffect, useState, useCallback } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React, { useRef, useEffect, useState, useCallback, ReactElement, AnchorHTMLAttributes } from "react";
 import gsap from "gsap";
+import { cn } from "../lib/utils";
 
 // Types for better code organization
 type MenuItemProps = {
@@ -208,7 +207,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, EnhancedMenuItemProps>(({
             ref={dropdownRef}
             className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
           >
-            <div className="w-max h-full p-4">
+            <div className="w-max h-full md:p-4">
               {children}
             </div>
           </div>
@@ -233,8 +232,8 @@ const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
-      <Image
+    <a href={href} className="flex space-x-2">
+      <img
         src={src}
         width={140}
         height={70}
@@ -249,18 +248,21 @@ const ProductItem = ({
           {description}
         </p>
       </div>
-    </Link>
+    </a>
   );
 };
 
-const HoveredLink = ({ children, ...rest }: any) => {
+interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: ReactElement | string;
+}
+const HoveredLink = ({ children, className = "", ...rest }: LinkProps) => {
   return (
-    <Link
+    <a
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black"
+      className={cn("text-neutral-700 dark:text-neutral-200 hover:text-black",className)}
     >
       {children}
-    </Link>
+    </a>
   );
 };
 

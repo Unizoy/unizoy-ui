@@ -15,12 +15,14 @@ function Rythem({
   imgsWidth,
   positionToAnimation=80,
   scrollerRef,
+  markers=false
 }: {
   children: React.ReactNode;
   className?: string;
   imgsWidth: number;
   positionToAnimation?:number
   scrollerRef?: RefObject<HTMLElement>;
+  markers?:boolean;
 }) {
   const sectionRef = useRef<HTMLElement>(null)
     const instanceIdRef = useRef<string>(
@@ -76,6 +78,7 @@ function Rythem({
           end: `bottom ${positionToAnimation}%`,
           scrub: 1,
           scroller: scrollerRef?.current ?? window,
+          markers:markers,
           id: instanceIdRef.current + "2"
         },
       })

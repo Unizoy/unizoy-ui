@@ -1,0 +1,10 @@
+---
+title: Home Page
+description: Code to be displayed at the home page
+---
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```

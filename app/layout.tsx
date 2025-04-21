@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "unizoy",
+      url: "https://ui.unizoy.com",
     },
   ],
-  creator: "shadcn",
+  creator: "unizoy",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@shadcn",
+    creator: "@unizoyofficial",
   },
   icons: {
     icon: "/favicon.ico",

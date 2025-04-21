@@ -101,6 +101,7 @@ const ScalingSlidingCards = ({
           scrub: scrubSpeed,
           markers: useMarkers,
           pin: true,
+          pinSpacing:true,
           scroller: scrollerRef?.current ?? window,
           id: instanceIdRef.current,
         },
@@ -165,7 +166,7 @@ const ScalingSlidingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "overflow-x-hidden flex justify-center items-start",
+        "overflow-hidden  flex justify-center items-start",
         wrapperClassName
       )}
     >
@@ -196,7 +197,7 @@ const ScalingSlidingCards = ({
         <div className="relative w-52 h-52 md:w-72 md:h-72 lg:w-80 lg:h-80  flex items-start justify-center overflow-visible">
           {/* "Explore More" card */}
           <div className="flex flex-col items-center">
-            <div className="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 flex items-center p-6 md:p-10 lg:p-14 gap-2 justify-center rounded-full bg-[#202020] shadow-lg cursor-pointer border border-transparent group hover:bg-transparent hover:border-white">
+            <div className="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 flex items-center p-6 md:p-10 lg:p-14 gap-2 justify-center rounded-full bg-[#202020] shadow-lg cursor-pointer border border-transparent group hover:bg-transparent dark:hover:border-white hover:border-black hover:text-black dark:hover:text-white ">
               <p className="text-xl md:text-2xl lg:text-3xl">
                 Explore More Unizoy <FaArrowRightLong />
               </p>

@@ -2,7 +2,7 @@ import {
   CustomCursor,
   CursorIcon,
   NameTag,
-} from "@/registry/default/ui/custom-pointer"
+} from "@/registry/new-york/ui/custom-pointer"
 
 export default function CardWithCustomCursor() {
   return (
@@ -20,9 +20,9 @@ export default function CardWithCustomCursor() {
       </p>
 
       <CustomCursor className="scale-100">
-        <CursorIcon className="relative">
-          <div className="w-8 h-8 rounded-[100%] animate-ping bg-red-400 "></div>
-          <div className="w-4 h-4 rounded-[100%] bg-green-400 animate-pulse absolute top-0 left-0 transform translate-x-[50%] translate-y-[50%] "></div>
+        <CursorIcon className="relative w-fit">
+          <div className="w-8 h-8 rounded-[100%] animate-ping bg-red-400 absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-20"></div>
+          <div className="w-4 h-4 rounded-[100%] bg-green-400 animate-pulse absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
         </CursorIcon>
         <NameTag name="Ankush" src="/avatars/01.png" />
       </CustomCursor>

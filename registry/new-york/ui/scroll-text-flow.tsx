@@ -125,12 +125,12 @@ const ScrollTextFlow: React.FC<ScrollTextFlowProps> = ({
   ])
 
   const words1 = heading.split(" ").map((word, index) => (
-    <span key={index} className={cn("word", "mr-2", "inline-block")}>
+    <span key={index} className={cn("word", "mr-2", "inline-block dark:text-white")}>
       {word}
     </span>
   ))
   const words2 = subheading.split(" ").map((word, index) => (
-    <span key={index} className={cn("word", "mr-2", "inline-block")}>
+    <span key={index} className={cn("word", "mr-2", "inline-block dark:text-white")}>
       {word}
     </span>
   ))

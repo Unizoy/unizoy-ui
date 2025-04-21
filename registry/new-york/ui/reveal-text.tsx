@@ -116,7 +116,7 @@ const RevealText = ({
           src={image}
           alt="hover image"
           className={cn(
-            "absolute left-1/2 top-[-9rem] aspect-video -translate-x-1/2 min-w-36 h-24 md:min-w-40 md:h-28 lg:min-w-48 lg:h-32 object-fill rounded-xl shadow-lg pointer-events-none opacity-0 border-4 lg:border-[6px] scale-50 border-white",
+            "absolute left-1/2 top-[-9rem] z-30 aspect-video -translate-x-1/2 min-w-36 h-24 md:min-w-40 md:h-28 lg:min-w-48 lg:h-32 object-fill rounded-xl shadow-lg pointer-events-none opacity-0 border-4 lg:border-[6px] scale-50 border-white",
             hoverImageClass
           )}
         />
