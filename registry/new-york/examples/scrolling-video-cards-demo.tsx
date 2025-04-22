@@ -1,11 +1,9 @@
-"use client"
-import React, { useRef } from "react"
+import React from "react"
 import { ScrollingVideoCards } from "@/registry/new-york/ui/scrolling-video-cards"
 import { Dancing_Script } from "next/font/google"
 const dancingScript = Dancing_Script({ subsets: ["latin"], weight: "400" })
 
 export default function () {
-  const parentRef = useRef<HTMLDivElement>(null)
   const items = [
     {
       title: "We partnered with",
@@ -51,7 +49,7 @@ export default function () {
     },
   ]
   return (
-    <div className="w-full h-[90vh] overflow-scroll" ref={parentRef}>
+    <div className="w-full">
       <div className="w-full h-40 flex items-center justify-center  border-b border-black dark:border-white">
         Scroll To animate
       </div>
@@ -59,7 +57,7 @@ export default function () {
         videoItems={items}
         startXPercentage={75}
         endXPercentage={-40}
-        scrollTriggerStart="top top"
+        scrollTriggerStart="top 15%"
         scrollTriggerEnd="+=200% top"
         scrubSpeed={0.5}
         gap={20}
@@ -67,7 +65,6 @@ export default function () {
         descriptionTextClassName={`${dancingScript.className} text-black dark:text-white my-0.5`}
         videoCardContainerClassName=""
         containerClassName="text-black dark:text-white h-[90vh]"
-        scrollerRef={parentRef}
       />
     </div>
   )

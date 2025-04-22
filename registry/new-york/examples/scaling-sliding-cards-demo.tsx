@@ -1,10 +1,8 @@
-"use client"
-
-import React, { useRef } from "react"
+import React from "react"
 import { ScalingSlidingCards } from "@/registry/new-york/ui/scaling-sliding-cards"
 
 export default function () {
-  const parentRef = useRef<HTMLDivElement>(null)
+
 
   // Define the images and their styles with explicit width and height
   const items = [
@@ -55,7 +53,7 @@ export default function () {
     },
   ]
   return (
-    <div className="w-full h-[50vh] overflow-scroll" ref={parentRef}>
+    <div className="w-full">
       <div className="w-full h-40 flex items-center justify-center  border-b border-black dark:border-white">
         Scroll To animate
       </div>
@@ -63,13 +61,12 @@ export default function () {
         photos={items}
         fromXPercent={80}
         toXPercent={-40}
-        triggerStart="top 5%"
+        triggerStart="top 15%"
         triggerEnd="+=200% top"
         scrubSpeed={1}
         gap={30}
         useMarkers={false}
         wrapperClassName="text-white h-[90vh]"
-        scrollerRef={parentRef}
       />
     </div>
   )

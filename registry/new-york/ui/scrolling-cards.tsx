@@ -32,26 +32,12 @@ function ScrollingCards({
 }: CardSliderProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
-  const instanceIdRef = useRef<string>(
-    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
-  )
-  const [forceUpdate, setForceUpdate] = useState(false)
+ 
 
-  useEffect(() => {
-    console.log("from useEffext");
-    
-    if (scrollerRef?.current) {
-      setForceUpdate(!forceUpdate)
-    }
-  }, [scrollerRef?.current])
+ 
   useGSAP(() => {
     if (!sectionRef.current || !cardsRef.current) return
-     const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
-    const existingTrigger2 = ScrollTrigger.getById(instanceIdRef.current + "2")
-    if (existingTrigger && existingTrigger2) {
-      existingTrigger.kill()
-      existingTrigger2.kill()
-    }
+    
     const unitLeftDis = (50 - left) / cards.length
     // Set initial position for all cards (below viewport)
     gsap.set(cardsRef.current, {
@@ -65,8 +51,8 @@ function ScrollingCards({
         end: `+=${animationLength}%`, // End after scrolling 300% of section height
         scrub: true, // Smooth scrubbing effect
         markers: false, // Set to
-        scroller: scrollerRef?.current ?? window,
-        id:instanceIdRef.current
+    
+     
       },
     })
     // Create timeline for sequential animation
@@ -76,10 +62,11 @@ function ScrollingCards({
         start: "center center", // Start when section center hits viewport center
         end: "+=300%", // End after scrolling 300% of section height
         pin: true, // Pin the section while animation plays
+        pinSpacing:true,
         scrub: 1, // Smooth scrubbing effect
-        scroller: scrollerRef?.current ?? window,
+   
         markers:false,
-        id: instanceIdRef.current + "2",
+      
         onUpdate: (self) => {
           const direction = self.direction
           const topCards = cardsRef.current.filter((card) => {
@@ -121,12 +108,12 @@ function ScrollingCards({
         ">"
       ) // Stagger the animations
     })
-  }, [cards, cardsRef.current,forceUpdate])
+  }, [cards, cardsRef.current])
 
   return (
     <section
       ref={sectionRef}
-      className="h-full relative flex items-center justify-center overflow-hidden "
+      className="h-screen relative flex items-center justify-center overflow-hidden"
     >
       {cards.map((item, index) => (
         <div
@@ -161,28 +148,15 @@ function SnappingScrollingCards({
 }: CardSliderProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
-  const instanceIdRef = useRef<string>(
-    `rotating-text-${Math.random().toString(36).substring(2, 11)}`
-  )
-  const [forceUpdate, setForceUpdate] = useState(false)
 
-  useEffect(() => {
-    console.log("from useEffext");
-    
-    if (scrollerRef?.current) {
-      setForceUpdate(!forceUpdate)
-    }
-  }, [scrollerRef?.current])
+
   useGSAP(() => {
     if (!sectionRef.current || cardsRef.current.some((ref) => !ref)) return
 
-    // // Clear any existing ScrollTriggers
-    // ScrollTrigger.getAll().forEach((st) => st.kill())
-    const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)
+
    
-    if (existingTrigger) {
-      existingTrigger.kill()
-    }
+
+ 
     const unitLeftDis = (50 - left) / (cards.length - 1 || 1)
 
     // Calculate maximum rotation to adjust starting position
@@ -205,8 +179,6 @@ function SnappingScrollingCards({
       end: `+=${animationLength}%`,
       pin: true,
       scrub: 1,
-      id:instanceIdRef.current,
-      scroller: scrollerRef?.current ?? window,
       onUpdate: (self) => {
         // Calculate current scroll progress (0-1)
         const progress = self.progress
@@ -264,12 +236,12 @@ function SnappingScrollingCards({
     return () => {
       st.kill()
     }
-  }, [cards, cardWidth, top, left,forceUpdate])
+  }, [cards, cardWidth, top, left])
 
   return (
     <section
       ref={sectionRef}
-      className="h-full relative flex items-center justify-center overflow-hidden"
+      className="h-screen relative flex items-center justify-center overflow-hidden"
     >
       {cards.map((item, index) => (
         <div

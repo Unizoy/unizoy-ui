@@ -1,10 +1,7 @@
-'use client';
 import { SnappingScrollingCards } from "@/registry/new-york/ui/scrolling-cards"
 import { CreditCard, Heart, Star, Sun, Zap } from "lucide-react"
-import { useRef } from "react"
 
 export default function () {
-  const scrollerRef = useRef<HTMLDivElement>(null)
   const cards = [
     {
       card: (
@@ -83,7 +80,7 @@ export default function () {
     },
   ]
   return (
-    <div className="w-full h-screen overflow-scroll" ref={scrollerRef}>
+    <div className="w-full " >
       <section className="h-40 w-full bg-black flex justify-center items-center text-white text-2xl">
         {" "}
         Scroll to animate
@@ -92,7 +89,6 @@ export default function () {
       <SnappingScrollingCards
         cards={cards}
         cardWidth={400}
-        scrollerRef={scrollerRef} //not required
       />
     </div>
   )

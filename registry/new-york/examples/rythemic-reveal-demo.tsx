@@ -1,15 +1,12 @@
-"use client";
-import { useRef } from "react"
 import { Rythem ,Line,Word,Picture} from "../ui/rythemic-reveal"
 
 export default function RythemicRevealDemo(){
-    const parentRef = useRef<HTMLDivElement>(null)
     return(
-    <div ref={parentRef} className="w-full h-[50vh] overflow-scroll ">
-         <div className="w-full h-full bg-background border-b flex justify-center items-center border-white text-white px-3">
+    <div className="w-full  ">
+         <div className="w-full h-[20vh] bg-background border-b flex justify-center items-center border-white text-white px-3">
         Scroll to Preview
       </div>
-         <Rythem className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-7xl" imgsWidth={110} scrollerRef={parentRef}>
+         <Rythem className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-7xl" imgsWidth={110} >
         <Line className="flex mx-auto w-fit gap-3  items-center">
           <Word>FROM</Word>
           <Word className="rounded-md scale-[0.65]">
@@ -84,9 +81,6 @@ export default function RythemicRevealDemo(){
           <Word>brand</Word>
         </Line>
       </Rythem>
-     <div className="w-full h-40 bg-background border-b flex justify-center items-center border-white text-white px-3">
-       
-      </div>
     </div>
      
     )

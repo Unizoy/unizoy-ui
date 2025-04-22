@@ -1,10 +1,8 @@
-"use client"
-
-import React, { useRef } from "react"
+import React from "react"
 import { ScrollTextFlow } from "@/registry/new-york/ui/scroll-text-flow"
 
 export default function ScrollTextFlowDemo() {
-  const parentRef = useRef<HTMLDivElement | null>(null)
+
   const slideItems = [
     [
       { name: "UI/UX", style: "bg-[#CBBEDC] mt-2" },
@@ -42,7 +40,7 @@ export default function ScrollTextFlowDemo() {
     ],
   ]
   return (
-    <div className="w-full h-screen overflow-scroll" ref={parentRef}>
+    <div className="w-full">
       <div className="w-full h-40 flex items-center justify-center  border-b border-black dark:border-white ">
         Scroll To animate
       </div>
@@ -57,7 +55,6 @@ export default function ScrollTextFlowDemo() {
         scrollTriggerStart="top top"
         scrollTriggerEnd="+=1500"
         useMarkers={false}
-        scrollerRef={parentRef}
       />
     </div>
   )

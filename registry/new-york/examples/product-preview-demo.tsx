@@ -1,10 +1,7 @@
-"use client"
 import ProductPreview from "@/registry/new-york/ui/product-preview"
-import { useRef } from "react"
 import { BsLightningCharge } from "react-icons/bs"
 
 export default function ProductPreviewDemo() {
-  const parentRef = useRef<HTMLDivElement|null>(null)
   const articleTop = [
     {
       title: { text: "Innovative Charging", className: "text-xl md:text-2xl lg:text-3xl font-bold" },
@@ -60,7 +57,7 @@ export default function ProductPreviewDemo() {
   ]
 
   return (
-    <div ref={parentRef} className="w-full h-screen overflow-scroll ">
+    <div className="w-full  ">
       <div className="w-full h-40 bg-black border-b flex justify-center items-center border-white text-white px-3">
         Scroll to Explore Product Features
       </div>
@@ -68,7 +65,7 @@ export default function ProductPreviewDemo() {
         productSrc="/examples/0001.webp"
         articleTop={articleTop}
         articleBottom={articleBottom}
-        scroller={parentRef} // optional
+        start="top 10%"
         rotate={45}
         scaleFactor={0.08}
       />
