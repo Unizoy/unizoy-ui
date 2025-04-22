@@ -207,7 +207,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, EnhancedMenuItemProps>(({
             ref={dropdownRef}
             className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
           >
-            <div className="w-max h-full md:p-4">
+            <div className="w-max h-full p-4">
               {children}
             </div>
           </div>
@@ -241,10 +241,10 @@ const ProductItem = ({
         className="shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className="text-base md:text-xl font-bold mb-1 text-black dark:text-white">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="text-neutral-700 text-xs md:text-sm max-w-[10rem] dark:text-neutral-300">
           {description}
         </p>
       </div>
