@@ -68,20 +68,22 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
   const localRef = React.useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     let parent = localRef.current?.parentElement
     if (!parent || !localRef.current) return
 
     const mouseEnter = () => {
       gsap.to(localRef.current, { opacity: 1, duration: 0.1 })
       gsap.to("[data-nametag]", { scale: 1, duration: 0.3 })
-      parent.style.border = "2px solid red"
+      parent.style.border = `1px solid ${colors.secondary}`
     }
 
     const mouseLeave = () => {
       gsap.to(localRef.current, { opacity: 0, duration: 0.1 })
       gsap.to("[data-nametag]", { scale: 0, duration: 0.1 })
       setColors(getRandomColorPair())
-      parent.style.border = "1px solid black"
+      parent.style.border = `0.5px solid ${prefersDark?"#E9E9E8":"#262626"}`
+      // parent.classList.add("border");
     }
 
     const mouseMove = (e: MouseEvent) => {
@@ -101,7 +103,7 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
       parent.removeEventListener("mousemove", mouseMove)
       parent.style.cursor = "";
     }
-  }, [])
+  }, [colors])
 
   // Improved detection of CursorIcon component
   React.useEffect(() => {
@@ -133,7 +135,7 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
     >
       {/* Only show default cursor when no CursorIcon is found */}
       {!hasCursorIcon && (
-        <CursorIcon style={{ color: colors.primary }}>
+        <CursorIcon style={{ color: colors.secondary }}>
           <svg
             style={{ rotate: "-70deg" }}
             className="scale-150"

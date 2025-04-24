@@ -217,16 +217,18 @@ export default function DraggableCarousel({
             style={{ width: cardWidth ?? "300px" }}
             className="flex-shrink-0 w-[300px] bg-white dark:bg-black rounded-xl border shadow-lg overflow-hidden transform transition-transform hover:scale-[1.02]"
           >
-            <img
-              src={item.imageUrl}
-              alt={item.title}
-              className="w-full h-48 object-cover"
-            />
             <div className="p-4">
               <h3 className="text-base font-semibold mb-2 text-gray-800 dark:text-white">
                 {item.title}
               </h3>
               <p className="text-foregound text-sm">{item.description}</p>
+            </div>
+            <div className="rounded-xl w-[90%] h-48 overflow-hidden my-3 mx-auto">
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+                className="w-full h-48 object-cover"
+              />
             </div>
           </div>
         ))}
