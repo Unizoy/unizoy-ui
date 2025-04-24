@@ -1,80 +1,34 @@
 import { ScrollingCards } from "@/registry/new-york/ui/scrolling-cards"
-import { CreditCard, Heart, Star, Sun, Zap } from "lucide-react"
 
 export default function () {
   const cards = [
     {
       card: (
-        <div className="rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 p-6 shadow-xl h-[400px] flex flex-col">
-          <img
-            src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=2000"
-            alt="Premium card"
-            className="w-full h-72 object-cover rounded-lg mb-4"
-          />
-          <CreditCard className="h-12 w-12 text-white" />
-          <h3 className="text-xl font-bold text-white mt-4">Premium Card</h3>
-          <p className="mt-2 text-white/80">Experience luxury at its finest</p>
-        </div>
+        <Card imgSrc="/examples/scrolling-card-1.png" title="Card 1" description="Reach fot the stars"/>
       ),
       rotate: 20,
     },
     {
       card: (
-        <div className="rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 p-6 shadow-xl h-[400px] flex flex-col">
-          <img
-            src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&q=80&w=2000"
-            alt="Love card"
-            className="w-full h-72 object-cover rounded-lg mb-4"
-          />
-          <Heart className="h-12 w-12 text-white" />
-          <h3 className="text-xl font-bold text-white mt-4">Love Card</h3>
-          <p className="mt-2 text-white/80">Share the love with others</p>
-        </div>
+        <Card imgSrc="/examples/scrolling-card-2.png" title="Card 2" description="Reach fot the stars"/>
       ),
       rotate: -5,
     },
     {
       card: (
-        <div className="rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 p-6 shadow-xl h-[400px] flex flex-col">
-          <img
-            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&q=80&w=2000"
-            alt="Star card"
-            className="w-full h-72 object-cover rounded-lg mb-4"
-          />
-          <Star className="h-12 w-12 text-white" />
-          <h3 className="text-xl font-bold text-white mt-4">Star Card</h3>
-          <p className="mt-2 text-white/80">Reach for the stars</p>
-        </div>
+        <Card imgSrc="/examples/scrolling-card-3.png" title="Card 3" description="Reach fot the stars"/>
       ),
       rotate: 0,
     },
     {
       card: (
-        <div className="rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 p-6 shadow-xl h-[400px] flex flex-col">
-          <img
-            src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?auto=format&fit=crop&q=80&w=2000"
-            alt="Sun card"
-            className="w-full h-72 object-cover rounded-lg mb-4"
-          />
-          <Sun className="h-12 w-12 text-white" />
-          <h3 className="text-xl font-bold text-white mt-4">Sun Card</h3>
-          <p className="mt-2 text-white/80">Brighten up your day</p>
-        </div>
+        <Card imgSrc="/examples/scrolling-card-4.png" title="Card 4" description="Reach fot the stars"/>
       ),
       rotate: 5,
     },
     {
       card: (
-        <div className="rounded-xl bg-gradient-to-br from-red-500 to-rose-500 p-6 shadow-xl h-[400px] flex flex-col">
-          <img
-            src="https://images.unsplash.com/photo-1506259091721-347e791bab0f?auto=format&fit=crop&q=80&w=2000"
-            alt="Energy card"
-            className="w-full h-72 object-cover rounded-lg mb-4"
-          />
-          <Zap className="h-12 w-12 text-white" />
-          <h3 className="text-xl font-bold text-white mt-4">Energy Card</h3>
-          <p className="mt-2 text-white/80">Power up your life</p>
-        </div>
+         <Card imgSrc="/examples/scrolling-card-5.png" title="Card 5" description="Reach fot the stars"/>
       ),
       rotate: -20,
     },
@@ -95,3 +49,38 @@ export default function () {
     </div>
   )
 }
+interface CardProps {
+  title: string;
+  description: string;
+  imgSrc: string;
+  alt?: string;
+}
+
+const Card = ({ 
+  title, 
+  description, 
+  imgSrc, 
+  alt = "Card image" 
+}:CardProps) => {
+  return (
+    <div className="max-w-sm rounded-2xl overflow-hidden transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg dark:shadow-none border dark:border dark:border-gray-700 hover:shadow-xl dark:hover:border-gray-600">
+      <div className="p-5 sm:p-6">
+        <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+          {title}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          {description}
+        </p>
+      </div>
+      <div className="relative overflow-hidden">
+        <div className="aspect-w-4 aspect-h-3 w-full">
+          <img 
+            src={imgSrc} 
+            alt={alt}
+            className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

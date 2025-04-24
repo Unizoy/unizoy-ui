@@ -25,7 +25,7 @@ interface CardSliderProps {
 function ScrollingCards({
   cards,
   cardWidth,
-  top = 35,
+  top = 45,
   left = 20,
   animationLength = 300,
   scrollerRef,
