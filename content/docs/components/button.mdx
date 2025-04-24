@@ -61,8 +61,8 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 | Name          | Type                                              | Description                                                       |
 | ------------- | ------------------------------------------------- | ----------------------------------------------------------------- |
-| `mainText`\*  | `string` or `{ text: string; className: string }` | Main heading text or an object containing text and a CSS class.   |
-| `cards`\*     | `ReactElement[]`                                  | An array of React elements representing the cards to be animated. |
-| `scrollerRef` | `RefObject<HTMLElement>` (optional)               | Reference to the scrolling container; defaults to `window`.       |
+| `children`\*  | `ReactNode` | Text string of the button.   |
+| `varaint`\*   | `string`    | Varaint type of the button. Default is `blue`. |
+| `intent`      | `string`    | Size of the text. Default is `small`. |
 
 > **Note:** Props marked with `*` are required.

@@ -84,7 +84,7 @@ interface ButtonProps
     VariantProps<typeof buttonVariants> {}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, intent, children, className, ...props }, ref) => {
+  ({ variant="blue", intent, children, className, ...props }, ref) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const circleRef = useRef<HTMLDivElement>(null);
     const [circleSize, setCircleSize] = useState<number>(0);
