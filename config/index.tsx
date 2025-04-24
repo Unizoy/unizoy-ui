@@ -41,6 +41,44 @@ export const Index: Record<string, any> = {
       source: "",
       meta: undefined,
     },
+     "button": {
+      name: "button",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/ui/button.tsx",
+          type: "registry:ui",
+          target: "",
+        },
+      ],
+      categories: ["animations"],
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/button.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
+    "button-demo": {
+      name: "button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [
+        {
+          path: "registry/new-york/examples/button-demo.tsx",
+          type: "registry:example",
+          target: "",
+        },
+      ],
+      categories: ["button"],
+      component: React.lazy(
+        () => import("@/registry/new-york/examples/button-demo.tsx")
+      ),
+      source: "",
+      meta: undefined,
+    },
     "custom-pointer-custom-cursor": {
       name: "custom-pointer-custom-cursor",
       description: "",
