@@ -15,7 +15,7 @@ export default function HeroGridSection() {
           className="border border-dotted md:w-1/3 w-full flex justify-center items-center"
         >
           <div>
-            <TextRollUpEffect className=" text-2xl lg:text-4xl  ">
+            <TextRollUpEffect className=" text-4xl  ">
               SonicBoom
             </TextRollUpEffect>
           </div>
