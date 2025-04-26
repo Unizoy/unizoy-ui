@@ -2,7 +2,7 @@ import { MdContentCopy } from "react-icons/md"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import AnimatedTooltipDemo from "@/registry/new-york/examples/animated-tooltip-demo"
+import AnimatedTooltipDemo from "@/registry/examples/animated-tooltip-demo"
 
 export default function HeroSection() {
   return (

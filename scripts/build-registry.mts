@@ -17,7 +17,7 @@ import { baseColors } from "../registry/registry-base-colors"
 import { registryCategories } from "../registry/registry-categories"
 import { colorMapping, colors } from "../registry/registry-colors"
 import { iconLibraries, icons } from "../registry/registry-icons"
-import { styles } from "../registry/registry-styles"
+// import { styles } from "../registry/registry-styles"
 import { fixImport } from "./fix-import.mts"
 
 const REGISTRY_PATH = path.join(process.cwd(), "public/r")
@@ -108,14 +108,13 @@ import * as React from "react"
 export const Index: Record<string, any> = {
 `
 
-  for (const style of styles) {
-    index += `  "${style.name}": {`
+
 
     // Build style index.
     for (const item of registry.items) {
       const resolveFiles = item.files?.map(
         (file) =>
-          `registry/${style.name}/${
+          `registry/${
             typeof file === "string" ? file : file.path
           }`
       )
@@ -183,7 +182,7 @@ export const Index: Record<string, any> = {
         })
 
         // Write the source file for blocks only.
-        sourceFilename = `__registry__/${style.name}/${type}/${item.name}.tsx`
+        sourceFilename = `__registry__/${type}/${item.name}.tsx`
 
         if (item.files) {
           const files = item.files.map((file) =>
@@ -192,7 +191,7 @@ export const Index: Record<string, any> = {
               : file
           )
           if (files?.length) {
-            sourceFilename = `__registry__/${style.name}/${files[0].path}`
+            sourceFilename = `__registry__/${files[0].path}`
           }
         }
 
@@ -205,7 +204,7 @@ export const Index: Record<string, any> = {
         await fs.writeFile(sourcePath, sourceFile.getText())
       }
 
-      let componentPath = `@/registry/${style.name}/${type}/${item.name}`
+      let componentPath = `@/registry/${type}/${item.name}`
 
       if (item.files) {
         const files = item.files.map((file) =>
@@ -214,7 +213,7 @@ export const Index: Record<string, any> = {
             : file
         )
         if (files?.length) {
-          componentPath = `@/registry/${style.name}/${files[0].path}`
+          componentPath = `@/registry/${files[0].path}`
         }
       }
 
@@ -225,7 +224,7 @@ export const Index: Record<string, any> = {
       type: "${item.type}",
       registryDependencies: ${JSON.stringify(item.registryDependencies)},
       files: [${item.files?.map((file) => {
-        const filePath = `registry/${style.name}/${
+        const filePath = `registry/${
           typeof file === "string" ? file : file.path
         }`
         const resolvedFilePath = path.resolve(filePath)
@@ -244,9 +243,7 @@ export const Index: Record<string, any> = {
     },`
     }
 
-    index += `
-  },`
-  }
+  
 
   index += `
 }
@@ -290,8 +287,8 @@ export const Index: Record<string, any> = {
 // Build registry/styles/[style]/[name].json.
 // ----------------------------------------------------------------------------
 async function buildStyles(registry: Registry) {
-  for (const style of styles) {
-    const targetPath = path.join(REGISTRY_PATH, "styles", style.name)
+
+    const targetPath = path.join(REGISTRY_PATH)
 
     // Create directory if it doesn't exist.
     if (!existsSync(targetPath)) {
@@ -320,7 +317,7 @@ async function buildStyles(registry: Registry) {
             let content: string
             try {
               content = await fs.readFile(
-                path.join(process.cwd(), "registry", style.name, file.path),
+                path.join(process.cwd(), "registry", file.path),
                 "utf8"
               )
 
@@ -377,8 +374,8 @@ async function buildStyles(registry: Registry) {
       }
 
       const payload = registryItemSchema.safeParse({
-        $schema: "https://ui.shadcn.com/schema/registry-item.json",
-        author: "shadcn (https://ui.shadcn.com)",
+        $schema: "https://ui.unizoy.com/schema/registry-item.json",
+        author: "shadcn (https://ui.unizoy.com)",
         ...item,
         files,
       })
@@ -391,51 +388,51 @@ async function buildStyles(registry: Registry) {
         )
       }
     }
-  }
+  
 
   // ----------------------------------------------------------------------------
   // Build registry/styles/index.json.
   // ----------------------------------------------------------------------------
-  const stylesJson = JSON.stringify(styles, null, 2)
-  await fs.writeFile(
-    path.join(REGISTRY_PATH, "styles/index.json"),
-    stylesJson,
-    "utf8"
-  )
+  // const stylesJson = JSON.stringify(styles, null, 2)
+  // await fs.writeFile(
+  //   path.join(REGISTRY_PATH, "styles/index.json"),
+  //   stylesJson,
+  //   "utf8"
+  // )
 }
 
 // ----------------------------------------------------------------------------
 // Build registry/styles/[name]/index.json.
 // ----------------------------------------------------------------------------
-async function buildStylesIndex() {
-  for (const style of styles) {
-    const targetPath = path.join(REGISTRY_PATH, "styles", style.name)
+// async function buildStylesIndex() {
+//   for (const style of styles) {
+//     const targetPath = path.join(REGISTRY_PATH, "styles", style.name)
 
-    const payload: z.infer<typeof registryItemSchema> = {
-      name: style.name,
-      type: "registry:style",
-      dependencies: [
-        "tailwindcss-animate",
-        "class-variance-authority",
-        "lucide-react",
-      ],
-      registryDependencies: ["utils"],
-      tailwind: {
-        config: {
-          plugins: [`require("tailwindcss-animate")`],
-        },
-      },
-      cssVars: {},
-      files: [],
-    }
+//     const payload: z.infer<typeof registryItemSchema> = {
+//       name: style.name,
+//       type: "registry:style",
+//       dependencies: [
+//         "tailwindcss-animate",
+//         "class-variance-authority",
+//         "lucide-react",
+//       ],
+//       registryDependencies: ["utils"],
+//       tailwind: {
+//         config: {
+//           plugins: [`require("tailwindcss-animate")`],
+//         },
+//       },
+//       cssVars: {},
+//       files: [],
+//     }
 
-    await fs.writeFile(
-      path.join(targetPath, "index.json"),
-      JSON.stringify(payload, null, 2),
-      "utf8"
-    )
-  }
-}
+//     await fs.writeFile(
+//       path.join(targetPath, "index.json"),
+//       JSON.stringify(payload, null, 2),
+//       "utf8"
+//     )
+//   }
+// }
 
 // ----------------------------------------------------------------------------
 // Build registry/colors/index.json.
@@ -805,11 +802,12 @@ try {
     console.error(result.error)
     process.exit(1)
   }
-
-  await syncStyles()
+  // this one used to copy every thing from  new-york to default
+  // await syncStyles()
   await buildRegistry(result.data)
   await buildStyles(result.data)
-  await buildStylesIndex()
+  // this was used to create index.json for each style in the respective public folder
+  // await buildStylesIndex()
   await buildThemes()
 
   await buildRegistryIcons()

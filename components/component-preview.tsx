@@ -2,14 +2,14 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { Index } from "@/config/index"
+import { Index } from "@/__registry__/index"
 
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
+// import { useConfig } from "@/hooks/use-config"
 import { CopyButton } from "@/components/copy-button"
 import { RefreshButton } from "@/components/refresh-button"
 import { Icons } from "@/components/icons"
-import { StyleSwitcher } from "@/components/style-switcher"
+// import { StyleSwitcher } from "@/components/style-switcher"
 import { ThemeWrapper } from "@/components/theme-wrapper"
 import { V0Button } from "@/components/v0-button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -41,18 +41,18 @@ export function ComponentPreview({
   hideCode = false,
   ...props
 }: ComponentPreviewProps) {
-  const [config] = useConfig()
+  // const [config] = useConfig()
   const [forceUpdate, setForceUpdate] = React.useState(false)
-  const index = styles.findIndex((style) => style.name === config.style)
+  // const index = styles.findIndex((style) => style.name === config.style)
 
-  const Codes = React.Children.toArray(children) as React.ReactElement[]
+  const Codes = React.Children.toArray(children)   as React.ReactElement[]
   //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
   //   and also Alex told to remove options for switching theme so no need of it
   //1 is default  and 0 is new-york
-  const Code = Codes[index]
+  const Code = Codes[0]
 
   const Preview = React.useMemo(() => {
-    const Component = Index[config.style][name]?.component
+    const Component = Index[name]?.component
     if (!Component) {
       return (
         <p className="text-sm text-muted-foreground">
@@ -66,7 +66,7 @@ export function ComponentPreview({
     }
 
     return <Component key={forceUpdate} />
-  }, [name, config.style, forceUpdate])
+  }, [name, forceUpdate])
 
   const codeString = React.useMemo(() => {
     if (
@@ -78,34 +78,6 @@ export function ComponentPreview({
       return Button?.props?.value || Button?.props?.__rawString__ || null
     }
   }, [Code])
-
-  if (type === "block") {
-    return (
-      <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border">
-        <Image
-          src={`/r/styles/${config.style}/${name}-light.png`}
-          alt={name}
-          width={1440}
-          height={900}
-          className="absolute left-0 top-0 z-20 w-[970px] max-w-none bg-background dark:hidden sm:w-[1280px] md:hidden md:dark:hidden"
-        />
-        <Image
-          src={`/r/styles/${config.style}/${name}-dark.png`}
-          alt={name}
-          width={1440}
-          height={900}
-          className="absolute left-0 top-0 z-20 hidden w-[970px] max-w-none bg-background dark:block sm:w-[1280px] md:hidden md:dark:hidden"
-        />
-        <div className="absolute inset-0 hidden w-[1600px] bg-background md:block">
-          <iframe
-            src={`/view/styles/${config.style}/${name}`}
-            className="size-full"
-          />
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div
       className={cn("relative my-4 flex flex-col space-y-2 h-fit", className)}
