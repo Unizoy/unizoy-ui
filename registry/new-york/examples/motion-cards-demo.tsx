@@ -1,9 +1,7 @@
-"use client"
 import MotionCards from "@/registry/new-york/ui/motion-cards"
-import { ReactElement, useRef } from "react"
+import { ReactElement } from "react"
 import { RiLockStarFill } from "react-icons/ri"
 export default function MotionCardsDemo() {
-  const parentRef = useRef<HTMLDivElement>(null)
 
   const cardsArray: ReactElement[] = [
     <Card1 />,
@@ -14,7 +12,7 @@ export default function MotionCardsDemo() {
   ]
   return (
     //make the width w-screen it will work well
-    <div ref={parentRef} className="w-full h-screen overflow-scroll ">
+    <div className="w-full  ">
       <div className="w-full h-40 bg-black border-b flex justify-center items-center border-white text-white px-3">
         Scroll to Explore Component
       </div>
@@ -25,7 +23,6 @@ export default function MotionCardsDemo() {
           className: "text-red-900 text-5xl",
         }}
         cards={cardsArray}
-        scrollerRef={parentRef} // optional
       />
       <div className="w-full h-40  border-b flex justify-center items-center border-white text-white px-3">
         {/* Scroll to Explore Component */}

@@ -16,6 +16,7 @@ interface ProductPreviewProps {
   rotate?: number
   length?: number
   scroller?: RefObject<HTMLElement>
+  start?:string
   articleTop: {
     title: {
       text: string
@@ -48,6 +49,7 @@ export default function ProductPreview({
   scaleFactor = 0.1,
   rotate = 30,
   scroller,
+  start="top top",
   articleTop,
   articleBottom,
   length = (articleTop.length * 2 - 1) * 50,
@@ -111,7 +113,7 @@ export default function ProductPreview({
       gsap.timeline({
         scrollTrigger: {
           trigger: mainRef.current,
-          start: "top top",
+          start,
           end: `${length}% top`,
           scrub: true,
           scroller: scroller?.current ?? window,

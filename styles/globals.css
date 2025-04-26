@@ -169,3 +169,8 @@
   background-color: #ffffff26;
   border-radius: 12px;
 }
+[data-rehype-pretty-code-fragment] {
+    position: relative;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}

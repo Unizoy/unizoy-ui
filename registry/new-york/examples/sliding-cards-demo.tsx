@@ -35,7 +35,10 @@ export default function SlidingCardsDemo() {
   ]
 
   return (
-    <div ref={parentRef} className="max-h-[30rem] w-full overflow-y-scroll">
+    <div ref={parentRef} className=" w-full ">
+      <div className="w-full h-40 flex items-center justify-center  border-b border-black dark:border-white">
+        Scroll To animate
+      </div>
       <SlidingCards
         items={items}
         maxWidth={320}
@@ -49,7 +52,6 @@ export default function SlidingCardsDemo() {
         parentContentClassName="mt-40"
         headingClassName="text-[2.5rem] text-white my-20 font-semibold mx-auto text-center"
         contentClassName=""
-        scrollerRef={parentRef}
       />
     </div>
   )

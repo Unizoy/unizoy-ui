@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "unizoy",
+      url: "https://ui.unizoy.com",
     },
   ],
-  creator: "shadcn",
+  creator: "unizoy",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -54,14 +54,71 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@shadcn",
+    creator: "@unizoyofficial",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      {
+        type: "image/png",
+        sizes: "16x16",
+        media: "(prefers-color-scheme: light)",
+        url: "/meta/favicon-16x16.png",
+      },
+      {
+        type: "image/png",
+        sizes: "16x16",
+        media: "(prefers-color-scheme: dark)",
+        url: "/meta/dark/favicon-16x16.png",
+      },
+      {
+        type: "image/png",
+        sizes: "32x32",
+        media: "(prefers-color-scheme: light)",
+        url: "/meta/favicon-32x32.png",
+      },
+      {
+        type: "image/png",
+        sizes: "32x32",
+        media: "(prefers-color-scheme: dark)",
+        url: "/meta/dark/favicon-32x32.png",
+      },
+    ],
+    shortcut: [
+      {
+        type: "image/x-icon",
+        media: "(prefers-color-scheme: light)",
+        url: "/meta/favicon.ico",
+      },
+      {
+        type: "image/x-icon",
+        media: "(prefers-color-scheme: dark)",
+        url: "/meta/dark/favicon.ico",
+      },
+    ],
+    apple: [
+      {
+        type: "image/png",
+        sizes: "180x180",
+        media: "(prefers-color-scheme: light)",
+        url: "/meta/apple-touch-icon.png",
+      },
+      {
+        type: "image/png",
+        sizes: "180x180",
+        media: "(prefers-color-scheme: dark)",
+        url: "/meta/dark/apple-touch-icon.png",
+      },
+    ],
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  manifest: `/site.webmanifest`,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 }
 
 export const viewport: Viewport = {

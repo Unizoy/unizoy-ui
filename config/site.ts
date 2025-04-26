@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "unizoy/ui",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
+  url: "https://ui.unizoy.com",
+  ogImage: "https://ui.unizoy.com/og.jpg",
   description:
-    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+    "Copy-Paste Ui Elements That Can Save Your Development Time. Accessible. Customizable. Open Source.",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    twitter: "https://x.com/unizoyofficial",
+    github: "https://github.com/Unizoy/unizoy-ui",
   },
 }
 

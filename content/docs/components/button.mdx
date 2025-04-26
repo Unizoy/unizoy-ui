@@ -1,0 +1,68 @@
+---
+title: Button
+description: The Button component you have here is a beautifully designed button with animated effects. It utilizes GSAP for smooth animations and custom hover effects.
+---
+
+<ComponentPreview
+  name="button-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+
+<Step>
+  Make a file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+<Step>
+  Make a file and copy paste this code in a file with name `button.tsx`
+</Step>
+
+<ComponentSource name="button" />
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="cli">
+
+<Steps>
+
+<Step>Yet to come.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Name          | Type                                              | Description                                                       |
+| ------------- | ------------------------------------------------- | ----------------------------------------------------------------- |
+| `children`\*  | `ReactNode` | Text string of the button.   |
+| `varaint`\*   | `string`    | Varaint type of the button. Default is `blue`. |
+| `intent`      | `string`    | Size of the text. Default is `small`. |
+
+> **Note:** Props marked with `*` are required.

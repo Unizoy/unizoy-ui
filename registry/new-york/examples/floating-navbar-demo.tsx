@@ -33,29 +33,29 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <MenuItem item="Products">
-          <div className="text-sm grid grid-cols-2 gap-10 p-4">
+          <div className="text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Product one"
               href="https://example.com"
-              src="https://images.unsplash.com/photo-1682687982501-1e58ab814714"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800"
               description="Ready-made UI components for consistent brand experiences."
             />
             <ProductItem
               title="Product two"
               href="https://example.com"
-              src="https://images.unsplash.com/photo-1682687982501-1e58ab814714"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800"
               description="Track metrics and visualize key performance data."
             />
             <ProductItem
               title="Product Three"
               href="https://example.com"
-              src="https://images.unsplash.com/photo-1682687982501-1e58ab814714"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800"
               description="Organize and publish content across channels."
             />
             <ProductItem
               title="Product three"
               href="https://example.com"
-              src="https://images.unsplash.com/photo-1682687982501-1e58ab814714"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800"
               description="Secure login solutions with multi-factor options."
             />
           </div>

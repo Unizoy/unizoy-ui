@@ -33,6 +33,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Button",
+          href: "/docs/components/button",
+          items: [],
+        },
+        {
           title: "Carousel ",
           href: "/docs/components/carousel",
           items: [],

@@ -15,12 +15,14 @@ function Rythem({
   imgsWidth,
   positionToAnimation=80,
   scrollerRef,
+  markers=false
 }: {
   children: React.ReactNode;
   className?: string;
   imgsWidth: number;
   positionToAnimation?:number
   scrollerRef?: RefObject<HTMLElement>;
+  markers?:boolean;
 }) {
   const sectionRef = useRef<HTMLElement>(null)
     const instanceIdRef = useRef<string>(
@@ -73,9 +75,10 @@ function Rythem({
           trigger: sectionRef.current,
           //edit these values for diffrent position of animation start and end
           start: `top ${positionToAnimation}%`,
-          end: `bottom ${positionToAnimation}%`,
+          end: `+=50% ${positionToAnimation}%`,
           scrub: 1,
           scroller: scrollerRef?.current ?? window,
+          markers:markers,
           id: instanceIdRef.current + "2"
         },
       })
@@ -92,7 +95,7 @@ function Rythem({
     <section
       ref={sectionRef}
       className={cn(
-        "text-8xl font-semibold h-fit flex-col gap-10 justify-center items-center uppercase w-full",
+        "text-8xl font-semibold h-fit flex-col justify-center items-center uppercase w-full",
         className
       )}
     >

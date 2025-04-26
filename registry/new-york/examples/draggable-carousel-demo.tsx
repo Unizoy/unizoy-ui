@@ -66,6 +66,6 @@ export default function DraggableCarouselDemo() {
     },
   ]
   return (
-    <DraggableCarousel items={carouselItems} friction={0.9} cardWidth="200px" />
+    <DraggableCarousel items={carouselItems} friction={0.9} cardWidth="250px" />
   )
 }
