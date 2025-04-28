@@ -16,6 +16,7 @@ description: When hovering over the clipboard icon, two hidden icons should move
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">Cli</TabsTrigger>
 </TabsList>
 
   <TabsContent value="manual">
@@ -58,7 +59,11 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 {" "}
 
-<Step>Cli Steps</Step>
+<Step>Run the following command </Step>
+
+```bash
+npx shadcn@latest add https://ui.unizoy.com/r/copy-icon.json
+```
 
   </Steps>
 
