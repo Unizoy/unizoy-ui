@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "motion-cards",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "files": [
+    {
+      "path": "ui/motion-cards.tsx",
+      "content": "\"use client\"\nimport { ReactElement, RefObject, useEffect, useRef, useState } from \"react\"\nimport gsap from \"gsap\"\nimport { ScrollTrigger } from \"gsap/ScrollTrigger\"\nimport { useGSAP } from \"@gsap/react\"\nimport { cn } from \"../lib/utils\"\ngsap.registerPlugin(ScrollTrigger)\n\ninterface MotionCardProps {\n  mainText:\n    | {\n        text: string\n        className: string\n      }\n    | string\n  cards: ReactElement[]\n  scrollerRef?: RefObject<HTMLElement>\n}\n\nexport default function MotionCard({\n  mainText,\n  cards,\n  scrollerRef,\n}: MotionCardProps) {\n  const masterRef = useRef<HTMLDivElement>(null)\n  const childRef = useRef<HTMLDivElement>(null)\n  const cardRefs = useRef<HTMLDivElement[]>([])\n  const instanceIdRef = useRef<string>(\n    `rotating-text-${Math.random().toString(36).substring(2, 11)}`\n  )\n  const [forceUpdate, setForceUpdate] = useState(false)\n\n  useEffect(() => {\n    if (scrollerRef?.current) {\n      setForceUpdate(!forceUpdate)\n    }\n  }, [scrollerRef?.current])\n  //ajust this value accordingly to have desired animation or you can also increase\n  //  the element inside and remove the conditional check below\n  const vars = [\n    { left: \"150%\", top: \"0%\" },\n    { left: \"10%\", top: \"-80%\" },\n    { left: \"180%\", top: \"55%\" },\n    { left: \"-100%\", top: \"50%\" },\n    { left: \"200%\", top: \"80%\" },\n  ]\n\n  useGSAP(() => {\n    if (!masterRef.current || !childRef.current) return\n    const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)\n    const existingTrigger2 = ScrollTrigger.getById(instanceIdRef.current + \"2\")\n    if (existingTrigger && existingTrigger2) {\n      existingTrigger.kill()\n      existingTrigger2.kill()\n    }\n\n    gsap.to(masterRef.current, {\n      scrollTrigger: {\n        trigger: masterRef.current,\n        start: \"top top\",\n        end: \"bottom 40%\",\n        pin: true,\n        scroller: scrollerRef?.current ?? window,\n        id: instanceIdRef.current,\n      },\n    })\n\n    const tl = gsap.timeline({\n      scrollTrigger: {\n        trigger: childRef.current,\n        start: \"top top\",\n        end: \"bottom 10%\",\n        scrub: 1,\n        scroller: scrollerRef?.current ?? window,\n        id: instanceIdRef.current + \"2\",\n      },\n    })\n\n    tl.to(childRef.current, {\n      scale: 0,\n    }).fromTo(\n      cardRefs.current,\n      {\n        left: (index) => vars[index]?.left || \"0%\",\n        top: (index) => vars[index]?.top || \"0%\",\n      },\n      {\n        left: \"50%\",\n        top: \"50%\",\n      },\n      \"<\"\n    )\n  }, [forceUpdate])\n  //this will return if legth is small than 1 or more than 5\n  if (cards.length > 5 || cards.length < 1)\n    return <div>Inappropriate card length </div>\n  return (\n    // Wrapper div for pinning\n    <div\n      ref={masterRef}\n      className=\"w-full h-screen flex justify-center items-center  relative overflow-hidden\"\n    >\n      {/* This div has scrub and scale with ScrollTrigger */}\n      <div\n        ref={childRef}\n        className=\"w-full h-full flex justify-center items-center\"\n      >\n        <h1\n          className={cn(\n            \"text-9xl font-extrabold  text-center px-32\",\n            typeof mainText === \"string\" ? \"\" : mainText.className\n          )}\n        >\n          {typeof mainText === \"string\" ? mainText : mainText.text}\n        </h1>\n      </div>\n\n      {/* Mapping cards here with absolute positioning */}\n      {cards.map((Card, i) => (\n        <div\n          key={i}\n          className={cn(\n            \"absolute w-[300px] block -translate-x-1/2 -translate-y-1/2\"\n          )}\n          ref={(el) => {\n            if (el) cardRefs.current[i] = el // Assign instead of push\n          }}\n        >\n          {Card}\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "categories": [
+    "hover-effect"
+  ]
+}

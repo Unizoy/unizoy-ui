@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "product-preview-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "product-preview"
+  ],
+  "files": [
+    {
+      "path": "examples/product-preview-demo.tsx",
+      "content": "import ProductPreview from \"@/registry/ui/product-preview\"\nimport { BsLightningCharge } from \"react-icons/bs\"\n\nexport default function ProductPreviewDemo() {\n  const articleTop = [\n    {\n      title: { text: \"Innovative Charging\", className: \"text-xl md:text-2xl lg:text-3xl font-bold\" },\n      description: {\n        text: \"Experience fast and efficient charging with USB-C compatibility, ensuring you never run out of power.\",\n      },\n      icon: <BsLightningCharge className=\"scale-[2]\" />,\n    },\n    {\n      title: { text: \"Seamless Design\", className: \"text-xl md:text-2xl lg:text-3xl font-bold\" },\n      description: {\n        text: \"Crafted with precision, the sleek design complements any modern workspace or lifestyle.\",\n      },\n      icon: <BsLightningCharge className=\"scale-[2]\" />,\n    },\n    {\n      title: { text: \"Enhanced Durability\", className: \"text-xl md:text-2xl lg:text-3xl font-bold\" },\n      description: {\n        text: \"Built to last, with robust materials that ensure long-term reliability and performance.\",\n      },\n      icon: <BsLightningCharge className=\"scale-[2]\" />,\n    },\n  ]\n\n  const articleBottom = [\n    {\n      title: {\n        text: \"Advanced Features\",\n        className: \"text-red-900 text-xl md:text-2xl lg:text-3xl font-bold\",\n      },\n      description: {\n        text: \"Equipped with cutting-edge technology to enhance your productivity and experience.\",\n      },\n      icon: <BsLightningCharge className=\"scale-[2]\" />,\n    },\n    {\n      title: {\n        text: \"User-Friendly Interface\",\n        className: \"text-xl md:text-2xl lg:text-3xl font-bold\",\n      },\n      description: {\n        text: \"Intuitive controls and seamless connectivity for an effortless user experience.\",\n      },\n      icon: <BsLightningCharge className=\"scale-[2]\" />,\n    },\n    {\n      title: { text: \"Eco-Friendly\", className: \"text-xl md:text-2xl lg:text-3xl font-bold\" },\n      description: {\n        text: \"Manufactured with environmentally sustainable materials, contributing to a greener planet.\",\n      },\n      icon: <BsLightningCharge className=\"scale-[2]\" />,\n    },\n  ]\n\n  return (\n    <div className=\"w-full  \">\n      <div className=\"w-full h-40 bg-black border-b flex justify-center items-center border-white text-white px-3\">\n        Scroll to Explore Product Features\n      </div>\n      <ProductPreview\n        productSrc=\"/examples/0001.webp\"\n        articleTop={articleTop}\n        articleBottom={articleBottom}\n        start=\"top 10%\"\n        rotate={45}\n        scaleFactor={0.08}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

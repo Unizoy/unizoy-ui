@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "testimonial-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "testimonial"
+  ],
+  "files": [
+    {
+      "path": "examples/testimonial-demo.tsx",
+      "content": "import { Testimonial } from \"@/registry/ui/testimonial\"\n\nexport default function TestimonialDemo() {\n    const testimonialDetails = [\n        {\n            title: \"Unizoy\",\n            subTitle: \"Explore Our Story\",\n            description:\n                \"Unizoy stands apart through our dedication \\n and genuine care for our clients. \\n We may not be the biggest,  but we’re \\n a team you can trust and enjoy   \\nworkin g with. Let us help you build a brand \\n that truly connects.\",\n        },\n        {\n            title: \"Pure Hearts\",\n            subTitle: \"We are More Than Just a Web Agency\",\n            description:\n                \"We believe in making meaningful connections.\\n Every project we take on is handled \\n  with sincerity and a genuine desire to \\n  help our clients succeed. It's not just about \\n  business, it's about creating lasting, impactful \\n  relationships. \",\n        },\n        {\n            title: \"Happy Clients\",\n            subTitle: \"Building Trust Through Every Project\",\n            description:\n                \"Client satisfaction is our top priority.\\n  We focus on collaboration, transparency, and personalized \\n  service to ensure that every project is a success. \\n Our goal is to make every client \\n  feel valued and supported.\",\n        },\n\n    ];\n    return (\n        <Testimonial data={testimonialDetails}\n            backgroundUrl=\"https://static.videezy.com/system/resources/previews/000/007/313/original/Plexus.mp4\"\n            backgroundClassName=\"absolute top-0 left-0 w-screen h-[90vh] object-cover -z-0 opacity-25\"\n            containerClassName=\" bg-black text-white w-screen h-[90vh]\"\n            animationDuration={4000}\n            contentWrapperClassName=\"w-full md:w-11/12 lg:w-10/12 p-10\"\n            titleTextClassName=\"text-[1.75rem] md:text-[2rem] lg:text-[2.5rem]\"\n            subtitleTextClassName=\"text-2xl lg:text-3xl font-semibold\"\n            descriptionTextClassName=\"text-base md:text-lg text-white/90\"\n        />\n    )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

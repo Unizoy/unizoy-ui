@@ -5,7 +5,3 @@ node_modules
 .next
 __registry__
 !public/r/**/*.png
-public/r/**/*
-!public/r/index.json
-!public/r/themes.css
-!public/r/facebook.json

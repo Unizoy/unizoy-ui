@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "reveal-text-demo2",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "reveal-text-demo2"
+  ],
+  "files": [
+    {
+      "path": "examples/reveal-text-demo2.tsx",
+      "content": "\"use client\";\nimport { RevealText } from \"@/registry/ui/reveal-text\";\nimport Unizoy from \"@/public/RevealText/Unizoy.png\";\n\nexport default function () {\n  const variants = [\n    \"black\",\n    \"gradient0\",\n    \"gradient1\",\n    \"gradient2\",\n    \"gradient3\",\n    \"gradient4\",\n    \"gradient5\",\n    \"gradient6\",\n    \"gradient7\",\n    \"gradient8\",\n  ];\n\n  return (\n    <div className=\"w-screen flex justify-center items-center\">\n      <div className=\"w-11/12 p-1 md:p-5 lg:p-10 space-y-8 text-2xl md:text-3xl lg:text-4xl font-medium text-neutral-500 max-w-4xl\">\n        <div className=\"grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center\">\n          {variants.map((variant) => (\n            <div key={variant} className=\"flex flex-col items-center gap-1\">\n              <RevealText\n                variant={variant as any}\n                className=\"font-bold\"\n                image={Unizoy.src}\n                hoverImageClass=\"p-0 border-neutral-400\"\n                href=\"https://unizoy.com/\"\n              >\n                Unizoy\n              </RevealText>\n              <span className=\"text-sm text-neutral-400\">{variant}</span>\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

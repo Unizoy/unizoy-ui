@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "carousel-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "examples/carousel-demo.tsx",
+      "content": "import React from \"react\"\nimport { Carousel } from \"@/registry/ui/carousel\"\n\nexport default function CarouselDemo() {\n  const slideData = [\n    {\n      title: \"Mystic Mountains\",\n      button: \"Explore Component\",\n      src: \"https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n      link: \"https://www.unizoy.com/\",\n    },\n    {\n      title: \"Urban Dreams\",\n      button: \"Explore Component\",\n      src: \"https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n      link: \"#\",\n    },\n    {\n      title: \"Neon Nights\",\n      button: \"Explore Component\",\n      src: \"https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n      link: \"#\",\n    },\n    {\n      title: \"Desert Whispers\",\n      button: \"Explore Component\",\n      src: \"https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n      link: \"#\",\n    },\n  ]\n  return (\n    <div className=\"relative overflow-hidden w-full h-full py-20\">\n      <Carousel slides={slideData} />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

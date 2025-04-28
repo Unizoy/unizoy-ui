@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "rythemic-reveal",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "files": [
+    {
+      "path": "ui/rythemic-reveal.tsx",
+      "content": "\"use client\"\nimport { useGSAP } from \"@gsap/react\"\nimport ScrollTrigger from \"gsap/ScrollTrigger\"\nimport { RefObject, useEffect, useRef, useState } from \"react\"\nimport gsap from \"gsap\"\nimport { cn } from \"../lib/utils\"\ngsap.registerPlugin(ScrollTrigger)\n/**\n *Default:- className=\"text-8xl font-semibold h-fit flex-col gap-10 justify-center items-center uppercase w-full\"\n *\n */\nfunction Rythem({\n  children,\n  className,\n  imgsWidth,\n  positionToAnimation=80,\n  scrollerRef,\n  markers=false\n}: {\n  children: React.ReactNode;\n  className?: string;\n  imgsWidth: number;\n  positionToAnimation?:number\n  scrollerRef?: RefObject<HTMLElement>;\n  markers?:boolean;\n}) {\n  const sectionRef = useRef<HTMLElement>(null)\n    const instanceIdRef = useRef<string>(\n    `rotating-text-${Math.random().toString(36).substring(2, 11)}`\n  )\n const [forceUpdate, setForceUpdate] = useState(false)\n   useEffect(()=>{\n      if (scrollerRef?.current) {\n      setForceUpdate(!forceUpdate)\n    }\n  },[])\n  useGSAP(\n    () => {\n      if (!sectionRef.current) return\n        const existingTrigger = ScrollTrigger.getById(instanceIdRef.current)\n    const existingTrigger2 = ScrollTrigger.getById(instanceIdRef.current + \"2\")\n    if (existingTrigger && existingTrigger2) {\n      existingTrigger.kill()\n      existingTrigger2.kill()\n    }\n      const allSpan = sectionRef.current.querySelectorAll(\"span\")\n      const allImages = sectionRef.current.querySelectorAll(\"img\")\n\n      gsap.set(allSpan, {\n        opacity: 0.1,\n      })\n      gsap.set(allImages, {\n        width: 0,\n        display: \"none\",\n      })\n      allImages.forEach((img) => {\n        gsap.to(img, {\n          scrollTrigger: {\n            trigger: img,\n            //edit these values for diffrent position of image's animation start and end\n            start: `center ${positionToAnimation}%`,\n            end: `center ${positionToAnimation}%`,\n            toggleActions: \"play none none reverse\",\n            scroller: scrollerRef?.current ?? window,\n             id: instanceIdRef.current,\n          },\n          display: \"block\",\n          width: `${imgsWidth}px`,\n          duration: 0.5,\n        })\n      })\n\n      const tl = gsap.timeline({\n        scrollTrigger: {\n          trigger: sectionRef.current,\n          //edit these values for diffrent position of animation start and end\n          start: `top ${positionToAnimation}%`,\n          end: `+=50% ${positionToAnimation}%`,\n          scrub: 1,\n          scroller: scrollerRef?.current ?? window,\n          markers:markers,\n          id: instanceIdRef.current + \"2\"\n        },\n      })\n\n      tl.to(allSpan, {\n        opacity: 1,\n        stagger: 0.2,\n      })\n    },\n    { scope: sectionRef ,dependencies:[forceUpdate] }\n  )\n\n  return (\n    <section\n      ref={sectionRef}\n      className={cn(\n        \"text-8xl font-semibold h-fit flex-col justify-center items-center uppercase w-full\",\n        className\n      )}\n    >\n      {children}\n    </section>\n  )\n}\ntype LineProps = React.HTMLAttributes<HTMLParagraphElement> & {\n  children: React.ReactNode\n}\n\nfunction Line({ children,className, ...props }: LineProps) {\n  return <p {...props} className={cn(\"items-center\",className)}>{children}</p>\n}\n\ntype WordProps = React.HTMLAttributes<HTMLSpanElement> & {\n  children: React.ReactNode\n}\n\nfunction Word({ children, className, ...props }: WordProps) {\n  return (\n    <span {...props} className={cn(\"overflow-hidden\", className)}>\n      {children}\n    </span>\n  )\n}\n\ntype PictureProps = React.ImgHTMLAttributes<HTMLImageElement>\n/**\n *Default:- className=\"h-full\"\n *\n */\n\nfunction Picture({ ...props }: PictureProps) {\n  return <img className=\"h-full \" {...props} />\n}\nexport { Rythem, Line, Word, Picture }\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "categories": [
+    "hover-effect"
+  ]
+}

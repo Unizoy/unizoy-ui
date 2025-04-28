@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "scroll-opacity-effect",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "files": [
+    {
+      "path": "ui/scroll-opacity-effect.tsx",
+      "content": "\"use client\"\n\nimport React, { useRef, ReactNode, ReactElement } from \"react\"\nimport gsap from \"gsap\"\nimport { ScrollTrigger } from \"gsap/ScrollTrigger\"\nimport { useGSAP } from \"@gsap/react\"\nimport { cn } from \"../lib/utils\"\n\ninterface ScrollOpacityEffectProps {\n  children: ReactNode\n  className?: string\n  animation?: gsap.TweenVars\n  start?: string\n  end?: string\n  scrub?: number | boolean\n  initialOpacity?: number\n}\n\ninterface ElementProps {\n  children?: ReactNode\n  [key: string]: unknown\n}\n\ngsap.registerPlugin(ScrollTrigger)\n\nexport const ScrollOpacityEffect = ({\n  children,\n  className,\n  animation,\n  scrub = 1,\n  initialOpacity = 0.2,\n  start = \"top 90%\", // default\n  end = \"bottom 60%\", // default\n}: ScrollOpacityEffectProps) => {\n  const container = useRef<HTMLDivElement>(null)\n  const wordsRef = useRef<HTMLSpanElement[]>([])\n\n  const splitWords = (phrase: string): React.JSX.Element[] => {\n    const words = phrase.split(\" \")\n    return words.map((word, i) => (\n      <span\n        key={`word_${i}`}\n        className=\"opacity-20 inline-block word-animation\"\n        ref={(el) => {\n          if (el) wordsRef.current.push(el)\n        }}\n      >\n        {word}\n        {i < words.length - 1 && \"\\u00A0\"}\n      </span>\n    ))\n  }\n\n  const processChildren = (children: ReactNode): ReactNode => {\n    return React.Children.map(children, (child) => {\n      if (typeof child === \"string\") {\n        return splitWords(child)\n      }\n\n      if (React.isValidElement(child)) {\n        const typedChild = child as ReactElement<ElementProps>\n        const childrenToProcess = typedChild.props.children\n        const processedChildren = processChildren(childrenToProcess)\n        return React.cloneElement(\n          typedChild,\n          typedChild.props,\n          processedChildren\n        )\n      }\n\n      return child\n    })\n  }\n\n  useGSAP(\n    () => {\n      wordsRef.current = []\n      const words = container.current?.querySelectorAll(\".word-animation\")\n\n      if (words && words.length > 0) {\n        gsap.fromTo(\n          words,\n          { opacity: initialOpacity },\n          {\n            opacity: 1,\n            duration: 0.5,\n            stagger: 0.1,\n            scrollTrigger: {\n              trigger: container.current,\n              start,\n              end,\n              scrub,\n              toggleActions: \"play none none reverse\",\n            },\n            ...animation, // merge/override with custom animation\n          }\n        )\n      }\n    },\n    { scope: container, dependencies: [animation, start, end] }\n  )\n\n  return (\n    <div ref={container} className={cn(\"block\", className)}>\n      {processChildren(children)}\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "categories": [
+    "hover-effect"
+  ]
+}

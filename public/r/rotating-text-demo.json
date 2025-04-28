@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "rotating-text-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "rotating-text"
+  ],
+  "files": [
+    {
+      "path": "examples/rotating-text-demo.tsx",
+      "content": "import RotatingText from \"@/registry/ui/rotating-text\"\n\n\nexport default function RotatingTextDemo() {\n\n  return (\n    <div className=\"w-full\">\n      <div className=\"w-full h-40 bg-black border-b flex justify-center items-center border-white text-white px-3\">\n        Scroll to see the animation\n      </div>\n      <RotatingText\n        text={[\n          { data: \"Hello, World!\", className: \"text-5xl\" },\n          { data: \"This is a sample text.\", className: \"text-5xl\" },\n        ]}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

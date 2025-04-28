@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "draggable-carousel-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "draggable-carousel"
+  ],
+  "files": [
+    {
+      "path": "examples/draggable-carousel-demo.tsx",
+      "content": "import DraggableCarousel, {\n  CarouselItem,\n} from \"@/registry/ui/draggable-carousel\"\n\nexport default function DraggableCarouselDemo() {\n  const carouselItems: CarouselItem[] = [\n    {\n      title: \"Mountain Retreat\",\n      description: \"A peaceful mountain getaway surrounded by nature\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Ocean Vista\",\n      description: \"Breathtaking views of the endless ocean horizon\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Urban Adventure\",\n      description: \"Explore the vibrant city life and culture\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Forest Escape\",\n      description: \"Get lost in the tranquility of ancient forests\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Desert Oasis\",\n      description: \"Experience the mystique of endless sand dunes\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Mountain Retreat\",\n      description: \"A peaceful mountain getaway surrounded by nature\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Ocean Vista\",\n      description: \"Breathtaking views of the endless ocean horizon\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Urban Adventure\",\n      description: \"Explore the vibrant city life and culture\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Forest Escape\",\n      description: \"Get lost in the tranquility of ancient forests\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800\",\n    },\n    {\n      title: \"Desert Oasis\",\n      description: \"Experience the mystique of endless sand dunes\",\n      imageUrl:\n        \"https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=800\",\n    },\n  ]\n  return (\n    <DraggableCarousel items={carouselItems} friction={0.9} cardWidth=\"250px\" />\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

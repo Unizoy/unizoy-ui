@@ -16,7 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Style, styles } from "@/registry/registry-styles"
 import { NpmCommands } from "@/types/unist"
 import { CodeBlockCommand } from "./code-block-command"
-import { StyleWrapper } from "./style-wrapper"
+// import { StyleWrapper } from "./style-wrapper"
 import { Event } from "@/lib/events"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -164,10 +164,10 @@ const Pre = ({
   __withMeta__,
   __src__,
   __event__,
-  __style__,
+  // __style__,
   ...props
 }: React.HTMLAttributes<HTMLPreElement> & {
-  __style__?: Style["name"]
+  // __style__?: Style["name"]
   __rawString__?: string
   __withMeta__?: boolean
   __src__?: string
@@ -188,14 +188,15 @@ const Pre = ({
   }
 
   return (
-    <StyleWrapper styleName={__style__}>
+  
+    <>
       <pre
         className={cn(
           "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-xl bg-zinc-950 py-4 dark:bg-zinc-900",
           className
         )}
         {...props}
-      />
+        />
       {__rawString__ && (
         <CopyButton
           value={__rawString__}
@@ -204,6 +205,7 @@ const Pre = ({
           className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
         />
       )}
-    </StyleWrapper>
+   
+  </>
   )
 }

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "text-slider",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "files": [
+    {
+      "path": "ui/text-slider.tsx",
+      "content": "\"use client\";\n\nimport React, { useRef } from \"react\";\nimport { cn } from \"../lib/utils\";\nimport { useGSAP } from \"@gsap/react\";\nimport gsap from \"gsap\";\nimport { ScrollTrigger } from \"gsap/ScrollTrigger\";\n\ninterface TextSliderProps {\n  children?: string | React.ReactNode;\n  className?: string;\n  delay?: number;\n  start?: string;\n  end?: string;\n  translateX?: number;\n  popFrom?: \"up\" | \"down\";\n  translateDuration?: number;\n  duration?: number;\n}\n\ngsap.registerPlugin(ScrollTrigger);\n\nexport function TextSlider({\n  children,\n  className,\n  delay = 0,\n  translateX,\n  popFrom = \"down\",\n  translateDuration = 0.4,\n  duration = 0.3,\n  start = \"top 80%\",\n  end = \"top 65%\",\n}: TextSliderProps) {\n  const containerRef = useRef<HTMLElement>(null);\n  const lineRef = useRef<HTMLDivElement>(null);\n  const tl = useRef<gsap.core.Timeline | null>(null);\n\n  useGSAP(\n    () => {\n      if (containerRef.current && lineRef.current) {\n        const lineHeight = lineRef.current.offsetHeight || 0;\n        const animationDistance = popFrom === \"up\" ? -lineHeight : lineHeight;\n\n        tl.current = gsap.timeline({\n          delay,\n          scrollTrigger: {\n            trigger: containerRef.current,\n            start,\n            end,\n            toggleActions: \"play none none reverse\",\n          },\n        });\n\n        // Animate line using the calculated height\n        tl.current.from(lineRef.current, {\n          y: animationDistance,\n          duration: duration,\n          ease: \"linear\",\n        });\n\n        // Add translateX animation if specified\n        if (translateX) {\n          tl.current.to(\n            containerRef.current,\n            {\n              x: translateX.toString().concat(\"%\"),\n              duration: translateDuration,\n              ease: \"linear\",\n            },\n            \"+=0.1\"\n          );\n        }\n      }\n\n      return () => {\n        if (tl.current) {\n          tl.current.kill();\n        }\n      };\n    },\n    {\n      dependencies: [popFrom],\n      revertOnUpdate: true,\n      scope: containerRef,\n    }\n  );\n\n  return (\n    <section ref={containerRef} className={cn(\"overflow-hidden block\", className)}>\n      <div className=\"inline-block opacity-1\" ref={lineRef}>\n        {children}\n      </div>\n    </section>\n  );\n}",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "categories": [
+    "hover-effect"
+  ]
+}
