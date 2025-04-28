@@ -56,12 +56,13 @@ export function rehypeComponent() {
             // Replace imports.
             // TODO: Use @swc/core and a visitor to replace this.
             // For now a simple regex should do.
+            source = source.replaceAll("@/registry/lib/utils", "@/lib/utils")
             source = source.replaceAll(
               `@/registry/`,
               "@/components/"
             )
             source = source.replaceAll("export default", "export")
-
+            source = source.replaceAll("../lib/utils", "@/lib/utils")
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
               u("element", {
