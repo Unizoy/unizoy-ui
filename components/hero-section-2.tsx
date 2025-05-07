@@ -6,6 +6,7 @@ import { MdOutlineExplore } from "react-icons/md"
 import DraggableCarouselDemo from "@/registry/examples/draggable-carousel-demo"
 import { CodeBlockCommand } from "./code-block-command"
 import { ArrowUpRight } from "lucide-react"
+import { CursorIcon, CustomCursor, NameTag } from "@/registry/ui/custom-pointer"
 
 export default function HeroSection2() {
   const doc = allDocs.find((doc) => doc.slugAsParams === "components/home-page")
@@ -20,8 +21,14 @@ export default function HeroSection2() {
       </p>
 
       <div className="px-3 pt-3  rounded-md bg-gray-200 w-full  lg:w-[80%] max-w-[1536px] lg:mx-auto flex flex-col gap-3 relative">
-        <div className="px-3 py-2 rounded-lg bg-white dark:bg-black">
+        <div className="px-3 py-2 rounded-lg bg-white dark:bg-black relative cursor-none">
           <DraggableCarouselDemo />
+          <CustomCursor className="">
+            {/* to supress the default cursor */}
+             <CursorIcon className="relative w-fit">
+            </CursorIcon>
+            <NameTag name="Drag me" className="text-sm"/>
+          </CustomCursor>
         </div>
 
         <div className="px-3  pb-6 rounded-xl bg-white dark:bg-black">

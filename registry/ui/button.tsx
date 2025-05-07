@@ -10,6 +10,7 @@ import {
 import { cn } from "../lib/utils"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import { ArrowRight } from "lucide-react"
 
 const buttonVariants = cva(
   `flex justify-center items-center relative z-10 hover:text-black
@@ -223,4 +224,199 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 )
 
 Button.displayName = "Button"
-export default Button
+
+interface Button2Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  hoverColor?: string
+}
+function Button2({ children, className, hoverColor, ...props }: Button2Props) {
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
+  useGSAP(() => {
+    if (!buttonRef.current) return
+
+    const handleEnter = () => {
+      const tl = gsap.timeline()
+      tl.to(buttonRef.current, {
+        scale: 0.8,
+        duration: 0.15,
+      })
+        .to(buttonRef.current, {
+          scale: 1,
+          ease: "bounce.out",
+          duration: 0.25,
+        })
+        .to(
+          bgRef.current,
+          {
+            top: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          },
+          "0"
+        )
+    }
+    const handleLeave = () => {
+      gsap.to(bgRef.current, {
+        top: "100%",
+        ease: "power2.out",
+        duration: 0.3,
+      })
+    }
+    buttonRef.current.parentElement?.addEventListener("mouseenter", handleEnter)
+    buttonRef.current.parentElement?.addEventListener("mouseleave", handleLeave)
+    return () => {
+      buttonRef.current?.parentElement?.removeEventListener(
+        "mouseenter",
+        handleEnter
+      )
+      buttonRef.current?.parentElement?.removeEventListener(
+        "mouseleave",
+        handleLeave
+      )
+    }
+  }, [])
+  return (
+    //event listners is applied to this div
+    <div className="w-fit h-fit">
+      <button
+        ref={buttonRef}
+        className={cn(
+          className,
+          "px-6 py-2 rounded-3xl cursor-pointer relative overflow-hidden"
+        )}
+        {...props}
+      >
+        <div className="absolute w-full h-full z-10 flex items-center justify-center top-0 left-0">
+          {children}
+        </div>
+        <div
+          ref={bgRef}
+          className={cn(
+            "z-0 w-full h-full absolute bg-white left-0 top-[100%] pointer-events-none",
+            hoverColor
+          )}
+        ></div>
+        <div className="opacity-0">{children}</div>
+      </button>
+    </div>
+  )
+}
+
+interface Button3Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  initialDotTranslate?: number
+  finalDotTranslate?: number
+  initialArrowTranslate?: number
+  finalArrowTranslate?: number
+  initialTextTranslate?: number
+  finalTextTranslate?: number
+
+}
+
+const Button3 = ({
+  children,
+  className,
+  initialDotTranslate = -100,
+  finalDotTranslate = 0,
+  initialArrowTranslate = -100,
+  finalArrowTranslate = -50,
+  initialTextTranslate = -30,
+  finalTextTranslate = 0,
+  ...props
+}: Button3Props) => {
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const arrowRef = useRef<SVGSVGElement>(null)
+  const dotRef = useRef<HTMLSpanElement>(null)
+  const textRef = useRef<HTMLParagraphElement>(null)
+
+  useGSAP(
+    () => {
+      const buttonElement = buttonRef.current
+      const arrowElement = arrowRef.current
+      const dotElement = dotRef.current
+      const textElement = textRef.current
+
+      const hoverInTimeline = gsap.timeline({
+        paused: true,
+        defaults: { duration: 0.3 },
+      })
+
+      const hoverOutTimeline = gsap.timeline({
+        paused: true,
+        defaults: { duration: 0.3 },
+      })
+
+      hoverInTimeline
+        .to(
+          buttonElement,
+          {
+            color: "#ffffff",
+            duration: 0.2,
+            backgroundColor: "#0016EC",
+          },
+          0
+        )
+        .to(dotElement, { opacity: 0, xPercent: initialDotTranslate }, 0)
+        .to(arrowElement, { opacity: 1, xPercent: initialArrowTranslate }, 0)
+        .to(textElement, { xPercent: initialTextTranslate }, "-=0.275")
+
+      hoverOutTimeline
+        .to(
+          buttonElement,
+          {
+            backgroundColor: "rgba(255, 255, 255)",
+            color: "#000000",
+            duration: 0.2,
+          },
+          0
+        )
+        .to(arrowElement, { opacity: 0, xPercent: finalDotTranslate }, 0)
+        .to(dotElement, { opacity: 1, xPercent: finalArrowTranslate }, 0)
+        .to(textElement, { xPercent: finalTextTranslate }, "-=0.275")
+
+      if (buttonElement) {
+        buttonElement.addEventListener("mouseenter", () =>
+          hoverInTimeline.restart().play()
+        )
+        buttonElement.addEventListener("mouseleave", () =>
+          hoverOutTimeline.restart().play()
+        )
+      }
+
+      return () => {
+        if (buttonElement) {
+          buttonElement.removeEventListener("mouseenter", () =>
+            hoverInTimeline.restart().play()
+          )
+          buttonElement.removeEventListener("mouseleave", () =>
+            hoverOutTimeline.restart().play()
+          )
+        }
+      }
+    },
+    { scope: buttonRef }
+  )
+  return (
+    <button
+      ref={buttonRef}
+      {...props}
+      className={cn(
+        "relative bg-white text-black rounded-[32px] px-6  py-3 flex items-center gap-[1em] text-[clamp(.875rem,1vw,1.75rem)] cursor-pointer  transition-all ease-custom shadow-buttonShadow overflow-hidden pointer-events-auto",
+        className
+      )}
+    >
+      <span
+        ref={dotRef}
+        className="inline-block size-1.5 lg:size-2  bg-black rounded-[100px] relative"
+      />
+      <p ref={textRef} className="font-aeonik font-medium">
+        {children}
+      </p>
+      <ArrowRight
+        ref={arrowRef}
+        className="size-5 absolute right-0 opacity-0 overflow-hidden"
+      />
+    </button>
+  )
+}
+
+export { Button, Button2, Button3 }

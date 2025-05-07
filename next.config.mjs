@@ -7,7 +7,7 @@ const nextConfig = {
       "/blocks/*": ["./registry/**/*"],
     },
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
   swcMinify: true,
   images: {
     remotePatterns: [

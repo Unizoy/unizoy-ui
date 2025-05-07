@@ -45,7 +45,7 @@ function NameTag({ name, src, className, children, ...props }: NameTagProps) {
             alt="Profile"
           />
         )}
-        {name && <p className="text-black font-semibold">{name}</p>}
+        {name && <p className="font-semibold">{name}</p>}
       </div>
     )
   }
@@ -111,9 +111,9 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
       if (child && React.isValidElement(child)) {
         // Check if the component is CursorIcon
         if (
-          typeof child.type === "function" &&
-          (child.type.name === "CursorIcon" ||
-            (child.type as any).displayName === "CursorIcon")
+            (child.type as any).name === "CursorIcon" ||
+            (child.type as any).displayName === "CursorIcon"||
+            (child.type as any)._payload?.value?.displayName=="CursorIcon"
         ) {
           foundCursorIcon = true
         }
@@ -156,7 +156,6 @@ const CustomCursor = ({ children, className, ...props }: CustomCursorProps) => {
             ? React.cloneElement(child, {
                 // @ts-ignore
                 style: {
-                  color: colors.primary,
                   backgroundColor:
                     (child.type as any).displayName !== "CursorIcon"
                       ? colors.secondary

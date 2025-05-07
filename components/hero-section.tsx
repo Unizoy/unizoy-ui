@@ -1,8 +1,8 @@
 import { MdContentCopy } from "react-icons/md"
-import { Button } from "./ui/button"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import AnimatedTooltipDemo from "@/registry/examples/animated-tooltip-demo"
+import { Button } from "@/registry/ui/button"
 
 export default function HeroSection() {
   return (
@@ -210,8 +210,8 @@ export default function HeroSection() {
         Speed up your workflow with tested, production-ready code snippets.
       </p>
       <div className="relative">
-        <Button asChild size="lg" className="mt-10 relative">
-          <Link href="/docs/components">Get Started</Link>
+        <Button variant={"blue"} className="mt-10">
+          <Link href={"/docs/components"}>Get Started</Link>
         </Button>
         {/* for smaller screens */}
         <CursorLogo
