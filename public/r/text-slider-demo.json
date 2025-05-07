@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "text-slider-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "text-slider"
+  ],
+  "files": [
+    {
+      "path": "examples/text-slider-demo.tsx",
+      "content": "import { TextSlider } from \"@/registry/ui/text-slider\"\n\nexport default function TextSliderDemo() {\n  return (\n    <div className=\"flex flex-col text-4xl md:text-5xl lg:text-7xl\">\n      <TextSlider start=\"top 90%\" end=\"top\" duration={0.5} translateX={10}>\n        <div>Hello world !</div>\n      </TextSlider>\n      <TextSlider start=\"top 90%\" end=\"top\" popFrom=\"up\" duration={0.5} translateX={-10}>\n        <span>Slide like this.</span>\n      </TextSlider>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

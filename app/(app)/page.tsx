@@ -1,6 +1,6 @@
 import HeroSection from "@/components/hero-section"
 import HeroSection2 from "@/components/hero-section-2"
-import { TextHoverEffect } from "@/registry/new-york/ui/text-hover-effect"
+import { TextHoverEffect } from "@/registry/ui/text-hover-effect"
 import HeroGridSection from "@/components/hero-grid-section"
 import HeroRythem from "@/components/hero-rythemic"
 

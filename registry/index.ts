@@ -15,14 +15,14 @@ export const registry = {
   homepage: "https://ui.shadcn.com",
   items: [
     ...ui,
-    ...blocks,
-    ...charts,
+    // ...blocks,
+    // ...charts,
     ...lib,
-    ...hooks,
-    ...themes,
+    // ...hooks,
+    // ...themes,
 
-    // Internal use only.
-    ...internal,
+    // // Internal use only.
+    // ...internal,
     ...examples,
   ],
 } satisfies Registry

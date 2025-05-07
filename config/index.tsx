@@ -2,7 +2,7 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
-  "new-york": {
+ 
     "custom-pointer": {
       name: "custom-pointer",
       description: "",
@@ -17,7 +17,7 @@ export const Index: Record<string, any> = {
       ],
       categories: ["animations"],
       component: React.lazy(
-        () => import("@/registry/new-york/ui/custom-pointer.tsx")
+        () => import("@/registry/ui/custom-pointer")
       ),
       source: "",
       meta: undefined,
@@ -36,7 +36,7 @@ export const Index: Record<string, any> = {
       ],
       categories: ["custom-pointer"],
       component: React.lazy(
-        () => import("@/registry/new-york/examples/custom-pointer-demo.tsx")
+        () => import("@/registry/examples/custom-pointer-demo")
       ),
       source: "",
       meta: undefined,
@@ -55,7 +55,7 @@ export const Index: Record<string, any> = {
       ],
       categories: ["animations"],
       component: React.lazy(
-        () => import("@/registry/new-york/ui/button.tsx")
+        () => import("@/registry/ui/button")
       ),
       source: "",
       meta: undefined,
@@ -74,7 +74,7 @@ export const Index: Record<string, any> = {
       ],
       categories: ["button"],
       component: React.lazy(
-        () => import("@/registry/new-york/examples/button-demo.tsx")
+        () => import("@/registry/examples/button-demo")
       ),
       source: "",
       meta: undefined,
@@ -95,7 +95,7 @@ export const Index: Record<string, any> = {
       component: React.lazy(
         () =>
           import(
-            "@/registry/new-york/examples/custom-pointer-custom-cursor.tsx"
+            "@/registry/examples/custom-pointer-custom-cursor"
           )
       ),
       source: "",
@@ -115,7 +115,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/draggable-carousel.tsx")
+        () => import("@/registry/ui/draggable-carousel")
       ),
       source: "",
       meta: undefined,
@@ -134,7 +134,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/draggable-carousel-demo.tsx")
+        () => import("@/registry/examples/draggable-carousel-demo")
       ),
       source: "",
       meta: undefined,
@@ -153,7 +153,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/floating-navbar.tsx")
+        () => import("@/registry/ui/floating-navbar")
       ),
       source: "",
       meta: undefined,
@@ -172,7 +172,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/floating-navbar-demo.tsx")
+        () => import("@/registry/examples/floating-navbar-demo")
       ),
       source: "",
       meta: undefined,
@@ -191,7 +191,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/motion-cards.tsx")
+        () => import("@/registry/ui/motion-cards")
       ),
       source: "",
       meta: undefined,
@@ -210,7 +210,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/motion-cards-demo.tsx")
+        () => import("@/registry/examples/motion-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -229,7 +229,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/product-preview.tsx")
+        () => import("@/registry/ui/product-preview")
       ),
       source: "",
       meta: undefined,
@@ -248,7 +248,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/product-preview-demo.tsx")
+        () => import("@/registry/examples/product-preview-demo")
       ),
       source: "",
       meta: undefined,
@@ -267,7 +267,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/rotating-text.tsx")
+        () => import("@/registry/ui/rotating-text")
       ),
       source: "",
       meta: undefined,
@@ -286,7 +286,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/rotating-text-demo.tsx")
+        () => import("@/registry/examples/rotating-text-demo")
       ),
       source: "",
       meta: undefined,
@@ -305,7 +305,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/rythemic-reveal.tsx")
+        () => import("@/registry/ui/rythemic-reveal")
       ),
       source: "",
       meta: undefined,
@@ -324,7 +324,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/rythemic-reveal-demo.tsx")
+        () => import("@/registry/examples/rythemic-reveal-demo")
       ),
       source: "",
       meta: undefined,
@@ -343,7 +343,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/text-hover-effect.tsx")
+        () => import("@/registry/ui/text-hover-effect")
       ),
       source: "",
       meta: undefined,
@@ -362,7 +362,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/text-hover-effect-demo.tsx")
+        () => import("@/registry/examples/text-hover-effect-demo")
       ),
       source: "",
       meta: undefined,
@@ -381,7 +381,7 @@ export const Index: Record<string, any> = {
       ] ,
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/text-rollup-effect.tsx")
+        () => import("@/registry/ui/text-rollup-effect")
       ),
       source: "",
       meta: undefined,
@@ -400,7 +400,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/text-rollup-effect-demo.tsx")
+        () => import("@/registry/examples/text-rollup-effect-demo")
       ),
       source: "",
       meta: undefined,
@@ -420,7 +420,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/text-slider.tsx")
+        () => import("@/registry/ui/text-slider")
       ),
       source: "",
       meta: undefined,
@@ -439,7 +439,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/text-slider-demo.tsx")
+        () => import("@/registry/examples/text-slider-demo")
       ),
       source: "",
       meta: undefined,
@@ -458,7 +458,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/copy-icon.tsx")
+        () => import("@/registry/ui/copy-icon")
       ),
       source: "",
       meta: undefined,
@@ -477,7 +477,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/copy-icon-demo.tsx")
+        () => import("@/registry/examples/copy-icon-demo")
       ),
       source: "",
       meta: undefined,
@@ -496,7 +496,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/carousel.tsx")
+        () => import("@/registry/ui/carousel")
       ),
       source: "",
       meta: undefined,
@@ -515,7 +515,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/carousel-demo.tsx")
+        () => import("@/registry/examples/carousel-demo")
       ),
       source: "",
       meta: undefined,
@@ -534,7 +534,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/typewriter.tsx")
+        () => import("@/registry/ui/typewriter")
       ),
       source: "",
       meta: undefined,
@@ -553,7 +553,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/typewriter-demo.tsx")
+        () => import("@/registry/examples/typewriter-demo")
       ),
       source: "",
       meta: undefined,
@@ -572,7 +572,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/image-trail.tsx")
+        () => import("@/registry/ui/image-trail")
       ),
       source: "",
       meta: undefined,
@@ -591,7 +591,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/image-trail-demo.tsx")
+        () => import("@/registry/examples/image-trail-demo")
       ),
       source: "",
       meta: undefined,
@@ -610,7 +610,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/infinite-moving-cards.tsx")
+        () => import("@/registry/ui/infinite-moving-cards")
       ),
       source: "",
       meta: undefined,
@@ -629,7 +629,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/infinite-moving-cards-demo.tsx")
+        () => import("@/registry/examples/infinite-moving-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -648,7 +648,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/navigation-icon.tsx")
+        () => import("@/registry/ui/navigation-icon")
       ),
       source: "",
       meta: undefined,
@@ -667,7 +667,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/navigation-icon-demo.tsx")
+        () => import("@/registry/examples/navigation-icon-demo")
       ),
       source: "",
       meta: undefined,
@@ -686,7 +686,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/animated-tooltip.tsx")
+        () => import("@/registry/ui/animated-tooltip")
       ),
       source: "",
       meta: undefined,
@@ -705,7 +705,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/animated-tooltip-demo.tsx")
+        () => import("@/registry/examples/animated-tooltip-demo")
       ),
       source: "",
       meta: undefined,
@@ -724,7 +724,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/scrolling-cards.tsx")
+        () => import("@/registry/ui/scrolling-cards")
       ),
       source: "",
       meta: undefined,
@@ -743,7 +743,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/scrolling-cards-demo.tsx")
+        () => import("@/registry/examples/scrolling-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -762,7 +762,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/snapping-scroll-cards-demo.tsx")
+        () => import("@/registry/examples/snapping-scroll-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -781,7 +781,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/sliding-cards.tsx")
+        () => import("@/registry/ui/sliding-cards")
       ),
       source: "",
       meta: undefined,
@@ -800,7 +800,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/sliding-cards-demo.tsx")
+        () => import("@/registry/examples/sliding-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -820,7 +820,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/scaling-sliding-cards.tsx")
+        () => import("@/registry/ui/scaling-sliding-cards")
       ),
       source: "",
       meta: undefined,
@@ -839,7 +839,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/scaling-sliding-cards-demo.tsx")
+        () => import("@/registry/examples/scaling-sliding-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -858,7 +858,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/scrolling-video-cards.tsx")
+        () => import("@/registry/ui/scrolling-video-cards")
       ),
       source: "",
       meta: undefined,
@@ -877,7 +877,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/scrolling-video-cards-demo.tsx")
+        () => import("@/registry/examples/scrolling-video-cards-demo")
       ),
       source: "",
       meta: undefined,
@@ -896,7 +896,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/scroll-text-flow.tsx")
+        () => import("@/registry/ui/scroll-text-flow")
       ),
       source: "",
       meta: undefined,
@@ -915,7 +915,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/scroll-text-flow-demo.tsx")
+        () => import("@/registry/examples/scroll-text-flow-demo")
       ),
       source: "",
       meta: undefined,
@@ -934,7 +934,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/scroll-opacity-effect.tsx")
+        () => import("@/registry/ui/scroll-opacity-effect")
       ),
       source: "",
       meta: undefined,
@@ -953,7 +953,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/scroll-opacity-effect-demo.tsx")
+        () => import("@/registry/examples/scroll-opacity-effect-demo")
       ),
       source: "",
       meta: undefined,
@@ -973,7 +973,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/testimonial.tsx")
+        () => import("@/registry/ui/testimonial")
       ),
       source: "",
       meta: undefined,
@@ -992,7 +992,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/testimonial-demo.tsx")
+        () => import("@/registry/examples/testimonial-demo")
       ),
       source: "",
       meta: undefined,
@@ -1011,7 +1011,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/ui/reveal-text.tsx")
+        () => import("@/registry/ui/reveal-text")
       ),
       source: "",
       meta: undefined,
@@ -1030,7 +1030,7 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/reveal-text-demo.tsx")
+        () => import("@/registry/examples/reveal-text-demo")
       ),
       source: "",
       meta: undefined,
@@ -1049,336 +1049,12 @@ export const Index: Record<string, any> = {
       ],
       categories: undefined,
       component: React.lazy(
-        () => import("@/registry/new-york/examples/reveal-text-demo2.tsx")
+        () => import("@/registry/examples/reveal-text-demo2")
       ),
       source: "",
       meta: undefined,
-    },
-  },
+    }
+  
 
-  default: {
-    "custom-pointer": {
-      name: "custom-pointer",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/custom-pointer.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/custom-pointer.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-
-    "custom-pointer-demo": {
-      name: "custom-pointer-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/custom-pointer-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: ["custom-pointer"],
-      component: React.lazy(
-        () => import("@/registry/default/examples/custom-pointer-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "custom-pointer-custom-cursor": {
-      name: "custom-pointer-custom-cursor",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/custom-pointer-custom-cursor.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: ["custom-pointer"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/examples/custom-pointer-custom-cursor.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "text-slider": {
-      name: "text-slider",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/text-slider.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/text-slider.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "text-slider-demo": {
-      name: "text-slider-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/text-slider-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/text-slider-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "copy-icon": {
-      name: "copy-icon",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/copy-icon.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/copy-icon.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "copy-icon-demo": {
-      name: "copy-icon-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/copy-icon-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/copy-icon-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    carousel: {
-      name: "carousel",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/carousel.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/carousel.tsx")),
-      source: "",
-      meta: undefined,
-    },
-    "carousel-demo": {
-      name: "carousel-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/carousel-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/carousel-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    typewriter: {
-      name: "typewriter",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/typewriter.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/typewriter.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "typewriter-demo": {
-      name: "typewriter-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/typewriter-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/typewriter-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "navigation-icon": {
-      name: "navigation-icon",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/navigation-icon.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/navigation-icon.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "navigation-icon-demo": {
-      name: "navigation-icon-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/navigation-icon-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/navigation-icon-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "animated-tooltip": {
-      name: "animated-tooltip",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/animated-tooltip.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/animated-tooltip.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "animated-tooltip-demo": {
-      name: "animated-tooltip-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/animated-tooltip-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/animated-tooltip-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "sliding-cards": {
-      name: "sliding-cards",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/ui/sliding-cards.tsx",
-          type: "registry:ui",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/ui/sliding-cards.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-    "sliding-cards-demo": {
-      name: "sliding-cards-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: [
-        {
-          path: "registry/default/examples/sliding-cards-demo.tsx",
-          type: "registry:example",
-          target: "",
-        },
-      ],
-      categories: undefined,
-      component: React.lazy(
-        () => import("@/registry/default/examples/sliding-cards-demo.tsx")
-      ),
-      source: "",
-      meta: undefined,
-    },
-  },
+ 
 }

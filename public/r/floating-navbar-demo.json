@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "floating-navbar-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "floating-navbar"
+  ],
+  "files": [
+    {
+      "path": "examples/floating-navbar-demo.tsx",
+      "content": "\"use client\"\nimport {\n  Menu,\n  MenuItem,\n  HoveredLink,\n  ProductItem,\n} from \"@/registry/ui/floating-navbar\"\nimport { cn } from \"../lib/utils\"\n\nexport default function NavbarDemo() {\n  return (\n    <div className=\"relative w-full flex items-center justify-center\">\n      <Navbar className=\"top-2\" />\n      <p className=\"text-black dark:text-white\">\n        The Navbar will show on top of the page\n      </p>\n    </div>\n  )\n}\n\nfunction Navbar({ className }: { className?: string }) {\n  return (\n    <div\n      className={cn(\"fixed top-10 inset-x-0 max-w-2xl mx-auto z-50\", className)}\n    >\n      <Menu>\n        <MenuItem item=\"Services\">\n          <div className=\"flex flex-col space-y-4 text-sm\">\n            <HoveredLink href=\"/web-dev\">Web Development</HoveredLink>\n            <HoveredLink href=\"/interface-design\">Interface Design</HoveredLink>\n            <HoveredLink href=\"/seo\">Search Engine Optimization</HoveredLink>\n            <HoveredLink href=\"/branding\">Branding</HoveredLink>\n          </div>\n        </MenuItem>\n        <MenuItem item=\"Products\">\n          <div className=\"text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4\">\n            <ProductItem\n              title=\"Product one\"\n              href=\"https://example.com\"\n              src=\"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800\"\n              description=\"Ready-made UI components for consistent brand experiences.\"\n            />\n            <ProductItem\n              title=\"Product two\"\n              href=\"https://example.com\"\n              src=\"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800\"\n              description=\"Track metrics and visualize key performance data.\"\n            />\n            <ProductItem\n              title=\"Product Three\"\n              href=\"https://example.com\"\n              src=\"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800\"\n              description=\"Organize and publish content across channels.\"\n            />\n            <ProductItem\n              title=\"Product three\"\n              href=\"https://example.com\"\n              src=\"https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800\"\n              description=\"Secure login solutions with multi-factor options.\"\n            />\n          </div>\n        </MenuItem>\n        <MenuItem item=\"Pricing\">\n          <div className=\"flex flex-col space-y-4 text-sm\">\n            <HoveredLink href=\"/hobby\">Hobby</HoveredLink>\n            <HoveredLink href=\"/individual\">Individual</HoveredLink>\n            <HoveredLink href=\"/team\">Team</HoveredLink>\n            <HoveredLink href=\"/enterprise\">Enterprise</HoveredLink>\n          </div>\n        </MenuItem>\n      </Menu>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

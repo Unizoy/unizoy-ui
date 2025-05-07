@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "reveal-text-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "reveal-text"
+  ],
+  "files": [
+    {
+      "path": "examples/reveal-text-demo.tsx",
+      "content": "\"use client\"\nimport { RevealText } from \"@/registry/ui/reveal-text\"\nimport Unizoy from \"@/public/RevealText/Unizoy.png\"\nimport Tailwind from \"@/public/RevealText/Tailwind.png\"\nimport GSAP from \"@/public/RevealText/GSAP.png\"\n\nexport default function () {\n  return (\n    <div className=\"w-screen  flex justify-center items-center  \">\n      <div className=\" w-11/12 p-1 md:p-5 lg:p-10 space-y-12 text-2xl md:text-3xl lg:text-4xl font-medium text-neutral-500 max-w-4xl\">\n        <p className=\"contents\">\n          <RevealText\n            variant=\"gradient0\"\n            className=\"font-bold\"\n            image={Unizoy.src}\n            href=\"https://unizoy.com/\"\n          >\n            Unizoy{\" \"}\n          </RevealText>{\" \"}\n          blends{\" \"}\n          <RevealText\n            variant=\"gradient1\"\n            className=\"font-bold\"\n            image={Tailwind.src}\n            hoverImageClass=\"border-gray-400\"\n            href=\"https://tailwindcss.com/\"\n          >\n            Tailwind-CSS\n          </RevealText>{\" \"}\n          magic for stunning web designs.\n        </p>\n        <p>\n          We use{\" \"}\n          <RevealText\n            variant=\"gradient7\"\n            className=\"font-bold\"\n            image={GSAP.src}\n            href=\"https://gsap.com/\"\n          >\n            GSAP\n          </RevealText>{\" \"}\n          animations to make every interaction smooth and dynamic.\n        </p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

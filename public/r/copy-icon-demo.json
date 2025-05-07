@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "copy-icon-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "copy-icon"
+  ],
+  "files": [
+    {
+      "path": "examples/copy-icon-demo.tsx",
+      "content": "import React from \"react\"\nimport { CopyIcon } from \"@/registry/ui/copy-icon\"\n\nexport default function CopyIconDemo() {\n  const handleCopyClick = () => {\n    alert(\"Copy  icon clicked!\")\n  }\n\n  const handleHtmlClick = () => {\n    alert(\"HTML icon clicked!\")\n  }\n\n  const handleWebflowClick = () => {\n    alert(\"Webflow icon clicked!\")\n  }\n  return (\n    <CopyIcon\n      iconClass=\"bg-black\"\n      hiddenIconClass=\"\"\n      startY={30} // Icons start lower\n      enterY={0} // Move slightly up on hover\n      endY={60} // Move further down when hiding\n      duration={0.5} // Slower animation\n      scaleFactor={1.1} // Larger scale on hover\n      onClick={handleCopyClick} // Click handler for main icon (Copy)\n      onHtmlClick={handleHtmlClick} // Click handler for HTML icon\n      onWebflowClick={handleWebflowClick} // Click handler for Webflow icon\n    />\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

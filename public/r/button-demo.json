@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "button-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/button-demo.tsx",
+      "content": "import Button from \"@/registry/ui/button\";\n\nexport default function ButtonDemo(){\n    return(\n       <div className=\"w-full\">\n        <DemoAllVariants />\n       </div>\n    )\n}\nconst variants = [\n\"pink\", \"yellow\", \"blue\", \"red\", \"purple\", \"green\", \"teal\", \"orange\",\n\"indigo\", \"emerald\", \"amber\", \"cyan\", \"lime\", \"fuchsia\", \"rose\", \"sky\",\n\"sunset\", \"ocean\", \"forest\", \"galaxy\", \"neon\", \"ember\", \"arctic\", \"candy\"\n] as const;\nconst DemoAllVariants = () => {\n  return (\n    <div className=\"p-6\">\n      <div className=\"grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4\">\n        {variants.map((variant) => (\n          <div key={variant} className=\"flex justify-center\">\n            <Button variant={variant} intent=\"medium\">\n              {variant}\n            </Button>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

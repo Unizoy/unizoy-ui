@@ -1,10 +1,10 @@
-import InfiniteMovingCardsDemo from "@/registry/new-york/examples/infinite-moving-cards-demo"
-import { CustomCursor, NameTag } from "@/registry/new-york/ui/custom-pointer"
+import InfiniteMovingCardsDemo from "@/registry/examples/infinite-moving-cards-demo"
+import { CustomCursor, NameTag } from "@/registry/ui/custom-pointer"
 import Link from "next/link"
-import { RevealText } from "@/registry/new-york/ui/reveal-text"
+import { RevealText } from "@/registry/ui/reveal-text"
 import Unizoy from "@/public/RevealText/Unizoy.png"
-import { TextRollUpEffect } from "@/registry/new-york/ui/text-rollup-effect"
-import { TypeWriter } from "@/registry/new-york/ui/typewriter"
+import { TextRollUpEffect } from "@/registry/ui/text-rollup-effect"
+import { TypeWriter } from "@/registry/ui/typewriter"
 export default function HeroGridSection() {
   return (
     <section className="px-6 pt-3 flex flex-col gap-3 mt-20 max-w-[1536px]  w-full  lg:w-[80%] lg:mx-auto  relative rounded-lg ">

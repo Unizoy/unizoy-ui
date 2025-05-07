@@ -3,7 +3,7 @@ import {
   Line,
   Word,
   Picture,
-} from "@/registry/new-york/ui/rythemic-reveal"
+} from "@/registry/ui/rythemic-reveal"
 export default function HeroRythem() {
   return (
     <>

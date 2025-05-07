@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "navigation-icon",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "files": [
+    {
+      "path": "ui/navigation-icon.tsx",
+      "content": "\"use client\"\nimport React, { ReactNode, useRef, useState } from \"react\"\nimport { gsap } from \"gsap\"\nimport { cn } from \"@/lib/utils\"\n\ninterface NavigationIconProps {\n  children: ReactNode\n  parentDivClass: string\n  innerDivClass: string\n  textClass: string\n  translateYUp?: number\n  translateYDown?: number\n  opposite?: boolean\n  duration?: number\n  stagger?: number\n  borderClass: string\n  onClick?: () => void\n}\n\nconst NavigationIcon: React.FC<NavigationIconProps> = ({\n  children,\n  innerDivClass,\n  textClass,\n  parentDivClass,\n  translateYUp = 130,\n  translateYDown = 130,\n  opposite = false,\n  duration = 0.5,\n  stagger = 0.1,\n  borderClass,\n  onClick,\n}) => {\n  const containerRef = useRef<HTMLDivElement>(null)\n  const [clicked, setClick] = useState<boolean>(false)\n\n  const handleMouseEnter = (e: React.MouseEvent) => {\n    if (containerRef.current) {\n      const container = containerRef.current.getBoundingClientRect()\n      const isEnteringFromTop = e.clientY < container.top + container.height / 2\n      const spans = containerRef.current.querySelectorAll(\"span\")\n      const upward = opposite ? -1 : 1\n      gsap.to(spans, {\n        y: isEnteringFromTop\n          ? `${translateYUp * upward}%`\n          : `${translateYDown * -1 * upward}%`,\n        duration,\n        stagger,\n      })\n    }\n  }\n\n  const handleMouseLeave = (e: React.MouseEvent) => {\n    if (containerRef.current) {\n      const spans = containerRef.current.querySelectorAll(\"span\")\n      gsap.to(spans, {\n        y: \"0%\", // Reset to the original position\n        duration,\n        stagger,\n      })\n    }\n  }\n\n  return (\n    <div\n      className={cn(\n        ` flex min-h-[100px] w-fit items-center justify-center overflow-hidden`,\n        parentDivClass\n      )}\n    >\n      <div\n        ref={containerRef}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        onClick={() => {\n          setClick(true)\n          onClick?.()\n        }}\n        className={cn(\n          `flex flex-col gap-2 h-10 items-center text-center pb-1 justify-center px-2 overflow-y-hidden rounded-full cursor-pointer ${clicked && borderClass}`,\n          innerDivClass\n        )}\n      >\n        <span className={textClass}>{children}</span>\n        <span className={textClass}>{children}</span> {/* Middle Text */}\n        <span className={textClass}>{children}</span>\n      </div>\n    </div>\n  )\n}\n\nexport { NavigationIcon }\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "categories": [
+    "hover-effect"
+  ]
+}

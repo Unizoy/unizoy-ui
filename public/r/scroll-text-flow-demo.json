@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "scroll-text-flow-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "scroll-text-flow"
+  ],
+  "files": [
+    {
+      "path": "examples/scroll-text-flow-demo.tsx",
+      "content": "import React from \"react\"\nimport { ScrollTextFlow } from \"@/registry/ui/scroll-text-flow\"\n\nexport default function ScrollTextFlowDemo() {\n\n  const slideItems = [\n    [\n      { name: \"UI/UX\", style: \"bg-[#CBBEDC] mt-2\" },\n      { name: \"Success Designed Differently\", style: \"bg-[#F5CC53] ml-5\" },\n    ],\n    [\n      { name: \"The First The Last\", style: \"bg-[#F49FC5] mt-2\" },\n      { name: \"Insights\", style: \"bg-[#F5CC53] ml-5\" },\n      { name: \"Development\", style: \"bg-[#F2FBE0] mt-10 ml-10\" },\n      { name: \"Miami\", style: \"bg-[#CBBEDC] ml-5\" },\n    ],\n    [\n      { name: \"Sexyness\", style: \"bg-[#F5CC53]\" },\n      { name: \"Awwwards\", style: \"bg-[#CBBEDC] mt-10\" },\n      { name: \"Development\", style: \"bg-[#F05E23]\" },\n      { name: \"Team\", style: \"bg-[#34B550] ml-5\" },\n      { name: \"Insights\", style: \"bg-[#F49FC5] ml-5\" },\n      { name: \"Success Designed Differently\", style: \"bg-[#E97EFF] ml-14\" },\n    ],\n    [\n      { name: \"Digital Experience\", style: \"bg-[#F2FBE0] mr-32\" },\n      { name: \"Marketing\", style: \"bg-[#CBBEDC]\" },\n      { name: \"Insights\", style: \"bg-[#F05E23] -mt-7\" },\n      { name: \"Brand indentity\", style: \"bg-[#F49FC5] mx-14\" },\n      { name: \"Creative Strategy\", style: \"bg-[#F2FBE0] ml-40\" },\n    ],\n    [\n      { name: \"Sexyness\", style: \"bg-[#F5CC53]\" },\n      { name: \"Digital Experience\", style: \"bg-[#E97EFF] mt-12 mr-20\" },\n      { name: \"Dubai\", style: \"bg-[#34B550] mb-7\" },\n      { name: \"Strong Message\", style: \"bg-[#F05E23] mx-16\" },\n      { name: \"Design\", style: \"bg-[#CBBEDC] mt-12 mx-14\" },\n      { name: \"Visual Language\", style: \"bg-[#F05E23] ml-20\" },\n      { name: \"Development\", style: \"bg-[#F49FC5] mx-20\" },\n    ],\n  ]\n  return (\n    <div className=\"w-full\">\n      <div className=\"w-full h-40 flex items-center justify-center  border-b border-black dark:border-white \">\n        Scroll To animate\n      </div>\n      <ScrollTextFlow\n        heading=\"TFTL©27 — Success Designed Differently.\"\n        subheading=\"We Spread the Sexyness.\"\n        slideGroups={slideItems}\n        topGroupCount={2}\n        wrapperClassName=\"bg-transparent text-black h-screen overflow-y-hidden\"\n        groupClassName=\"py-4 gap-10 flex-nowrap\"\n        textWrapperClassName=\"my-5 mb-8 w-full mx-auto\"\n        scrollTriggerStart=\"top top\"\n        scrollTriggerEnd=\"+=1500\"\n        useMarkers={false}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

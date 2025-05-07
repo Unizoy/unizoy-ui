@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "sliding-cards-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "sliding-cards"
+  ],
+  "files": [
+    {
+      "path": "examples/sliding-cards-demo.tsx",
+      "content": "\"use client\"\nimport React, { useRef } from \"react\"\nimport { SlidingCards } from \"@/registry/ui/sliding-cards\"\nexport default function SlidingCardsDemo() {\n  const parentRef = useRef<HTMLDivElement>(null)\n  const items = [\n    {\n      title: \"Outstanding Design & Development\",\n      description:\n        \"Unizoy revamped our website with a modern, responsive design that boosted our online presence and conversions.\",\n      name: \"Alice W.\",\n      background: \"bg-[#FFDCB8]\",\n    },\n    {\n      title: \"Exceptional Customer Support\",\n      description:\n        \"Their support team was prompt and professional, guiding us through every step to ensure smooth implementation.\",\n      name: \"Mark T.\",\n      background: \"bg-[#BBD2FF]\",\n    },\n    {\n      title: \"Innovative Digital Solutions\",\n      description:\n        \"Unizoy provided creative digital strategies that transformed our marketing approach and drove measurable growth.\",\n      name: \"Claire S.\",\n      background: \"bg-[#BCFFBB]\",\n    },\n    {\n      title: \"Reliable & Professional\",\n      description:\n        \"Working with Unizoy has been a pleasure—they consistently deliver quality work on time, every time.\",\n      name: \"James D.\",\n      background: \"bg-[#F5FFBB]\",\n    },\n  ]\n\n  return (\n    <div ref={parentRef} className=\" w-full \">\n      <div className=\"w-full h-40 flex items-center justify-center  border-b border-black dark:border-white\">\n        Scroll To animate\n      </div>\n      <SlidingCards\n        items={items}\n        maxWidth={320}\n        gap={30}\n        backgroundImage=\"https://www.jeton.com/_ipx/f_webp&q_80&w_3400/cms/b7c674ecd0ee69b2eca20443cac6272c550ed396-4000x2667.jpg\"\n        triggerStart=\"top top\"\n        triggerEnd=\"+=800\"\n        markers={false}\n        headingText=\"Hear it from our clients\"\n        parentClassName=\"min-h-[156vh] justify-start items-center\"\n        parentContentClassName=\"mt-40\"\n        headingClassName=\"text-[2.5rem] text-white my-20 font-semibold mx-auto text-center\"\n        contentClassName=\"\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "utils",
+  "type": "registry:lib",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\nexport function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {\n  return (node: T | null) => {\n    refs.forEach((ref) => {\n      if (typeof ref === \"function\") {\n        ref(node)\n      } else if (ref && \"current\" in ref) {\n        ;(ref as React.MutableRefObject<T | null>).current = node\n      }\n    })\n  }\n}\n",
+      "type": "registry:lib",
+      "target": ""
+    }
+  ]
+}

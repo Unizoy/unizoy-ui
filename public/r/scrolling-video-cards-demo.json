@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "scrolling-video-cards-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "scrolling-video-cards"
+  ],
+  "files": [
+    {
+      "path": "examples/scrolling-video-cards-demo.tsx",
+      "content": "import React from \"react\"\nimport { ScrollingVideoCards } from \"@/registry/ui/scrolling-video-cards\"\nimport { Dancing_Script } from \"next/font/google\"\nconst dancingScript = Dancing_Script({ subsets: [\"latin\"], weight: \"400\" })\n\nexport default function () {\n  const items = [\n    {\n      title: \"We partnered with\",\n      description: \"Mariah Carey to create content with Kay Jewelers\",\n      tag: \"#jewelry\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/Mariah-Short_Full.mp4\",\n    },\n    {\n      title: \"We partnered with\",\n      description: \"Kalen Allen to create content for Starbucks\",\n      tag: \"#foodandbev\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/Kalen-Allen-Oleato.mp4\",\n    },\n    {\n      title: \"We partnered with\",\n      description: \"HappyKelli to create content for Outshine Snacks\",\n      tag: \"#foodandbev\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/HappyKelli.mp4\",\n    },\n    {\n      title: \"We partnered with\",\n      description: \"Kat Stickler to create content for Lincoln\",\n      tag: \"#automotive\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/Kat_Final.mp4\",\n    },\n    {\n      title: \"We partnered with\",\n      description: \"NBA Star Brandon Beloti to create content for Wendy's\",\n      tag: \"#sports\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/NBA_Go-Biggie_1.mp4\",\n    },\n    {\n      title: \"We partnered with\",\n      description: \"David Quarles IV to create content for Pennington\",\n      tag: \"#lifestyle\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/David-Q-IV-Pennington.mp4\",\n    },\n    {\n      title: \"We partnered with\",\n      description: \"Devon Rodriguez to create content for V8\",\n      tag: \"#foodandbev\",\n      link: \"https://servd-rhythm-influence.b-cdn.net/staging/DevonRodriguez_V8_1-1.mp4\",\n    },\n  ]\n  return (\n    <div className=\"w-full\">\n      <div className=\"w-full h-40 flex items-center justify-center  border-b border-black dark:border-white\">\n        Scroll To animate\n      </div>\n      <ScrollingVideoCards\n        videoItems={items}\n        startXPercentage={75}\n        endXPercentage={-40}\n        scrollTriggerStart=\"top 15%\"\n        scrollTriggerEnd=\"+=200% top\"\n        scrubSpeed={0.5}\n        gap={20}\n        useMarkers={false}\n        descriptionTextClassName={`${dancingScript.className} text-black dark:text-white my-0.5`}\n        videoCardContainerClassName=\"\"\n        containerClassName=\"text-black dark:text-white h-[90vh]\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

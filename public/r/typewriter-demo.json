@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "typewriter-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "typewriter"
+  ],
+  "files": [
+    {
+      "path": "examples/typewriter-demo.tsx",
+      "content": "import { TypeWriter } from \"@/registry/ui/typewriter\"\n\nexport default function TypeWriterDemo() {\n  const StaticTextWithClasses = [\n    { text: \"We are\" },\n    { text: \"Unizoy\", className: \"text-green-500\" },\n  ]\n  const DynamicTextWithClasses = [\n    { text: \"Passionately\", className: \"text-blue-500\" },\n    { text: \"Eagerly\", className: \"text-blue-500\" },\n  ]\n  return (\n    <TypeWriter\n      className=\" text-xl  lg:text-5xl\"\n      staticText={StaticTextWithClasses}\n      textArray={DynamicTextWithClasses}\n    />\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

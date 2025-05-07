@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "text-rollup-effect-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "text-rollup-effect"
+  ],
+  "files": [
+    {
+      "path": "examples/text-rollup-effect-demo.tsx",
+      "content": "import { TextRollUpEffect } from \"@/registry/ui/text-rollup-effect\"\n\nexport default function TextRollUpEffectDemo() {\n  return (\n    <div>\n      <TextRollUpEffect className=\"text-7xl\">Unizoy</TextRollUpEffect>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

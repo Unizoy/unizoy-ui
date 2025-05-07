@@ -3,7 +3,7 @@ import Link from "next/link"
 import { allDocs } from "contentlayer/generated"
 import { Mdx } from "@/components/mdx-components"
 import { MdOutlineExplore } from "react-icons/md"
-import DraggableCarouselDemo from "@/registry/new-york/examples/draggable-carousel-demo"
+import DraggableCarouselDemo from "@/registry/examples/draggable-carousel-demo"
 import { CodeBlockCommand } from "./code-block-command"
 import { ArrowUpRight } from "lucide-react"
 

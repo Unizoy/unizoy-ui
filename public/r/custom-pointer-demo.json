@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "custom-pointer-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "custom-pointer"
+  ],
+  "files": [
+    {
+      "path": "examples/custom-pointer-demo.tsx",
+      "content": "import {\n  CursorIcon,\n  CustomCursor,\n  NameTag,\n} from \"@/registry/ui/custom-pointer\"\n\nexport default function Card() {\n  return (\n    <div className=\"w-64 h-96 border rounded-xl  flex justify-between items-center flex-col p-3 cursor-none relative\">\n      <div className=\"rounded-xl w-[90%] h-48 overflow-hidden my-3 mx-auto\">\n        <img\n          src={\n            \"https://images.unsplash.com/photo-1719937206094-8de79c912f40?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\n          }\n          alt={\"image\"}\n          className=\"w-full h-48 object-cover\"\n        />\n      </div>\n      <h1 className=\"text-xl md:text-3xl font-bold w-full p-3 \">Hover Me</h1>\n      <p className=\" px-3 pb-3 text-start\">\n        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae qui\n        illo consequatur delectus repellat dignissimos soluta incidunt! Iste ab\n        animi nes\n      </p>\n\n      <CustomCursor className=\"scale-100\">\n        <NameTag name=\"Ankush\" src=\"/avatars/01.png\" />\n      </CustomCursor>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

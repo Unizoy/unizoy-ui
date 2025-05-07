@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "snapping-scroll-cards-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "scrolling-cards"
+  ],
+  "files": [
+    {
+      "path": "examples/snapping-scroll-cards-demo.tsx",
+      "content": "import { SnappingScrollingCards } from \"@/registry/ui/scrolling-cards\"\nimport { CreditCard, Heart, Star, Sun, Zap } from \"lucide-react\"\n\nexport default function () {\n   const cards = [\n    {\n      card: (\n        <Card imgSrc=\"/examples/scrolling-card-1.png\" title=\"Card 1\" description=\"Reach fot the stars\"/>\n      ),\n      rotate: 20,\n    },\n    {\n      card: (\n        <Card imgSrc=\"/examples/scrolling-card-2.png\" title=\"Card 2\" description=\"Reach fot the stars\"/>\n      ),\n      rotate: -5,\n    },\n    {\n      card: (\n        <Card imgSrc=\"/examples/scrolling-card-3.png\" title=\"Card 3\" description=\"Reach fot the stars\"/>\n      ),\n      rotate: 0,\n    },\n    {\n      card: (\n        <Card imgSrc=\"/examples/scrolling-card-4.png\" title=\"Card 4\" description=\"Reach fot the stars\"/>\n      ),\n      rotate: 5,\n    },\n    {\n      card: (\n         <Card imgSrc=\"/examples/scrolling-card-5.png\" title=\"Card 5\" description=\"Reach fot the stars\"/>\n      ),\n      rotate: -20,\n    },\n  ]\n  return (\n    <div className=\"w-full \" >\n      <section className=\"h-40 w-full bg-black flex justify-center items-center text-white text-2xl\">\n        {\" \"}\n        Scroll to animate\n      </section>\n\n      <SnappingScrollingCards\n        cards={cards}\n        cardWidth={300}\n      />\n    </div>\n  )\n}\ninterface CardProps {\n  title: string;\n  description: string;\n  imgSrc: string;\n  alt?: string;\n}\n\nconst Card = ({ \n  title, \n  description, \n  imgSrc, \n  alt = \"Card image\" \n}:CardProps) => {\n  return (\n    <div className=\"max-w-sm rounded-2xl overflow-hidden transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg dark:shadow-none border dark:border dark:border-gray-700 hover:shadow-xl dark:hover:border-gray-600\">\n      <div className=\"p-5 sm:p-6\">\n        <h3 className=\"text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-2\">\n          {title}\n        </h3>\n        <p className=\"text-gray-600 dark:text-gray-300 mb-4\">\n          {description}\n        </p>\n      </div>\n      <div className=\"relative overflow-hidden\">\n        <div className=\"aspect-w-4 aspect-h-3 w-full\">\n          <img \n            src={imgSrc} \n            alt={alt}\n            className=\"w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105\"\n          />\n        </div>\n      </div>\n    </div>\n  );\n};",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

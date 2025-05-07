@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "text-rollup-effect",
+  "type": "registry:ui",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "files": [
+    {
+      "path": "ui/text-rollup-effect.tsx",
+      "content": "\"use client\"\nimport { useRef, CSSProperties } from \"react\"\nimport { gsap } from \"gsap\"\nimport { useGSAP } from \"@gsap/react\"\nimport { cn } from \"../lib/utils\"\n\ninterface TextRollUpEffectProps {\n  children: string\n  style?: CSSProperties\n  frequency?: number\n  className?: string\n  stagger?: number\n}\n\nexport const TextRollUpEffect = ({\n  children,\n  frequency = 2,\n  className,\n  stagger = 0.05,\n  style,\n}: TextRollUpEffectProps) => {\n  const textRef = useRef<HTMLDivElement>(null)\n  const tl = useRef<gsap.core.Timeline | null>(null)\n\n  useGSAP(\n    () => {\n      if (textRef.current) {\n        const words = gsap.utils.toArray<HTMLElement>(\n          textRef.current.querySelectorAll(\".word-wrapper\")\n        )\n\n        function animateRandomCharsFromEachWord() {\n          tl.current = gsap.timeline({\n            onComplete: () => {\n              animateRandomCharsFromEachWord()\n            },\n            delay: 0.5,\n          })\n\n          words.forEach((word, wordIndex) => {\n            const chars = gsap.utils.toArray<HTMLElement>(\n              word.querySelectorAll(\".char-wrapper\")\n            )\n            // Create a set to store unique random indices\n            const randomIndices = new Set<number>()\n            while (randomIndices.size < 1) {\n              // We only need one unique index per word\n              const potentialIndex = Math.floor(Math.random() * chars.length)\n              const charText = chars[potentialIndex].textContent?.trim() // Get the character's text content (without spaces)\n              if (charText !== \"\") {\n                // Only add non-empty characters\n                randomIndices.add(potentialIndex)\n              }\n            }\n\n            randomIndices.forEach((randomIndex) => {\n              const charWrapper = chars[randomIndex]\n              tl.current?.to(\n                charWrapper,\n                {\n                  duration: 1.6 / frequency,\n                  yPercent: \"-50\",\n                  ease: \"power2.inOut\",\n                  onComplete: () => {\n                    gsap.set(charWrapper, { yPercent: 0 })\n                  },\n                },\n                wordIndex * stagger\n              )\n            })\n          })\n        }\n\n        animateRandomCharsFromEachWord()\n\n        return () => {\n          if (textRef.current) {\n            gsap.killTweensOf(textRef.current.querySelectorAll(\".char-wrapper\"))\n          }\n          tl.current?.kill()\n        }\n      }\n    },\n    {\n      scope: textRef,\n      dependencies: [children, frequency],\n    }\n  )\n\n  return (\n    <div\n      ref={textRef}\n      className={cn(\n        \"font-medium pointer-events-auto leading-none relative\",\n        className\n      )}\n      style={style}\n    >\n      {children.split(\" \").map((word, index, arr) => {\n        const wordWithSpace = word + (index !== arr.length - 1 ? \" \" : \"\")\n        return (\n          <div\n            key={`${word}-${index}`}\n            className=\"relative inline-block overflow-hidden word-wrapper\"\n            style={{ height: \"1em\" }} // Fixed height based on font size\n          >\n            {wordWithSpace.split(\"\").map((char, charIndex) => (\n              <div\n                key={charIndex}\n                className=\"relative inline-block char-wrapper\"\n              >\n                <p className=\"inline-block whitespace-pre\">{char}</p>\n                <p className=\"block whitespace-pre \">{char}</p>\n              </div>\n            ))}\n          </div>\n        )\n      })}\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "categories": [
+    "hover-effect"
+  ]
+}

@@ -12,6 +12,7 @@ description: A dynamic component that reveals hidden cards while scrolling.
 
 <TabsList>
   <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">Cli</TabsTrigger>
 </TabsList>
 
   <TabsContent value="manual">
@@ -88,7 +89,11 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
 
 {" "}
 
-<Step>Cli Steps</Step>
+<Step>Run the following command </Step>
+
+```bash
+npx shadcn@latest add https://ui.unizoy.com/r/sliding-cards.json
+```
 
   </Steps>
 

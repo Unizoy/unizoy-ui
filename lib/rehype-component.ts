@@ -4,8 +4,8 @@ import { UnistNode, UnistTree } from "types/unist"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 
-import { Index } from "../config/index"
-import { styles } from "../registry/registry-styles"
+import { Index } from "../__registry__/index"
+// import { styles } from "../registry/registry-styles"
 
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
@@ -29,13 +29,13 @@ export function rehypeComponent() {
         }
 
         try {
-          for (const style of styles) {
+          
             let src: string
 
             if (srcPath) {
               src = path.join(process.cwd(), srcPath)
             } else {
-              const component = Index[style.name][name]
+              const component = Index[name]
               src = fileName
                 ? component.files.find((file: unknown) => {
                     if (typeof file === "string") {
@@ -56,26 +56,27 @@ export function rehypeComponent() {
             // Replace imports.
             // TODO: Use @swc/core and a visitor to replace this.
             // For now a simple regex should do.
+            source = source.replaceAll("@/registry/lib/utils", "@/lib/utils")
             source = source.replaceAll(
-              `@/registry/${style.name}/`,
+              `@/registry/`,
               "@/components/"
             )
             source = source.replaceAll("export default", "export")
-
+            source = source.replaceAll("../lib/utils", "@/lib/utils")
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
               u("element", {
                 tagName: "pre",
                 properties: {
                   __src__: src,
-                  __style__: style.name,
+                  // __style__: style.name,
                 },
                 attributes: [
-                  {
-                    name: "styleName",
-                    type: "mdxJsxAttribute",
-                    value: style.name,
-                  },
+                  // {
+                  //   name: "styleName",
+                  //   type: "mdxJsxAttribute",
+                  //   value: style.name,
+                  // },
                 ],
                 children: [
                   u("element", {
@@ -93,7 +94,7 @@ export function rehypeComponent() {
                 ],
               })
             )
-          }
+          
         } catch (error) {
           console.error(error)
         }
@@ -107,8 +108,8 @@ export function rehypeComponent() {
         }
 
         try {
-          for (const style of styles) {
-            const component = Index[style.name][name]
+        
+            const component = Index[name]
             const src = component.files[0]?.path
 
             // Read the source file.
@@ -119,7 +120,7 @@ export function rehypeComponent() {
             // TODO: Use @swc/core and a visitor to replace this.
             // For now a simple regex should do.
             source = source.replaceAll(
-              `@/registry/${style.name}/`,
+              `@/registry/`,
               "@/components/"
             )
             source = source.replaceAll("export default", "export")
@@ -147,7 +148,7 @@ export function rehypeComponent() {
                 ],
               })
             )
-          }
+     
         } catch (error) {
           console.error(error)
         }

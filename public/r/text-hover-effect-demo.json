@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "text-hover-effect-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "text-hover-effect"
+  ],
+  "files": [
+    {
+      "path": "examples/text-hover-effect-demo.tsx",
+      "content": "import { TextHoverEffect } from \"@/registry/ui/text-hover-effect\"\n\nexport default function TextHoverEffectDemo() {\n  return (\n    <div className=\"  text-white w-full h-full\">\n      <TextHoverEffect text=\"unizoy\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

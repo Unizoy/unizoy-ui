@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "infinite-moving-cards-demo",
+  "type": "registry:example",
+  "author": "shadcn (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "infinite-moving-cards"
+  ],
+  "files": [
+    {
+      "path": "examples/infinite-moving-cards-demo.tsx",
+      "content": "import  InfiniteMovingCards  from \"@/registry/ui/infinite-moving-cards\"\nexport default function InfiniteMovingCardsDemo(){\nconst testimonials = [\n  {\n    quote:\n      \"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.\",\n    name: \"Charles Dickens\",\n    title: \"A Tale of Two Cities\",\n  },\n  {\n    quote:\n      \"To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.\",\n    name: \"William Shakespeare\",\n    title: \"Hamlet\",\n  },\n  {\n    quote: \"All that we see or seem is but a dream within a dream.\",\n    name: \"Edgar Allan Poe\",\n    title: \"A Dream Within a Dream\",\n  },\n  {\n    quote:\n      \"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.\",\n    name: \"Jane Austen\",\n    title: \"Pride and Prejudice\",\n  },\n  {\n    quote:\n      \"Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.\",\n    name: \"Herman Melville\",\n    title: \"Moby-Dick\",\n  },\n];\n    return(\n       <div className=\"h-[20rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden\">\n      <InfiniteMovingCards\n        items={testimonials}\n        direction=\"left\"\n        speed=\"normal\"\n      />\n    </div>\n    )\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
