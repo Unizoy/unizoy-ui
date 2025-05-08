@@ -210,9 +210,14 @@ export default function HeroSection() {
         Speed up your workflow with tested, production-ready code snippets.
       </p>
       <div className="relative">
-        <Button variant={"blue"} className="mt-10">
-          <Link href={"/docs/components"}>Get Started</Link>
-        </Button>
+        <Link
+          href={"/docs/components"}
+          className="bg-transparent w-full h-full"
+        >
+          <Button variant={"blue"} className="mt-10 w-full h-full">
+            Get Started
+          </Button>
+        </Link>
         {/* for smaller screens */}
         <CursorLogo
           text="Next.js"

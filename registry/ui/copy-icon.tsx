@@ -168,7 +168,7 @@ const CopyIcon: React.FC<CopyIconProp> = ({
       <TbCopy
         onMouseEnter={() => handleMouseEnter(false)}
         className={cn(
-          "size-14 p-3 bg-black text-[#c2ff5d] rounded-full cursor-pointer copy-icon",
+          "size-14 p-3 bg-black text-blue-600 rounded-full cursor-pointer copy-icon",
           iconClass
         )}
         onClick={onClick} // Passing the onClick prop

@@ -7,7 +7,7 @@ export default function ButtonDemo() {
       <Button2 className="border" hoverColor="bg-green-600">
         Button2
       </Button2>
-      <Button3>Button3</Button3>
+      <Button3 className="border">Button3</Button3>
     </div>
   )
 }

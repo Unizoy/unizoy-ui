@@ -1,4 +1,4 @@
-import { Button } from "./ui/button"
+import { Button } from "@/registry/ui/button"
 import Link from "next/link"
 import { allDocs } from "contentlayer/generated"
 import { Mdx } from "@/components/mdx-components"
@@ -25,9 +25,8 @@ export default function HeroSection2() {
           <DraggableCarouselDemo />
           <CustomCursor className="">
             {/* to supress the default cursor */}
-             <CursorIcon className="relative w-fit">
-            </CursorIcon>
-            <NameTag name="Drag me" className="text-sm"/>
+            <CursorIcon className="relative w-fit"></CursorIcon>
+            <NameTag name="Drag me" className="text-sm" />
           </CustomCursor>
         </div>
 
@@ -48,11 +47,11 @@ export default function HeroSection2() {
         <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-white dark:from-[#0B0A0B] to-transparent"></div>
       </div>
 
-      <Button asChild size="lg" className="mt-10 mx-auto w-fit">
-        <Link href="/docs/components/draggable-carousel">
+      <Link href="/docs/components/draggable-carousel">
+        <Button variant={"blue"} className="flex">
           Explore Now <ArrowUpRight />
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </section>
   )
 }

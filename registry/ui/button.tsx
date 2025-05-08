@@ -14,13 +14,13 @@ import { ArrowRight } from "lucide-react"
 
 const buttonVariants = cva(
   `flex justify-center items-center relative z-10 hover:text-black
-   px-4 py-2 sm:px-6 sm:py-3 bg-black text-white font-bold border-2 rounded-2xl sm:rounded-3xl overflow-hidden `,
+   px-4 py-2 sm:px-6 sm:py-3 bg-black text-white font-bold border-2 rounded-2xl sm:rounded-3xl overflow-hidden`,
   {
     variants: {
       variant: {
         pink: "border-pink-400",
         yellow: "border-yellow-400",
-        blue: "border-blue-400",
+        blue: "border-blue-600",
         red: "border-red-400",
         purple: "border-purple-400",
         green: "border-green-400",
@@ -64,7 +64,7 @@ const buttonVariants = cva(
 const variantToColorClass = {
   pink: "bg-pink-400",
   yellow: "bg-yellow-400",
-  blue: "bg-blue-400",
+  blue: "bg-blue-600",
   red: "bg-red-400",
   purple: "bg-purple-400",
   green: "bg-green-400",
@@ -201,7 +201,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           if (typeof ref === "function") ref(node)
           else if (ref) ref.current = node
         }}
-        type="button"
         className={cn(buttonVariants({ className, variant, intent }))}
         {...props}
       >
@@ -217,7 +216,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             transform: "translate(-50%, -50%) scale(0)",
           }}
         />
-        <div className="z-20 whitespace-nowrap">{children}</div>
+        <div className="absolute top-0 left-0 z-20 whitespace-nowrap w-full h-full flex justify-center items-center">
+          {children}
+        </div>
+        <div className="whitespace-nowrap w-full h-full  flex opacity-0">
+          {children}
+        </div>
       </button>
     )
   }
@@ -309,7 +313,6 @@ interface Button3Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   finalArrowTranslate?: number
   initialTextTranslate?: number
   finalTextTranslate?: number
-
 }
 
 const Button3 = ({
