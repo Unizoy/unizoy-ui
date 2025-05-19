@@ -174,3 +174,10 @@
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-shadow-light {
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-dark {
+  text-shadow: 2px 4px 8px rgba(255, 255, 255, 0.2);
+}

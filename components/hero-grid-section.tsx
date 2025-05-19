@@ -16,7 +16,7 @@ export default function HeroGridSection() {
         >
           <div>
             <TextRollUpEffect className=" text-4xl  ">
-              SonicBoom
+              Hello there!
             </TextRollUpEffect>
           </div>
         </Link>
@@ -36,41 +36,7 @@ export default function HeroGridSection() {
           <InfiniteMovingCardsDemo />
         </Link>
       </div>
-      {/* thirs row */}
-      <div className=" w-full relative flex   flex-col md:flex-row md:gap-20 gap-3  justify-start items-center">
-        <div className="flex border border-dotted justify-center items-center text-xl sm:text-2xl lg:text-4xl gap-2  w-full h-full md:w-2/3 cursor-pointer">
-          We are
-          <RevealText
-            variant="gradient0"
-            className="font-bold sm:text-2xl lg:text-4xl"
-            image={Unizoy.src}
-            href="https://unizoy.com/"
-          >
-            Unizoy{" "}
-          </RevealText>
-          .
-        </div>
-        {/* for dark mode */}
-        <Link
-          href={"/docs/components/custom-pointer"}
-          className="dark:flex hidden relative md:w-1/3 cursor-none border border-dotted"
-        >
-          <img src="/og.jpg" alt="" />
-          <CustomCursor className="scale-100">
-            <NameTag name="Ankush" src="/avatars/01.png" />
-          </CustomCursor>
-        </Link>
-        {/* on light mode */}
-        <Link
-          href={"/docs/components/custom-pointer"}
-          className="dark:hidden flex relative md:w-1/3 cursor-none border border-dotted"
-        >
-          <img src="/og-light.png" alt="" />
-          <CustomCursor className="scale-100">
-            <NameTag name="Ankush" src="/avatars/01.png" />
-          </CustomCursor>
-        </Link>
-      </div>
+      
     </section>
   )
 }

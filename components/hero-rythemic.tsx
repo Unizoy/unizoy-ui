@@ -10,15 +10,16 @@ export default function HeroRythem() {
       <section className="md:flex hidden">
         <Rythem
           className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pt-[150px]"
-          imgsWidth={90}
-          markers={false}
+          imgsWidth={62}
+          markers={true}
+          positionToAnimation={70}
         >
           <Line className="flex mx-auto w-fit gap-3 ">
             <Word>FROM</Word>
             <Word>STATIC</Word>
             <Word className="rounded-md scale-[0.40] md:scale-[0.65]">
               <Picture
-                className=""
+                
                 src="/home/static.jpg"
                 alt="Static webpage elements"
               />

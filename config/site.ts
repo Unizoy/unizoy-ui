@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Copy-Paste Ui Elements That Can Save Your Development Time. Accessible. Customizable. Open Source.",
   links: {
-    twitter: "https://x.com/unizoyofficial",
+    twitter: "https://unizoy.com",
     github: "https://github.com/Unizoy/unizoy-ui",
   },
 }

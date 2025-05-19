@@ -58,6 +58,7 @@ const buttonVariants = cva(
     },
     defaultVariants: {
       intent: "small",
+      variant: "blue",
     },
   }
 )
@@ -94,6 +95,7 @@ interface ButtonProps
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = "blue", intent, children, className, ...props }, ref) => {
     const buttonRef = useRef<HTMLButtonElement>(null)
+    const circleAnim = useRef<GSAPTween | null>(null)
     const circleRef = useRef<HTMLDivElement>(null)
     const [circleSize, setCircleSize] = useState<number>(0)
 
@@ -124,7 +126,28 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       const button = buttonRef.current
 
       if (!circle || !button) return
+      const animateIn = () => {
+        circleAnim.current?.kill()
+        circleAnim.current = gsap.to(circleRef.current, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        })
+      }
 
+      const animateOut = (x: number, y: number) => {
+        circleAnim.current?.kill()
+        circleAnim.current = gsap.to(circleRef.current, {
+          scale: 0,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            circle.classList.add("hidden")
+            circle.style.top = `${y}px`
+            circle.style.left = `${x}px`
+          },
+        })
+      }
       // Set up the mousemove handler for direct position updates
       const updateCirclePosition = (e: MouseEvent) => {
         if (!circle) return
@@ -150,14 +173,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         circle.style.top = `${y}px`
         circle.style.left = `${x}px`
-        circle.style.display = "flex"
-
-        // Use GSAP only for the scale animation
-        gsap.to(circle, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        })
+        circle.classList.remove("hidden")
+        animateIn()
       }
 
       const handleMouseLeave = (e: MouseEvent) => {
@@ -165,17 +182,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         const rect = button.getBoundingClientRect()
         const x = e.clientX - rect.left
         const y = e.clientY - rect.top
-        // Use GSAP for the scaling out animation
-        gsap.to(circle, {
-          scale: 0,
-          duration: 0.3,
-          ease: "power2.in",
-          onComplete: () => {
-            circle.style.display = "none"
-            circle.style.top = `${y}px`
-            circle.style.left = `${x}px`
-          },
-        })
+        animateOut(x, y)
       }
 
       // Attach event listeners
@@ -216,10 +223,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             transform: "translate(-50%, -50%) scale(0)",
           }}
         />
-        <div className="absolute top-0 left-0 z-20 whitespace-nowrap w-full h-full flex justify-center items-center">
-          {children}
-        </div>
-        <div className="whitespace-nowrap w-full h-full  flex opacity-0">
+        <div className="z-20 whitespace-nowrap w-full h-full flex justify-center items-center">
           {children}
         </div>
       </button>

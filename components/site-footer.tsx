@@ -6,14 +6,14 @@ export function SiteFooter() {
       <div className="container-wrapper">
         <div className="container py-4">
           <div className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-            Built by{" "}
+            Made with love by{" "}
             <a
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              unizoy
+              Unizoy
             </a>
             . The source code is available on{" "}
             <a
