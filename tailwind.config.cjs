@@ -100,12 +100,21 @@ module.exports = {
   				'20%,50%': {
   					opacity: '0'
   				}
-  			}
+  			},
+			'blink-border':{
+                '0%,70%,100%': {
+  					"borderColor": 'white'
+  				},
+  				'20%,50%': {
+  					"borderColor": 'black'
+  				}
+			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			'caret-blink': 'caret-blink 1.25s ease-out infinite'
+  			'caret-blink': 'caret-blink 1.25s ease-out infinite',
+			'blink-border' : 'blink-border 1s infinite'
   		}
   	}
   },

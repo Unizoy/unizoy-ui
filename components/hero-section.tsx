@@ -68,9 +68,9 @@ function TypeWriterDemo() {
     { text: "", className: "text-green-500" },
   ]
   const DynamicTextWithClasses = [
-    { text: "Interact with people", className: "text-blue-600" },
-    { text: "Replicate your ideas", className: "text-blue-600" },
-    { text: "Enhance your Brand", className: "text-blue-600"}
+    { text: "Interact with people", className: "text-blue-600 text-nowrap" },
+    { text: "Replicate your ideas", className: "text-blue-600 text-nowrap" },
+    { text: "Enhance your Brand", className: "text-blue-600 text-nowrap"}
   ]
   return (
     <TypeWriter
