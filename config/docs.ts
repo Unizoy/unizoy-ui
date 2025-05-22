@@ -19,8 +19,8 @@ export const docsConfig: DocsConfig = {
       href: "/docs/components/animated-tooltip",
     },
     {
-      title: "Colors",
-      href: "/colors",
+      title: "Template",
+      href: "/templates",
     },
   ],
   sidebarNav: [

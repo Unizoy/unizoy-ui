@@ -40,7 +40,7 @@ const LinksProperties = defineNestedType(() => ({
 
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `docs/**/*.mdx`,
+  filePathPattern: `docs/components/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -77,10 +77,58 @@ export const Doc = defineDocumentType(() => ({
   },
   computedFields,
 }))
-
+const TemplateFeatures = defineNestedType(()=>({
+  name:"TemplateFeatures",
+  fields:{
+    heading:{
+      type:"string",
+    },
+    description:{
+      type:"string",
+    }
+  }
+}))
+export const Template=defineDocumentType(()=>({
+  name:"Template",
+  filePathPattern:"templates/*.mdx",
+  contentType:"mdx",
+  fields:{
+    title:{
+      type:"string",
+      required:true
+    },
+    description:{
+      type:"string",
+      required:true
+    },
+    imageLinks:{
+      type:"list",
+      of: { type: 'string' },
+      required:true
+    },
+    liveLink:{
+      type:"string",
+      required:true
+    },
+    repoLink:{
+      type:"string",
+      required:true
+    },
+    features:{
+      type:"list",
+      of:TemplateFeatures,
+      required:true
+    },
+    technologyUsed:{
+      type:"list",
+      of:{type:"string"},
+      required:true
+    }
+  }
+}))
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Doc],
+  documentTypes: [Doc,Template],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
