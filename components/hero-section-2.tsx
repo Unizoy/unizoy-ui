@@ -12,11 +12,12 @@ export default function HeroSection2() {
   const doc = allDocs.find((doc) => doc.slugAsParams === "components/home-page")
   return (
     <section className="flex flex-col justify-center items-center mx-6">
-      <h1 className="flex flex-wrap justify-center items-center gap-2 font-semibold w-fit mx-auto text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-center">
+      <h1 className="flex flex-wrap justify-center items-center text-2xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] leading-none font-medium gap-2  w-fit mx-auto text-center">
         Enter the Multiverse of Innovative UIs
       </h1>
-      <p className="text-xs md:text-base text-center text-foreground md:w-1/2 mx-auto mt-5 font-semibold px-10 mb-12 md:px-0">
-        Browse the library of best rated UIs- Responsive, Reusable, and Ready to Act.
+      <p className="text-base sm:text-lg md:text-xl lg:text-[26px] leading-none font-normal  text-center   text-[#7E7E7E]  mx-auto mt-5  px-10 mb-12 md:px-0">
+        Browse the library of best rated UIs- Responsive, Reusable, and Ready to
+        Act.
       </p>
 
       <div className="px-3 pt-3  rounded-md bg-gray-200 w-full  lg:w-[80%] max-w-[1536px] lg:mx-auto flex flex-col gap-3 relative">

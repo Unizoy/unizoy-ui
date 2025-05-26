@@ -5,7 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Motto() {
-     useGSAP(() => {
+  useGSAP(() => {
     const lines = gsap.utils.toArray(".line2") as Element[]
 
     gsap.set(lines, { opacity: 0.1, scale: 0.8 })
@@ -39,7 +39,7 @@ export default function Motto() {
     })
   }, [])
   return (
-    <section className="w-fit mx-auto text-center mt-[100px] text-3xl sm:text-7xl section2">
+    <section className="w-fit mx-auto text-center mt-[200px] text-3xl sm:text-7xl section2">
       <div className="line2 text-shadow-light dark:text-shadow-dark">
         Design Smarter
       </div>
