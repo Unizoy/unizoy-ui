@@ -1,7 +1,7 @@
 import { promises as fs } from "fs"
 import { tmpdir } from "os"
 import path from "path"
-import { Index } from "@/config"
+import { Index } from "@/__registry__"
 import {
   registryItemFileSchema,
   registryItemSchema,
