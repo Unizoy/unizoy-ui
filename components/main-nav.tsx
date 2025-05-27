@@ -16,7 +16,6 @@ export function MainNav() {
         <Icons.logo className="h-6 w-6" />
       </Link>
       <nav className="flex items-center gap-4 text-sm xl:gap-6">
-       
         <Link
           href="/docs/components"
           className={cn(
@@ -29,8 +28,7 @@ export function MainNav() {
         >
           Components
         </Link>
-        
-    
+
         <Link
           href="/templates"
           className={cn(
@@ -41,6 +39,13 @@ export function MainNav() {
           )}
         >
           Templates
+        </Link>
+
+        <Link
+          href="https://unizoy.com/contact?utm_source=ui"
+          className={"transition-colors text-foreground bg-green-600/20 border px-3 py-2 rounded-3xl hover:scale-95"}
+        >
+          Need Custom Components?
         </Link>
       </nav>
     </div>

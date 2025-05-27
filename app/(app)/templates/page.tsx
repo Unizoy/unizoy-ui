@@ -7,10 +7,10 @@ export default function Templates() {
   return (
     <main>
       <section>
-        <h1 className="w-fit mx-auto text-2xl sm:text-4xl mt-24 font-serif">
+        <h1 className="w-fit mx-auto text-2xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] leading-none font-medium mt-24 font-serif">
           Templates
         </h1>
-        <p className="w-fit sm:w-[50vw] lg:w-[40vw] mt-6 text-center px-6 mx-auto text-wrap">
+        <p className="w-fit sm:w-[50vw] lg:w-[40vw] text-base sm:text-lg md:text-xl  leading-none font-normal text-[#7E7E7E] mt-6 text-center px-6 mx-auto text-wrap">
           Modern and minimalist templates for building your next product. Built
           with React, NextJS, TailwindCSS, GSAP and TypeScript.
         </p>

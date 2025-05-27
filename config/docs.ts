@@ -22,6 +22,10 @@ export const docsConfig: DocsConfig = {
       title: "Template",
       href: "/templates",
     },
+    {
+      title: "Need Custom Components?",
+      href: "https://unizoy.com/contact?utm_source=ui",
+    },
   ],
   sidebarNav: [
     {

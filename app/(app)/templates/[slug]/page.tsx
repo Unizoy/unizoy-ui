@@ -80,7 +80,7 @@ export default function TemplatePage({ params }: { params: { slug: string } }) {
       </div>
 
       {template.features?.length > 0 && (
-        <section className="mt-10 lg:flex">
+        <section className="my-20 lg:flex">
           <h2 className="text-2xl font-semibold mb-4 lg:w-2/5">Features</h2>
           <ul className="space-y-4 lg:3/5 grid grid-col-1 sm:grid-cols-2 gap-3">
             {template.features.map((feature, i) => (

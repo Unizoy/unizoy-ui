@@ -13,10 +13,9 @@ export default function Motto() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".section2",
-        start: "top 40%",
+        start: "top 60%",
         end: "+=600", // controls scroll length for all animations
         scrub: 1,
-        pin: true,
         pinSpacing: true,
       },
     })
@@ -39,7 +38,7 @@ export default function Motto() {
     })
   }, [])
   return (
-    <section className="w-fit mx-auto text-center mt-[200px] text-3xl sm:text-7xl section2">
+    <section className="w-fit mx-auto text-center mt-[200px] text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl section2">
       <div className="line2 text-shadow-light dark:text-shadow-dark">
         Design Smarter
       </div>
