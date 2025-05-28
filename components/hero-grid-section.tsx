@@ -7,7 +7,7 @@ import { TextRollUpEffect } from "@/registry/ui/text-rollup-effect"
 import { TypeWriter } from "@/registry/ui/typewriter"
 export default function HeroGridSection() {
   return (
-    <section className="px-6 pt-3 flex flex-col gap-3 mt-20 max-w-[1536px]  w-full  lg:w-[80%] lg:mx-auto  relative rounded-lg ">
+    <section className="container-wrapper px-6 flex flex-col gap-3 pt-20 relative  ">
       {/* first row */}
       <div className=" w-full relative flex  flex-col md:flex-row gap-2  md:gap-10 justify-start items-center">
         <Link

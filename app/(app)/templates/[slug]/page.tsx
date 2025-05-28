@@ -20,12 +20,14 @@ export default function TemplatePage({ params }: { params: { slug: string } }) {
   if (!template) return notFound()
 
   return (
-    <main className="px-6 pt-16">
+    <main className="px-6 pt-16 container-wrapper">
       <h1 className="mx-auto md:mx-0 font-bold w-fit text-4xl text-wrap">
         {template.title}
       </h1>
 
-      <p className="mt-4 w-fit mx-auto md:mx-0 text-gray-400">{template.description}</p>
+      <p className="mt-4 w-fit mx-auto md:mx-0 text-gray-400">
+        {template.description}
+      </p>
       <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mt-3">
         <div>
           {template.technologyUsed.map((tech, i) => {

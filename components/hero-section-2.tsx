@@ -11,7 +11,7 @@ import { CursorIcon, CustomCursor, NameTag } from "@/registry/ui/custom-pointer"
 export default function HeroSection2() {
   const doc = allDocs.find((doc) => doc.slugAsParams === "components/home-page")
   return (
-    <section className="flex flex-col justify-center items-center mx-6">
+    <section className="container-wrapper flex flex-col justify-center items-center mx-6">
       <h1 className="flex flex-wrap justify-center items-center text-2xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] leading-none font-medium gap-2  w-fit mx-auto text-center">
         Enter the Multiverse of Innovative UIs
       </h1>

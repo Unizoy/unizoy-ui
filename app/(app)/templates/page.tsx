@@ -6,8 +6,8 @@ import Image from "next/image"
 export default function Templates() {
   return (
     <main>
-      <section>
-        <h1 className="w-fit mx-auto text-2xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] leading-none font-medium mt-24 font-serif">
+      <section className="container-wrapper">
+        <h1 className="w-fit mx-auto text-2xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] leading-none font-medium pt-24 font-serif">
           Templates
         </h1>
         <p className="w-fit sm:w-[50vw] lg:w-[40vw] text-base sm:text-lg md:text-xl  leading-none font-normal text-[#7E7E7E] mt-6 text-center px-6 mx-auto text-wrap">
@@ -16,7 +16,7 @@ export default function Templates() {
         </p>
       </section>
 
-      <section className="my-12 px-6 space-y-3">
+      <section className="py-12 px-6 space-y-3 container-wrapper">
         {allTemplates.map((temp) => (
           <div key={temp.title} className="flex  flex-col-reverse md:flex-col border p-3 rounded-lg">
             <div className="flex justify-between flex-col md:flex-row gap-4">

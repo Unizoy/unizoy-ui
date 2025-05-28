@@ -10,7 +10,7 @@ export default function HeroVideoGrid() {
     }
   }
   return (
-    <section className="px-6 mb-[100px]">
+    <section className="px-6 pb-[100px] container-wrapper mx-auto">
       <div className="grid grid-cols-1 gap-6 sm:[grid-template-columns:minmax(100px,1fr)_minmax(100px,1fr)] lg:[grid-template-columns:minmax(100px,2fr)_minmax(100px,1fr)_minmax(100px,2fr)_minmax(100px,2fr)]">
         <Link href={"/docs/components/animated-tooltip"}>
           <div className="inline-block h-full">

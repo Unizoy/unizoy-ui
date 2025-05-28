@@ -4,7 +4,7 @@ import { TypeWriter } from "@/registry/ui/typewriter"
 import { Icons } from "@/components/icons"
 export default function HeroSection() {
   return (
-    <section className="my-[100px]  items-center flex flex-col ">
+    <section className="py-[100px] container-wrapper border-grid items-center flex flex-col ">
       <div className=" mx-auto lg:min-w-[60vw] max-w-fit ">
         <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] leading-none w-fit mx-auto font-medium">
           Make Websites that
@@ -14,9 +14,18 @@ export default function HeroSection() {
           <TypeWriterDemo />
         </h2>
 
-        <p className="lg:w-[747.5px] md:w-[560px] sm:w-[448px] w-[280px] text-base md:text-xl lg:text-[26px] leading-none font-normal  text-center  text-[#7E7E7E]  mt-5 text-wrap  mx-auto">
-          Step into the future of UI. Interactive designs that don’t just look
-          good, they do the talking.
+        <p className="lg:w-[747.5px] md:w-[560px] sm:w-[448px] w-[280px] text-base md:text-xl lg:text-[26px] leading-none font-normal  text-center  text-[#7E7E7E]  mt-5 text-wrap  mx-auto ">
+          <span className="hidden sm:flex">
+            {" "}
+            Step into the future of UI. Interactive designs that don’t just look
+            good, they do the talking.
+          </span>
+          <span className="sm:hidden flex flex-col">
+            <span className="w-fit mx-auto">Step into the future of UI.</span>
+            <span> Interactive designs that</span>
+            <span> don’t just look good,</span>
+            <span>they do the talking.</span>
+          </span>
         </p>
       </div>
       <div className="relative sm:flex gap-6">
