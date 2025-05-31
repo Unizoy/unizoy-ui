@@ -12,7 +12,11 @@ export function MainNav() {
 
   return (
     <div className="mr-4 hidden md:flex">
-      <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
+      <Link
+        href="/"
+        aria-label="Home"
+        className="mr-4 flex items-center gap-2 lg:mr-6"
+      >
         <Icons.logo className="h-6 w-6" />
       </Link>
       <nav className="flex items-center gap-4 text-sm xl:gap-6">
@@ -43,7 +47,9 @@ export function MainNav() {
 
         <Link
           href="https://unizoy.com/contact?utm_source=ui"
-          className={"transition-colors text-foreground text-xs bg-green-600/20 border px-2 py-2 rounded-3xl hover:scale-95"}
+          className={
+            "transition-colors text-foreground text-xs bg-green-600/20 border px-2 py-2 rounded-3xl hover:scale-95"
+          }
         >
           Need Custom Components?
         </Link>

@@ -49,23 +49,31 @@ export default function HeroSection() {
       </div>
       <div className="flex justify-between gap-3 mt-10 items-center">
         {/* Gsap */}
-        <Link href={"https://gsap.com"} prefetch={false}>
+        <Link href={"https://gsap.com"} aria-label="Gsap" prefetch={false}>
           <Icons.gsap className="text-[#7E7E7E]" />
         </Link>
         {/* Typescript */}
-        <Link href={"https://www.typescriptlang.org/"} prefetch={false}>
+        <Link
+          href={"https://www.typescriptlang.org/"}
+          aria-label="Typescript"
+          prefetch={false}
+        >
           <Icons.typescript className="text-white dark:text-black" />
         </Link>
         {/* Nextjs */}
-        <Link href={"https://nextjs.org/"} prefetch={false}>
+        <Link href={"https://nextjs.org/"} aria-label="NextJs" prefetch={false}>
           <Icons.nextjs className="text-[#7E7E7E]" />
         </Link>
         {/* Reactjs */}
-        <Link href={"https://react.dev/"} prefetch={false}>
+        <Link href={"https://react.dev/"} aria-label="ReactJs" prefetch={false}>
           <Icons.reactjs className="text-[#7E7E7E]" />
         </Link>
         {/* Tailwindcss */}
-        <Link href={"https://tailwindcss.com/"} prefetch={false}>
+        <Link
+          href={"https://tailwindcss.com/"}
+          aria-label="Tailwind Css"
+          prefetch={false}
+        >
           <Icons.tailwind className="w-[58px] h-[38px] text-[#7E7E7E]" />
         </Link>
       </div>

@@ -16,7 +16,7 @@ export default function HeroRythem() {
               <Picture
                 height={100}
                 // width={"200px"}
-                src="/home/static.jpg"
+                src="/home/1.webp"
                 alt="Static webpage elements"
               />
             </Word>
@@ -29,7 +29,7 @@ export default function HeroRythem() {
               <Picture
                 height={100}
                 // width={"200px"}
-                src="/home/dynamic.jpg"
+                src="/home/2.webp"
                 alt="Animated UI elements"
               />
             </Word>
@@ -42,7 +42,7 @@ export default function HeroRythem() {
               <Picture
                 height={100}
                 // width={"200px"}
-                src="/home/mundane.jpg"
+                src="/home/3.webp"
                 alt="Before and after animation states"
               />
             </Word>
@@ -63,7 +63,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/static.jpg"
+                src="/home/1.webp"
                 alt="Static webpage elements"
               />
             </Word>
@@ -75,7 +75,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/dynamic.jpg"
+                src="/home/2.webp"
                 alt="Animated UI elements"
               />
             </Word>
@@ -87,7 +87,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/mundane.jpg"
+                src="/home/3.webp"
                 alt="Before and after animation states"
               />
             </Word>
@@ -108,7 +108,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/static.jpg"
+                src="/home/1.webp"
                 alt="Static webpage elements"
               />
             </Word>
@@ -120,7 +120,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/dynamic.jpg"
+                src="/home/2.webp"
                 alt="Animated UI elements"
               />
             </Word>
@@ -132,7 +132,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/mundane.jpg"
+                src="/home/3.webp"
                 alt="Before and after animation states"
               />
             </Word>
@@ -153,7 +153,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/static.jpg"
+                src="/home/1.webp"
                 alt="Static webpage elements"
               />
             </Word>
@@ -165,7 +165,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/dynamic.jpg"
+                src="/home/2.webp"
                 alt="Animated UI elements"
               />
             </Word>
@@ -177,7 +177,7 @@ export default function HeroRythem() {
             <Word className="rounded-md ">
               <Picture
                 height={50}
-                src="/home/mundane.jpg"
+                src="/home/3.webp"
                 alt="Before and after animation states"
               />
             </Word>
