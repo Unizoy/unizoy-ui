@@ -194,10 +194,10 @@ export const ImageTrail: React.FC<ImageTrailProps> = ({
 
         // we keep the expiring image
         // until its fade-out animation completes
-        if (newImages.length > MAX_IMAGES + 3) {
-          // But we do limit how many fading images we keep to avoid memory issues
-          newImages = newImages.slice(-(MAX_IMAGES + 3))
-        }
+        // if (newImages.length > MAX_IMAGES + 3) {
+        //   // But we do limit how many fading images we keep to avoid memory issues
+        //   newImages = newImages.slice(-(MAX_IMAGES + 3))
+        // }
       }
 
       return newImages

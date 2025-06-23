@@ -11,7 +11,6 @@ import { RefreshButton } from "@/components/refresh-button"
 import { Icons } from "@/components/icons"
 // import { StyleSwitcher } from "@/components/style-switcher"
 import { ThemeWrapper } from "@/components/theme-wrapper"
-import { V0Button } from "@/components/v0-button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Style, styles } from "@/registry/registry-styles"
 import { NpmCommands } from "@/types/unist"
@@ -45,7 +44,7 @@ export function ComponentPreview({
   const [forceUpdate, setForceUpdate] = React.useState(false)
   // const index = styles.findIndex((style) => style.name === config.style)
 
-  const Codes = React.Children.toArray(children)   as React.ReactElement[]
+  const Codes = React.Children.toArray(children) as React.ReactElement[]
   //made it hard coded to 0 because sometimes Codes has only element and value of index can be both 0,1
   //   and also Alex told to remove options for switching theme so no need of it
   //1 is default  and 0 is new-york
@@ -106,7 +105,6 @@ export function ComponentPreview({
           <div className="flex items-center justify-between p-4">
             {/* <StyleSwitcher /> */}
             <div className="flex items-center gap-2">
-              {description ? <V0Button name={name} /> : null}
               <CopyButton
                 value={codeString}
                 variant="outline"
@@ -188,7 +186,6 @@ const Pre = ({
   }
 
   return (
-  
     <>
       <pre
         className={cn(
@@ -196,7 +193,7 @@ const Pre = ({
           className
         )}
         {...props}
-        />
+      />
       {__rawString__ && (
         <CopyButton
           value={__rawString__}
@@ -205,7 +202,6 @@ const Pre = ({
           className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
         />
       )}
-   
-  </>
+    </>
   )
 }

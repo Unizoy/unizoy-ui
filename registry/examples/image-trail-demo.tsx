@@ -23,7 +23,7 @@ export default function ImageTrailDemo() {
       <ImageTrail
         images={imageUrls}
         text="Hover Magic"
-        duration={2}
+        duration={1}
         spawnInterval={50}
       />
     </div>

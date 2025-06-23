@@ -53,21 +53,21 @@ export function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
 <Step>Add this configurations to `tailwind.config.js` file</Step>
 
 ```bash
- extend: {
-      keyframes: {
-        blinkBorder: {
-          "0%, 100%": {
-            borderColor: "transparent",
-          },
-          "50%": {
-            borderColor: "#3B82F6",
-          },
-        },
-      },
-      animation: {
-        blinkBorder: "blinkBorder 1.5s infinite ease-in-out",
-      },
+ extend:{
+    keyframes:{
+      'blink-border':{
+        '0%,70%,100%': {
+  		    "borderColor": 'white'
+  		  },
+  			'20%,50%': {
+  				"borderColor": 'black'
+  			}
+			}
     },
+    animation:{
+      'blink-border' : 'blink-border 1s infinite'
+    }
+ }
 ```
 
 <Step>
@@ -88,6 +88,22 @@ export function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
 
 ```bash
 npx shadcn@latest add https://ui.unizoy.com/r/typewriter.json
+```
+
+<Step>After running the above command paste this into you `lib/utils.ts` file.</Step>
+
+```bash
+export function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
+  return (node: T | null) => {
+    refs.forEach((ref) => {
+      if (typeof ref === "function") {
+        ref(node)
+      } else if (ref && "current" in ref) {
+        ;(ref as React.MutableRefObject<T | null>).current = node
+      }
+    })
+  }
+}
 ```
 
 </Steps>

@@ -146,7 +146,7 @@ const TypeWriter = forwardRef<HTMLDivElement, TypeWriterProps>(
         className={cn("flex flex-col gap-2", className)}
         {...props}
       >
-        <div className="flex items-center animate-blinkBorder border-r-2 pr-1">
+        <div className="flex items-center animate-blink-border border-r-2 pr-1">
           <div ref={textRef} className="flex  text-nowrap overflow-hidden ">
             {staticText.map((data, i) => (
               <span key={`staticText-${i}`} className={cn(data.className)}>
