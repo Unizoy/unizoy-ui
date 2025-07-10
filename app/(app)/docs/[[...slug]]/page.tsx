@@ -42,10 +42,10 @@ export async function generateMetadata({
   }
 
   return {
-    title: doc.title,
+    title: `${doc.title} - ${siteConfig.name}`,
     description: doc.description,
     openGraph: {
-      title: doc.title,
+      title: `${doc.title} - ${siteConfig.name}`,
       description: doc.description,
       type: "article",
       url: absoluteUrl(doc.slug),
@@ -60,7 +60,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: doc.title,
+      title: `${doc.title} - ${siteConfig.name}`,
       description: doc.description,
       images: [siteConfig.ogImage],
       creator: "@unizoy",
