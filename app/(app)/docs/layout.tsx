@@ -1,5 +1,13 @@
+import { Metadata } from "next"
 import { docsConfig } from "@/config/docs"
 import { DocsNav } from "@/components/docs-nav"
+import { generateSEO, seoTemplates } from "@/lib/seo"
+
+// Generate metadata for the docs section
+export const metadata: Metadata = generateSEO({
+  ...seoTemplates.docs,
+  canonical: "/docs",
+})
 
 export default function DocsLayout({
   children,

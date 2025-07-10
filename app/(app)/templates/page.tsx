@@ -1,7 +1,16 @@
+import { Metadata } from "next"
 import { allTemplates } from ".contentlayer/generated"
 import { Button } from "@/registry/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { generateSEO } from "@/lib/seo"
+import { pageSEO } from "@/config/seo"
+
+// Generate metadata for the templates page
+export const metadata: Metadata = generateSEO({
+  ...pageSEO["/templates"],
+  ogType: "website",
+})
 
 export default function Templates() {
   return (
@@ -18,15 +27,24 @@ export default function Templates() {
 
       <section className="py-12 px-6 space-y-3 container-wrapper">
         {allTemplates.map((temp) => (
-          <div key={temp.title} className="flex  flex-col-reverse md:flex-col border p-3 rounded-lg">
+          <div
+            key={temp.title}
+            className="flex  flex-col-reverse md:flex-col border p-3 rounded-lg"
+          >
             <div className="flex justify-between flex-col md:flex-row gap-4">
               <div className="mt-3">
-                <Link href={temp._raw.flattenedPath} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                <Link
+                  href={temp._raw.flattenedPath}
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+                >
                   {temp.title}
                 </Link>
                 <p className="my-3">{temp.description}</p>
               </div>
-              <Link href={temp._raw.flattenedPath} className="self-start w-full md:w-fit">
+              <Link
+                href={temp._raw.flattenedPath}
+                className="self-start w-full md:w-fit"
+              >
                 <Button variant="cyan" className="mt-4 md:mt-10 w-full">
                   Check Out
                 </Button>
@@ -37,43 +55,55 @@ export default function Templates() {
             {/* large screen images */}
             <div className="hidden lg:grid grid-cols-3 gap-4 mt-3">
               {temp.imageLinks.slice(0, 3).map((img, i) => (
-                <Link href={temp._raw.flattenedPath} key={img} className="w-fit overflow-hidden">
-                <Image
-                  src={img}
-                  alt={`image_id_${i}`}
-                  width={400}
-                  height={300}
-                  className="rounded-lg border-[10px]  transition-transform duration-300 ease-in-out hover:scale-105"
+                <Link
+                  href={temp._raw.flattenedPath}
+                  key={img}
+                  className="w-fit overflow-hidden"
+                >
+                  <Image
+                    src={img}
+                    alt={`image_id_${i}`}
+                    width={400}
+                    height={300}
+                    className="rounded-lg border-[10px]  transition-transform duration-300 ease-in-out hover:scale-105"
                   />
-                  </Link>
+                </Link>
               ))}
             </div>
             {/* medium screen images */}
             <div className="hidden md:flex lg:hidden gap-3 justify-between mt-3">
               {temp.imageLinks.slice(0, 2).map((img, i) => (
-                <Link href={temp._raw.flattenedPath} key={img} className="w-fit">
-                <Image
-                  src={img}
-                  alt={`image_id_${i}`}
-                  width={400}
-                  height={300}
-                  className="rounded-lg border-[10px]  transition-transform duration-300 ease-in-out hover:scale-105"
+                <Link
+                  href={temp._raw.flattenedPath}
+                  key={img}
+                  className="w-fit"
+                >
+                  <Image
+                    src={img}
+                    alt={`image_id_${i}`}
+                    width={400}
+                    height={300}
+                    className="rounded-lg border-[10px]  transition-transform duration-300 ease-in-out hover:scale-105"
                   />
-                  </Link>
+                </Link>
               ))}
             </div>
             {/* smaller screen images */}
             <div className="md:hidden gap-4">
               {temp.imageLinks.slice(0, 1).map((img, i) => (
-                <Link href={temp._raw.flattenedPath} key={img} className="w-fit">
-                <Image
-                  src={img}
-                  alt={`image_id_${i}`}
-                  width={400}
-                  height={300}
-                  className="rounded-lg border-[10px] w-full transition-transform duration-300 ease-in-out hover:scale-105"
+                <Link
+                  href={temp._raw.flattenedPath}
+                  key={img}
+                  className="w-fit"
+                >
+                  <Image
+                    src={img}
+                    alt={`image_id_${i}`}
+                    width={400}
+                    height={300}
+                    className="rounded-lg border-[10px] w-full transition-transform duration-300 ease-in-out hover:scale-105"
                   />
-                  </Link>
+                </Link>
               ))}
             </div>
           </div>
