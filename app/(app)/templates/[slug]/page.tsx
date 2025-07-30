@@ -38,7 +38,7 @@ export default function TemplatePage({ params }: { params: { slug: string } }) {
             return (
               <span
                 key={i}
-                className="mr-[2px]  rounded-full border border-gray-800 dark:border-gray-200 w-[30px] h-[30px] inline-flex justify-center items-center"
+                className="mr-[2px] w-[30px] h-[30px] inline-flex justify-center items-center"
               >
                 {Icon ? <Icon className="h-6 w-6" /> : <span>{tech}</span>}
               </span>
