@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react"
 import toast, { Toast } from "react-hot-toast"
-import AnimatedButton from "./animatedButton"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/ui/button"
 import { FaArrowRightArrowLeft } from "react-icons/fa6"
