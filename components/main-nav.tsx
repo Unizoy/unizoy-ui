@@ -46,7 +46,7 @@ export function MainNav() {
         </Link>
 
         <Link
-          href="https://unizoy.com/contact?utm_source=ui"
+          href="/contact"
           className={
             "transition-colors text-foreground text-xs bg-green-600/20 border px-2 py-2 rounded-3xl hover:scale-95"
           }
