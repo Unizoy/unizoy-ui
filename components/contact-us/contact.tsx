@@ -1,11 +1,10 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
-import toast, { Toast } from "react-hot-toast"
+import React, { useState } from "react"
+import toast, { Toaster } from "react-hot-toast"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/ui/button"
-import { FaArrowRightArrowLeft } from "react-icons/fa6"
-import { ArrowUpRightFromSquareIcon } from "lucide-react"
+
 import { useRouter } from "next/navigation"
 
 const budgetOptions = [
@@ -38,7 +37,6 @@ const ContactForm = () => {
   let [formDetails, setFormDetails] = React.useState<FormDetails>({
     ...defaultFormDetails,
   })
-  const router = useRouter()
   const url = process.env.NEXT_PUBLIC_SERVER_URL
   // console.log("url: ", url)
   let [loading, setLoading] = React.useState<boolean>(false)
@@ -130,13 +128,8 @@ const ContactForm = () => {
       if (contactFormResponse.ok) {
         setFormDetails({ ...defaultFormDetails })
         toast.success(
-          "We have received your message. We will get back to you soon.",
-          {
-            duration: 4000,
-            position: "bottom-center",
-          }
+          "We have received your message. We will get back to you soon."
         )
-        router.push("/")
       } else {
         toast.error("Failed to save your contact form. Please try again later.")
       }
@@ -155,7 +148,6 @@ const ContactForm = () => {
 
   return (
     <div className="web-container my-20">
-      {/* <Toast /> */}
       <div className="flex flex-col md:flex-row gap-10 justify-between items-baseline">
         <div className="w-full lg:w-[33%]">
           <div className="text-justify text-base xs:text-lg md:text-xl lg:text-2xl 3xl:text-[34px]/[46px] font-aeonik font-normal text-gray-800 dark:text-gray-200">
@@ -225,6 +217,7 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
+      <Toaster />
     </div>
   )
 }
