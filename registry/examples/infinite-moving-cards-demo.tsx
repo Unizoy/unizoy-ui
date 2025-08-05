@@ -4,7 +4,7 @@ export default function InfiniteMovingCardsDemo() {
     {
       quote:
         "Having been closely involved in the development of Unizoy UI, I can confidently say it’s a game‑changer for modern web projects. Its GSAP‑powered animations, React component structure, and TypeScript foundation make building sleek, high‑performance UIs a seamless experience. It’s not just a library, it’s a toolkit built with developers in mind.",
-      name: "Ankush Jaiswal,",
+      name: "Ankush Jaiswal",
       title: "Full Stack Developer",
     },
     {
