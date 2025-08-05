@@ -38,7 +38,6 @@ const ContactForm = () => {
     ...defaultFormDetails,
   })
   const url = process.env.NEXT_PUBLIC_SERVER_URL
-  // console.log("url: ", url)
   let [loading, setLoading] = React.useState<boolean>(false)
   let [formError, setFormError] = React.useState<InputErrors>({})
 

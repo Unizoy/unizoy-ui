@@ -56,8 +56,6 @@ const ScalingSlidingCards = ({
   const [forceUpdate, setForceUpdate] = useState(false)
 
   useEffect(() => {
-    console.log("from useEffext")
-
     if (scrollerRef?.current) {
       setForceUpdate(!forceUpdate)
     }
