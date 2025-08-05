@@ -11,7 +11,6 @@ import { themes } from "@/registry/registry-themes"
 import { ui } from "@/registry/registry-ui"
 
 export const registry = {
-  //change
   name: "unizoy/ui",
   homepage: "https://ui.unizoy.com",
   items: [

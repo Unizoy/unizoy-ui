@@ -163,7 +163,6 @@ function getFileTarget(file: z.infer<typeof registryItemFileSchema>) {
   return target ?? ""
 }
 
-//change
 async function createTempSourceFile(filename: string) {
   const dir = await fs.mkdtemp(path.join(tmpdir(), "unizoy-"))
   return path.join(dir, filename)

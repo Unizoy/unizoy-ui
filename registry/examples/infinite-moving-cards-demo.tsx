@@ -1,6 +1,5 @@
 import InfiniteMovingCards from "@/registry/ui/infinite-moving-cards"
 export default function InfiniteMovingCardsDemo() {
-  //change
   const testimonials = [
     {
       quote:
