@@ -8,7 +8,7 @@ import {
   registryItemSchema,
   registryItemTypeSchema,
   registrySchema,
-} from "../packages/shadcn/src/registry/schema"
+} from "../packages/unizoy/src/registry/schema"
 import { Project, ScriptKind } from "ts-morph"
 import { z } from "zod"
 
@@ -37,7 +37,7 @@ const project = new Project({
 })
 
 async function createTempSourceFile(filename: string) {
-  const dir = await fs.mkdtemp(path.join(tmpdir(), "shadcn-"))
+  const dir = await fs.mkdtemp(path.join(tmpdir(), "unizoy-"))
   return path.join(dir, filename)
 }
 
@@ -108,103 +108,76 @@ import * as React from "react"
 export const Index: Record<string, any> = {
 `
 
+  // Build style index.
+  for (const item of registry.items) {
+    const resolveFiles = item.files?.map(
+      (file) => `registry/${typeof file === "string" ? file : file.path}`
+    )
+    if (!resolveFiles) {
+      continue
+    }
 
-
-    // Build style index.
-    for (const item of registry.items) {
-      const resolveFiles = item.files?.map(
-        (file) =>
-          `registry/${
-            typeof file === "string" ? file : file.path
-          }`
+    // Validate categories.
+    if (item.categories) {
+      const invalidCategories = item.categories.filter(
+        (category) => !registryCategories.some((c) => c.slug === category)
       )
-      if (!resolveFiles) {
+
+      if (invalidCategories.length > 0) {
+        console.error(
+          `${item.name} has invalid categories: ${invalidCategories}`
+        )
+        process.exit(1)
+      }
+    }
+
+    const type = item.type.split(":")[1]
+    let sourceFilename = ""
+
+    if (item.type === "registry:block") {
+      const file = resolveFiles[0]
+      const filename = path.basename(file)
+      let raw: string
+      try {
+        raw = await fs.readFile(file, "utf8")
+      } catch (error) {
         continue
       }
+      const tempFile = await createTempSourceFile(filename)
+      const sourceFile = project.createSourceFile(tempFile, raw, {
+        scriptKind: ScriptKind.TSX,
+      })
 
-      // Validate categories.
-      if (item.categories) {
-        const invalidCategories = item.categories.filter(
-          (category) => !registryCategories.some((c) => c.slug === category)
-        )
-
-        if (invalidCategories.length > 0) {
-          console.error(
-            `${item.name} has invalid categories: ${invalidCategories}`
-          )
-          process.exit(1)
+      // Find all imports.
+      const imports = new Map<
+        string,
+        {
+          module: string
+          text: string
+          isDefault?: boolean
         }
-      }
-
-      const type = item.type.split(":")[1]
-      let sourceFilename = ""
-
-      if (item.type === "registry:block") {
-        const file = resolveFiles[0]
-        const filename = path.basename(file)
-        let raw: string
-        try {
-          raw = await fs.readFile(file, "utf8")
-        } catch (error) {
-          continue
-        }
-        const tempFile = await createTempSourceFile(filename)
-        const sourceFile = project.createSourceFile(tempFile, raw, {
-          scriptKind: ScriptKind.TSX,
-        })
-
-        // Find all imports.
-        const imports = new Map<
-          string,
-          {
-            module: string
-            text: string
-            isDefault?: boolean
-          }
-        >()
-        sourceFile.getImportDeclarations().forEach((node) => {
-          const module = node.getModuleSpecifier().getLiteralValue()
-          node.getNamedImports().forEach((item) => {
-            imports.set(item.getText(), {
-              module,
-              text: node.getText(),
-            })
+      >()
+      sourceFile.getImportDeclarations().forEach((node) => {
+        const module = node.getModuleSpecifier().getLiteralValue()
+        node.getNamedImports().forEach((item) => {
+          imports.set(item.getText(), {
+            module,
+            text: node.getText(),
           })
-
-          const defaultImport = node.getDefaultImport()
-          if (defaultImport) {
-            imports.set(defaultImport.getText(), {
-              module,
-              text: defaultImport.getText(),
-              isDefault: true,
-            })
-          }
         })
 
-        // Write the source file for blocks only.
-        sourceFilename = `__registry__/${type}/${item.name}.tsx`
-
-        if (item.files) {
-          const files = item.files.map((file) =>
-            typeof file === "string"
-              ? { type: "registry:page", path: file }
-              : file
-          )
-          if (files?.length) {
-            sourceFilename = `__registry__/${files[0].path}`
-          }
+        const defaultImport = node.getDefaultImport()
+        if (defaultImport) {
+          imports.set(defaultImport.getText(), {
+            module,
+            text: defaultImport.getText(),
+            isDefault: true,
+          })
         }
+      })
 
-        const sourcePath = path.join(process.cwd(), sourceFilename)
-        if (!existsSync(sourcePath)) {
-          await fs.mkdir(sourcePath, { recursive: true })
-        }
-
-        rimraf.sync(sourcePath)
-        await fs.writeFile(sourcePath, sourceFile.getText())
-      }
-
-      let componentPath = `@/registry/${type}/${item.name}`
+      // Write the source file for blocks only.
+      sourceFilename = `__registry__/${type}/${item.name}.tsx`
 
       if (item.files) {
         const files = item.files.map((file) =>
@@ -213,11 +186,31 @@ export const Index: Record<string, any> = {
             : file
         )
         if (files?.length) {
-          componentPath = `@/registry/${files[0].path}`
+          sourceFilename = `__registry__/${files[0].path}`
         }
       }
 
-      index += `
+      const sourcePath = path.join(process.cwd(), sourceFilename)
+      if (!existsSync(sourcePath)) {
+        await fs.mkdir(sourcePath, { recursive: true })
+      }
+
+      rimraf.sync(sourcePath)
+      await fs.writeFile(sourcePath, sourceFile.getText())
+    }
+
+    let componentPath = `@/registry/${type}/${item.name}`
+
+    if (item.files) {
+      const files = item.files.map((file) =>
+        typeof file === "string" ? { type: "registry:page", path: file } : file
+      )
+      if (files?.length) {
+        componentPath = `@/registry/${files[0].path}`
+      }
+    }
+
+    index += `
     "${item.name}": {
       name: "${item.name}",
       description: "${item.description ?? ""}",
@@ -241,9 +234,7 @@ export const Index: Record<string, any> = {
       source: "${sourceFilename}",
       meta: ${JSON.stringify(item.meta)},
     },`
-    }
-
-  
+  }
 
   index += `
 }
@@ -287,108 +278,106 @@ export const Index: Record<string, any> = {
 // Build registry/styles/[style]/[name].json.
 // ----------------------------------------------------------------------------
 async function buildStyles(registry: Registry) {
+  const targetPath = path.join(REGISTRY_PATH)
 
-    const targetPath = path.join(REGISTRY_PATH)
+  // Create directory if it doesn't exist.
+  if (!existsSync(targetPath)) {
+    await fs.mkdir(targetPath, { recursive: true })
+  }
 
-    // Create directory if it doesn't exist.
-    if (!existsSync(targetPath)) {
-      await fs.mkdir(targetPath, { recursive: true })
+  for (const item of registry.items) {
+    if (!REGISTRY_INDEX_WHITELIST.includes(item.type)) {
+      continue
     }
 
-    for (const item of registry.items) {
-      if (!REGISTRY_INDEX_WHITELIST.includes(item.type)) {
-        continue
-      }
+    let files
+    if (item.files) {
+      files = await Promise.all(
+        item.files.map(async (_file) => {
+          const file =
+            typeof _file === "string"
+              ? {
+                  path: _file,
+                  type: item.type,
+                  content: "",
+                  target: "",
+                }
+              : _file
 
-      let files
-      if (item.files) {
-        files = await Promise.all(
-          item.files.map(async (_file) => {
-            const file =
-              typeof _file === "string"
-                ? {
-                    path: _file,
-                    type: item.type,
-                    content: "",
-                    target: "",
-                  }
-                : _file
+          let content: string
+          try {
+            content = await fs.readFile(
+              path.join(process.cwd(), "registry", file.path),
+              "utf8"
+            )
 
-            let content: string
-            try {
-              content = await fs.readFile(
-                path.join(process.cwd(), "registry", file.path),
-                "utf8"
-              )
-
-              // Only fix imports for v0- blocks.
-              if (item.name.startsWith("v0-")) {
-                content = fixImport(content)
-              }
-            } catch (error) {
-              return
+            // Only fix imports for v0- blocks.
+            if (item.name.startsWith("v0-")) {
+              content = fixImport(content)
             }
+          } catch (error) {
+            return
+          }
 
-            const tempFile = await createTempSourceFile(file.path)
-            const sourceFile = project.createSourceFile(tempFile, content, {
-              scriptKind: ScriptKind.TSX,
-            })
-
-            sourceFile.getVariableDeclaration("iframeHeight")?.remove()
-            sourceFile.getVariableDeclaration("containerClassName")?.remove()
-            sourceFile.getVariableDeclaration("description")?.remove()
-
-            let target = file.target || ""
-
-            if ((!target || target === "") && item.name.startsWith("v0-")) {
-              const fileName = file.path.split("/").pop()
-              if (
-                file.type === "registry:block" ||
-                file.type === "registry:component" ||
-                file.type === "registry:example"
-              ) {
-                target = `components/${fileName}`
-              }
-
-              if (file.type === "registry:ui") {
-                target = `components/ui/${fileName}`
-              }
-
-              if (file.type === "registry:hook") {
-                target = `hooks/${fileName}`
-              }
-
-              if (file.type === "registry:lib") {
-                target = `lib/${fileName}`
-              }
-            }
-
-            return {
-              path: file.path,
-              type: file.type,
-              content: sourceFile.getText(),
-              target,
-            }
+          const tempFile = await createTempSourceFile(file.path)
+          const sourceFile = project.createSourceFile(tempFile, content, {
+            scriptKind: ScriptKind.TSX,
           })
-        )
-      }
 
-      const payload = registryItemSchema.safeParse({
-        $schema: "https://ui.unizoy.com/schema/registry-item.json",
-        author: "shadcn (https://ui.unizoy.com)",
-        ...item,
-        files,
-      })
+          sourceFile.getVariableDeclaration("iframeHeight")?.remove()
+          sourceFile.getVariableDeclaration("containerClassName")?.remove()
+          sourceFile.getVariableDeclaration("description")?.remove()
 
-      if (payload.success) {
-        await fs.writeFile(
-          path.join(targetPath, `${item.name}.json`),
-          JSON.stringify(payload.data, null, 2),
-          "utf8"
-        )
-      }
+          let target = file.target || ""
+
+          if ((!target || target === "") && item.name.startsWith("v0-")) {
+            const fileName = file.path.split("/").pop()
+            if (
+              file.type === "registry:block" ||
+              file.type === "registry:component" ||
+              file.type === "registry:example"
+            ) {
+              target = `components/${fileName}`
+            }
+
+            if (file.type === "registry:ui") {
+              target = `components/ui/${fileName}`
+            }
+
+            if (file.type === "registry:hook") {
+              target = `hooks/${fileName}`
+            }
+
+            if (file.type === "registry:lib") {
+              target = `lib/${fileName}`
+            }
+          }
+
+          return {
+            path: file.path,
+            type: file.type,
+            content: sourceFile.getText(),
+            target,
+          }
+        })
+      )
     }
-  
+
+    const payload = registryItemSchema.safeParse({
+      $schema: "https://ui.unizoy.com/schema/registry-item.json",
+      author: "Unizoy (https://ui.unizoy.com)",
+      ...item,
+      files,
+    })
+
+    if (payload.success) {
+      await fs.writeFile(
+        path.join(targetPath, `${item.name}.json`),
+        JSON.stringify(payload.data, null, 2),
+        "utf8"
+      )
+    }
+  }
 
   // ----------------------------------------------------------------------------
   // Build registry/styles/index.json.

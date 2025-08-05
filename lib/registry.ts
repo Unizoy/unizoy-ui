@@ -5,7 +5,7 @@ import { Index } from "@/__registry__"
 import {
   registryItemFileSchema,
   registryItemSchema,
-} from "@/packages/shadcn/src/registry/schema"
+} from "@/packages/unizoy/src/registry/schema"
 import { Project, ScriptKind, SourceFile, SyntaxKind } from "ts-morph"
 import { z } from "zod"
 
@@ -163,8 +163,9 @@ function getFileTarget(file: z.infer<typeof registryItemFileSchema>) {
   return target ?? ""
 }
 
+//change
 async function createTempSourceFile(filename: string) {
-  const dir = await fs.mkdtemp(path.join(tmpdir(), "shadcn-"))
+  const dir = await fs.mkdtemp(path.join(tmpdir(), "unizoy-"))
   return path.join(dir, filename)
 }
 

@@ -1,4 +1,4 @@
-import { type Registry } from "@/packages/shadcn/src/registry/schema"
+import { type Registry } from "@/packages/unizoy/src/registry/schema"
 import { z } from "zod"
 
 import { blocks } from "@/registry/registry-blocks"
@@ -11,8 +11,9 @@ import { themes } from "@/registry/registry-themes"
 import { ui } from "@/registry/registry-ui"
 
 export const registry = {
-  name: "shadcn/ui",
-  homepage: "https://ui.shadcn.com",
+  //change
+  name: "unizoy/ui",
+  homepage: "https://ui.unizoy.com",
   items: [
     ...ui,
     // ...blocks,

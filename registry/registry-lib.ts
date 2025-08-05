@@ -1,4 +1,4 @@
-import { type Registry } from "@/packages/shadcn/src/registry/schema"
+import { type Registry } from "@/packages/unizoy/src/registry/schema"
 
 export const lib: Registry["items"] = [
   {
