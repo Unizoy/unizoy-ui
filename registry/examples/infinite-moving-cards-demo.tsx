@@ -3,32 +3,26 @@ export default function InfiniteMovingCardsDemo() {
   const testimonials = [
     {
       quote:
-        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-      name: "Charles Dickens",
-      title: "A Tale of Two Cities",
+        "Having been closely involved in the development of Unizoy UI, I can confidently say it’s a game‑changer for modern web projects. Its GSAP‑powered animations, React component structure, and TypeScript foundation make building sleek, high‑performance UIs a seamless experience. It’s not just a library, it’s a toolkit built with developers in mind.",
+      name: "Ankush Jaiswal,",
+      title: "Full Stack Developer",
+    },
+    {
+      quote: "Haven't found any better open-source GSAP component library!",
+      name: "Bhavya Patel",
+      title: "Unizoy",
     },
     {
       quote:
-        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-      name: "William Shakespeare",
-      title: "Hamlet",
-    },
-    {
-      quote: "All that we see or seem is but a dream within a dream.",
-      name: "Edgar Allan Poe",
-      title: "A Dream Within a Dream",
+        "Just copy and paste, and boom, your animated website is ready! I love how easy it is to create animations using Unizoy UI.",
+      name: "Rajpurohit Vijesh",
+      title: "Unizoy",
     },
     {
       quote:
-        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-      name: "Jane Austen",
-      title: "Pride and Prejudice",
-    },
-    {
-      quote:
-        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-      name: "Herman Melville",
-      title: "Moby-Dick",
+        "Unizoy UI is very simple to use. I can add nice animations without writing too much code. It saves my time and works really well.",
+      name: "Faizan Pathan",
+      title: "Full Stack Developer",
     },
   ]
   return (

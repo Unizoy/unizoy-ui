@@ -53,8 +53,6 @@ const SlidingCards: React.FC<SlidingCardsProps> = ({
   const [forceUpdate, setForceUpdate] = useState(false)
 
   useEffect(() => {
-    console.log("from useEffext")
-
     if (scrollerRef?.current) {
       setForceUpdate(!forceUpdate)
     }
@@ -76,13 +74,11 @@ const SlidingCards: React.FC<SlidingCardsProps> = ({
       if (!content) return 0
       return content.getBoundingClientRect().height
     })
-    console.log("initialHeights", initialHeights)
     // const minHeight = Math.min(...initialHeights)
     const minHeight =
       minHeightValue !== undefined
         ? minHeightValue
         : Math.min(...initialHeights)
-    console.log("minHeight", minHeight)
 
     // Create a timeline with ScrollTrigger
     const tl = gsap.timeline({

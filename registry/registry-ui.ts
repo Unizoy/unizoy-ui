@@ -1,4 +1,4 @@
-import { type Registry } from "@/packages/shadcn/src/registry/schema"
+import { type Registry } from "@/packages/unizoy/src/registry/schema"
 
 export const ui: Registry["items"] = [
   {
@@ -312,26 +312,26 @@ export const ui: Registry["items"] = [
         type: "registry:ui",
       },
     ],
-    tailwind:{
-      config:{
-        theme:{
-          extend:{
-            keyframes:{
-              'blink-border':{
-                '0%,70%,100%': {
-  				       	"borderColor": 'white'
-  				      },
-  			      	'20%,50%': {
-  				      	"borderColor": 'black'
-  				      }
-			        }
+    tailwind: {
+      config: {
+        theme: {
+          extend: {
+            keyframes: {
+              "blink-border": {
+                "0%,70%,100%": {
+                  borderColor: "white",
+                },
+                "20%,50%": {
+                  borderColor: "black",
+                },
+              },
             },
-            animation:{
-              'blink-border' : 'blink-border 1s infinite'
-            }
-          }
-        }
-      }
-    }
+            animation: {
+              "blink-border": "blink-border 1s infinite",
+            },
+          },
+        },
+      },
+    },
   },
 ]
