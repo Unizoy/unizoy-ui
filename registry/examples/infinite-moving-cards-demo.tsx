@@ -24,6 +24,12 @@ export default function InfiniteMovingCardsDemo() {
       name: "Faizan Pathan",
       title: "Full Stack Developer",
     },
+    {
+      quote:
+        "A useful library for teams looking to build beautiful, animated website without added complexity.",
+      name: "Neel Patel",
+      title: "Instant branding",
+    },
   ]
   return (
     <div className="h-[20rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
