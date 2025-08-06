@@ -75,6 +75,7 @@
     "next": "14.3.0-canary.43",
     "next-contentlayer2": "^0.4.6",
     "next-themes": "^0.4.4",
+    "posthog-js": "^1.258.5",
     "puppeteer": "^24.2.0",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",
@@ -124,5 +125,6 @@
   },
   "peerDependencies": {
     "esbuild": "^0.17.3"
-  }
+  },
+  "packageManager": "pnpm@9.9.0+sha1.3edbe440f4e570aa8f049adbd06b9483d55cc2d2"
 }

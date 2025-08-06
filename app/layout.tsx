@@ -11,7 +11,8 @@ import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Toaster as DefaultToaster } from "@/components/ui/toaster"
 import { Toaster as NewYorkSonner } from "@/components/ui/sonner"
 import { Toaster as NewYorkToaster } from "@/components/ui/toaster"
-
+import { PostHogProvider } from "@/analytics/providers/posthog-provider"
+import GoogleAnalytics from "@/analytics/GoogleAnalytics"
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -153,25 +154,28 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontMono.variable
           )}
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-            enableColorScheme
-          >
-            <div vaul-drawer-wrapper="">
-              <div className="relative flex min-h-svh flex-col bg-background">
-                {children}
+          <PostHogProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+              enableColorScheme
+            >
+              <div vaul-drawer-wrapper="">
+                <div className="relative flex min-h-svh flex-col bg-background">
+                  {children}
+                </div>
               </div>
-            </div>
-            <TailwindIndicator />
-            <ThemeSwitcher />
-            {/* <Analytics /> */}
-            <NewYorkToaster />
-            <DefaultToaster />
-            <NewYorkSonner />
-          </ThemeProvider>
+              <TailwindIndicator />
+              <ThemeSwitcher />
+              {/* <Analytics /> */}
+              <NewYorkToaster />
+              <DefaultToaster />
+              <NewYorkSonner />
+            </ThemeProvider>
+          </PostHogProvider>
+          <GoogleAnalytics />
         </body>
       </html>
     </>
