@@ -139,7 +139,7 @@ export const seoTemplates = {
   docs: {
     title: "Documentation",
     description:
-      "Learn how to use unizoy/ui components in your React and Next.js projects. Complete guides, examples, and API references.",
+      "Learn how to use Unizoy UI components in your React and Next.js projects. Complete guides, examples, and API references.",
     keywords: [
       "documentation",
       "guides",
@@ -166,7 +166,7 @@ export const seoTemplates = {
   examples: {
     title: "Examples",
     description:
-      "See unizoy/ui components in action with real-world examples and use cases. Get inspired for your next project.",
+      "See Unizoy UI components in action with real-world examples and use cases. Get inspired for your next project.",
     keywords: [
       "examples",
       "demos",
@@ -180,7 +180,7 @@ export const seoTemplates = {
   blocks: {
     title: "Blocks",
     description:
-      "Pre-built sections and layouts using unizoy/ui components. Perfect starting points for your web applications.",
+      "Pre-built sections and layouts using Unizoy UI components. Perfect starting points for your web applications.",
     keywords: [
       "blocks",
       "sections",
@@ -194,7 +194,7 @@ export const seoTemplates = {
   templates: {
     title: "Templates",
     description:
-      "Complete application templates built with unizoy/ui. Download and customize for your projects.",
+      "Complete application templates built with Unizoy UI. Download and customize for your projects.",
     keywords: [
       "templates",
       "starter templates",
