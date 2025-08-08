@@ -50,7 +50,7 @@ const jsonLdPage = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  let title = `Contact Us - Unizoy Ui`
+  let title = `Contact Us - Unizoy UI`
   let description = `Dreaming big? Need insights? Got a question? We're here for you no matter who you are!`
   return {
     title: title,
