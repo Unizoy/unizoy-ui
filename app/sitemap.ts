@@ -7,15 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const staticPages = [
     "",
-    "/docs",
-    "/docs/installation",
-    "/docs/theming",
     "/docs/components",
-    "/examples",
-    "/blocks",
     "/templates",
-    "/colors",
-    "/changelog",
   ]
 
   // Component pages (you can generate these dynamically)
@@ -45,32 +38,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/docs/components/date-picker",
   ]
 
-  // Example pages
-  const examplePages = [
-    "/examples/dashboard",
-    "/examples/authentication",
-    "/examples/forms",
-    "/examples/cards",
-    "/examples/tables",
-  ]
-
-  // Block pages
-  const blockPages = [
-    "/blocks/hero-sections",
-    "/blocks/feature-sections",
-    "/blocks/testimonials",
-    "/blocks/pricing",
-    "/blocks/contact",
-    "/blocks/footers",
-    "/blocks/headers",
-  ]
-
   // Combine all pages
   const allPages = [
     ...staticPages,
     ...componentPages,
-    ...examplePages,
-    ...blockPages,
   ]
 
   return allPages.map((page) => ({

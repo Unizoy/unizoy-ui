@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "unizoy/ui",
+  name: "Unizoy UI",
   url: "https://ui.unizoy.com",
   ogImage: "https://ui.unizoy.com/og.jpg",
   description:

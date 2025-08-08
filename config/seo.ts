@@ -19,56 +19,10 @@ export const pageSEO: Record<string, SEOProps> = {
     canonical: "/",
   },
 
-  // Documentation pages
-  "/docs": {
-    title: "Documentation - Getting Started Guide",
-    description:
-      "Complete documentation for unizoy/ui component library. Learn installation, customization, and best practices for React components.",
-    keywords: [
-      "documentation",
-      "getting started",
-      "installation",
-      "guide",
-      "React",
-      "components",
-    ],
-    canonical: "/docs",
-  },
-
-  "/docs/installation": {
-    title: "Installation Guide - Setup unizoy/ui",
-    description:
-      "Step-by-step installation guide for unizoy/ui. Learn how to install and configure components in your React or Next.js project.",
-    keywords: [
-      "installation",
-      "setup",
-      "configuration",
-      "Next.js",
-      "React",
-      "getting started",
-    ],
-    canonical: "/docs/installation",
-  },
-
-  "/docs/theming": {
-    title: "Theming Guide - Customize Your Components",
-    description:
-      "Learn how to customize colors, typography, and styling in unizoy/ui components. Complete theming documentation.",
-    keywords: [
-      "theming",
-      "customization",
-      "colors",
-      "typography",
-      "CSS variables",
-      "design tokens",
-    ],
-    canonical: "/docs/theming",
-  },
-
   "/docs/components": {
     title: "Component Documentation - React UI Components",
     description:
-      "Browse complete documentation for all unizoy/ui components. Props, examples, and customization options.",
+      "Browse complete documentation for all Unizoy UI components. Props, examples, and customization options.",
     keywords: [
       "components",
       "documentation",
@@ -111,42 +65,11 @@ export const pageSEO: Record<string, SEOProps> = {
     canonical: "/docs/components/form",
   },
 
-  // Examples section
-  "/examples": {
-    title: "Component Examples - Real-world Use Cases",
-    description:
-      "Explore real-world examples and implementations of unizoy/ui components. Get inspiration for your projects.",
-    keywords: [
-      "examples",
-      "demos",
-      "implementations",
-      "real-world",
-      "inspiration",
-    ],
-    canonical: "/examples",
-  },
-
-  "/examples/dashboard": {
-    title: "Dashboard Example - Admin Interface",
-    description:
-      "Complete dashboard example built with unizoy/ui components. Includes charts, tables, and navigation.",
-    keywords: ["dashboard", "admin", "charts", "tables", "interface"],
-    canonical: "/examples/dashboard",
-  },
-
-  "/examples/authentication": {
-    title: "Authentication Examples - Login & Signup Forms",
-    description:
-      "Beautiful authentication forms and flows using unizoy/ui components. Login, signup, and password reset examples.",
-    keywords: ["authentication", "login", "signup", "forms", "password reset"],
-    canonical: "/examples/authentication",
-  },
-
   // Templates section
   "/templates": {
     title: "Application Templates - Starter Projects",
     description:
-      "Download complete application templates built with unizoy/ui. Perfect starting points for your projects.",
+      "Download complete application templates built with Unizoy UI. Perfect starting points for your projects.",
     keywords: [
       "templates",
       "starter",
@@ -156,74 +79,32 @@ export const pageSEO: Record<string, SEOProps> = {
     ],
     canonical: "/templates",
   },
-
-  // Blocks section
-  "/blocks": {
-    title: "UI Blocks - Pre-built Sections",
+  "/templates/real-estate-investment-page": {
+    title: "Real Estate Investment Page - Starter Projects",
     description:
-      "Copy-paste UI blocks and sections built with unizoy/ui components. Headers, footers, heroes, and more.",
+      "Download complete application templates built with Unizoy UI. Perfect starting points for your projects.",
     keywords: [
-      "blocks",
-      "sections",
-      "pre-built",
-      "headers",
-      "footers",
-      "heroes",
+      "templates",
+      "starter",
+      "boilerplate",
+      "application",
+      "download",
     ],
-    canonical: "/blocks",
-  },
-
-  // Colors and theming
-  "/colors": {
-    title: "Color System - Design Tokens",
-    description:
-      "Explore the unizoy/ui color system. Semantic colors, dark mode support, and CSS variables.",
-    keywords: [
-      "colors",
-      "design tokens",
-      "dark mode",
-      "CSS variables",
-      "palette",
-    ],
-    canonical: "/colors",
-  },
-
-  // About pages
-  "/about": {
-    title: "About unizoy/ui - Open Source Component Library",
-    description:
-      "Learn about the unizoy/ui project, our mission, and the team behind the component library.",
-    keywords: ["about", "open source", "mission", "team", "project"],
-    canonical: "/about",
-  },
-
-  // Blog/Changelog
-  "/changelog": {
-    title: "Changelog - What's New in unizoy/ui",
-    description:
-      "Stay updated with the latest changes, new components, and improvements in unizoy/ui.",
-    keywords: [
-      "changelog",
-      "updates",
-      "new features",
-      "improvements",
-      "releases",
-    ],
-    canonical: "/changelog",
+    canonical: "/templates",
   },
 }
 
 // Category-based SEO for dynamic routes
 export const categorySEO = {
   components: {
-    titleTemplate: "%s Component - React UI Library",
+    titleTemplate: "%s Component - Unizoy UI Library",
     descriptionTemplate:
-      "Learn how to use the %s component from unizoy/ui. Complete documentation with examples and customization options.",
+      "Learn how to use the %s component from Unizoy UI. Complete documentation with examples and customization options.",
     keywords: ["component", "React", "UI", "documentation", "examples"],
   },
 
   examples: {
-    titleTemplate: "%s Example - unizoy/ui Implementation",
+    titleTemplate: "%s Example - Unizoy UI Implementation",
     descriptionTemplate:
       "See the %s component in action with this practical example. Copy the code and customize for your project.",
     keywords: ["example", "implementation", "demo", "practical"],
@@ -232,14 +113,14 @@ export const categorySEO = {
   blocks: {
     titleTemplate: "%s Block - Ready-to-use UI Section",
     descriptionTemplate:
-      "Copy-paste %s block built with unizoy/ui components. Perfect for quick prototyping and development.",
+      "Copy-paste %s block built with Unizoy UI components. Perfect for quick prototyping and development.",
     keywords: ["block", "section", "copy-paste", "prototyping"],
   },
 
   templates: {
     titleTemplate: "%s Template - Application Starter",
     descriptionTemplate:
-      "Download the %s template built with unizoy/ui. Complete application ready for customization.",
+      "Download the %s template built with Unizoy UI. Complete application ready for customization.",
     keywords: ["template", "starter", "application", "download"],
   },
 }
