@@ -72,7 +72,6 @@ export async function generateMetadata({
   const template = allTemplates.find(
     (item) => item._raw.flattenedPath.split("/")[1] === params.slug
   )
-  console.log("tempalate: ", template)
   if (!template) {
     return generateSEO({
       title: "Template Not Found",
