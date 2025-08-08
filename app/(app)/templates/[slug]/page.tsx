@@ -4,7 +4,11 @@ import Image from "next/image"
 import { Button } from "@/registry/ui/button"
 import Link from "next/link"
 import { Icons } from "@/components/icons"
+import { generateSEO } from "@/lib/seo"
+import { Metadata } from "next"
+
 type IconName = keyof typeof Icons
+
 // Find template by slug
 export async function generateStaticParams() {
   return allTemplates.map((template) => ({
@@ -12,6 +16,45 @@ export async function generateStaticParams() {
   }))
 }
 
+// Generate dynamic metadata for each template
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const template = allTemplates.find(
+    (item) => item._raw.flattenedPath.split("/")[1] === params.slug
+  )
+  console.log("tempalate: ", template)
+  if (!template) {
+    return generateSEO({
+      title: "Template Not Found",
+      description: "The requested template could not be found.",
+      noindex: true,
+    })
+  }
+
+  return generateSEO({
+    title: `${template.title} - Unizoy UI Template`,
+    description: template.description,
+    keywords: [
+      "template",
+      "starter",
+      "project",
+      "dashboard",
+      "landing page",
+      ...template.technologyUsed,
+      "React",
+      "Next.js",
+      "Unizoy UI",
+    ],
+    canonical: `/templates/${params.slug}`,
+    ogType: "website",
+    ogImage: template.imageLinks?.[0] || undefined,
+    tags: template.technologyUsed,
+    section: "Templates",
+  })
+}
 export default function TemplatePage({ params }: { params: { slug: string } }) {
   const template = allTemplates.find(
     (item) => item._raw.flattenedPath.split("/")[1] === params.slug
