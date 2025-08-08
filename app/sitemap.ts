@@ -34,14 +34,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/docs/components/date-picker",
   ]
 
-  const templatePage = ["/templates/real-estate-investment-page"]
+  const templatePages = ["/templates/real-estate-investment-page"]
 
   // Combine all pages
-  const allPages = [
-    ...staticPages,
-    ...componentPages,
-    ...templatePage,
-  ]
+  const allPages = [...staticPages, ...componentPages, ...templatePages]
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,
