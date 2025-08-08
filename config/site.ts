@@ -15,7 +15,7 @@ export const siteConfig = {
     "Component Library",
   ],
   ogImage: "https://ui.unizoy.com/og.jpg",
-  logo: "https://ui.unizoy.com/meta/unizoy-logo-type.png",
+  logo: "https://ui.unizoy.com/meta/unizoy-logo-type-dark.png",
 
   links: {
     twitter: "https://x.com/unizoyofficial",
