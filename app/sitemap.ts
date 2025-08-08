@@ -5,44 +5,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url
 
   // Static pages
-  const staticPages = [
-    "",
-    "/docs/components",
-    "/templates",
-  ]
+  const staticPages = ["", "/docs/components", "/templates", "/contact"]
 
   // Component pages (you can generate these dynamically)
   const componentPages = [
+    "/docs/components/animated-tooltip",
     "/docs/components/button",
-    "/docs/components/card",
-    "/docs/components/form",
-    "/docs/components/input",
-    "/docs/components/select",
-    "/docs/components/dialog",
-    "/docs/components/tooltip",
-    "/docs/components/popover",
-    "/docs/components/dropdown-menu",
-    "/docs/components/navigation-menu",
-    "/docs/components/tabs",
-    "/docs/components/accordion",
-    "/docs/components/alert",
-    "/docs/components/badge",
-    "/docs/components/avatar",
-    "/docs/components/checkbox",
-    "/docs/components/radio-group",
-    "/docs/components/switch",
-    "/docs/components/slider",
-    "/docs/components/progress",
-    "/docs/components/table",
-    "/docs/components/calendar",
-    "/docs/components/date-picker",
+    "/docs/components/carousel",
+    "/docs/components/copy-icon",
+    "/docs/components/custom-pointer",
+    "/docs/components/draggable-carousel",
+    "/docs/components/floating-navabar",
+    "/docs/components/image-trail",
+    "/docs/components/infinite-moving-cards",
+    "/docs/components/motion-cards",
+    "/docs/components/product-preview",
+    "/docs/components/reveal-text",
+    "/docs/components/rotating-text",
+    "/docs/components/rythemic-reveal",
+    "/docs/components/navigation-icon",
+    "/docs/components/scaling-sliding-cards",
+    "/docs/components/scroll-opacity-effect",
+    "/docs/components/scroll-text-flow",
+    "/docs/components/scrolling-cards",
+    "/docs/components/scrolling-video-cards",
+    "/docs/components/slide-cards",
+    "/docs/components/testimonial",
+    "/docs/components/text-hover-effect",
+    "/docs/components/text-rollup-effect",
+    "/docs/components/text-slider",
+    "/docs/components/type-writer",
   ]
 
+  const templatePages = ["/templates/real-estate-investment-page"]
+
   // Combine all pages
-  const allPages = [
-    ...staticPages,
-    ...componentPages,
-  ]
+  const allPages = [...staticPages, ...componentPages, ...templatePages]
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,
