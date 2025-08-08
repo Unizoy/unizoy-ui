@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Unizoy UI",
   alternateName: "Unizoy UI Library",
-  title: "Unizoy UI - GSAP Component Library",
+  title: "Unizoy UI",
   description:
     "Copy-Paste UI elements that save development time. Accessible, customizable, and open-source.",
   url: "https://ui.unizoy.com",
@@ -9,12 +9,10 @@ export const siteConfig = {
   keywords: [
     "Unizoy",
     "Unizoy UI",
-    "GSAP Component",
     "Shadcn",
     "React Component",
     "Next.js Component",
     "Component Library",
-    "GSAP Component library",
   ],
   ogImage: "https://ui.unizoy.com/og.jpg",
   logo: "https://ui.unizoy.com/meta/unizoy-logo-type.png",
