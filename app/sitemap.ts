@@ -5,11 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url
 
   // Static pages
-  const staticPages = [
-    "",
-    "/docs/components",
-    "/templates",
-  ]
+  const staticPages = ["", "/docs/components", "/templates"]
 
   // Component pages (you can generate these dynamically)
   const componentPages = [
@@ -38,10 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/docs/components/date-picker",
   ]
 
+  const templatePage = ["/templates/real-estate-investment-page"]
+
   // Combine all pages
   const allPages = [
     ...staticPages,
     ...componentPages,
+    ...templatePage,
   ]
 
   return allPages.map((page) => ({
