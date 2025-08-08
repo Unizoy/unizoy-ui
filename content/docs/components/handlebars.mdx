@@ -1,0 +1,101 @@
+---
+title: Handlebars
+description: An interactive, text hide like effect.
+---
+{" "}
+
+<ComponentPreview
+name="handlebars-demo"
+className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+/>
+
+{" "}
+
+<Tabs defaultValue="manual">
+
+{" "}
+
+<TabsList>
+<TabsTrigger value="manual">Manual</TabsTrigger>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+</TabsList>
+
+{" "}
+
+<TabsContent value="manual">
+
+{" "}
+
+<Steps>
+
+{" "}
+
+<Step>Install the following dependency:</Step>
+
+```bash
+npm install gsap @gsap/react
+```
+
+<Step>
+  Make a file for cn and mergerRef functions and match the import
+  afterwards
+</Step>
+
+```tsx
+import clsx, { ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes))
+```
+
+{" "}
+
+<Step>
+Create a new file named handlebars.tsx and paste the code below.
+</Step>
+
+{" "}
+
+<ComponentSource name="handlebars" />
+
+{" "}
+
+
+</Steps>
+
+{" "}
+
+</TabsContent>
+
+{" "}
+
+<TabsContent value="cli">
+
+{" "}
+
+<Steps>
+
+{" "}
+
+<Step>Run the following command:</Step>
+
+```bash
+npx shadcn@latest add https://ui.unizoy.com/r/handlebars.json
+```
+
+{" "}
+
+</Steps>
+
+{" "}
+
+</TabsContent>
+
+{" "}
+
+</Tabs>
+
+<Callout className="mb-6">
+
+**Credit** : This component is inspired by [Opencut](https://opencut.app/).
+
+</Callout>

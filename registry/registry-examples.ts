@@ -90,6 +90,17 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "handlebars-demo",
+    type: "registry:example",
+    registryDependencies: ["handlebars"],
+    files: [
+      {
+        path: "examples/handlebars-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "image-trail-demo",
     type: "registry:example",
     registryDependencies: ["image-trail"],

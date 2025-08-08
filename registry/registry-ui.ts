@@ -86,6 +86,18 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "handlebars",
+    type: "registry:ui",
+    dependencies: ["gsap", "@gsap/react"],
+    categories: ["hover-effect"],
+    files: [
+      {
+        path: "ui/handlebars.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "image-trail",
     type: "registry:ui",
     dependencies: ["gsap", "@gsap/react"],

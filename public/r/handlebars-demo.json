@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.unizoy.com/schema/registry-item.json",
+  "name": "handlebars-demo",
+  "type": "registry:example",
+  "author": "Unizoy (https://ui.unizoy.com)",
+  "registryDependencies": [
+    "handlebars"
+  ],
+  "files": [
+    {
+      "path": "examples/handlebars-demo.tsx",
+      "content": "import { Handlebars } from \"../ui/handlebars\"\n\nexport default function HandlebarsDemo() {\n  return (\n    <div className=\"w-full h-64 flex justify-center items-center rounded-lg p-4\">\n      <Handlebars>\n        <span className=\"text-6xl text-yellow-400 md:text-6xl font-extrabold tracking-tighter\">\n          DRAG ME\n        </span>\n      </Handlebars>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
