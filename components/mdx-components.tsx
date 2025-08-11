@@ -29,6 +29,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Style } from "@/registry/registry-styles"
+import { CodeTabs } from "@/components/code-tabs"
 
 const components = {
   Accordion,
@@ -311,6 +312,7 @@ const components = {
       {...props}
     />
   ),
+  CodeTabs
 }
 
 interface MdxProps {
