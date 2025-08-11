@@ -23,7 +23,7 @@ export const graphOrganizationConfig = {
     "https://www.facebook.com/people/Unizoy/61550664177245/",
     "https://x.com/unizoyofficial",
     "https://www.instagram.com/unizoyofficial/",
-    "https://www.linkedin.com/showcase/unizoy-Ui",
+    "https://www.linkedin.com/showcase/unizoy-ui",
     "https://www.youtube.com/@Unizoy",
     "https://github.com/Unizoy/unizoy-ui",
   ],
