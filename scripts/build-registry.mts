@@ -270,8 +270,10 @@ export const Index: Record<string, any> = {
   )
 
   // Write style index.
-  rimraf.sync(path.join(process.cwd(), "__registry__/index.tsx"))
-  await fs.writeFile(path.join(process.cwd(), "__registry__/index.tsx"), index)
+  const registryDir = path.join(process.cwd(), "__registry__")
+  await fs.mkdir(registryDir, { recursive: true })
+  rimraf.sync(path.join(registryDir, "index.tsx"))
+  await fs.writeFile(path.join(registryDir, "index.tsx"), index)
 }
 
 // ----------------------------------------------------------------------------
