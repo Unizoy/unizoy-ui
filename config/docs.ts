@@ -67,6 +67,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Handlebars",
+          href: "/docs/components/handlebars",
+          items: [],
+        },
+        {
           title: "Image Trail",
           href: "/docs/components/image-trail",
           items: [],

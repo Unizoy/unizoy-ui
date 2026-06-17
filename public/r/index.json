@@ -119,6 +119,23 @@
     ]
   },
   {
+    "name": "handlebars",
+    "type": "registry:ui",
+    "dependencies": [
+      "gsap",
+      "@gsap/react"
+    ],
+    "files": [
+      {
+        "path": "ui/handlebars.tsx",
+        "type": "registry:ui"
+      }
+    ],
+    "categories": [
+      "hover-effect"
+    ]
+  },
+  {
     "name": "image-trail",
     "type": "registry:ui",
     "dependencies": [

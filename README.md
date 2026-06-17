@@ -13,7 +13,7 @@ pnpm run build:registry
 
 5. Now bulid the contentlayer using this command.
 ```bash
-pnpm run bulid:docs
+pnpm run build:docs
 ```
 6. At last update the `config/docs.ts`. to update the sidebar.
 
